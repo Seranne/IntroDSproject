@@ -1,0 +1,19 @@
+---
+title: "happiness index"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(readr)
+gh2015 <- read_csv("d:/Downloads/2015.csv")
+gh2016 <- read_csv("d:/Downloads/2016.csv")
+gh2017 <- read_csv("d:/Downloads/2017.csv")
+
+write.csv(gh2015, file = "gh2015.csv")
+write.csv(gh2016, file = "gh2016.csv")
+write.csv(gh2017, file = "gh2017.csv")
+```
+
