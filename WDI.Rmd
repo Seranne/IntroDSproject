@@ -11,10 +11,43 @@ library(readr)
 Indicators_csv <- read_csv("d:/Documents/IntroDSproject/Indicators_csv")
 library(tidyverse)
 
+# Filtering by Year
 WDI <- filter(Indicators_csv, Year == "2010"| Year == "2011" | Year == "2012"| Year == "2013" | Year == "2014" | Year == "2015" | Year == "2016" | Year =="2017")
 
+ourWDI <- read.csv("F://IntroDSproject/ourWDI.csv")
 
-WDI2 <- filter(WDI, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"| IndicatorCode == "EN.ATM.CO2E.PC"| IndicatorCode == "EN.ATM.GHGO.KT.CE"|IndicatorCode == "EN.ATM.METH.KT.CE"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
+# Removing Aggregated country values              
+
+
+WDInew <- filter(ourWDI, CountryCode != "WBG")
+WDInew <- filter(WDInew, CountryCode != "WLD")
+WDInew <- filter(WDInew, CountryCode != "UMC")
+WDInew <- filter(WDInew, CountryCode != "SSA")
+WDInew <- filter(WDInew, CountryCode != "SSF")
+WDInew <- filter(WDInew, CountryCode != "OED")
+WDInew <- filter(WDInew, CountryCode != "MNA")
+WDInew <- filter(WDInew, CountryCode != "MEA")
+WDInew <- filter(WDInew, CountryCode != "LMC")
+WDInew <- filter(WDInew, CountryCode != "LIC")
+WDInew <- filter(WDInew, CountryCode != "LMY")
+WDInew <- filter(WDInew, CountryCode != "LDC")
+WDInew <- filter(WDInew, CountryCode != "LAC")
+WDInew <- filter(WDInew, CountryCode != "LCN")
+WDInew <- filter(WDInew, CountryCode != "OEC")
+WDInew <- filter(WDInew, CountryCode != "NOC")
+WDInew <- filter(WDInew, CountryCode != "HIC")
+WDInew <- filter(WDInew, CountryCode != "HPC")
+WDInew <- filter(WDInew, CountryCode != "FCS")
+WDInew <- filter(WDInew, CountryCode != "EUU")
+WDInew <- filter(WDInew, CountryCode != "ECA")
+WDInew <- filter(WDInew, CountryCode != "ECS")
+WDInew <- filter(WDInew, CountryCode != "EMU")
+WDInew <- filter(WDInew, CountryCode != "EAP")
+WDInew <- filter(WDInew, CountryCode != "EAS")
+WDInew <- filter(WDInew, CountryCode != "CEB")
+WDInew <- filter(WDInew, CountryCode != "ARB")
+
+WDI2 <- filter(WDInew, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"| IndicatorCode == "EN.ATM.CO2E.PC"| IndicatorCode == "EN.ATM.GHGO.KT.CE"|IndicatorCode == "EN.ATM.METH.KT.CE"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
 
 write.csv(WDI2, file = "ourWDI.csv")
 WDI4<- select(WDI2,"CountryName","CountryCode", "IndicatorCode", "Year","Value")
