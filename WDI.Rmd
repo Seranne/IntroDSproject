@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "WDI"
 output: html_document
@@ -140,3 +141,143 @@ head(ourWDI)
 
 
 #https://www.kaggle.com/benhamner/indicators-in-data
+=======
+---
+title: "WDI"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(readr)
+Indicators_csv <- read_csv("d:/Documents/IntroDSproject/Indicators_csv")
+library(tidyverse)
+
+# Filtering by Year
+WDI <- filter(Indicators_csv, Year == "2010"| Year == "2011" | Year == "2012"| Year == "2013" | Year == "2014" | Year == "2015" | Year == "2016" | Year =="2017")
+
+ourWDI <- read.csv("F://IntroDSproject/ourWDI.csv")
+
+# Removing Aggregated country values              
+
+
+WDInew <- filter(ourWDI, CountryCode != "WBG")
+WDInew <- filter(WDInew, CountryCode != "WLD")
+WDInew <- filter(WDInew, CountryCode != "UMC")
+WDInew <- filter(WDInew, CountryCode != "SSA")
+WDInew <- filter(WDInew, CountryCode != "SSF")
+WDInew <- filter(WDInew, CountryCode != "OED")
+WDInew <- filter(WDInew, CountryCode != "MNA")
+WDInew <- filter(WDInew, CountryCode != "MEA")
+WDInew <- filter(WDInew, CountryCode != "LMC")
+WDInew <- filter(WDInew, CountryCode != "LIC")
+WDInew <- filter(WDInew, CountryCode != "LMY")
+WDInew <- filter(WDInew, CountryCode != "LDC")
+WDInew <- filter(WDInew, CountryCode != "LAC")
+WDInew <- filter(WDInew, CountryCode != "LCN")
+WDInew <- filter(WDInew, CountryCode != "OEC")
+WDInew <- filter(WDInew, CountryCode != "NOC")
+WDInew <- filter(WDInew, CountryCode != "HIC")
+WDInew <- filter(WDInew, CountryCode != "HPC")
+WDInew <- filter(WDInew, CountryCode != "FCS")
+WDInew <- filter(WDInew, CountryCode != "EUU")
+WDInew <- filter(WDInew, CountryCode != "ECA")
+WDInew <- filter(WDInew, CountryCode != "ECS")
+WDInew <- filter(WDInew, CountryCode != "EMU")
+WDInew <- filter(WDInew, CountryCode != "EAP")
+WDInew <- filter(WDInew, CountryCode != "EAS")
+WDInew <- filter(WDInew, CountryCode != "CEB")
+WDInew <- filter(WDInew, CountryCode != "ARB")
+WDInew <- filter(WDInew, CountryCode != "NAC")
+
+
+WDI2 <- filter(WDInew, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"| IndicatorCode == "EN.ATM.CO2E.PC"| IndicatorCode == "EN.ATM.GHGO.KT.CE"|IndicatorCode == "EN.ATM.METH.KT.CE"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
+
+
+#read.csv("F://IntroDSproject/ourWDI.csv")
+
+
+#WDI2 <- filter(WDInew, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"| IndicatorCode == "EN.ATM.CO2E.PC"| IndicatorCode == "EN.ATM.GHGO.KT.CE"|IndicatorCode == "EN.ATM.METH.KT.CE"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
+
+write.csv(WDI2, file = "ourWDI.csv")
+WDI4<- select(WDI2,"CountryName","CountryCode", "IndicatorCode", "Year","Value")
+
+comm<- WDI4 %>% filter(IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2")  %>% spread(IndicatorCode, Value)
+write.csv(comm, file = "Communication.csv")
+
+econ<- WDI4 %>% filter(IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
+write.csv(econ, file = "Economy.csv")
+
+edu <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS" | IndicatorCode == "SE.ADT.LITR.ZS" | IndicatorCode == "SG.GEN.PARL.ZS" | IndicatorCode == "SG.VAW.REAS.ZS") %>% spread(IndicatorCode, Value)
+write.csv(comm, file = "Education.csv")
+
+emissions<- WDI4%>% filter(IndicatorCode == "EN.ATM.CO2E.PC")%>% spread(IndicatorCode, Value)
+write.csv(emissions, file = "Emissions.csv")
+
+energy<- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS") %>% spread(IndicatorCode, Value)
+write.csv(energy, file = "Energy.csv")
+
+environnment1<- WDI4 %>% filter(IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "AG.LND.FRST.ZS") %>% spread(IndicatorCode, Value)
+write.csv(environnment1, file = "Environment.csv")
+
+
+GDP<- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG") %>% spread(IndicatorCode, Value)
+write.csv(GDP, file = "GDP.csv")
+
+population<- WDI4 %>% filter(IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
+
+write.csv(population, file = "Population.csv")
+
+```
+(AG.LND.FRST.ZS	Forest area (% of land area), 
+EG.ELC.ACCS.ZS	Access to electricity (% of population) 
+EG.FEC.RNEW.ZS	Renewable energy consumption (% of total final energy consumption), 
+EG.USE.COMM.FO.ZS	Fossil fuel energy consumption (% of total), 
+EN.ATM.CO2E.PC	CO2 emissions (metric tons per capita), 
+EN.ATM.GHGO.KT.CE	Other greenhouse gas emissions, HFC, PFC and SF6 (thousand metric tons of CO2 equivalent), 
+EN.ATM.HFCG.KT.CE	HFC gas emissions (thousand metric tons of CO2 equivalent, 
+EN.ATM.METH.KT.CE	Methane emissions (kt of CO2 equivalent), 
+EN.FSH.THRD.NO	Fish species, threatened, 
+EN.HPT.THRD.NO	Plant species (higher), threatened, 
+EN.MAM.THRD.NO	Mammal species, threatened, 
+EN.POP.DNST	Population density (people per sq. km of land area), 
+ER.BDV.TOTL.XQ	GEF benefits index for biodiversity (0 = no biodiversity potential to 100 = maximum), 
+ER.PTD.TOTL.ZS	Terrestrial and marine protected areas (% of total territorial area), 
+FP.CPI.TOTL.ZG	Inflation, consumer prices (annual %), 
+GC.XPN.COMP.ZS	Compensation of employees (% of expense), 
+IC.FRM.CRIM.ZS	Losses due to theft, robbery, vandalism, and arson (% sales), 
+IC.FRM.FEMM.ZS	Firms with female top manager (% of firms),
+IC.LGL.CRED.XQ	Strength of legal rights index (0=weak to 12=strong),
+IT.CEL.SETS.P2	Mobile cellular subscriptions (per 100 people), 
+IT.NET.USER.P2	Internet users (per 100 people), 
+MS.MIL.XPND.GD.ZS	Military expenditure (% of GDP), 
+NY.GDP.PCAP.CD	GDP per capita (current USdollar), NY.GDP.MKTP.PP.CD	GDP, PPP (current international dollar), 
+NY.GDP.PCAP.KD.ZG	GDP per capita growth (annual %), 
+SE.ADT.1524.LT.ZS	Youth literacy rate, population 15-24 years, both sexes (%), 
+SE.ADT.LITR.ZS	Adult literacy rate, population 15+ years, both sexes (%), 
+SG.GEN.PARL.ZS	Proportion of seats held by women in national parliaments (%), 
+SG.VAW.REAS.ZS	Women who believe a husband is justified in beating his wife (any of five reasons) (%),
+SH.DTH.MORT	Number of under-five deaths), 
+SI.POV.GINI	GINI index (World Bank estimate), 
+SL.EMP.WORK.ZS	Wage and salaried workers, total (% of total employed), 
+SL.FAM.0714.ZS	Children in employment, unpaid family workers (% of children in employment, ages 7-14),
+SL.UEM.NEET.ZS	Share of youth not in education, employment, or training, total (% of youth population, SM.POP.TOTL.ZS	International migrant stock (% of population),
+SN.ITK.DFCT	Depth of the food deficit (kilocalories per person per day), 
+SP.DYN.LE00.IN	Life expectancy at birth, total (years), 
+SP.UWT.TFRT	Unmet need for contraception (% of married women ages 15-49), 
+ST.INT.DPRT	International tourism, number of departures, 
+SP.POP.TOTL	Population, total, 
+VC.IHR.PSRC.P5	Intentional homicides (per 100,000 people))
+
+```{r}
+ourWDI <- read_csv("d:/Documents/GitHub/IntroDSproject/ourWDI.csv")
+head(ourWDI)
+
+
+```
+
+
+#https://www.kaggle.com/benhamner/indicators-in-data
+>>>>>>> 18989483dccb8eefddf6e58a39bc9db3c88e99cc

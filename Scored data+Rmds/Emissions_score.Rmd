@@ -19,4 +19,8 @@ emissions_mod <- emissions %>%
 write.csv(emissions_mod, "Emissions_score.csv")
 
                                        
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 18989483dccb8eefddf6e58a39bc9db3c88e99cc
