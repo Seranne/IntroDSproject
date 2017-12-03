@@ -7,7 +7,19 @@ output: html_document
 ```{r}
 wdi <- read.csv("F://IntroDSProject/ourWDI.csv")
 
-Comm <- data.frame("country" = wdi$CountryName[wdi$IndicatorCode == "IT.CEL.SETS.P2"], "MobCelSub" = wdi$Value[wdi$IndicatorCode == "IT.CEL.SETS.P2"])
+wdi$Year <- as.factor(wdi$Year)
+levels(wdi$Year)
+
+MobCelSub <- data.frame("Country" = wdi$CountryName[wdi$IndicatorCode == "IT.CEL.SETS.P2"], "Year" = wdi$Year[wdi$IndicatorCode == "IT.CEL.SETS.P2"] | wdi$Year, "CellPerCap" = wdi$Value[wdi$IndicatorCode == "IT.CEL.SETS.P2"])
+
+internet <- data.frame("Country" = wdi$CountryName[wdi$IndicatorCode == "IT.NET.USER.P2"], "Year" = wdi$Year[wdi$IndicatorCode == "IT.NET.USER.P2"] "InternetPerCap" = wdi$Value[wdi$IndicatorCode == "IT.NET.USER.P2"])
+
+View(MobCelSub)
+View(internet)
+
+comm <- merge(MobCelSub, internet, by = "Country", all.x = TRUE, all.y = FALSE)
+View(comm)
+
 
 #a <- data.frame()
 
