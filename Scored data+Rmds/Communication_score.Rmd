@@ -17,7 +17,10 @@ Communication <- Communication %>% distinct(CountryName, .keep_all = TRUE)
 Communication <- Communication %>% mutate(rankcell = rank(IT.CEL.SETS.P2)) 
 Communication <- Communication %>% mutate(ranknet = rank(IT.NET.USER.P2))
 Communication <- Communication %>% mutate(score = (rankcell+ranknet)/2)
-Communication <- Communication %>% mutate(finalrank = rank(-Communication$score))
+Communication <- Communication %>% mutate(finalrank_comm = rank(-Communication$score))
+Communication2 <- select(Communication, "CountryName", "CountryCode","finalrank_comm" )
+
+write.csv(Communication2, file = "Communication_score.csv")
 ```
 
 
