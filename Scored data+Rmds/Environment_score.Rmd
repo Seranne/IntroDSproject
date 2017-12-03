@@ -17,6 +17,10 @@ envir_mod <- environment %>%
   summarise(mean_agland = mean(AG.LND.FRST.ZS), mean_protect = mean(ER.PTD.TOTL.ZS)) %>%
   mutate(rank_agland = rank(mean_agland), rank_protect = rank(mean_protect)) %>%
   mutate(score = (rank_agland+rank_protect)/2) %>%
-  mutate(finalrank = rank(-score))
-                                          
+  mutate(finalrank_env = rank(-score)) %>%
+  select(CountryName, finalrank_env)
+
+write.csv(envir_mod, "Environment_score.csv")
+
+                                       
 ```
