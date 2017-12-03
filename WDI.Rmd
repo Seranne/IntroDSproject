@@ -3,22 +3,21 @@ title: "WDI"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 ```{r}
 library(readr)
-Indicators_csv <- read_csv("d:/Documents/IntroDSproject/Indicators_csv")
 library(tidyverse)
+```
 
+```{r}
+Indicators_csv <- read_csv("d:/Documents/IntroDSproject/Indicators_csv")
 # Filtering by Year
 WDI <- filter(Indicators_csv, Year == "2010"| Year == "2011" | Year == "2012"| Year == "2013" | Year == "2014" | Year == "2015" | Year == "2016" | Year =="2017")
+```
 
-<<<<<<< HEAD
-ourWDI <- read.csv("F://IntroDSproject/ourWDI.csv")
+```{r}
+ourWDI <- read_csv("F://IntroDSproject/ourWDI.csv")
 
 # Removing Aggregated country values              
-
 
 WDInew <- filter(ourWDI, CountryCode != "WBG")
 WDInew <- filter(WDInew, CountryCode != "WLD")
@@ -47,6 +46,8 @@ WDInew <- filter(WDInew, CountryCode != "EAP")
 WDInew <- filter(WDInew, CountryCode != "EAS")
 WDInew <- filter(WDInew, CountryCode != "CEB")
 WDInew <- filter(WDInew, CountryCode != "ARB")
+WDInew <- filter(WDInew, CountryCode != "NAC")
+
 
 WDI2 <- filter(WDInew, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"| IndicatorCode == "EN.ATM.CO2E.PC"| IndicatorCode == "EN.ATM.GHGO.KT.CE"|IndicatorCode == "EN.ATM.METH.KT.CE"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
 =======
@@ -58,7 +59,6 @@ WDI <- filter(ourWDI, CountryCode != "WBG" | CountryCode != "WLD" | CountryCode 
 
 
 WDI2 <- filter(WDI, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"| IndicatorCode == "EN.ATM.CO2E.PC"| IndicatorCode == "EN.ATM.GHGO.KT.CE"|IndicatorCode == "EN.ATM.METH.KT.CE"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
->>>>>>> 67d5e49d59e8ced83bfcd1ff16526b95d33898f7
 
 write.csv(WDI2, file = "ourWDI.csv")
 WDI4<- select(WDI2,"CountryName","CountryCode", "IndicatorCode", "Year","Value")
@@ -75,7 +75,7 @@ environnment1<- WDI4 %>% filter(IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode 
 write.csv(environnment1, file = "Environment.csv")
 
 
-econ<- WDI4 %>% filter(IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
+econ<- WDI4 %>% filter(IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
 write.csv(econ, file = "Economy.csv")
 
 
