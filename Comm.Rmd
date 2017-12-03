@@ -1,0 +1,22 @@
+---
+title: "comm"
+output: html_document
+---
+```{r}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+Communication <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Communication.csv")
+unique(Communication$CountryName)
+Communication <- Communication %>% distinct(CountryName, .keep_all = TRUE)
+Communication <- Communication %>% mutate(rankcell = order(IT.CEL.SETS.P2)) 
+Communication <- Communication %>% mutate(ranknet = order(IT.NET.USER.P2))
+Communication <- Communication %>% mutate(score = (rankcell+ranknet)/2)
+                                          
+```
+
+
