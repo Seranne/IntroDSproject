@@ -1,0 +1,1196 @@
+"","CountryName","CountryCode","Year","IT.CEL.SETS.P2","IT.NET.USER.P2"
+"1","Afghanistan","AFG",2010,45.77817,4
+"2","Afghanistan","AFG",2011,60.32632,5
+"3","Afghanistan","AFG",2012,65.45219,5.454545
+"4","Afghanistan","AFG",2013,70.66136,5.9
+"5","Afghanistan","AFG",2014,74.88284,6.39
+"6","Albania","ALB",2010,85.46825,45
+"7","Albania","ALB",2011,98.29153,49
+"8","Albania","ALB",2012,110.6865,54.65596
+"9","Albania","ALB",2013,116.1572,57.2
+"10","Albania","ALB",2014,105.47,60.1
+"11","Algeria","DZA",2010,88.44488,12.5
+"12","Algeria","DZA",2011,94.31444,14
+"13","Algeria","DZA",2012,97.52089,15.22803
+"14","Algeria","DZA",2013,100.7877,16.5
+"15","Algeria","DZA",2014,93.31075,18.09
+"16","Andorra","ADO",2010,84.06818,81
+"17","Andorra","ADO",2011,83.53432,81
+"18","Andorra","ADO",2012,81.50204,86.43442
+"19","Andorra","ADO",2013,80.70262,94
+"20","Andorra","ADO",2014,82.64319,95.9
+"21","Angola","AGO",2010,48.10121,10
+"22","Angola","AGO",2011,59.82619,14.776
+"23","Angola","AGO",2012,61.40628,16.93721
+"24","Angola","AGO",2013,61.8733,19.1
+"25","Angola","AGO",2014,63.47921,21.26
+"26","Antigua and Barbuda","ATG",2010,192.5533,47
+"27","Antigua and Barbuda","ATG",2011,199.6642,52
+"28","Antigua and Barbuda","ATG",2012,143.0138,58
+"29","Antigua and Barbuda","ATG",2013,127.0856,63.4
+"30","Antigua and Barbuda","ATG",2014,120.018,64
+"31","Arab World","ARB",2010,87.62882,24.53578
+"32","Arab World","ARB",2011,98.87331,26.53401
+"33","Arab World","ARB",2012,105.0372,29.9543
+"34","Arab World","ARB",2013,110.0126,32.34205
+"35","Arab World","ARB",2014,109.1523,34.51737
+"36","Argentina","ARG",2010,141.383,45
+"37","Argentina","ARG",2011,149.0906,51
+"38","Argentina","ARG",2012,156.5648,55.8
+"39","Argentina","ARG",2013,162.5274,59.9
+"40","Argentina","ARG",2014,158.7358,64.7
+"41","Armenia","ARM",2010,130.4322,25
+"42","Armenia","ARM",2011,108.3362,32
+"43","Armenia","ARM",2012,111.9147,37.5
+"44","Armenia","ARM",2013,112.4207,41.9
+"45","Armenia","ARM",2014,115.9232,46.3
+"46","Aruba","ABW",2010,129.7282,62
+"47","Aruba","ABW",2011,NA,69
+"48","Aruba","ABW",2012,131.8565,74
+"49","Aruba","ABW",2013,134.8738,78.9
+"50","Aruba","ABW",2014,135.0659,83.78
+"51","Australia","AUS",2010,100.4263,76
+"52","Australia","AUS",2011,104.6106,79.4877
+"53","Australia","AUS",2012,105.5857,79
+"54","Australia","AUS",2013,106.8435,83
+"55","Australia","AUS",2014,131.2305,84.56
+"56","Austria","AUT",2010,145.6928,75.17
+"57","Austria","AUT",2011,154.426,78.73999
+"58","Austria","AUT",2012,160.5397,80.02999
+"59","Austria","AUT",2013,156.2304,80.6188
+"60","Austria","AUT",2014,151.9113,81
+"61","Azerbaijan","AZE",2010,100.0593,46
+"62","Azerbaijan","AZE",2011,109.9721,50
+"63","Azerbaijan","AZE",2012,108.7683,54.2
+"64","Azerbaijan","AZE",2013,107.6134,58.7
+"65","Azerbaijan","AZE",2014,110.9054,61
+"66","Bahamas, The","BHS",2010,118.8292,43
+"67","Bahamas, The","BHS",2011,81.56285,65
+"68","Bahamas, The","BHS",2012,80.65383,71.7482
+"69","Bahamas, The","BHS",2013,76.05187,72
+"70","Bahamas, The","BHS",2014,71.43772,76.92
+"71","Bahrain","BHR",2010,125.2084,55
+"72","Bahrain","BHR",2011,131.01,76.99997
+"73","Bahrain","BHR",2012,161.1671,88
+"74","Bahrain","BHR",2013,165.9089,90.00004
+"75","Bahrain","BHR",2014,173.2739,90.99998
+"76","Bangladesh","BGD",2010,44.94536,3.7
+"77","Bangladesh","BGD",2011,55.19257,4.5
+"78","Bangladesh","BGD",2012,62.82024,5
+"79","Bangladesh","BGD",2013,74.42965,6.63
+"80","Bangladesh","BGD",2014,75.92489,9.6
+"81","Barbados","BRB",2010,124.8452,65.1
+"82","Barbados","BRB",2011,123.4606,67
+"83","Barbados","BRB",2012,123.3298,70
+"84","Barbados","BRB",2013,108.1028,73
+"85","Barbados","BRB",2014,106.7782,76.67
+"86","Belarus","BLR",2010,108.8697,31.8
+"87","Belarus","BLR",2011,113.1689,39.6489
+"88","Belarus","BLR",2012,113.5179,46.91
+"89","Belarus","BLR",2013,118.7862,54.17
+"90","Belarus","BLR",2014,122.5011,59.02
+"91","Belgium","BEL",2010,111.0842,75
+"92","Belgium","BEL",2011,113.531,81.61
+"93","Belgium","BEL",2012,111.3315,80.71999
+"94","Belgium","BEL",2013,110.9032,82.1702
+"95","Belgium","BEL",2014,114.27,85
+"96","Belize","BLZ",2010,62.9307,28.2
+"97","Belize","BLZ",2011,70.31965,30.7
+"98","Belize","BLZ",2012,53.20712,31
+"99","Belize","BLZ",2013,52.61073,33.6
+"100","Belize","BLZ",2014,50.71257,38.7
+"101","Benin","BEN",2010,74.39605,3.13
+"102","Benin","BEN",2011,79.4005,4.148323
+"103","Benin","BEN",2012,83.65432,4.5
+"104","Benin","BEN",2013,93.25782,4.9
+"105","Benin","BEN",2014,101.7111,5.3
+"106","Bermuda","BMU",2010,135.7947,84.21
+"107","Bermuda","BMU",2011,NA,88.336
+"108","Bermuda","BMU",2012,139.5363,91.2993
+"109","Bermuda","BMU",2013,144.3198,95.3
+"110","Bermuda","BMU",2014,90.88007,96.8
+"111","Bhutan","BTN",2010,54.99994,13.6
+"112","Bhutan","BTN",2011,66.37918,21
+"113","Bhutan","BTN",2012,75.60978,24
+"114","Bhutan","BTN",2013,72.19831,29.9
+"115","Bhutan","BTN",2014,82.07006,34.37
+"116","Bolivia","BOL",2010,70.68598,22.4
+"117","Bolivia","BOL",2011,80.90772,30
+"118","Bolivia","BOL",2012,90.4435,35.34
+"119","Bolivia","BOL",2013,97.69945,36.94
+"120","Bolivia","BOL",2014,96.33725,39.02
+"121","Bosnia and Herzegovina","BIH",2010,80.87079,42.75
+"122","Bosnia and Herzegovina","BIH",2011,82.60008,47.77
+"123","Bosnia and Herzegovina","BIH",2012,87.57471,52.78
+"124","Bosnia and Herzegovina","BIH",2013,91.09531,57.79
+"125","Bosnia and Herzegovina","BIH",2014,91.27895,60.8
+"126","Botswana","BWA",2010,120.0102,6
+"127","Botswana","BWA",2011,145.9839,8
+"128","Botswana","BWA",2012,153.7856,11.5
+"129","Botswana","BWA",2013,160.6411,15
+"130","Botswana","BWA",2014,167.2976,18.5
+"131","Brazil","BRA",2010,100.881,40.65
+"132","Brazil","BRA",2011,119.0024,45.69
+"133","Brazil","BRA",2012,125.0019,48.56
+"134","Brazil","BRA",2013,135.305,51.04
+"135","Brazil","BRA",2014,138.9515,57.6
+"136","Brunei Darussalam","BRN",2010,108.6215,53
+"137","Brunei Darussalam","BRN",2011,109.0155,56
+"138","Brunei Darussalam","BRN",2012,113.9487,60.27307
+"139","Brunei Darussalam","BRN",2013,112.2144,64.5
+"140","Brunei Darussalam","BRN",2014,110.0571,68.77
+"141","Bulgaria","BGR",2010,138.039,46.23
+"142","Bulgaria","BGR",2011,142.8462,47.97999
+"143","Bulgaria","BGR",2012,148.1311,51.89999
+"144","Bulgaria","BGR",2013,145.1877,53.0615
+"145","Bulgaria","BGR",2014,137.7066,55.49
+"146","Burkina Faso","BFA",2010,36.72938,2.4
+"147","Burkina Faso","BFA",2011,48.02719,3
+"148","Burkina Faso","BFA",2012,60.60765,3.725035
+"149","Burkina Faso","BFA",2013,66.37728,9.1
+"150","Burkina Faso","BFA",2014,71.73747,9.4
+"151","Burundi","BDI",2010,18.17474,1
+"152","Burundi","BDI",2011,20.06827,1.11
+"153","Burundi","BDI",2012,22.81446,1.22
+"154","Burundi","BDI",2013,24.96259,1.3
+"155","Burundi","BDI",2014,30.46201,1.38
+"156","Cabo Verde","CPV",2010,76.26543,30
+"157","Cabo Verde","CPV",2011,80.81218,32
+"158","Cabo Verde","CPV",2012,86.02531,34.74
+"159","Cabo Verde","CPV",2013,100.1124,37.5
+"160","Cabo Verde","CPV",2014,121.7897,40.26
+"161","Cambodia","KHM",2010,56.74071,1.26
+"162","Cambodia","KHM",2011,94.18821,3.1
+"163","Cambodia","KHM",2012,128.5272,4.94
+"164","Cambodia","KHM",2013,133.8902,6.8
+"165","Cambodia","KHM",2014,155.1115,9
+"166","Cameroon","CMR",2010,41.87601,4.3
+"167","Cameroon","CMR",2011,49.5674,5
+"168","Cameroon","CMR",2012,60.40682,5.698987
+"169","Cameroon","CMR",2013,70.39047,6.4
+"170","Cameroon","CMR",2014,75.68513,11
+"171","Canada","CAN",2010,75.67608,80.3
+"172","Canada","CAN",2011,77.82549,83
+"173","Canada","CAN",2012,79.56834,83
+"174","Canada","CAN",2013,80.61008,85.8
+"175","Canada","CAN",2014,82.98444,87.12
+"176","Caribbean small states","CSS",2010,114.4775,35.81886
+"177","Caribbean small states","CSS",2011,107.9535,42.68901
+"178","Caribbean small states","CSS",2012,104.2195,43.26065
+"179","Caribbean small states","CSS",2013,109.4289,46.29434
+"180","Caribbean small states","CSS",2014,109.9251,49.27395
+"181","Cayman Islands","CYM",2010,181.1742,66
+"182","Cayman Islands","CYM",2011,170.9811,69.46594
+"183","Cayman Islands","CYM",2012,171.6762,74.12653
+"184","Cayman Islands","CYM",2013,167.7693,74.1
+"185","Cayman Islands","CYM",2014,153.7484,74.1
+"186","Central African Republic","CAF",2010,22.51149,2
+"187","Central African Republic","CAF",2011,22.3714,2.2
+"188","Central African Republic","CAF",2012,25.26102,3
+"189","Central African Republic","CAF",2013,29.46658,3.5
+"190","Central African Republic","CAF",2014,31.35987,4.03
+"191","Central Europe and the Baltics","CEB",2010,120.6792,58.35017
+"192","Central Europe and the Baltics","CEB",2011,123.6346,58.85739
+"193","Central Europe and the Baltics","CEB",2012,128.0304,61.50955
+"194","Central Europe and the Baltics","CEB",2013,130.2566,63.28363
+"195","Central Europe and the Baltics","CEB",2014,132.7192,66.92852
+"196","Chad","TCD",2010,24.53168,1.7
+"197","Chad","TCD",2011,30.34478,1.9
+"198","Chad","TCD",2012,35.36488,2.1
+"199","Chad","TCD",2013,35.56438,2.3
+"200","Chad","TCD",2014,39.75098,2.5
+"201","Chile","CHL",2010,115.7514,45
+"202","Chile","CHL",2011,128.9269,52.24961
+"203","Chile","CHL",2012,137.0812,61.41815
+"204","Chile","CHL",2013,134.2891,66.5
+"205","Chile","CHL",2014,133.2556,72.35
+"206","China","CHN",2010,63.17028,34.3
+"207","China","CHN",2011,72.07132,38.3
+"208","China","CHN",2012,80.76271,42.30012
+"209","China","CHN",2013,88.70833,45.8
+"210","China","CHN",2014,92.27349,49.3
+"211","Colombia","COL",2010,95.76455,36.5
+"212","Colombia","COL",2011,98.13425,40.35092
+"213","Colombia","COL",2012,102.8549,48.98
+"214","Colombia","COL",2013,104.0845,51.7
+"215","Colombia","COL",2014,113.0821,52.57
+"216","Comoros","COM",2010,24.19596,5.1
+"217","Comoros","COM",2011,30.91018,5.5
+"218","Comoros","COM",2012,39.51356,5.975296
+"219","Comoros","COM",2013,47.28425,6.5
+"220","Comoros","COM",2014,50.9012,6.98
+"221","Congo, Dem. Rep.","ZAR",2010,19.00648,0.72
+"222","Congo, Dem. Rep.","ZAR",2011,24.47131,1.2
+"223","Congo, Dem. Rep.","ZAR",2012,30.58009,1.679961
+"224","Congo, Dem. Rep.","ZAR",2013,41.81656,2.2
+"225","Congo, Dem. Rep.","ZAR",2014,53.49322,3
+"226","Congo, Rep.","COG",2010,90.44275,5
+"227","Congo, Rep.","COG",2011,91.9391,5.6
+"228","Congo, Rep.","COG",2012,98.75683,6.106695
+"229","Congo, Rep.","COG",2013,104.7695,6.6
+"230","Congo, Rep.","COG",2014,108.1496,7.11
+"231","Costa Rica","CRI",2010,66.99321,36.5
+"232","Costa Rica","CRI",2011,87.66035,39.2122
+"233","Costa Rica","CRI",2012,111.9199,47.5
+"234","Costa Rica","CRI",2013,145.9716,45.96
+"235","Costa Rica","CRI",2014,143.8284,49.41
+"236","Cote d'Ivoire","CIV",2010,82.20152,2.7
+"237","Cote d'Ivoire","CIV",2011,89.44963,2.9
+"238","Cote d'Ivoire","CIV",2012,91.22863,5
+"239","Cote d'Ivoire","CIV",2013,95.44605,8.4
+"240","Cote d'Ivoire","CIV",2014,106.2476,14.6
+"241","Croatia","HRV",2010,113.6081,56.55
+"242","Croatia","HRV",2011,118.3014,57.78998
+"243","Croatia","HRV",2012,115.4136,61.93997
+"244","Croatia","HRV",2013,110.0543,66.7476
+"245","Croatia","HRV",2014,104.4313,68.57
+"246","Cuba","CUB",2010,8.890583,15.9
+"247","Cuba","CUB",2011,11.66313,16.01729
+"248","Cuba","CUB",2012,14.92016,21.2
+"249","Cuba","CUB",2013,17.71493,27.93
+"250","Cuba","CUB",2014,22.4784,30
+"251","Curacao","CUW",2010,138.2651,NA
+"252","Curacao","CUW",2011,136.147,NA
+"253","Curacao","CUW",2012,131.8166,NA
+"254","Curacao","CUW",2013,128.1822,NA
+"255","Curacao","CUW",2014,121.5966,NA
+"256","Cyprus","CYP",2010,93.69258,52.99
+"257","Cyprus","CYP",2011,97.70992,56.85989
+"258","Cyprus","CYP",2012,98.40043,60.68987
+"259","Cyprus","CYP",2013,96.35943,65.4548
+"260","Cyprus","CYP",2014,96.33531,69.33
+"261","Czech Republic","CZE",2010,122.5551,68.82
+"262","Czech Republic","CZE",2011,124.0944,70.49
+"263","Czech Republic","CZE",2012,126.8465,73.43001
+"264","Czech Republic","CZE",2013,127.7308,74.1104
+"265","Czech Republic","CZE",2014,130.0334,79.71
+"266","Denmark","DNK",2010,115.6699,88.72
+"267","Denmark","DNK",2011,128.6615,89.81001
+"268","Denmark","DNK",2012,130.2799,92.26001
+"269","Denmark","DNK",2013,127.1177,94.6297
+"270","Denmark","DNK",2014,125.9578,95.99
+"271","Djibouti","DJI",2010,19.85682,6.5
+"272","Djibouti","DJI",2011,22.80162,7
+"273","Djibouti","DJI",2012,24.71558,8.267233
+"274","Djibouti","DJI",2013,27.96587,9.5
+"275","Djibouti","DJI",2014,32.38687,10.71
+"276","Dominica","DMA",2010,148.337,47.45
+"277","Dominica","DMA",2011,152.5525,51.3135
+"278","Dominica","DMA",2012,152.4748,55.17701
+"279","Dominica","DMA",2013,129.9599,59
+"280","Dominica","DMA",2014,127.4519,62.86
+"281","Dominican Republic","DOM",2010,88.77871,31.4
+"282","Dominican Republic","DOM",2011,86.43208,38
+"283","Dominican Republic","DOM",2012,86.9371,41.2
+"284","Dominican Republic","DOM",2013,88.4335,45.9
+"285","Dominican Republic","DOM",2014,78.86383,49.58
+"286","East Asia & Pacific (all income levels)","EAS",2010,73.73629,34.22949
+"287","East Asia & Pacific (all income levels)","EAS",2011,83.27386,37.36357
+"288","East Asia & Pacific (all income levels)","EAS",2012,91.63285,40.74677
+"289","East Asia & Pacific (all income levels)","EAS",2013,98.30288,44.41317
+"290","East Asia & Pacific (all income levels)","EAS",2014,103.1707,46.89128
+"291","East Asia & Pacific (developing only)","EAP",2010,69.92421,28.95606
+"292","East Asia & Pacific (developing only)","EAP",2011,79.87848,32.38396
+"293","East Asia & Pacific (developing only)","EAP",2012,88.68072,36.10946
+"294","East Asia & Pacific (developing only)","EAP",2013,95.71931,39.39276
+"295","East Asia & Pacific (developing only)","EAP",2014,100.4766,42.13206
+"296","Ecuador","ECU",2010,98.53116,29.03
+"297","Ecuador","ECU",2011,100.5656,31.36681
+"298","Ecuador","ECU",2012,106.2255,35.13515
+"299","Ecuador","ECU",2013,105.6445,40.35368
+"300","Ecuador","ECU",2014,103.8992,43
+"301","Egypt, Arab Rep.","EGY",2010,90.50319,21.6
+"302","Egypt, Arab Rep.","EGY",2011,105.0794,25.6
+"303","Egypt, Arab Rep.","EGY",2012,119.9164,26.4
+"304","Egypt, Arab Rep.","EGY",2013,121.5079,29.4
+"305","Egypt, Arab Rep.","EGY",2014,114.306,31.7
+"306","El Salvador","SLV",2010,123.8356,15.9
+"307","El Salvador","SLV",2011,132.9256,18.9
+"308","El Salvador","SLV",2012,137.3425,20.32139
+"309","El Salvador","SLV",2013,141.8179,23.1093
+"310","El Salvador","SLV",2014,144.0257,29.7
+"311","Equatorial Guinea","GNQ",2010,57.35549,6
+"312","Equatorial Guinea","GNQ",2011,66.88026,11.5
+"313","Equatorial Guinea","GNQ",2012,68.05374,13.94318
+"314","Equatorial Guinea","GNQ",2013,67.47339,16.4
+"315","Equatorial Guinea","GNQ",2014,66.38811,18.86
+"316","Eritrea","ERI",2010,3.227136,0.61
+"317","Eritrea","ERI",2011,4.077954,0.7
+"318","Eritrea","ERI",2012,4.979398,0.8
+"319","Eritrea","ERI",2013,5.602975,0.9
+"320","Eritrea","ERI",2014,6.385997,0.99
+"321","Estonia","EST",2010,127.2828,74.1
+"322","Estonia","EST",2011,143.9261,76.5
+"323","Estonia","EST",2012,160.4108,78.38993
+"324","Estonia","EST",2013,159.6607,79.4
+"325","Estonia","EST",2014,160.6878,84.24
+"326","Ethiopia","ETH",2010,7.869542,0.75
+"327","Ethiopia","ETH",2011,15.80286,1.1
+"328","Ethiopia","ETH",2012,22.37452,1.48281
+"329","Ethiopia","ETH",2013,27.25469,1.9
+"330","Ethiopia","ETH",2014,31.59388,2.9
+"331","Euro area","EMU",2010,116.3811,71.02192
+"332","Euro area","EMU",2011,119.3281,72.05946
+"333","Euro area","EMU",2012,120.6253,74.08163
+"334","Euro area","EMU",2013,121.7575,75.81073
+"335","Euro area","EMU",2014,121.2458,78.30004
+"336","Europe & Central Asia (all income levels)","ECS",2010,120.2586,56.24588
+"337","Europe & Central Asia (all income levels)","ECS",2011,120.2849,59.22647
+"338","Europe & Central Asia (all income levels)","ECS",2012,122.5181,63.89756
+"339","Europe & Central Asia (all income levels)","ECS",2013,125.237,66.34379
+"340","Europe & Central Asia (all income levels)","ECS",2014,126.0535,69.20344
+"341","Europe & Central Asia (developing only)","ECA",2010,99.07154,31.99136
+"342","Europe & Central Asia (developing only)","ECA",2011,106.6871,37.19708
+"343","Europe & Central Asia (developing only)","ECA",2012,108.8564,41.56475
+"344","Europe & Central Asia (developing only)","ECA",2013,111.5915,44.49344
+"345","Europe & Central Asia (developing only)","ECA",2014,112.711,48.18224
+"346","European Union","EUU",2010,118.0482,70.6309
+"347","European Union","EUU",2011,120.7643,71.55807
+"348","European Union","EUU",2012,122.6103,73.69936
+"349","European Union","EUU",2013,123.8564,75.53578
+"350","European Union","EUU",2014,123.9117,78.10215
+"351","Faeroe Islands","FRO",2010,119.8967,75.2
+"352","Faeroe Islands","FRO",2011,118.0097,80.73217
+"353","Faeroe Islands","FRO",2012,118.6159,85.33519
+"354","Faeroe Islands","FRO",2013,120.6816,90
+"355","Faeroe Islands","FRO",2014,124.1165,94.66
+"356","Fiji","FJI",2010,81.10077,20
+"357","Fiji","FJI",2011,83.76338,28
+"358","Fiji","FJI",2012,98.17855,33.74236
+"359","Fiji","FJI",2013,105.6002,37.1
+"360","Fiji","FJI",2014,98.7767,41.8
+"361","Finland","FIN",2010,156.3055,86.89
+"362","Finland","FIN",2011,165.8909,88.70999
+"363","Finland","FIN",2012,172.3224,89.88
+"364","Finland","FIN",2013,136.5787,91.5144
+"365","Finland","FIN",2014,139.6639,92.38
+"366","Fragile and conflict affected situations","FCS",2010,39.23105,6.703662
+"367","Fragile and conflict affected situations","FCS",2011,46.40834,7.454809
+"368","Fragile and conflict affected situations","FCS",2012,51.99454,8.602357
+"369","Fragile and conflict affected situations","FCS",2013,59.22488,10.02549
+"370","Fragile and conflict affected situations","FCS",2014,67.5821,11.53125
+"371","France","FRA",2010,91.38733,77.28
+"372","France","FRA",2011,94.07677,77.82
+"373","France","FRA",2012,97.37775,81.44
+"374","France","FRA",2013,98.49547,81.9198
+"375","France","FRA",2014,100.3616,83.75
+"376","French Polynesia","PYF",2010,80.53644,49
+"377","French Polynesia","PYF",2011,82.26223,49
+"378","French Polynesia","PYF",2012,82.53778,52.87663
+"379","French Polynesia","PYF",2013,85.57568,56.8
+"380","French Polynesia","PYF",2014,85.65762,60.68
+"381","Gabon","GAB",2010,103.4557,7.23
+"382","Gabon","GAB",2011,148.6936,8
+"383","Gabon","GAB",2012,179.4714,8.616714
+"384","Gabon","GAB",2013,214.75,9.2
+"385","Gabon","GAB",2014,210.3671,9.81
+"386","Gambia, The","GMB",2010,87.96334,9.2
+"387","Gambia, The","GMB",2011,80.76026,10.8703
+"388","Gambia, The","GMB",2012,85.20376,12.44923
+"389","Gambia, The","GMB",2013,99.97669,14
+"390","Gambia, The","GMB",2014,119.6305,15.56
+"391","Georgia","GEO",2010,90.64793,26.9
+"392","Georgia","GEO",2011,101.2829,31.52
+"393","Georgia","GEO",2012,107.8091,36.94
+"394","Georgia","GEO",2013,115.0251,43.3
+"395","Georgia","GEO",2014,124.9355,48.9
+"396","Germany","DEU",2010,106.4837,82
+"397","Germany","DEU",2011,109.6596,81.27
+"398","Germany","DEU",2012,111.594,82.35
+"399","Germany","DEU",2013,120.9212,84.17
+"400","Germany","DEU",2014,120.419,86.19
+"401","Ghana","GHA",2010,71.86671,7.8
+"402","Ghana","GHA",2011,85.27494,9
+"403","Ghana","GHA",2012,100.9933,10.6
+"404","Ghana","GHA",2013,108.1911,12.3
+"405","Ghana","GHA",2014,114.8195,18.9
+"406","Greece","GRC",2010,110.6455,44.4
+"407","Greece","GRC",2011,109.0788,51.65
+"408","Greece","GRC",2012,120.0963,55.06999
+"409","Greece","GRC",2013,116.8206,59.8663
+"410","Greece","GRC",2014,114.9619,63.21
+"411","Greenland","GRL",2010,101.4201,63
+"412","Greenland","GRL",2011,103.7368,64
+"413","Greenland","GRL",2012,104.6983,64.89601
+"414","Greenland","GRL",2013,105.9891,65.8
+"415","Greenland","GRL",2014,106.3606,66.7
+"416","Grenada","GRD",2010,116.4974,27
+"417","Grenada","GRD",2011,115.0189,30
+"418","Grenada","GRD",2012,123.1592,32
+"419","Grenada","GRD",2013,125.5937,35
+"420","Grenada","GRD",2014,126.5251,37.38
+"421","Guam","GUM",2010,NA,54.04
+"422","Guam","GUM",2011,NA,57.7
+"423","Guam","GUM",2012,NA,61.53416
+"424","Guam","GUM",2013,NA,65.4
+"425","Guam","GUM",2014,NA,69.27
+"426","Guatemala","GTM",2010,125.9832,10.5
+"427","Guatemala","GTM",2011,132.4516,12.3
+"428","Guatemala","GTM",2012,137.8195,16
+"429","Guatemala","GTM",2013,140.3935,19.7
+"430","Guatemala","GTM",2014,106.6338,23.4
+"431","Guinea","GIN",2010,36.77812,1
+"432","Guinea","GIN",2011,43.5477,1.3
+"433","Guinea","GIN",2012,48.76925,1.490144
+"434","Guinea","GIN",2013,63.31504,1.6
+"435","Guinea","GIN",2014,72.09875,1.72
+"436","Guinea-Bissau","GNB",2010,42.69222,2.45
+"437","Guinea-Bissau","GNB",2011,45.1066,2.672
+"438","Guinea-Bissau","GNB",2012,63.06922,2.893991
+"439","Guinea-Bissau","GNB",2013,55.15073,3.1
+"440","Guinea-Bissau","GNB",2014,63.48369,3.32
+"441","Guyana","GUY",2010,71.2859,29.9
+"442","Guyana","GUY",2011,66.85662,31
+"443","Guyana","GUY",2012,68.77902,33
+"444","Guyana","GUY",2013,69.41295,35
+"445","Guyana","GUY",2014,70.53891,37.35
+"446","Haiti","HTI",2010,40.41874,8.37
+"447","Haiti","HTI",2011,41.86242,9
+"448","Haiti","HTI",2012,59.90841,9.8
+"449","Haiti","HTI",2013,69.39886,10.6
+"450","Haiti","HTI",2014,64.70746,11.4
+"451","Heavily indebted poor countries (HIPC)","HPC",2010,37.34787,4.929979
+"452","Heavily indebted poor countries (HIPC)","HPC",2011,45.89839,5.388737
+"453","Heavily indebted poor countries (HIPC)","HPC",2012,51.98971,6.379505
+"454","Heavily indebted poor countries (HIPC)","HPC",2013,58.28493,7.332232
+"455","Heavily indebted poor countries (HIPC)","HPC",2014,64.10237,8.865291
+"456","High income","HIC",2010,115.4456,67.57395
+"457","High income","HIC",2011,116.5107,68.92818
+"458","High income","HIC",2012,119.2413,74.21294
+"459","High income","HIC",2013,121.7716,78.14118
+"460","High income","HIC",2014,123.3102,80.60755
+"461","High income: nonOECD","NOC",2010,149.9159,47.43906
+"462","High income: nonOECD","NOC",2011,142.2514,52.57732
+"463","High income: nonOECD","NOC",2012,145.9256,62.42065
+"464","High income: nonOECD","NOC",2013,151.0857,66.95622
+"465","High income: nonOECD","NOC",2014,151.7527,69.89933
+"466","High income: OECD","OEC",2010,105.0924,73.62314
+"467","High income: OECD","OEC",2011,108.7659,73.85215
+"468","High income: OECD","OEC",2012,111.194,77.77013
+"469","High income: OECD","OEC",2013,112.919,81.51978
+"470","High income: OECD","OEC",2014,114.7117,83.84558
+"471","Honduras","HND",2010,124.7188,11.09
+"472","Honduras","HND",2011,103.672,15.9
+"473","Honduras","HND",2012,92.87017,18.12
+"474","Honduras","HND",2013,95.91917,17.8
+"475","Honduras","HND",2014,93.51564,19.08
+"476","Hong Kong SAR, China","HKG",2010,195.6692,72
+"477","Hong Kong SAR, China","HKG",2011,215.5038,72.2
+"478","Hong Kong SAR, China","HKG",2012,229.2446,72.9
+"479","Hong Kong SAR, China","HKG",2013,237.3519,74.2
+"480","Hong Kong SAR, China","HKG",2014,239.2979,74.56
+"481","Hungary","HUN",2010,119.9427,65
+"482","Hungary","HUN",2011,116.9435,68.01999
+"483","Hungary","HUN",2012,116.0706,70.58
+"484","Hungary","HUN",2013,116.4279,72.6439
+"485","Hungary","HUN",2014,118.0538,76.13
+"486","Iceland","ISL",2010,107.2428,93.39
+"487","Iceland","ISL",2011,106.8414,94.81969
+"488","Iceland","ISL",2012,108.0545,96.2098
+"489","Iceland","ISL",2013,108.1111,96.5468
+"490","Iceland","ISL",2014,111.0802,98.16
+"491","India","IND",2010,62.39006,7.5
+"492","India","IND",2011,73.19804,10.07
+"493","India","IND",2012,69.92239,12.58006
+"494","India","IND",2013,70.78318,15.1
+"495","India","IND",2014,74.48377,18
+"496","Indonesia","IDN",2010,87.79014,10.92
+"497","Indonesia","IDN",2011,102.4626,12.28
+"498","Indonesia","IDN",2012,114.2181,14.52
+"499","Indonesia","IDN",2013,125.3581,14.94
+"500","Indonesia","IDN",2014,126.1806,17.14
+"501","Iran, Islamic Rep.","IRN",2010,72.58942,15.9
+"502","Iran, Islamic Rep.","IRN",2011,74.30366,19
+"503","Iran, Islamic Rep.","IRN",2012,76.09809,22.73
+"504","Iran, Islamic Rep.","IRN",2013,84.2461,29.95
+"505","Iran, Islamic Rep.","IRN",2014,87.79273,39.35
+"506","Iraq","IRQ",2010,75.13766,2.5
+"507","Iraq","IRQ",2011,80.15513,5
+"508","Iraq","IRQ",2012,81.62785,7.1
+"509","Iraq","IRQ",2013,96.10477,9.2
+"510","Iraq","IRQ",2014,94.91279,11.3
+"511","Ireland","IRL",2010,105.2358,69.85
+"512","Ireland","IRL",2011,108.4794,74.88997
+"513","Ireland","IRL",2012,107.2129,76.91999
+"514","Ireland","IRL",2013,105.4662,78.2477
+"515","Ireland","IRL",2014,104.2555,79.69
+"516","Israel","ISR",2010,122.7837,67.5
+"517","Israel","ISR",2011,121.9783,68.87388
+"518","Israel","ISR",2012,120.6844,70.8
+"519","Israel","ISR",2013,122.8478,70.8
+"520","Israel","ISR",2014,121.4507,71.45
+"521","Italy","ITA",2010,154.797,53.68
+"522","Italy","ITA",2011,158.1459,54.39
+"523","Italy","ITA",2012,159.6276,55.83
+"524","Italy","ITA",2013,158.8173,58.4593
+"525","Italy","ITA",2014,154.2487,61.96
+"526","Jamaica","JAM",2010,116.0683,27.67
+"527","Jamaica","JAM",2011,106.9237,37.43861
+"528","Jamaica","JAM",2012,98.04969,33.79
+"529","Jamaica","JAM",2013,102.2382,37.1
+"530","Jamaica","JAM",2014,102.9209,40.5
+"531","Japan","JPN",2010,96.80752,78.21
+"532","Japan","JPN",2011,104.2742,79.05411
+"533","Japan","JPN",2012,110.9074,79.4964
+"534","Japan","JPN",2013,116.3154,89.71
+"535","Japan","JPN",2014,120.233,90.58
+"536","Jordan","JOR",2010,102.5632,27.2
+"537","Jordan","JOR",2011,111.1632,34.9
+"538","Jordan","JOR",2012,128.1735,37
+"539","Jordan","JOR",2013,141.7963,41
+"540","Jordan","JOR",2014,147.805,44
+"541","Kazakhstan","KAZ",2010,121.867,31.6
+"542","Kazakhstan","KAZ",2011,156.7947,50.6
+"543","Kazakhstan","KAZ",2012,185.8216,53.31567
+"544","Kazakhstan","KAZ",2013,184.6948,54
+"545","Kazakhstan","KAZ",2014,168.6229,54.89
+"546","Kenya","KEN",2010,61.03491,14
+"547","Kenya","KEN",2011,66.81461,28
+"548","Kenya","KEN",2012,71.17433,32.1
+"549","Kenya","KEN",2013,71.76405,39
+"550","Kenya","KEN",2014,73.84325,43.4
+"551","Kiribati","KIR",2010,10.83965,9.07
+"552","Kiribati","KIR",2011,13.89219,10
+"553","Kiribati","KIR",2012,15.87522,10.7468
+"554","Kiribati","KIR",2013,16.60951,11.5
+"555","Kiribati","KIR",2014,17.41356,12.25
+"556","Korea, Dem. Rep.","PRK",2010,1.762897,0
+"557","Korea, Dem. Rep.","PRK",2011,4.059877,0
+"558","Korea, Dem. Rep.","PRK",2012,6.865029,0
+"559","Korea, Dem. Rep.","PRK",2013,9.72064,NA
+"560","Korea, Dem. Rep.","PRK",2014,11.1881,0
+"561","Korea, Rep.","KOR",2010,104.7742,83.7
+"562","Korea, Rep.","KOR",2011,107.7446,83.75912
+"563","Korea, Rep.","KOR",2012,109.4316,84.07
+"564","Korea, Rep.","KOR",2013,110.9985,84.77
+"565","Korea, Rep.","KOR",2014,115.5436,84.33
+"566","Kuwait","KWT",2010,133.0115,61.4
+"567","Kuwait","KWT",2011,157.908,65.76907
+"568","Kuwait","KWT",2012,156.8991,70.45
+"569","Kuwait","KWT",2013,190.2883,75.46
+"570","Kuwait","KWT",2014,218.4303,78.7
+"571","Kyrgyz Republic","KGZ",2010,98.8987,16.3
+"572","Kyrgyz Republic","KGZ",2011,116.1692,17.5
+"573","Kyrgyz Republic","KGZ",2012,124.1795,19.8
+"574","Kyrgyz Republic","KGZ",2013,121.4498,23
+"575","Kyrgyz Republic","KGZ",2014,134.4609,28.3
+"576","Lao PDR","LAO",2010,62.59498,7
+"577","Lao PDR","LAO",2011,84.04519,9
+"578","Lao PDR","LAO",2012,64.70226,10.74768
+"579","Lao PDR","LAO",2013,68.13586,12.5
+"580","Lao PDR","LAO",2014,66.99333,14.26
+"581","Latin America & Caribbean (all income levels)","LCN",2010,96.36836,34.7104
+"582","Latin America & Caribbean (all income levels)","LCN",2011,104.933,39.34958
+"583","Latin America & Caribbean (all income levels)","LCN",2012,109.4351,43.35328
+"584","Latin America & Caribbean (all income levels)","LCN",2013,114.5115,46.54419
+"585","Latin America & Caribbean (all income levels)","LCN",2014,114.7214,50.15332
+"586","Latin America & Caribbean (developing only)","LAC",2010,91.76355,33.13786
+"587","Latin America & Caribbean (developing only)","LAC",2011,100.7752,37.68222
+"588","Latin America & Caribbean (developing only)","LAC",2012,104.9758,41.04778
+"589","Latin America & Caribbean (developing only)","LAC",2013,110.6302,43.93749
+"590","Latin America & Caribbean (developing only)","LAC",2014,111.3288,47.46603
+"591","Latvia","LVA",2010,110.3123,68.42
+"592","Latvia","LVA",2011,111.3638,69.74995
+"593","Latvia","LVA",2012,127.6858,73.11994
+"594","Latvia","LVA",2013,124.7612,75.2344
+"595","Latvia","LVA",2014,124.1971,75.83
+"596","Least developed countries: UN classification","LDC",2010,33.43447,4.471247
+"597","Least developed countries: UN classification","LDC",2011,42.62119,5.06268
+"598","Least developed countries: UN classification","LDC",2012,49.03499,5.937298
+"599","Least developed countries: UN classification","LDC",2013,56.34407,7.146267
+"600","Least developed countries: UN classification","LDC",2014,63.14596,8.636392
+"601","Lebanon","LBN",2010,65.96644,43.68
+"602","Lebanon","LBN",2011,77.19002,52
+"603","Lebanon","LBN",2012,80.80708,61.24979
+"604","Lebanon","LBN",2013,80.56367,70.5
+"605","Lebanon","LBN",2014,88.34778,74.7
+"606","Lesotho","LSO",2010,49.15315,3.86
+"607","Lesotho","LSO",2011,60.72157,4.2248
+"608","Lesotho","LSO",2012,75.30008,4.589618
+"609","Lesotho","LSO",2013,86.30153,5
+"610","Lesotho","LSO",2014,101.8984,11
+"611","Liberia","LBR",2010,39.69965,2.3
+"612","Liberia","LBR",2011,49.52909,2.5
+"613","Liberia","LBR",2012,56.79363,2.6
+"614","Liberia","LBR",2013,59.40217,3.2
+"615","Liberia","LBR",2014,73.35345,5.41
+"616","Libya","LBY",2010,180.4453,14
+"617","Libya","LBY",2011,163.8476,14
+"618","Libya","LBY",2012,155.7691,NA
+"619","Libya","LBY",2013,165.045,16.5
+"620","Libya","LBY",2014,161.1206,17.76
+"621","Liechtenstein","LIE",2010,98.2835,80
+"622","Liechtenstein","LIE",2011,101.5994,85
+"623","Liechtenstein","LIE",2012,98.42863,89.4077
+"624","Liechtenstein","LIE",2013,104.0677,93.8
+"625","Liechtenstein","LIE",2014,104.3179,95.21
+"626","Lithuania","LTU",2010,159.3954,62.12
+"627","Lithuania","LTU",2011,162.2218,63.63998
+"628","Lithuania","LTU",2012,165.0558,67.22999
+"629","Lithuania","LTU",2013,151.345,68.4529
+"630","Lithuania","LTU",2014,147.0433,72.13
+"631","Low & middle income","LMY",2010,66.98338,19.72122
+"632","Low & middle income","LMY",2011,76.38963,22.71607
+"633","Low & middle income","LMY",2012,81.09852,25.62454
+"634","Low & middle income","LMY",2013,86.24101,28.26739
+"635","Low & middle income","LMY",2014,89.79339,31.13659
+"636","Low income","LIC",2010,29.07801,3.28819
+"637","Low income","LIC",2011,37.31119,3.724134
+"638","Low income","LIC",2012,43.83302,4.40535
+"639","Low income","LIC",2013,50.96161,5.607914
+"640","Low income","LIC",2014,57.24681,6.290987
+"641","Lower middle income","LMC",2010,67.55101,11.80799
+"642","Lower middle income","LMC",2011,77.68659,14.42506
+"643","Lower middle income","LMC",2012,80.19612,17.15351
+"644","Lower middle income","LMC",2013,83.31648,19.54179
+"645","Lower middle income","LMC",2014,87.06385,22.55515
+"646","Luxembourg","LUX",2010,143.1426,90.62
+"647","Luxembourg","LUX",2011,148.1507,90.02986
+"648","Luxembourg","LUX",2012,145.3599,91.94992
+"649","Luxembourg","LUX",2013,148.6427,93.7765
+"650","Luxembourg","LUX",2014,148.3714,94.67
+"651","Macao SAR, China","MAC",2010,209.9152,55.198
+"652","Macao SAR, China","MAC",2011,247.7116,60.2037
+"653","Macao SAR, China","MAC",2012,289.782,61.31
+"654","Macao SAR, China","MAC",2013,304.0821,65.8
+"655","Macao SAR, China","MAC",2014,322.5915,69.78
+"656","Macedonia, FYR","MKD",2010,102.436,51.9
+"657","Macedonia, FYR","MKD",2011,105.1967,56.7
+"658","Macedonia, FYR","MKD",2012,106.1686,57.44995
+"659","Macedonia, FYR","MKD",2013,106.1738,65.24
+"660","Macedonia, FYR","MKD",2014,109.1002,68.06
+"661","Madagascar","MDG",2010,36.58393,1.7
+"662","Madagascar","MDG",2011,40.04243,1.9
+"663","Madagascar","MDG",2012,39.37667,2.3
+"664","Madagascar","MDG",2013,36.90807,3
+"665","Madagascar","MDG",2014,38.21891,3.7
+"666","Malawi","MWI",2010,20.76347,2.26
+"667","Malawi","MWI",2011,25.56406,3.33
+"668","Malawi","MWI",2012,29.21384,4.3506
+"669","Malawi","MWI",2013,32.33016,5.05
+"670","Malawi","MWI",2014,30.49777,5.83
+"671","Malaysia","MYS",2010,119.7443,56.3
+"672","Malaysia","MYS",2011,127.4778,61
+"673","Malaysia","MYS",2012,141.3297,65.8
+"674","Malaysia","MYS",2013,144.7153,66.97
+"675","Malaysia","MYS",2014,148.8298,67.5
+"676","Maldives","MDV",2010,151.7839,26.53
+"677","Maldives","MDV",2011,159.7911,34
+"678","Maldives","MDV",2012,165.6257,38.9301
+"679","Maldives","MDV",2013,181.194,44.1
+"680","Maldives","MDV",2014,189.3831,49.28
+"681","Mali","MLI",2010,53.19894,2
+"682","Mali","MLI",2011,75.06504,2.2
+"683","Mali","MLI",2012,98.37927,2.8
+"684","Mali","MLI",2013,129.0669,3.5
+"685","Mali","MLI",2014,149.0239,7
+"686","Malta","MLT",2010,107.2612,63
+"687","Malta","MLT",2011,122.3738,68.01982
+"688","Malta","MLT",2012,124.4209,68.19987
+"689","Malta","MLT",2013,129.7545,68.9138
+"690","Malta","MLT",2014,126.9834,73.17
+"691","Marshall Islands","MHL",2010,NA,7
+"692","Marshall Islands","MHL",2011,NA,10
+"693","Marshall Islands","MHL",2012,NA,12.5
+"694","Marshall Islands","MHL",2013,NA,14
+"695","Marshall Islands","MHL",2014,29.37164,16.8
+"696","Mauritania","MRT",2010,76.91125,4
+"697","Mauritania","MRT",2011,89.52145,4.5
+"698","Mauritania","MRT",2012,106.0413,5
+"699","Mauritania","MRT",2013,102.5275,6.2
+"700","Mauritania","MRT",2014,94.19928,10.7
+"701","Mauritius","MUS",2010,96.76929,28.33
+"702","Mauritius","MUS",2011,104.7931,34.95
+"703","Mauritius","MUS",2012,119.8654,35.42
+"704","Mauritius","MUS",2013,123.2398,39
+"705","Mauritius","MUS",2014,132.2498,41.44
+"706","Mexico","MEX",2010,77.51826,31.05
+"707","Mexico","MEX",2011,79.24118,37.1763
+"708","Mexico","MEX",2012,83.35071,39.75
+"709","Mexico","MEX",2013,84.81948,43.46
+"710","Mexico","MEX",2014,82.54325,44.39
+"711","Micronesia, Fed. Sts.","FSM",2010,26.55691,20
+"712","Micronesia, Fed. Sts.","FSM",2011,26.68626,22.8
+"713","Micronesia, Fed. Sts.","FSM",2012,30.18811,25.97442
+"714","Micronesia, Fed. Sts.","FSM",2013,30.31705,27.8
+"715","Micronesia, Fed. Sts.","FSM",2014,NA,29.65
+"716","Middle East & North Africa (all income levels)","MEA",2010,92.92327,24.85263
+"717","Middle East & North Africa (all income levels)","MEA",2011,99.66948,27.69677
+"718","Middle East & North Africa (all income levels)","MEA",2012,104.889,31.26996
+"719","Middle East & North Africa (all income levels)","MEA",2013,110.5943,34.66956
+"720","Middle East & North Africa (all income levels)","MEA",2014,110.5742,38.26142
+"721","Middle East & North Africa (developing only)","MNA",2010,82.04816,20.61892
+"722","Middle East & North Africa (developing only)","MNA",2011,89.10251,22.76705
+"723","Middle East & North Africa (developing only)","MNA",2012,95.07102,25.79288
+"724","Middle East & North Africa (developing only)","MNA",2013,100.8014,28.97034
+"725","Middle East & North Africa (developing only)","MNA",2014,100.6916,32.66178
+"726","Middle income","MIC",2010,71.17768,21.50788
+"727","Middle income","MIC",2011,80.77947,24.81037
+"728","Middle income","MIC",2012,85.3451,28.0004
+"729","Middle income","MIC",2013,90.31968,30.7779
+"730","Middle income","MIC",2014,93.61289,34.0523
+"731","Moldova","MDA",2010,71.38469,32.3
+"732","Moldova","MDA",2011,90.80797,38
+"733","Moldova","MDA",2012,101.989,43.37
+"734","Moldova","MDA",2013,106.0114,45
+"735","Moldova","MDA",2014,107.9952,46.6
+"736","Monaco","MCO",2010,63.54729,75
+"737","Monaco","MCO",2011,85.3144,80.3
+"738","Monaco","MCO",2012,88.33391,87
+"739","Monaco","MCO",2013,93.74323,90.7
+"740","Monaco","MCO",2014,88.46477,92.4
+"741","Mongolia","MNG",2010,92.54377,10.2
+"742","Mongolia","MNG",2011,106.8297,12.49999
+"743","Mongolia","MNG",2012,120.6946,16.4
+"744","Mongolia","MNG",2013,124.1841,20
+"745","Mongolia","MNG",2014,105.061,27
+"746","Montenegro","MNE",2010,188.6859,37.5
+"747","Montenegro","MNE",2011,186.7596,35.61154
+"748","Montenegro","MNE",2012,159.5394,56.83878
+"749","Montenegro","MNE",2013,159.95,60.31
+"750","Montenegro","MNE",2014,163.0294,61
+"751","Morocco","MAR",2010,101.0743,52
+"752","Morocco","MAR",2011,114.0193,46.10748
+"753","Morocco","MAR",2012,119.9722,55.41605
+"754","Morocco","MAR",2013,128.5252,56
+"755","Morocco","MAR",2014,131.7131,56.8
+"756","Mozambique","MOZ",2010,30.14185,4.17
+"757","Mozambique","MOZ",2011,31.9565,4.3
+"758","Mozambique","MOZ",2012,34.93571,4.8491
+"759","Mozambique","MOZ",2013,48.00422,5.4
+"760","Mozambique","MOZ",2014,69.67187,5.94
+"761","Myanmar","MMR",2010,1.14382,0.25
+"762","Myanmar","MMR",2011,2.375551,0.98
+"763","Myanmar","MMR",2012,7.064027,1.0691
+"764","Myanmar","MMR",2013,12.82859,1.6
+"765","Myanmar","MMR",2014,49.47176,2.1
+"766","Namibia","NAM",2010,89.49525,11.6
+"767","Namibia","NAM",2011,98.9573,12
+"768","Namibia","NAM",2012,95.01813,12.9414
+"769","Namibia","NAM",2013,118.4342,13.9
+"770","Namibia","NAM",2014,113.7562,14.84
+"771","Nepal","NPL",2010,34.25299,7.93
+"772","Nepal","NPL",2011,49.17623,9
+"773","Nepal","NPL",2012,60.45131,11.1493
+"774","Nepal","NPL",2013,76.8498,13.3
+"775","Nepal","NPL",2014,82.48729,15.44
+"776","Netherlands","NLD",2010,115.4302,90.72
+"777","Netherlands","NLD",2011,118.9791,91.42
+"778","Netherlands","NLD",2012,117.9668,92.85999
+"779","Netherlands","NLD",2013,116.1569,93.9564
+"780","Netherlands","NLD",2014,116.4234,93.17
+"781","New Caledonia","NCL",2010,89.62249,42
+"782","New Caledonia","NCL",2011,91.0019,50
+"783","New Caledonia","NCL",2012,91.24844,58
+"784","New Caledonia","NCL",2013,93.76365,66
+"785","New Caledonia","NCL",2014,93.56334,70
+"786","New Zealand","NZL",2010,107.8263,80.46
+"787","New Zealand","NZL",2011,109.1999,81.23
+"788","New Zealand","NZL",2012,110.3624,82
+"789","New Zealand","NZL",2013,105.7757,82.78
+"790","New Zealand","NZL",2014,112.0547,85.5
+"791","Nicaragua","NIC",2010,68.05402,10
+"792","Nicaragua","NIC",2011,81.68357,10.6
+"793","Nicaragua","NIC",2012,97.66328,13.5
+"794","Nicaragua","NIC",2013,111.9802,15.5
+"795","Nicaragua","NIC",2014,114.5656,17.6
+"796","Niger","NER",2010,23.08219,0.83
+"797","Niger","NER",2011,28.72477,1.3
+"798","Niger","NER",2012,31.44796,1.4077
+"799","Niger","NER",2013,39.29221,1.7
+"800","Niger","NER",2014,44.43749,1.95
+"801","Nigeria","NGA",2010,54.66095,24
+"802","Nigeria","NGA",2011,57.96066,28.43
+"803","Nigeria","NGA",2012,66.79812,32.8
+"804","Nigeria","NGA",2013,73.29196,38
+"805","Nigeria","NGA",2014,77.84155,42.68
+"806","North America","NAC",2010,89.77979,72.54048
+"807","North America","NAC",2011,92.80045,71.04255
+"808","North America","NAC",2012,94.39302,79.66799
+"809","North America","NAC",2013,95.45579,84.36047
+"810","North America","NAC",2014,96.87584,87.33792
+"811","Norway","NOR",2010,114.4755,93.39
+"812","Norway","NOR",2011,115.8117,93.48998
+"813","Norway","NOR",2012,116.0923,94.64998
+"814","Norway","NOR",2013,116.2684,95.0534
+"815","Norway","NOR",2014,116.5131,96.3
+"816","OECD members","OED",2010,101.3449,67.61929
+"817","OECD members","OED",2011,104.8156,68.551
+"818","OECD members","OED",2012,107.358,72.19684
+"819","OECD members","OED",2013,109.0202,75.75079
+"820","OECD members","OED",2014,110.3946,78.05137
+"821","Oman","OMN",2010,164.3423,35.8278
+"822","Oman","OMN",2011,158.9953,48
+"823","Oman","OMN",2012,159.2513,60
+"824","Oman","OMN",2013,154.6459,66.45
+"825","Oman","OMN",2014,157.7533,70.22
+"826","Other small states","OSS",2010,77.61363,10.46952
+"827","Other small states","OSS",2011,88.50479,12.51109
+"828","Other small states","OSS",2012,95.99219,14.5076
+"829","Other small states","OSS",2013,105.6003,16.32355
+"830","Other small states","OSS",2014,111.5975,18.39257
+"831","Pacific island small states","PSS",2010,55.09696,12.98692
+"832","Pacific island small states","PSS",2011,63.10101,17.50836
+"833","Pacific island small states","PSS",2012,69.56128,20.90335
+"834","Pacific island small states","PSS",2013,72.18485,22.92466
+"835","Pacific island small states","PSS",2014,74.42491,26.63312
+"836","Pakistan","PAK",2010,57.28342,8
+"837","Pakistan","PAK",2011,61.81346,9
+"838","Pakistan","PAK",2012,67.06361,9.96
+"839","Pakistan","PAK",2013,70.13038,10.9
+"840","Pakistan","PAK",2014,73.33219,13.8
+"841","Palau","PLW",2010,70.89399,NA
+"842","Palau","PLW",2011,74.9539,NA
+"843","Palau","PLW",2012,82.63949,NA
+"844","Palau","PLW",2013,85.78736,NA
+"845","Palau","PLW",2014,90.60056,NA
+"846","Panama","PAN",2010,180.6992,40.1
+"847","Panama","PAN",2011,180.0781,42.7
+"848","Panama","PAN",2012,163.4167,40.3019
+"849","Panama","PAN",2013,162.9743,44.03
+"850","Panama","PAN",2014,158.0543,44.92
+"851","Papua New Guinea","PNG",2010,27.83341,1.28
+"852","Papua New Guinea","PNG",2011,34.22227,2
+"853","Papua New Guinea","PNG",2012,37.79819,3.5
+"854","Papua New Guinea","PNG",2013,40.97654,6.5
+"855","Papua New Guinea","PNG",2014,44.92846,9.38
+"856","Paraguay","PRY",2010,91.65811,19.8
+"857","Paraguay","PRY",2011,99.32994,24.76352
+"858","Paraguay","PRY",2012,101.5902,29.34
+"859","Paraguay","PRY",2013,103.69,36.9
+"860","Paraguay","PRY",2014,105.6045,43
+"861","Peru","PER",2010,99.49533,34.77
+"862","Peru","PER",2011,109.6118,36.01
+"863","Peru","PER",2012,98.00011,38.2
+"864","Peru","PER",2013,98.08298,39.2
+"865","Peru","PER",2014,102.9158,40.2
+"866","Philippines","PHL",2010,88.98362,25
+"867","Philippines","PHL",2011,99.09141,29
+"868","Philippines","PHL",2012,105.4511,36.2351
+"869","Philippines","PHL",2013,104.5023,37
+"870","Philippines","PHL",2014,111.2187,39.69
+"871","Poland","POL",2010,122.9153,62.32
+"872","Poland","POL",2011,131.2937,61.95
+"873","Poland","POL",2012,141.5465,62.31
+"874","Poland","POL",2013,149.0785,62.8492
+"875","Poland","POL",2014,156.4494,66.6
+"876","Portugal","PRT",2010,115.3033,53.3
+"877","Portugal","PRT",2011,116.3901,55.25
+"878","Portugal","PRT",2012,112.3895,60.34
+"879","Portugal","PRT",2013,113.0356,62.0956
+"880","Portugal","PRT",2014,111.7963,64.59
+"881","Puerto Rico","PRI",2010,79.09025,45.3
+"882","Puerto Rico","PRI",2011,83.97889,48
+"883","Puerto Rico","PRI",2012,82.55282,68.99998
+"884","Puerto Rico","PRI",2013,83.64642,73.9
+"885","Puerto Rico","PRI",2014,87.11106,78.78
+"886","Qatar","QAT",2010,124.9603,69
+"887","Qatar","QAT",2011,120.4784,69
+"888","Qatar","QAT",2012,126.8565,69.3
+"889","Qatar","QAT",2013,152.6442,85.3
+"890","Qatar","QAT",2014,145.7647,91.49
+"891","Romania","ROM",2010,111.4289,39.93
+"892","Romania","ROM",2011,107.3872,40.01
+"893","Romania","ROM",2012,104.9886,45.87999
+"894","Romania","ROM",2013,105.5829,49.7645
+"895","Romania","ROM",2014,105.9142,54.08
+"896","Russian Federation","RUS",2010,165.5011,43
+"897","Russian Federation","RUS",2011,142.0484,49
+"898","Russian Federation","RUS",2012,145.3276,63.8
+"899","Russian Federation","RUS",2013,152.8354,67.97
+"900","Russian Federation","RUS",2014,155.1442,70.52
+"901","Rwanda","RWA",2010,32.74752,8
+"902","Rwanda","RWA",2011,39.89652,7
+"903","Rwanda","RWA",2012,49.66704,8.023854
+"904","Rwanda","RWA",2013,56.80079,9
+"905","Rwanda","RWA",2014,64.02469,10.6
+"906","Samoa","WSM",2010,48.37955,7
+"907","Samoa","WSM",2011,NA,11
+"908","Samoa","WSM",2012,53.10103,12.92249
+"909","Samoa","WSM",2013,52.46938,15.3
+"910","Samoa","WSM",2014,55.53013,21.2
+"911","San Marino","SMR",2010,99.11215,NA
+"912","San Marino","SMR",2011,114.2264,49.6
+"913","San Marino","SMR",2012,115.2111,NA
+"914","San Marino","SMR",2013,116.955,NA
+"915","San Marino","SMR",2014,118.8482,NA
+"916","Sao Tome and Principe","STP",2010,57.63965,18.75
+"917","Sao Tome and Principe","STP",2011,62.80155,20.1612
+"918","Sao Tome and Principe","STP",2012,64.95125,21.5724
+"919","Sao Tome and Principe","STP",2013,64.93966,23
+"920","Sao Tome and Principe","STP",2014,64.93769,24.41
+"921","Saudi Arabia","SAU",2010,189.1688,41
+"922","Saudi Arabia","SAU",2011,194.5124,47.5
+"923","Saudi Arabia","SAU",2012,187.3596,54
+"924","Saudi Arabia","SAU",2013,184.2042,60.5
+"925","Saudi Arabia","SAU",2014,179.5612,63.7
+"926","Senegal","SEN",2010,64.42744,8
+"927","Senegal","SEN",2011,70.16017,9.8
+"928","Senegal","SEN",2012,83.56862,10.8
+"929","Senegal","SEN",2013,92.92798,13.1
+"930","Senegal","SEN",2014,98.84218,17.7
+"931","Serbia","SRB",2010,125.3008,40.9
+"932","Serbia","SRB",2011,130.2483,42.2
+"933","Serbia","SRB",2012,117.7745,48.1
+"934","Serbia","SRB",2013,119.3917,51.5
+"935","Serbia","SRB",2014,122.1328,53.5
+"936","Seychelles","SYC",2010,128.9218,41
+"937","Seychelles","SYC",2011,137.9035,43.164
+"938","Seychelles","SYC",2012,147.8032,47.076
+"939","Seychelles","SYC",2013,147.3427,50.4
+"940","Seychelles","SYC",2014,162.1932,54.26
+"941","Sierra Leone","SLE",2010,34.77066,0.58
+"942","Sierra Leone","SLE",2011,36.43344,0.9
+"943","Sierra Leone","SLE",2012,36.96439,1.3
+"944","Sierra Leone","SLE",2013,65.65907,1.7
+"945","Sierra Leone","SLE",2014,76.65604,2.1
+"946","Singapore","SGP",2010,145.3957,71
+"947","Singapore","SGP",2011,150.116,71
+"948","Singapore","SGP",2012,152.1252,72
+"949","Singapore","SGP",2013,155.9222,81
+"950","Singapore","SGP",2014,158.1301,82
+"951","Slovak Republic","SVK",2010,109.0472,75.71
+"952","Slovak Republic","SVK",2011,109.9776,74.44
+"953","Slovak Republic","SVK",2012,111.9122,76.70999
+"954","Slovak Republic","SVK",2013,113.9112,77.8826
+"955","Slovak Republic","SVK",2014,116.9401,79.98
+"956","Slovenia","SVN",2010,103.2965,70
+"957","Slovenia","SVN",2011,105.1697,67.33999
+"958","Slovenia","SVN",2012,108.3881,68.34997
+"959","Slovenia","SVN",2013,110.2112,72.6756
+"960","Slovenia","SVN",2014,112.083,71.59
+"961","Small states","SST",2010,84.96443,16.8894
+"962","Small states","SST",2011,91.50766,20.25374
+"963","Small states","SST",2012,95.98005,21.95686
+"964","Small states","SST",2013,103.9906,24.02613
+"965","Small states","SST",2014,108.4484,26.37992
+"966","Solomon Islands","SLB",2010,21.93953,5
+"967","Solomon Islands","SLB",2011,51.09173,6
+"968","Solomon Islands","SLB",2012,54.976,6.9974
+"969","Solomon Islands","SLB",2013,57.57077,8
+"970","Solomon Islands","SLB",2014,65.7565,9
+"971","Somalia","SOM",2010,6.726737,NA
+"972","Somalia","SOM",2011,18.16732,1.25
+"973","Somalia","SOM",2012,22.55978,1.3767
+"974","Somalia","SOM",2013,49.38268,1.5
+"975","Somalia","SOM",2014,50.89929,1.63
+"976","South Africa","ZAF",2010,97.90029,24
+"977","South Africa","ZAF",2011,123.1977,33.97
+"978","South Africa","ZAF",2012,130.558,41
+"979","South Africa","ZAF",2013,145.644,46.5
+"980","South Africa","ZAF",2014,149.6818,49
+"981","South Asia","SAS",2010,59.72472,7.206546
+"982","South Asia","SAS",2011,69.84456,9.396049
+"983","South Asia","SAS",2012,69.00742,11.51579
+"984","South Asia","SAS",2013,71.49024,13.75001
+"985","South Asia","SAS",2014,75.02359,16.60992
+"986","South Sudan","SSD",2010,14.44932,7
+"987","South Sudan","SSD",2011,17.33919,NA
+"988","South Sudan","SSD",2012,21.22255,NA
+"989","South Sudan","SSD",2013,25.25836,14.1
+"990","South Sudan","SSD",2014,24.50095,15.9
+"991","Spain","ESP",2010,111.2758,65.8
+"992","Spain","ESP",2011,113.0635,67.6
+"993","Spain","ESP",2012,108.364,69.81
+"994","Spain","ESP",2013,106.8867,71.635
+"995","Spain","ESP",2014,107.8493,76.19
+"996","Sri Lanka","LKA",2010,83.62395,12
+"997","Sri Lanka","LKA",2011,87.54591,15
+"998","Sri Lanka","LKA",2012,91.63311,18.2854
+"999","Sri Lanka","LKA",2013,95.49632,21.9
+"1000","Sri Lanka","LKA",2014,103.1578,25.8
+"1001","St. Kitts and Nevis","KNA",2010,152.8117,63
+"1002","St. Kitts and Nevis","KNA",2011,145.3626,63.2
+"1003","St. Kitts and Nevis","KNA",2012,141.8334,64
+"1004","St. Kitts and Nevis","KNA",2013,142.09,64.6
+"1005","St. Kitts and Nevis","KNA",2014,139.8091,65.4
+"1006","St. Lucia","LCA",2010,111.7336,43.3
+"1007","St. Lucia","LCA",2011,120.7836,44
+"1008","St. Lucia","LCA",2012,119.4228,45.9
+"1009","St. Lucia","LCA",2013,116.3091,46.2
+"1010","St. Lucia","LCA",2014,102.5888,51
+"1011","St. Vincent and the Grenadines","VCT",2010,120.5597,38.5
+"1012","St. Vincent and the Grenadines","VCT",2011,120.5309,43.01
+"1013","St. Vincent and the Grenadines","VCT",2012,116.1091,47.52
+"1014","St. Vincent and the Grenadines","VCT",2013,114.6334,52
+"1015","St. Vincent and the Grenadines","VCT",2014,105.1622,56.48
+"1016","Sub-Saharan Africa (all income levels)","SSF",2010,44.41018,10.01562
+"1017","Sub-Saharan Africa (all income levels)","SSF",2011,53.09439,12.48165
+"1018","Sub-Saharan Africa (all income levels)","SSF",2012,59.72096,14.57266
+"1019","Sub-Saharan Africa (all income levels)","SSF",2013,66.08031,16.87366
+"1020","Sub-Saharan Africa (all income levels)","SSF",2014,71.12352,19.22124
+"1021","Sub-Saharan Africa (developing only)","SSA",2010,44.39103,10.01558
+"1022","Sub-Saharan Africa (developing only)","SSA",2011,53.0745,12.47924
+"1023","Sub-Saharan Africa (developing only)","SSA",2012,59.70531,14.56984
+"1024","Sub-Saharan Africa (developing only)","SSA",2013,66.07112,16.87072
+"1025","Sub-Saharan Africa (developing only)","SSA",2014,71.11851,19.21813
+"1026","Sudan","SDN",2010,41.54403,16.7
+"1027","Sudan","SDN",2011,68.77724,17.30391
+"1028","Sudan","SDN",2012,74.36036,21
+"1029","Sudan","SDN",2013,72.85231,22.7
+"1030","Sudan","SDN",2014,72.19899,24.64
+"1031","Suriname","SUR",2010,99.27728,31.59
+"1032","Suriname","SUR",2011,100.7099,32
+"1033","Suriname","SUR",2012,106.4594,34.6812
+"1034","Suriname","SUR",2013,161.0678,37.4
+"1035","Suriname","SUR",2014,170.575,40.08
+"1036","Swaziland","SWZ",2010,60.83084,11.04
+"1037","Swaziland","SWZ",2011,63.23758,18.13
+"1038","Swaziland","SWZ",2012,65.39479,20.78178
+"1039","Swaziland","SWZ",2013,71.46779,24.7
+"1040","Swaziland","SWZ",2014,72.31972,27.1
+"1041","Sweden","SWE",2010,117.1611,90
+"1042","Sweden","SWE",2011,121.2223,92.76999
+"1043","Sweden","SWE",2012,124.5722,93.17999
+"1044","Sweden","SWE",2013,125.5275,94.7836
+"1045","Sweden","SWE",2014,127.8377,92.52
+"1046","Switzerland","CHE",2010,123.1609,83.9
+"1047","Switzerland","CHE",2011,127.3832,85.19303
+"1048","Switzerland","CHE",2012,132.0564,85.2
+"1049","Switzerland","CHE",2013,136.7772,86.34
+"1050","Switzerland","CHE",2014,140.5387,87
+"1051","Syrian Arab Republic","SYR",2010,54.31752,20.7
+"1052","Syrian Arab Republic","SYR",2011,59.24044,22.5
+"1053","Syrian Arab Republic","SYR",2012,59.29734,24.3001
+"1054","Syrian Arab Republic","SYR",2013,56.12894,26.2
+"1055","Syrian Arab Republic","SYR",2014,70.94742,28.09
+"1056","Tajikistan","TJK",2010,77.88892,11.55
+"1057","Tajikistan","TJK",2011,80.92286,13.03
+"1058","Tajikistan","TJK",2012,81.5084,14.51
+"1059","Tajikistan","TJK",2013,91.82812,16
+"1060","Tajikistan","TJK",2014,95.12606,17.49
+"1061","Tanzania","TZA",2010,46.65844,2.9
+"1062","Tanzania","TZA",2011,55.3698,3.2
+"1063","Tanzania","TZA",2012,56.96424,3.95
+"1064","Tanzania","TZA",2013,55.71793,4.4
+"1065","Tanzania","TZA",2014,62.77433,4.86
+"1066","Thailand","THA",2010,108.0178,22.4
+"1067","Thailand","THA",2011,116.3311,23.66993
+"1068","Thailand","THA",2012,127.2921,26.46
+"1069","Thailand","THA",2013,140.0512,28.94
+"1070","Thailand","THA",2014,144.4387,34.89
+"1071","Timor-Leste","TMP",2010,43.82046,0.21
+"1072","Timor-Leste","TMP",2011,56.0207,0.9
+"1073","Timor-Leste","TMP",2012,55.73976,0.9147
+"1074","Timor-Leste","TMP",2013,57.37594,1.1
+"1075","Timor-Leste","TMP",2014,58.7363,1.14
+"1076","Togo","TGO",2010,41.26669,3
+"1077","Togo","TGO",2011,41.64413,3.5
+"1078","Togo","TGO",2012,49.86113,4
+"1079","Togo","TGO",2013,62.5349,4.5
+"1080","Togo","TGO",2014,68.96513,5.7
+"1081","Tonga","TON",2010,52.16239,16
+"1082","Tonga","TON",2011,52.6044,25
+"1083","Tonga","TON",2012,53.36332,33
+"1084","Tonga","TON",2013,54.59396,35
+"1085","Tonga","TON",2014,64.28315,40
+"1086","Trinidad and Tobago","TTO",2010,142.6284,48.5
+"1087","Trinidad and Tobago","TTO",2011,136.9908,55.2
+"1088","Trinidad and Tobago","TTO",2012,140.8425,59.5162
+"1089","Trinidad and Tobago","TTO",2013,144.9407,63.8
+"1090","Trinidad and Tobago","TTO",2014,147.3378,65.1
+"1091","Tunisia","TUN",2010,104.5371,36.8
+"1092","Tunisia","TUN",2011,115.2011,39.1
+"1093","Tunisia","TUN",2012,118.1056,41.4416
+"1094","Tunisia","TUN",2013,115.6036,43.8
+"1095","Tunisia","TUN",2014,128.4858,46.16
+"1096","Turkey","TUR",2010,85.62758,39.82
+"1097","Turkey","TUR",2011,89.41002,43.06571
+"1098","Turkey","TUR",2012,91.46375,45.13
+"1099","Turkey","TUR",2013,92.96497,46.25
+"1100","Turkey","TUR",2014,94.7933,51.04
+"1101","Turkmenistan","TKM",2010,63.41982,3
+"1102","Turkmenistan","TKM",2011,103.7859,5
+"1103","Turkmenistan","TKM",2012,114.0553,7.1958
+"1104","Turkmenistan","TKM",2013,116.8934,9.6
+"1105","Turkmenistan","TKM",2014,135.7804,12.2
+"1106","Tuvalu","TUV",2010,16.28167,25
+"1107","Tuvalu","TUV",2011,21.63755,30
+"1108","Tuvalu","TUV",2012,28.39757,35
+"1109","Tuvalu","TUV",2013,34.42689,37
+"1110","Tuvalu","TUV",2014,38.40712,NA
+"1111","Uganda","UGA",2010,37.74438,12.5
+"1112","Uganda","UGA",2011,47.50473,13.01354
+"1113","Uganda","UGA",2012,45.00206,14.6896
+"1114","Uganda","UGA",2013,48.08193,16.2
+"1115","Uganda","UGA",2014,52.42924,17.71
+"1116","Ukraine","UKR",2010,117.1087,23.3
+"1117","Ukraine","UKR",2011,121.3388,28.70826
+"1118","Ukraine","UKR",2012,130.3399,35.27
+"1119","Ukraine","UKR",2013,138.0647,41
+"1120","Ukraine","UKR",2014,144.0822,43.4
+"1121","United Arab Emirates","ARE",2010,129.4316,68
+"1122","United Arab Emirates","ARE",2011,131.398,78
+"1123","United Arab Emirates","ARE",2012,149.6391,84.99999
+"1124","United Arab Emirates","ARE",2013,171.8738,88
+"1125","United Arab Emirates","ARE",2014,178.0615,90.4
+"1126","United Kingdom","GBR",2010,123.6255,85
+"1127","United Kingdom","GBR",2011,123.6042,85.38
+"1128","United Kingdom","GBR",2012,124.7618,87.48
+"1129","United Kingdom","GBR",2013,124.6098,89.8441
+"1130","United Kingdom","GBR",2014,123.5811,91.61
+"1131","United States","USA",2010,91.31165,71.69
+"1132","United States","USA",2011,94.44043,69.72946
+"1133","United States","USA",2012,96.01038,79.3
+"1134","United States","USA",2013,97.07774,84.2
+"1135","United States","USA",2014,98.40686,87.36
+"1136","Upper middle income","UMC",2010,75.40171,32.80533
+"1137","Upper middle income","UMC",2011,84.39337,36.94581
+"1138","Upper middle income","UMC",2012,91.39856,40.786
+"1139","Upper middle income","UMC",2013,98.60299,44.06769
+"1140","Upper middle income","UMC",2014,101.3987,47.72135
+"1141","Uruguay","URY",2010,131.589,46.4
+"1142","Uruguay","URY",2011,140.6072,51.40466
+"1143","Uruguay","URY",2012,147.1307,54.45377
+"1144","Uruguay","URY",2013,154.6185,57.69
+"1145","Uruguay","URY",2014,160.7951,61.46
+"1146","Uzbekistan","UZB",2010,75.45031,20
+"1147","Uzbekistan","UZB",2011,90.37375,30.2
+"1148","Uzbekistan","UZB",2012,71.03391,36.5213
+"1149","Uzbekistan","UZB",2013,74.30678,38.2
+"1150","Uzbekistan","UZB",2014,73.79116,43.55
+"1151","Vanuatu","VUT",2010,71.91524,8
+"1152","Vanuatu","VUT",2011,56.64535,9.2
+"1153","Vanuatu","VUT",2012,59.08065,10.598
+"1154","Vanuatu","VUT",2013,50.34123,11.3
+"1155","Vanuatu","VUT",2014,60.4144,18.8
+"1156","Venezuela, RB","VEN",2010,95.99511,37.37
+"1157","Venezuela, RB","VEN",2011,97.56403,40.22
+"1158","Venezuela, RB","VEN",2012,102.0507,49.05008
+"1159","Venezuela, RB","VEN",2013,101.6144,54.9
+"1160","Venezuela, RB","VEN",2014,98.952,57
+"1161","Vietnam","VNM",2010,125.2931,30.65
+"1162","Vietnam","VNM",2011,141.5999,35.07
+"1163","Vietnam","VNM",2012,145.0219,39.49
+"1164","Vietnam","VNM",2013,134.965,43.9
+"1165","Vietnam","VNM",2014,147.1109,48.31
+"1166","Virgin Islands (U.S.)","VIR",2010,NA,31.22
+"1167","Virgin Islands (U.S.)","VIR",2011,NA,35.6
+"1168","Virgin Islands (U.S.)","VIR",2012,NA,40.5479
+"1169","Virgin Islands (U.S.)","VIR",2013,NA,45.3
+"1170","Virgin Islands (U.S.)","VIR",2014,NA,50.07
+"1171","West Bank and Gaza","WBG",2010,64.88063,37.4
+"1172","West Bank and Gaza","WBG",2011,70.12213,41.08
+"1173","West Bank and Gaza","WBG",2012,74.30363,43.4
+"1174","West Bank and Gaza","WBG",2013,73.74053,46.6
+"1175","West Bank and Gaza","WBG",2014,72.07515,53.67
+"1176","World","WLD",2010,76.56503,29.19601
+"1177","World","WLD",2011,84.28435,31.82406
+"1178","World","WLD",2012,88.55751,35.1495
+"1179","World","WLD",2013,93.14404,37.99132
+"1180","World","WLD",2014,96.26505,40.68914
+"1181","Yemen, Rep.","YEM",2010,48.69743,12.35
+"1182","Yemen, Rep.","YEM",2011,50.06822,14.905
+"1183","Yemen, Rep.","YEM",2012,58.27504,17.4465
+"1184","Yemen, Rep.","YEM",2013,69.01478,20
+"1185","Yemen, Rep.","YEM",2014,68.48627,22.55
+"1186","Zambia","ZMB",2010,41.21205,10
+"1187","Zambia","ZMB",2011,59.88466,11.5
+"1188","Zambia","ZMB",2012,74.77515,13.4682
+"1189","Zambia","ZMB",2013,71.50463,15.4
+"1190","Zambia","ZMB",2014,67.33816,17.34
+"1191","Zimbabwe","ZWE",2010,58.88211,11.5
+"1192","Zimbabwe","ZWE",2011,68.86878,15.7
+"1193","Zimbabwe","ZWE",2012,91.90938,17.09
+"1194","Zimbabwe","ZWE",2013,96.34987,18.5
+"1195","Zimbabwe","ZWE",2014,80.81642,19.89
