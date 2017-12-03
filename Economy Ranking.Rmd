@@ -1,0 +1,63 @@
+---
+title: "Economy_Ranking"
+author: "Seranne Motilal, Shravanthi Seshasayee and Sanjana Sunderesan"
+date: "3 December 2017"
+output: html_document
+---
+
+```{r}
+economy <- read_csv("F://IntroDSproject/WDI data split/Economy.csv")
+
+#IC.LGL.CRED.XQ - Available for 2015, 2014
+#IC.FRM.FEMM.ZS - Not enough data 
+#GC.XPN.COMP.ZS - Not enough data
+#IC.FRM.CRIM.ZS - Available for 2010, 2011, 2012
+#FP.CPI.TOTL.ZG - Available for 2014 and earlier
+
+totl <- select(economy, "CountryName", "Year", "FP.CPI.TOTL.ZG")
+totl <- totl[order(-totl$Year),]
+totl <- na.omit(totl)
+totl <- totl %>% distinct(CountryName, .keep_all = TRUE)
+totl <- mutate(totl, rank.totl = rank(totl$FP.CPI.TOTL.ZG))
+View(totl)
+
+crime <- select(economy, "CountryName", "Year", "IC.FRM.CRIM.ZS")
+crime[crime == 0] <- NA
+crime <- crime[order(-crime$Year),]
+crime <- na.omit(crime)
+crime <- crime %>% distinct(CountryName, .keep_all = TRUE)
+crime <- mutate(crime, rank.crime = rank(IC.FRM.CRIM.ZS))
+View(crime)
+
+cred <- select(economy, "CountryName", "Year", "IC.LGL.CRED.XQ")
+#crime[crime == 0] <- NA
+cred <- cred[order(-cred$Year),]
+cred <- na.omit(cred)
+cred <- cred %>% distinct(CountryName, .keep_all = TRUE)
+View(cred)
+cred <- mutate(cred, rank.cred = rank(IC.LGL.CRED.XQ))
+View(cred)
+
+
+
+crim <- filter(economy, economy$Year == "2012")
+rank.crim <- rank()
+
+cred <- filter(economy, economy$Year == "2015")
+rank.cred <- rank(cred$IC.LGL.CRED.XQ)
+
+new <- data.frame("Country" = totl$CountryName, "rank.totl" = rank.totl, "rank.crim" = rank.crim)
+
+View(new)
+
+economy <- economy %>% mutate(score = (rank.totl + rank.crim + rank.cred)/3)
+
+
+
+rank.IC.LGL.CRED.XQ
+economy <- economy %>% distinct(CountryName, .keep_all = TRUE)
+Communication <- Communication %>% mutate(rankcell = rank(IT.CEL.SETS.P2)) 
+Communication <- Communication %>% mutate(ranknet = rank(IT.NET.USER.P2))
+Communication <- Communication %>% mutate(score = (rankcell+ranknet)/2)
+```
+
