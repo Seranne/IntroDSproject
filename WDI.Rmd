@@ -19,7 +19,7 @@ ourWDI <- read.csv("F://IntroDSproject/ourWDI.csv")
 # Removing Aggregated country values              
 
 
-WDInew <- filter(WDI, CountryCode != "WBG")
+WDInew <- filter(ourWDI, CountryCode != "WBG")
 WDInew <- filter(WDInew, CountryCode != "WLD")
 WDInew <- filter(WDInew, CountryCode != "UMC")
 WDInew <- filter(WDInew, CountryCode != "SSA")
@@ -60,24 +60,23 @@ WDI2 <- filter(WDInew, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.
 write.csv(WDI2, file = "ourWDI.csv")
 WDI4<- select(WDI2,"CountryName","CountryCode", "IndicatorCode", "Year","Value")
 
+comm<- WDI4 %>% filter(IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2")  %>% spread(IndicatorCode, Value)
+write.csv(comm, file = "Communication.csv")
+
+econ<- WDI4 %>% filter(IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
+write.csv(econ, file = "Economy.csv")
+
+edu <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS" | IndicatorCode == "SE.ADT.LITR.ZS" | IndicatorCode == "SG.GEN.PARL.ZS" | IndicatorCode == "SG.VAW.REAS.ZS") %>% spread(IndicatorCode, Value)
+write.csv(comm, file = "Education.csv")
+
+emissions<- WDI4%>% filter(IndicatorCode == "EN.ATM.CO2E.PC")%>% spread(IndicatorCode, Value)
+write.csv(emissions, file = "Emissions.csv")
+
 energy<- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS") %>% spread(IndicatorCode, Value)
 write.csv(energy, file = "Energy.csv")
 
-
-emissions<- WDI4%>% filter(IndicatorCode == "EN.ATM.CO2E.PC"| IndicatorCode == "EN.ATM.GHGO.KT.CE"|IndicatorCode == "EN.ATM.METH.KT.CE")%>% spread(IndicatorCode, Value)
-write.csv(emissions, file = "Emissions.csv")
-
-
 environnment1<- WDI4 %>% filter(IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "AG.LND.FRST.ZS") %>% spread(IndicatorCode, Value)
 write.csv(environnment1, file = "Environment.csv")
-
-
-econ<- WDI4 %>% filter(IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
-write.csv(econ, file = "Economy.csv")
-
-
-comm<- WDI4 %>% filter(IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2")  %>% spread(IndicatorCode, Value)
-write.csv(comm, file = "Communication.csv")
 
 
 GDP<- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG") %>% spread(IndicatorCode, Value)
