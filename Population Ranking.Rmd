@@ -1,0 +1,23 @@
+---
+title: "Population"
+author: "Shravanthi Seshasayee"
+date: "3 December 2017"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+read_csv("F://IntroDSproject/WDI data split/Population.csv")
+```
+
+```{r}
+totl <- select(economy, "CountryName", "Year", "FP.CPI.TOTL.ZG")
+totl <- totl[order(-totl$Year),]
+totl <- na.omit(totl)
+totl <- totl %>% distinct(CountryName, .keep_all = TRUE)
+totl <- mutate(totl, rank.totl = rank(totl$FP.CPI.TOTL.ZG))
+View(totl)
+```
