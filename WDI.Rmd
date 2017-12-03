@@ -42,7 +42,7 @@ write.csv(comm, file = "Communication.csv")
 GDP<- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG") %>% spread(IndicatorCode, Value)
 write.csv(GDP, file = "GDP.csv")
 
-population<- WDI4 %>% filter(IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5") %>% spread(IndicatorCode, Value)
+population<- WDI4 %>% filter(IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
 
 write.csv(population, file = "Population.csv")
 
