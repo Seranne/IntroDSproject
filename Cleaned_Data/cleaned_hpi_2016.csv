@@ -1,0 +1,155 @@
+"","Country","Region","Average_Wellbeing_(0-10)","Happy_Life_Years","Footprint_(gha/capita)","Inequality_of_Outcomes","Inequality-adjusted_Life_Expectancy","Inequality-adjusted_Wellbeing"
+"1","Afghanistan","Middle East and North Africa",3.8,12.4,0.8,"43%",38.3,3.4
+"2","Albania","Post-communist",5.5,34.4,2.2,"17%",69.7,5.1
+"3","Algeria","Middle East and North Africa",5.6,30.5,2.1,"24%",60.5,5.2
+"4","Argentina","Americas",6.5,40.2,3.1,"16%",68.3,6
+"5","Armenia","Post-communist",4.3,24,2.2,"22%",66.9,3.7
+"6","Australia","Asia Pacific",7.2,53.1,9.3,"8%",78.6,6.9
+"7","Austria","Europe",7.4,54.4,6.1,"7%",78,7.1
+"8","Bangladesh","Asia Pacific",4.7,23.3,0.7,"27%",56.6,4.3
+"9","Belarus","Post-communist",5.7,34,5.1,"13%",66.7,5.3
+"10","Belgium","Europe",6.9,49.5,7.4,"9%",77.2,6.6
+"11","Belize","Americas",6.1,34.2,2.5,"18%",61.7,5.7
+"12","Benin","Sub Saharan Africa",3.2,9.9,1.4,"44%",37.3,2.8
+"13","Bhutan","Asia Pacific",5.6,27.4,2.3,"27%",54.5,5.2
+"14","Bolivia","Americas",6,25.6,3,"35%",47.9,5.5
+"15","Bosnia and Herzegovina","Post-communist",4.8,28.6,3.1,"19%",71.1,4.2
+"16","Botswana","Sub Saharan Africa",4.8,21.3,3.8,"28%",50.8,4.3
+"17","Brazil","Americas",6.9,39,3.1,"22%",63.3,6.3
+"18","Bulgaria","Post-communist",4.2,24,3.3,"19%",68.1,3.7
+"19","Burkina Faso","Sub Saharan Africa",4,12.6,1.2,"43%",36.5,3.6
+"20","Burundi","Sub Saharan Africa",3.4,9.5,0.8,"48%",33,3
+"21","Cambodia","Asia Pacific",3.9,18.2,1.2,"28%",54.2,3.5
+"22","Cameroon","Sub Saharan Africa",4.2,11.6,1.2,"47%",33.1,3.7
+"23","Canada","Americas",7.4,53.9,8.2,"9%",77.8,7.1
+"24","Chad","Sub Saharan Africa",4,9.6,1.5,"51%",27.3,3.7
+"25","Chile","Americas",6.6,44.7,4.4,"14%",74.9,6.1
+"26","China","Asia Pacific",5.1,30.6,3.4,"17%",68.6,4.6
+"27","Colombia","Americas",6.4,35.1,1.9,"24%",63.1,5.7
+"28","Comoros","Sub Saharan Africa",4,15.4,1,"36%",43.3,3.7
+"29","Costa Rica","Americas",7.3,48.2,2.8,"15%",72.6,6.8
+"30","Cote d'Ivoire","Sub Saharan Africa",3.8,10.3,1.3,"45%",30.6,3.5
+"31","Croatia","Post-communist",6,39.6,3.9,"12%",73.5,5.5
+"32","Cyprus","Europe",6.2,42.3,4.2,"12%",76.6,5.7
+"33","Czech Republic","Post-communist",6.3,43.4,5.2,"9%",75.5,5.9
+"34","Denmark","Europe",7.5,54.4,5.5,"7%",76.8,7.2
+"35","Djibouti","Sub Saharan Africa",4.4,15.1,2.2,"42%",41.4,3.8
+"36","Dominican Republic","Americas",4.8,23.7,1.5,"30%",60.8,4.1
+"37","Ecuador","Americas",6,34.3,2.2,"22%",64.1,5.5
+"38","Egypt","Middle East and North Africa",4.2,21.8,2.2,"23%",61.3,3.7
+"39","El Salvador","Americas",5.9,32.2,2.1,"22%",62.5,5.3
+"40","Estonia","Post-communist",5.4,35,6.9,"12%",72.6,5
+"41","Ethiopia","Sub Saharan Africa",4.6,17.8,1,"36%",43.8,4.2
+"42","Finland","Europe",7.4,54.6,5.9,"6%",77.6,7.2
+"43","France","Europe",6.6,48.1,5.1,"9%",78.5,6.3
+"44","Gabon","Sub Saharan Africa",4,15.4,2,"36%",45.8,3.5
+"45","Georgia","Post-communist",4.3,24.7,1.6,"20%",66.9,3.8
+"46","Germany","Europe",6.7,48.2,5.3,"8%",77.6,6.4
+"47","Ghana","Sub Saharan Africa",5.1,18.8,2,"38%",42.2,4.6
+"48","Greece","Europe",5.1,33.3,4.4,"16%",77.6,4.5
+"49","Guatemala","Americas",5.9,29.6,1.9,"27%",59.2,5.2
+"50","Guinea","Sub Saharan Africa",3.7,11.8,1.4,"42%",37.2,3.3
+"51","Haiti","Americas",4.4,16.5,0.6,"37%",42.9,4
+"52","Honduras","Americas",4.6,22.1,1.7,"31%",58.5,3.9
+"53","Hong Kong","Asia Pacific",5.5,40.1,8.8,"10%",81.3,5.1
+"54","Hungary","Post-communist",4.7,28.7,2.9,"15%",70.9,4.2
+"55","Iceland","Europe",7.6,58,6.4,"5%",79.8,7.4
+"56","India","Asia Pacific",4.6,20.4,1.2,"31%",51.1,4.2
+"57","Indonesia","Asia Pacific",5.4,28.4,1.6,"21%",57.2,5.1
+"58","Iran","Middle East and North Africa",4.6,25.4,2.8,"23%",66.9,4
+"59","Iraq","Middle East and North Africa",4.7,22.8,1.9,"27%",55.6,4.3
+"60","Ireland","Europe",7,50.3,5.6,"8%",77.5,6.7
+"61","Israel","Middle East and North Africa",7.1,52.5,6.2,"8%",78.7,6.8
+"62","Italy","Europe",5.8,41.1,4.6,"12%",80.2,5.3
+"63","Jamaica","Americas",5.6,31.9,1.9,"21%",66.3,5
+"64","Japan","Asia Pacific",6,44,5,"9%",80.6,5.6
+"65","Kazakhstan","Post-communist",5.8,31.7,5.6,"18%",60.7,5.4
+"66","Kenya","Sub Saharan Africa",4.5,16.2,1,"38%",41,4.1
+"67","Kyrgyzstan","Post-communist",5.2,28.7,1.9,"18%",60.2,4.9
+"68","Latvia","Post-communist",5.1,31.2,6.3,"14%",68.7,4.7
+"69","Lebanon","Middle East and North Africa",4.6,28.2,3.8,"19%",73.1,4
+"70","Lesotho","Sub Saharan Africa",4.9,13.4,1.7,"42%",32.6,4.3
+"71","Liberia","Sub Saharan Africa",4.4,15.7,1.2,"38%",40.3,4.1
+"72","Lithuania","Post-communist",5.8,36.4,5.8,"11%",68.8,5.4
+"73","Luxembourg","Europe",7,51.7,15.8,"7%",79,6.7
+"74","Macedonia","Post-communist",4.6,27.2,3.3,"18%",69.4,4.1
+"75","Malawi","Sub Saharan Africa",4.3,13.7,0.8,"45%",40.4,3.5
+"76","Malaysia","Asia Pacific",5.9,38.3,3.7,"10%",69.5,5.7
+"77","Malta","Europe",6,40.8,4.4,"13%",76.6,5.5
+"78","Mauritania","Sub Saharan Africa",4.7,18,2.5,"37%",41.5,4.5
+"79","Mauritius","Sub Saharan Africa",5.5,33.1,3.5,"17%",66.7,5.1
+"80","Mexico","Americas",7.3,44.3,2.9,"19%",66.3,6.8
+"81","Mongolia","Asia Pacific",4.9,25.3,6.1,"22%",56.9,4.6
+"82","Montenegro","Post-communist",5.2,32.1,3.8,"16%",71.8,4.6
+"83","Morocco","Middle East and North Africa",5,26.7,1.7,"25%",61.6,4.5
+"84","Mozambique","Sub Saharan Africa",5,15,0.9,"43%",34.5,4.5
+"85","Myanmar","Asia Pacific",4.4,18.8,1.4,"32%",48.4,4
+"86","Namibia","Sub Saharan Africa",4.7,21.3,2.5,"26%",50.1,4.4
+"87","Nepal","Asia Pacific",4.2,20.2,1,"27%",55.3,3.8
+"88","Netherlands","Europe",7.5,57,5.3,"4%",78.2,7.5
+"89","New Zealand","Asia Pacific",7.2,52.7,5.6,"8%",77.7,6.9
+"90","Nicaragua","Americas",5.4,29.2,1.4,"25%",63.4,4.8
+"91","Niger","Sub Saharan Africa",3.8,13.1,1.6,"40%",38.9,3.5
+"92","Nigeria","Sub Saharan Africa",5.5,15.5,1.2,"44%",30.9,5.2
+"93","Norway","Europe",7.7,57.1,5,"7%",78.6,7.4
+"94","Oman","Middle East and North Africa",6.9,44.5,7.5,"13%",70.9,6.4
+"95","Pakistan","Asia Pacific",5.1,19.5,0.8,"40%",44.1,4.6
+"96","Palestine","Middle East and North Africa",4.6,24.5,1.2,"24%",62.6,4.1
+"97","Panama","Americas",6.9,42.1,2.8,"19%",68.3,6.3
+"98","Paraguay","Americas",5.8,31.8,4.2,"22%",59.4,5.5
+"99","Peru","Americas",5.8,32.9,2.3,"21%",63.5,5.3
+"100","Philippines","Asia Pacific",5,24.1,1.1,"26%",56.9,4.4
+"101","Poland","Post-communist",5.9,39.2,4.4,"11%",72.9,5.5
+"102","Portugal","Europe",5,32.3,3.9,"16%",77.2,4.3
+"103","Republic of Congo","Sub Saharan Africa",3.9,13.6,1.3,"40%",42,3.4
+"104","Romania","Post-communist",5.2,30.1,2.7,"19%",68.1,4.6
+"105","Russia","Post-communist",5.6,31.7,5.7,"16%",63.4,5.2
+"106","Rwanda","Sub Saharan Africa",3.3,12.4,0.9,"37%",44.3,3
+"107","Senegal","Sub Saharan Africa",3.7,15.5,1.2,"33%",49.1,3.3
+"108","Serbia","Post-communist",5.2,30.3,2.7,"19%",68.6,4.6
+"109","Sierra Leone","Sub Saharan Africa",4.5,10.8,1.2,"50%",28.2,4
+"110","Slovakia","Post-communist",5.9,37.9,4.1,"13%",71.9,5.4
+"111","Slovenia","Post-communist",6.1,42.6,5.8,"10%",77.1,5.7
+"112","South Africa","Sub Saharan Africa",5.1,18.5,3.3,"33%",41.8,4.6
+"113","South Korea","Asia Pacific",6,42.2,5.7,"11%",78.3,5.5
+"114","Spain","Europe",6.3,45.3,3.7,"10%",79.3,5.9
+"115","Sri Lanka","Asia Pacific",4.2,24.9,1.3,"17%",68.6,3.8
+"116","Suriname","Americas",6.3,35.2,4.3,"19%",61.2,5.9
+"117","Swaziland","Sub Saharan Africa",4.9,13.6,2,"41%",31.8,4.4
+"118","Sweden","Europe",7.6,57.4,7.3,"6%",79.1,7.4
+"119","Switzerland","Europe",7.8,59.3,5.8,"6%",79.4,7.6
+"120","Syria","Middle East and North Africa",3.2,14.7,1.5,"30%",60.2,2.6
+"121","Tajikistan","Post-communist",4.5,22.2,0.9,"26%",53,4.3
+"122","Tanzania","Sub Saharan Africa",4,16.2,1.3,"33%",47.7,3.6
+"123","Thailand","Asia Pacific",6.3,38.6,2.7,"15%",66.3,6
+"124","Togo","Sub Saharan Africa",2.9,9,1.1,"43%",39.6,2.4
+"125","Trinidad and Tobago","Americas",6.4,34.4,7.9,"21%",58.4,6
+"126","Tunisia","Middle East and North Africa",4.5,25.2,2.3,"22%",65.5,4
+"127","Turkey","Middle East and North Africa",5.3,31.2,3.3,"19%",66.2,4.9
+"128","Turkmenistan","Post-communist",5.5,24,5.5,"31%",48.3,5.1
+"129","Uganda","Sub Saharan Africa",4.3,13.8,1.2,"41%",36.8,3.9
+"130","Ukraine","Post-communist",5,28.3,2.8,"17%",64.2,4.6
+"131","United Kingdom","Europe",6.9,49.1,4.9,"9%",76.8,6.6
+"132","United States of America","Americas",7,46.8,8.2,"13%",74,6.5
+"133","Uruguay","Americas",6.4,39.4,2.9,"18%",69.6,5.8
+"134","Uzbekistan","Post-communist",6,27.9,2.3,"30%",51.6,5.6
+"135","Vanuatu","Asia Pacific",6.5,34.9,1.9,"22%",60.3,5.9
+"136","Venezuela","Americas",7.1,41.5,3.6,"19%",65.5,6.5
+"137","Vietnam","Asia Pacific",5.5,32.8,1.7,"19%",64.8,5.2
+"138","Yemen","Middle East and North Africa",4.1,15.2,1,"39%",44.7,3.6
+"139","Zambia","Sub Saharan Africa",5,16.7,1,"41%",38.7,4.5
+"140","Zimbabwe","Sub Saharan Africa",5,16.4,1.4,"37%",36.9,4.6
+"141",NA,NA,NA,NA,NA,NA,NA,NA
+"142",NA,NA,NA,NA,NA,NA,NA,NA
+"143",NA,NA,NA,NA,NA,NA,NA,NA
+"144",NA,NA,NA,NA,NA,NA,NA,NA
+"145",NA,NA,NA,NA,NA,NA,NA,NA
+"146",NA,NA,NA,NA,NA,NA,NA,NA
+"147",NA,NA,NA,NA,NA,NA,NA,NA
+"148",NA,NA,NA,NA,NA,NA,NA,NA
+"149",NA,NA,NA,NA,NA,NA,NA,NA
+"150",NA,NA,NA,NA,NA,NA,NA,NA
+"151",NA,NA,NA,NA,NA,NA,NA,NA
+"152",NA,NA,NA,NA,NA,NA,NA,NA
+"153",NA,NA,NA,NA,NA,NA,NA,NA
+"154",NA,NA,NA,NA,NA,NA,NA,NA

@@ -1,0 +1,22 @@
+---
+title: "Happy Planet Index"
+author: "Seranne Motilal and Shravanthi Seshasayee"
+date: "3 December 2017"
+output: html_document
+---
+
+```{r, eval=FALSE, include=FALSE}
+library(readr)
+library(tidyverse)
+```
+
+```{r}
+read_csv("F://IntroDSproject/hpi-data-2016.csv")
+```
+
+```{r}
+HPI2016 <- select(hpi_data_2016, "Country", "Region", "Average_Wellbeing_(0-10)", "Happy_Life_Years", "Footprint_(gha/capita)", "Inequality_of_Outcomes", "Inequality-adjusted_Life_Expectancy", "Inequality-adjusted_Wellbeing")
+
+write.csv(HPI2016, file = "cleaned_hpi_2016.csv")
+```
+
