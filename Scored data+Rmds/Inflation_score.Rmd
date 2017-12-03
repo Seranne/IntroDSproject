@@ -1,0 +1,39 @@
+---
+title: "InflationPercent_Ranking"
+author: "Seranne Motilal, Shravanthi Seshasayee and Sanjana Sunderesan"
+date: "3 December 2017"
+output: html_document
+---
+```{r}
+library(tidyverse)
+```
+
+```{r}
+inflation <- read_csv("F://IntroDSproject/WDI data split/Economy.csv")
+
+#IC.LGL.CRED.XQ - Available for 2015, 2014
+#IC.FRM.FEMM.ZS - Not enough data - Removed
+#GC.XPN.COMP.ZS - Not enough data - Removed
+#IC.FRM.CRIM.ZS - Available for 2010, 2011, 2012 - Too few, and inaccurate reporting - Removed
+#FP.CPI.TOTL.ZG - Available for 2014 and earlier
+```
+
+```{r}
+totl <- select(inflation, "CountryName", "Year", "FP.CPI.TOTL.ZG")
+totl <- totl[order(-totl$Year),]
+totl <- na.omit(totl)
+totl <- totl %>% distinct(CountryName, .keep_all = TRUE)
+totl <- mutate(totl, rank.totl = rank(totl$FP.CPI.TOTL.ZG))
+totl$rank.totl<- as.numeric(as.factor(totl$rank.totl))
+View(totl)
+
+write.csv(totl, file = "Inflation_score.csv")
+```
+
+```{r}
+#economy.rank <- inner_join(cred, totl, by = "CountryName")
+#economy.rank <- select(economy.rank, "CountryName", "IC.LGL.CRED.XQ", "rank.cred", "FP.CPI.TOTL.ZG", "rank.totl")
+#economy.rank <- economy.rank %>% mutate(rank = as.numeric(as.factor(rank((economy.rank$rank.totl + economy.rank$rank.cred)/2))))
+#View(economy.rank)
+```
+

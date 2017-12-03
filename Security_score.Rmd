@@ -1,0 +1,23 @@
+---
+title: "Sense of Security"
+author: "Shravanthi Seshasayee"
+date: "3 December 2017"
+output: html_document
+---
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+#Strength of legal system
+cred <- read_csv("F://IntroDSproject/WDI data split/Economy.csv")
+cred <- select(cred, "CountryName", "Year", "IC.LGL.CRED.XQ")
+#crime[crime == 0] <- NA
+cred <- cred[order(-cred$Year),]
+cred <- na.omit(cred)
+cred <- cred %>% distinct(CountryName, .keep_all = TRUE)
+View(cred)
+cred <- mutate(cred, rank.cred = -rank(IC.LGL.CRED.XQ))
+cred$rank.cred <- as.numeric(as.factor(cred$rank.cred))
+```
