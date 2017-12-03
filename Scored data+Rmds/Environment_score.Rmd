@@ -1,0 +1,22 @@
+---
+title: "Environment"
+output: html_document
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+envir_mod <- environment %>% 
+  group_by(CountryName) %>% 
+  na.omit() %>%
+  summarise(mean_agland = mean(AG.LND.FRST.ZS), mean_protect = mean(ER.PTD.TOTL.ZS)) %>%
+  mutate(rank_agland = rank(mean_agland), rank_protect = rank(mean_protect)) %>%
+  mutate(score = (rank_agland+rank_protect)/2) %>%
+  mutate(finalrank = rank(-score))
+                                          
+```
