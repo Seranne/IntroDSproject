@@ -1,0 +1,45 @@
+---
+title: "energy"
+output: html_document
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+Energy <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Energy.csv")
+Energy1<- select(Energy, "CountryName", "CountryCode", "Year", "EG.ELC.ACCS.ZS")
+Energy1 <- Energy1[order(-Energy1$Year),]
+Energy1<- na.omit(Energy1)
+Energy1 <- Energy1%>% distinct(CountryName, .keep_all = TRUE)
+Energy1 <- Energy1 %>% mutate(finalrank_eng1 = rank(-Energy1$EG.ELC.ACCS.ZS))
+Energy1$finalrank_eng1<- as.numeric(as.factor(Energy1$finalrank_eng1))
+
+Energy2<- select(Energy, "CountryName", "CountryCode", "Year", "EG.FEC.RNEW.ZS")
+Energy2 <- Energy2[order(-Energy2$Year),]
+Energy2<- na.omit(Energy2)
+Energy2 <- Energy2%>% distinct(CountryName, .keep_all = TRUE)
+Energy2 <- Energy2 %>% mutate(finalrank_eng2 = rank(Energy2$EG.FEC.RNEW.ZS))
+Energy1$finalrank_eng2<- as.numeric(as.factor(Energy2$finalrank_eng2))
+
+Energy3<- select(Energy, "CountryName", "CountryCode", "Year", "EG.USE.COMM.FO.ZS")
+Energy3 <- Energy3[order(-Energy3$Year),]
+Energy3<- na.omit(Energy3)
+Energy3 <- Energy3%>% distinct(CountryName, .keep_all = TRUE)
+Energy3 <- Energy3 %>% mutate(finalrank_eng3 = rank(Energy3$EG.USE.COMM.FO.ZS))
+Energy3$finalrank_eng3<- as.numeric(as.factor(Energy3$finalrank_eng3))
+
+Enjoin <- left_join(Energy1, Energy2, "CountryName")
+Energy<- left_join(Enjoin, Energy3, "CountryName")
+
+Communication <- Communication %>% mutate(score = (rankcell+ranknet)/2)
+Communication <- Communication %>% mutate(finalrank_comm = rank(-Communication$score))
+Communication2 <- select(Communication, "CountryName", "CountryCode","finalrank_comm" )
+
+write.csv(Communication2, file = "Communication_score.csv")
+```
+
