@@ -210,7 +210,7 @@ econ<- WDI4 %>% filter(IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "IC.LG
 write.csv(econ, file = "Economy.csv")
 
 edu <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS" | IndicatorCode == "SE.ADT.LITR.ZS" | IndicatorCode == "SG.GEN.PARL.ZS" | IndicatorCode == "SG.VAW.REAS.ZS") %>% spread(IndicatorCode, Value)
-write.csv(comm, file = "Education.csv")
+write.csv(edu, file = "Education.csv")
 
 emissions<- WDI4%>% filter(IndicatorCode == "EN.ATM.CO2E.PC")%>% spread(IndicatorCode, Value)
 write.csv(emissions, file = "Emissions.csv")
