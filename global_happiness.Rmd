@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "happiness index"
 output: html_document
@@ -17,3 +18,37 @@ write.csv(gh2016, file = "gh2016.csv")
 write.csv(gh2017, file = "gh2017.csv")
 ```
 
+=======
+---
+title: "happiness index"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r, eval=FALSE, include=FALSE}
+library(readr)
+library(tidyverse)
+gh2015 <- read_csv("d:/Downloads/2015.csv")
+gh2016 <- read_csv("d:/Downloads/2016.csv")
+gh2017 <- read_csv("d:/Downloads/2017.csv")
+
+write.csv(gh2015, file = "gh2015.csv")
+write.csv(gh2016, file = "gh2016.csv")
+write.csv(gh2017, file = "gh2017.csv")
+```
+
+```{r}
+read_csv("F://IntroDSproject/gh2015.csv")
+read_csv("F://IntroDSproject/gh2016.csv")
+read_csv("F://IntroDSproject/gh2017.csv")
+```
+
+```{r}
+GHI2015 <- select(gh2015, "Country", "Region", "Family", "Freedom", "Trust (Government Corruption)", "Generosity", "Dystopia Residual")
+GH2016 <- select(gh2016, "Country", "Region", "Family", "Freedom", "Trust (Government Corruption)", "Generosity", "Dystopia Residual")
+GH2017 <- select(gh2017, "Country", "Family", "Freedom", "Trust..Government.Corruption.", "Generosity", "Dystopia.Residual")
+```
+
+>>>>>>> d48bb6b479685baf609c22f6e0afc89b8560d7c0
