@@ -101,7 +101,7 @@ FoodDeficit <- WDI4 %>% filter(IndicatorCode == "SN.ITK.DFCT") %>% spread(Indica
 write.csv(FoodDeficit, file = "Food_deficit.csv")
 
 Tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
-write.csv(Tourism, file = "Tourism.csv")|
+write.csv(Tourism, file = "Tourism.csv")
 ```
 (AG.LND.FRST.ZS	Forest area (% of land area), 
 EG.ELC.ACCS.ZS	Access to electricity (% of population) 
