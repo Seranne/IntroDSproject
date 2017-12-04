@@ -33,15 +33,23 @@ Energy <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Energy.csv
  Energy3 <- Energy3 %>% mutate(finalrank_eng3 = rank(Energy3$EG.USE.COMM.FO.ZS))
  Energy3$finalrank_eng3<- as.numeric(as.factor(Energy3$finalrank_eng3))
  
- Enjoin <- left_join(Energy1, Energy2, "CountryName")
- Energy<- left_join(Enjoin, Energy3, "CountryName")
- Energy<- select(Energy,"CountryName", "finalrank_eng1", "finalrank_eng2", "finalrank_eng3")
+ Energy4<- select(Energy, "CountryName", "CountryCode", "Year", "EG.USE.ELEC.KH.PC")
+ Energy4 <- Energy4[order(-Energy4$Year),]
+ Energy4<- na.omit(Energy4)
+ Energy4 <- Energy4%>% distinct(CountryName, .keep_all = TRUE)
+ Energy4 <- Energy4 %>% mutate(finalrank_eng4 = rank(-Energy4$EG.USE.ELEC.KH.PC))
+ Energy4$finalrank_eng4<- as.numeric(as.factor(Energy4$finalrank_eng4))
  
- Energy <- Energy[rowSums(is.na(Energy)) < 2, ]
+ Enjoin <- left_join(Energy1, Energy2, "CountryName")
+ Ener<- left_join(Enjoin, Energy3, "CountryName")
+ Energy<- left_join(Ener, Energy4, "CountryName")
+ Energy<- select(Energy,"CountryName", "finalrank_eng1", "finalrank_eng2", "finalrank_eng3", "finalrank_eng4")
+ 
+ Energy <- Energy[rowSums(is.na(Energy)) < 3, ]
  i <- which(is.na(Energy), arr.ind = TRUE)
  Energy[i] <- rowMeans(Energy[,-1], na.rm = TRUE)[i[,1]]
  
- Energy<- Energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3)/3)
+ Energy<- Energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 + finalrank_eng4)/4)
  Energy <- Energy %>% mutate(finalrank_eng = rank(Energy$score_eng))
  
  write.csv(Energy, file = "Energy_score.csv")
