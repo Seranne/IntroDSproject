@@ -1,0 +1,21 @@
+---
+title: "International Tourism, Departures"
+author: "Shravanthi Seshasayee"
+date: "3 December 2017"
+output: html_document
+---
+
+# Ranking number of international departures as a proportion of total population
+```{r}
+tourism <- read.csv("F://IntroDSproject/WDI data split/Population.csv")
+
+tourism <- select(tourism, "CountryName", "Year", "ST.INT.DPRT", "SP.POP.TOTL")
+tourism <- tourism[order(-tourism$Year),]
+tourism <- na.omit(tourism)
+tourism <- tourism %>% distinct(CountryName, .keep_all = TRUE)
+tourism <- mutate(tourism, rank.tourism = rank(tourism$FP.CPI.tourism.ZG))
+tourism$rank.tourism<- as.numeric(as.factor(tourism$rank.tourism))
+View(tourism)
+
+write.csv(tourism, file = "tourism.csv")
+```
