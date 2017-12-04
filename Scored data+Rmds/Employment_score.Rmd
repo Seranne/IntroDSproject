@@ -1,0 +1,20 @@
+---
+title: "Employment"
+author: "Shravanthi Seshasayee"
+date: "3 December 2017"
+output: html_document
+---
+
+# Ranking number of international departures as a proportion of total population
+```{r}
+empl <- read.csv("F://IntroDSproject/WDI data split/Employment.csv")
+empl <- select(empl, "CountryName", "Year", "SL.EMP.WORK.ZS")
+empl <- empl[order(-empl$Year),]
+empl <- empl %>% distinct(CountryName, .keep_all = TRUE)
+
+empl.score = as.numeric(as.factor(rank(-(empl$SL.EMP.WORK.ZS))))
+empl <- empl %>% mutate(empl.score)
+View(empl)
+
+write.csv(empl, file = "Employment_score.csv")
+```
