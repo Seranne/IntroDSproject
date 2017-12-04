@@ -1,0 +1,46 @@
+---
+title: "Sense of Security"
+author: "Shravanthi Seshasayee"
+date: "3 December 2017"
+output: html_document
+---
+```{r}
+library(tidyverse)
+security <- read_csv("F://IntroDSproject/WDI data split/Security.csv")
+```
+
+
+```{r}
+#Strength of legal system - rank generates best legal strength at 1
+legal <- select(security, "CountryName", "Year", "IC.LGL.CRED.XQ")
+#crime[crime == 0] <- NA
+legal <- legal[order(-legal$Year),]
+legal <- na.omit(legal)
+legal <- legal %>% distinct(CountryName, .keep_all = TRUE)
+legal <- mutate(legal, rank.legal = as.numeric(as.factor(rank(-(IC.LGL.CRED.XQ)))))
+
+View(legal)
+```
+
+```{r}
+#Intentional Homicide rate (per 100,000) - Rank generates least homicide rate at 1
+homicide <- select(security, "CountryName", "Year", "VC.IHR.PSRC.P5")
+homicide[homicide == 0] <- NA
+homicide <- homicide[order(-homicide$Year),]
+homicide<- na.omit(homicide)
+homicide <- homicide%>% distinct(CountryName, .keep_all = TRUE)
+homicide <- mutate(homicide, rank.homi = as.numeric(as.factor(rank(VC.IHR.PSRC.P5))))
+
+View(homicide)
+```
+
+```{r}
+#Lower country.scores have higher security 
+security_score <- left_join(legal, homicide, by = "CountryName")
+security_score <- select(security_score, "CountryName", "IC.LGL.CRED.XQ", "rank.legal", "VC.IHR.PSRC.P5", "rank.homi")
+security_score <- mutate(security_score, country.score = as.numeric(as.factor(rank(((rank.legal+rank.homi)/2)))))
+View(security_score)
+
+write.csv(security_score, file = "Security_score.csv")
+
+```
