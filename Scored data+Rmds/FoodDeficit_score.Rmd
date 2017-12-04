@@ -1,0 +1,22 @@
+---
+title: "Food Deficit"
+author: "Shravanthi Seshasayee"
+date: "3 December 2017"
+output: html_document
+---
+# Depth of Food Deficit in kilocalories per person per day
+```{r}
+#Least food deficit will rank 1
+
+deficit <- read.csv("F://IntroDSproject/WDI data split/Food_deficit.csv")
+deficit <- select(deficit, "CountryName", "Year", "SN.ITK.DFCT")
+deficit <- deficit[order(-deficit$Year),]
+deficit <- deficit %>% distinct(CountryName, .keep_all = TRUE)
+View(deficit)
+
+deficit.score = as.numeric(as.factor(rank((deficit$SN.ITK.DFCT))))
+deficit <- deficit %>% mutate(deficit.score)
+View(deficit)
+
+write.csv(deficit, file = "FoodDeficit_score.csv")
+```
