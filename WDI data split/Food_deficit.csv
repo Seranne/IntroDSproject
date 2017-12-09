@@ -349,255 +349,245 @@
 "348","Mexico","MEX",2012,31
 "349","Mexico","MEX",2013,32
 "350","Mexico","MEX",2014,32
-"351","Middle income","MIC",2010,100.6777
-"352","Middle income","MIC",2011,95.86843
-"353","Middle income","MIC",2012,90.83546
-"354","Middle income","MIC",2013,87.84456
-"355","Middle income","MIC",2014,85.27275
-"356","Mongolia","MNG",2010,223
-"357","Mongolia","MNG",2011,205
-"358","Mongolia","MNG",2012,192
-"359","Mongolia","MNG",2013,182
-"360","Mongolia","MNG",2014,173
-"361","Morocco","MAR",2010,39
-"362","Morocco","MAR",2011,39
-"363","Morocco","MAR",2012,37
-"364","Morocco","MAR",2013,36
-"365","Morocco","MAR",2014,34
-"366","Mozambique","MOZ",2010,241
-"367","Mozambique","MOZ",2011,229
-"368","Mozambique","MOZ",2012,216
-"369","Mozambique","MOZ",2013,208
-"370","Mozambique","MOZ",2014,204
-"371","Myanmar","MMR",2010,171
-"372","Myanmar","MMR",2011,150
-"373","Myanmar","MMR",2012,133
-"374","Myanmar","MMR",2013,125
-"375","Myanmar","MMR",2014,122
-"376","Namibia","NAM",2010,250
-"377","Namibia","NAM",2011,278
-"378","Namibia","NAM",2012,291
-"379","Namibia","NAM",2013,290
-"380","Namibia","NAM",2014,278
-"381","Nepal","NPL",2010,88
-"382","Nepal","NPL",2011,81
-"383","Nepal","NPL",2012,79
-"384","Nepal","NPL",2013,82
-"385","Nepal","NPL",2014,87
-"386","Nicaragua","NIC",2010,155
-"387","Nicaragua","NIC",2011,150
-"388","Nicaragua","NIC",2012,143
-"389","Nicaragua","NIC",2013,133
-"390","Nicaragua","NIC",2014,123
-"391","Niger","NER",2010,70
-"392","Niger","NER",2011,66
-"393","Niger","NER",2012,64
-"394","Niger","NER",2013,65
-"395","Niger","NER",2014,67
-"396","Nigeria","NGA",2010,33
-"397","Nigeria","NGA",2011,33
-"398","Nigeria","NGA",2012,34
-"399","Nigeria","NGA",2013,36
-"400","Nigeria","NGA",2014,38
-"401","Other small states","OSS",2010,141.4898
-"402","Other small states","OSS",2011,141.1039
-"403","Other small states","OSS",2012,138.4014
-"404","Other small states","OSS",2013,133.8374
-"405","Other small states","OSS",2014,128.9532
-"406","Pacific island small states","PSS",2010,40.37119
-"407","Pacific island small states","PSS",2011,40.40225
-"408","Pacific island small states","PSS",2012,41.05122
-"409","Pacific island small states","PSS",2013,42.43932
-"410","Pacific island small states","PSS",2014,44.03216
-"411","Pakistan","PAK",2010,169
-"412","Pakistan","PAK",2011,168
-"413","Pakistan","PAK",2012,168
-"414","Pakistan","PAK",2013,169
-"415","Pakistan","PAK",2014,169
-"416","Panama","PAN",2010,116
-"417","Panama","PAN",2011,105
-"418","Panama","PAN",2012,94
-"419","Panama","PAN",2013,84
-"420","Panama","PAN",2014,73
-"421","Paraguay","PRY",2010,75
-"422","Paraguay","PRY",2011,70
-"423","Paraguay","PRY",2012,63
-"424","Paraguay","PRY",2013,64
-"425","Paraguay","PRY",2014,75
-"426","Peru","PER",2010,93
-"427","Peru","PER",2011,83
-"428","Peru","PER",2012,73
-"429","Peru","PER",2013,65
-"430","Peru","PER",2014,58
-"431","Philippines","PHL",2010,87
-"432","Philippines","PHL",2011,84
-"433","Philippines","PHL",2012,84
-"434","Philippines","PHL",2013,82
-"435","Philippines","PHL",2014,78
-"436","Rwanda","RWA",2010,299
-"437","Rwanda","RWA",2011,275
-"438","Rwanda","RWA",2012,258
-"439","Rwanda","RWA",2013,250
-"440","Rwanda","RWA",2014,248
-"441","Samoa","WSM",2010,23
-"442","Samoa","WSM",2011,23
-"443","Samoa","WSM",2012,22
-"444","Samoa","WSM",2013,21
-"445","Samoa","WSM",2014,20
-"446","Sao Tome and Principe","STP",2010,50
-"447","Sao Tome and Principe","STP",2011,48
-"448","Sao Tome and Principe","STP",2012,46
-"449","Sao Tome and Principe","STP",2013,44
-"450","Sao Tome and Principe","STP",2014,42
-"451","Saudi Arabia","SAU",2010,18
-"452","Saudi Arabia","SAU",2011,17
-"453","Saudi Arabia","SAU",2012,15
-"454","Saudi Arabia","SAU",2013,13
-"455","Saudi Arabia","SAU",2014,10
-"456","Senegal","SEN",2010,95
-"457","Senegal","SEN",2011,89
-"458","Senegal","SEN",2012,88
-"459","Senegal","SEN",2013,95
-"460","Senegal","SEN",2014,108
-"461","Sierra Leone","SLE",2010,245
-"462","Sierra Leone","SLE",2011,235
-"463","Sierra Leone","SLE",2012,221
-"464","Sierra Leone","SLE",2013,206
-"465","Sierra Leone","SLE",2014,190
-"466","Small states","SST",2010,113.8709
-"467","Small states","SST",2011,113.7993
-"468","Small states","SST",2012,111.918
-"469","Small states","SST",2013,108.716
-"470","Small states","SST",2014,105.5094
-"471","Solomon Islands","SLB",2010,67
-"472","Solomon Islands","SLB",2011,67
-"473","Solomon Islands","SLB",2012,67
-"474","Solomon Islands","SLB",2013,71
-"475","Solomon Islands","SLB",2014,77
-"476","South Africa","ZAF",2010,26
-"477","South Africa","ZAF",2011,24
-"478","South Africa","ZAF",2012,21
-"479","South Africa","ZAF",2013,19
-"480","South Africa","ZAF",2014,16
-"481","South Asia","SAS",2010,123.6291
-"482","South Asia","SAS",2011,120.2825
-"483","South Asia","SAS",2012,118.722
-"484","South Asia","SAS",2013,118.0494
-"485","South Asia","SAS",2014,118.0414
-"486","Sri Lanka","LKA",2010,238
-"487","Sri Lanka","LKA",2011,230
-"488","Sri Lanka","LKA",2012,224
-"489","Sri Lanka","LKA",2013,220
-"490","Sri Lanka","LKA",2014,216
-"491","St. Vincent and the Grenadines","VCT",2010,53
-"492","St. Vincent and the Grenadines","VCT",2011,49
-"493","St. Vincent and the Grenadines","VCT",2012,45
-"494","St. Vincent and the Grenadines","VCT",2013,43
-"495","St. Vincent and the Grenadines","VCT",2014,41
-"496","Sudan","SDN",2010,169
-"497","Sudan","SDN",2011,176
-"498","Suriname","SUR",2010,65
-"499","Suriname","SUR",2011,60
-"500","Suriname","SUR",2012,57
-"501","Suriname","SUR",2013,58
-"502","Suriname","SUR",2014,59
-"503","Swaziland","SWZ",2010,158
-"504","Swaziland","SWZ",2011,165
-"505","Swaziland","SWZ",2012,171
-"506","Swaziland","SWZ",2013,177
-"507","Swaziland","SWZ",2014,186
-"508","Tajikistan","TJK",2010,297
-"509","Tajikistan","TJK",2011,292
-"510","Tajikistan","TJK",2012,283
-"511","Tajikistan","TJK",2013,266
-"512","Tajikistan","TJK",2014,245
-"513","Tanzania","TZA",2010,259
-"514","Tanzania","TZA",2011,264
-"515","Tanzania","TZA",2012,267
-"516","Tanzania","TZA",2013,261
-"517","Tanzania","TZA",2014,258
-"518","Thailand","THA",2010,69
-"519","Thailand","THA",2011,68
-"520","Thailand","THA",2012,63
-"521","Thailand","THA",2013,57
-"522","Thailand","THA",2014,49
-"523","Timor-Leste","TMP",2010,223
-"524","Timor-Leste","TMP",2011,220
-"525","Timor-Leste","TMP",2012,214
-"526","Timor-Leste","TMP",2013,206
-"527","Timor-Leste","TMP",2014,197
-"528","Togo","TGO",2010,145
-"529","Togo","TGO",2011,139
-"530","Togo","TGO",2012,128
-"531","Togo","TGO",2013,116
-"532","Togo","TGO",2014,102
-"533","Trinidad and Tobago","TTO",2010,79
-"534","Trinidad and Tobago","TTO",2011,77
-"535","Trinidad and Tobago","TTO",2012,74
-"536","Trinidad and Tobago","TTO",2013,70
-"537","Trinidad and Tobago","TTO",2014,67
-"538","Tunisia","TUN",2010,7
-"539","Tunisia","TUN",2011,6
-"540","Tunisia","TUN",2012,6
-"541","Tunisia","TUN",2013,5
-"542","Tunisia","TUN",2014,5
-"543","Turkey","TUR",2010,2
-"544","Turkey","TUR",2011,2
-"545","Turkey","TUR",2012,2
-"546","Turkey","TUR",2013,2
-"547","Turkey","TUR",2014,2
-"548","Turkmenistan","TKM",2010,32
-"549","Turkmenistan","TKM",2011,32
-"550","Turkmenistan","TKM",2012,31
-"551","Turkmenistan","TKM",2013,27
-"552","Turkmenistan","TKM",2014,21
-"553","Uganda","UGA",2010,166
-"554","Uganda","UGA",2011,165
-"555","Uganda","UGA",2012,164
-"556","Uganda","UGA",2013,166
-"557","Uganda","UGA",2014,172
-"558","United Arab Emirates","ARE",2010,35
-"559","United Arab Emirates","ARE",2011,34
-"560","United Arab Emirates","ARE",2012,33
-"561","United Arab Emirates","ARE",2013,27
-"562","United Arab Emirates","ARE",2014,22
-"563","Uruguay","URY",2010,24
-"564","Uruguay","URY",2011,23
-"565","Uruguay","URY",2012,22
-"566","Uruguay","URY",2013,23
-"567","Uruguay","URY",2014,24
-"568","Uzbekistan","UZB",2010,65
-"569","Uzbekistan","UZB",2011,62
-"570","Uzbekistan","UZB",2012,57
-"571","Uzbekistan","UZB",2013,49
-"572","Uzbekistan","UZB",2014,39
-"573","Vanuatu","VUT",2010,37
-"574","Vanuatu","VUT",2011,37
-"575","Vanuatu","VUT",2012,40
-"576","Vanuatu","VUT",2013,43
-"577","Vanuatu","VUT",2014,46
-"578","Venezuela, RB","VEN",2010,18
-"579","Venezuela, RB","VEN",2011,14
-"580","Venezuela, RB","VEN",2012,13
-"581","Venezuela, RB","VEN",2013,13
-"582","Venezuela, RB","VEN",2014,12
-"583","Vietnam","VNM",2010,122
-"584","Vietnam","VNM",2011,114
-"585","Vietnam","VNM",2012,108
-"586","Vietnam","VNM",2013,103
-"587","Vietnam","VNM",2014,99
-"588","Yemen, Rep.","YEM",2010,181
-"589","Yemen, Rep.","YEM",2011,179
-"590","Yemen, Rep.","YEM",2012,178
-"591","Yemen, Rep.","YEM",2013,176
-"592","Yemen, Rep.","YEM",2014,176
-"593","Zambia","ZMB",2010,452
-"594","Zambia","ZMB",2011,437
-"595","Zambia","ZMB",2012,422
-"596","Zambia","ZMB",2013,412
-"597","Zambia","ZMB",2014,408
-"598","Zimbabwe","ZWE",2010,277
-"599","Zimbabwe","ZWE",2011,265
-"600","Zimbabwe","ZWE",2012,254
-"601","Zimbabwe","ZWE",2013,246
-"602","Zimbabwe","ZWE",2014,244
+"351","Mongolia","MNG",2010,223
+"352","Mongolia","MNG",2011,205
+"353","Mongolia","MNG",2012,192
+"354","Mongolia","MNG",2013,182
+"355","Mongolia","MNG",2014,173
+"356","Morocco","MAR",2010,39
+"357","Morocco","MAR",2011,39
+"358","Morocco","MAR",2012,37
+"359","Morocco","MAR",2013,36
+"360","Morocco","MAR",2014,34
+"361","Mozambique","MOZ",2010,241
+"362","Mozambique","MOZ",2011,229
+"363","Mozambique","MOZ",2012,216
+"364","Mozambique","MOZ",2013,208
+"365","Mozambique","MOZ",2014,204
+"366","Myanmar","MMR",2010,171
+"367","Myanmar","MMR",2011,150
+"368","Myanmar","MMR",2012,133
+"369","Myanmar","MMR",2013,125
+"370","Myanmar","MMR",2014,122
+"371","Namibia","NAM",2010,250
+"372","Namibia","NAM",2011,278
+"373","Namibia","NAM",2012,291
+"374","Namibia","NAM",2013,290
+"375","Namibia","NAM",2014,278
+"376","Nepal","NPL",2010,88
+"377","Nepal","NPL",2011,81
+"378","Nepal","NPL",2012,79
+"379","Nepal","NPL",2013,82
+"380","Nepal","NPL",2014,87
+"381","Nicaragua","NIC",2010,155
+"382","Nicaragua","NIC",2011,150
+"383","Nicaragua","NIC",2012,143
+"384","Nicaragua","NIC",2013,133
+"385","Nicaragua","NIC",2014,123
+"386","Niger","NER",2010,70
+"387","Niger","NER",2011,66
+"388","Niger","NER",2012,64
+"389","Niger","NER",2013,65
+"390","Niger","NER",2014,67
+"391","Nigeria","NGA",2010,33
+"392","Nigeria","NGA",2011,33
+"393","Nigeria","NGA",2012,34
+"394","Nigeria","NGA",2013,36
+"395","Nigeria","NGA",2014,38
+"396","Other small states","OSS",2010,141.4898
+"397","Other small states","OSS",2011,141.1039
+"398","Other small states","OSS",2012,138.4014
+"399","Other small states","OSS",2013,133.8374
+"400","Other small states","OSS",2014,128.9532
+"401","Pacific island small states","PSS",2010,40.37119
+"402","Pacific island small states","PSS",2011,40.40225
+"403","Pacific island small states","PSS",2012,41.05122
+"404","Pacific island small states","PSS",2013,42.43932
+"405","Pacific island small states","PSS",2014,44.03216
+"406","Pakistan","PAK",2010,169
+"407","Pakistan","PAK",2011,168
+"408","Pakistan","PAK",2012,168
+"409","Pakistan","PAK",2013,169
+"410","Pakistan","PAK",2014,169
+"411","Panama","PAN",2010,116
+"412","Panama","PAN",2011,105
+"413","Panama","PAN",2012,94
+"414","Panama","PAN",2013,84
+"415","Panama","PAN",2014,73
+"416","Paraguay","PRY",2010,75
+"417","Paraguay","PRY",2011,70
+"418","Paraguay","PRY",2012,63
+"419","Paraguay","PRY",2013,64
+"420","Paraguay","PRY",2014,75
+"421","Peru","PER",2010,93
+"422","Peru","PER",2011,83
+"423","Peru","PER",2012,73
+"424","Peru","PER",2013,65
+"425","Peru","PER",2014,58
+"426","Philippines","PHL",2010,87
+"427","Philippines","PHL",2011,84
+"428","Philippines","PHL",2012,84
+"429","Philippines","PHL",2013,82
+"430","Philippines","PHL",2014,78
+"431","Rwanda","RWA",2010,299
+"432","Rwanda","RWA",2011,275
+"433","Rwanda","RWA",2012,258
+"434","Rwanda","RWA",2013,250
+"435","Rwanda","RWA",2014,248
+"436","Samoa","WSM",2010,23
+"437","Samoa","WSM",2011,23
+"438","Samoa","WSM",2012,22
+"439","Samoa","WSM",2013,21
+"440","Samoa","WSM",2014,20
+"441","Sao Tome and Principe","STP",2010,50
+"442","Sao Tome and Principe","STP",2011,48
+"443","Sao Tome and Principe","STP",2012,46
+"444","Sao Tome and Principe","STP",2013,44
+"445","Sao Tome and Principe","STP",2014,42
+"446","Saudi Arabia","SAU",2010,18
+"447","Saudi Arabia","SAU",2011,17
+"448","Saudi Arabia","SAU",2012,15
+"449","Saudi Arabia","SAU",2013,13
+"450","Saudi Arabia","SAU",2014,10
+"451","Senegal","SEN",2010,95
+"452","Senegal","SEN",2011,89
+"453","Senegal","SEN",2012,88
+"454","Senegal","SEN",2013,95
+"455","Senegal","SEN",2014,108
+"456","Sierra Leone","SLE",2010,245
+"457","Sierra Leone","SLE",2011,235
+"458","Sierra Leone","SLE",2012,221
+"459","Sierra Leone","SLE",2013,206
+"460","Sierra Leone","SLE",2014,190
+"461","Small states","SST",2010,113.8709
+"462","Small states","SST",2011,113.7993
+"463","Small states","SST",2012,111.918
+"464","Small states","SST",2013,108.716
+"465","Small states","SST",2014,105.5094
+"466","Solomon Islands","SLB",2010,67
+"467","Solomon Islands","SLB",2011,67
+"468","Solomon Islands","SLB",2012,67
+"469","Solomon Islands","SLB",2013,71
+"470","Solomon Islands","SLB",2014,77
+"471","South Africa","ZAF",2010,26
+"472","South Africa","ZAF",2011,24
+"473","South Africa","ZAF",2012,21
+"474","South Africa","ZAF",2013,19
+"475","South Africa","ZAF",2014,16
+"476","Sri Lanka","LKA",2010,238
+"477","Sri Lanka","LKA",2011,230
+"478","Sri Lanka","LKA",2012,224
+"479","Sri Lanka","LKA",2013,220
+"480","Sri Lanka","LKA",2014,216
+"481","St. Vincent and the Grenadines","VCT",2010,53
+"482","St. Vincent and the Grenadines","VCT",2011,49
+"483","St. Vincent and the Grenadines","VCT",2012,45
+"484","St. Vincent and the Grenadines","VCT",2013,43
+"485","St. Vincent and the Grenadines","VCT",2014,41
+"486","Sudan","SDN",2010,169
+"487","Sudan","SDN",2011,176
+"488","Suriname","SUR",2010,65
+"489","Suriname","SUR",2011,60
+"490","Suriname","SUR",2012,57
+"491","Suriname","SUR",2013,58
+"492","Suriname","SUR",2014,59
+"493","Swaziland","SWZ",2010,158
+"494","Swaziland","SWZ",2011,165
+"495","Swaziland","SWZ",2012,171
+"496","Swaziland","SWZ",2013,177
+"497","Swaziland","SWZ",2014,186
+"498","Tajikistan","TJK",2010,297
+"499","Tajikistan","TJK",2011,292
+"500","Tajikistan","TJK",2012,283
+"501","Tajikistan","TJK",2013,266
+"502","Tajikistan","TJK",2014,245
+"503","Tanzania","TZA",2010,259
+"504","Tanzania","TZA",2011,264
+"505","Tanzania","TZA",2012,267
+"506","Tanzania","TZA",2013,261
+"507","Tanzania","TZA",2014,258
+"508","Thailand","THA",2010,69
+"509","Thailand","THA",2011,68
+"510","Thailand","THA",2012,63
+"511","Thailand","THA",2013,57
+"512","Thailand","THA",2014,49
+"513","Timor-Leste","TMP",2010,223
+"514","Timor-Leste","TMP",2011,220
+"515","Timor-Leste","TMP",2012,214
+"516","Timor-Leste","TMP",2013,206
+"517","Timor-Leste","TMP",2014,197
+"518","Togo","TGO",2010,145
+"519","Togo","TGO",2011,139
+"520","Togo","TGO",2012,128
+"521","Togo","TGO",2013,116
+"522","Togo","TGO",2014,102
+"523","Trinidad and Tobago","TTO",2010,79
+"524","Trinidad and Tobago","TTO",2011,77
+"525","Trinidad and Tobago","TTO",2012,74
+"526","Trinidad and Tobago","TTO",2013,70
+"527","Trinidad and Tobago","TTO",2014,67
+"528","Tunisia","TUN",2010,7
+"529","Tunisia","TUN",2011,6
+"530","Tunisia","TUN",2012,6
+"531","Tunisia","TUN",2013,5
+"532","Tunisia","TUN",2014,5
+"533","Turkey","TUR",2010,2
+"534","Turkey","TUR",2011,2
+"535","Turkey","TUR",2012,2
+"536","Turkey","TUR",2013,2
+"537","Turkey","TUR",2014,2
+"538","Turkmenistan","TKM",2010,32
+"539","Turkmenistan","TKM",2011,32
+"540","Turkmenistan","TKM",2012,31
+"541","Turkmenistan","TKM",2013,27
+"542","Turkmenistan","TKM",2014,21
+"543","Uganda","UGA",2010,166
+"544","Uganda","UGA",2011,165
+"545","Uganda","UGA",2012,164
+"546","Uganda","UGA",2013,166
+"547","Uganda","UGA",2014,172
+"548","United Arab Emirates","ARE",2010,35
+"549","United Arab Emirates","ARE",2011,34
+"550","United Arab Emirates","ARE",2012,33
+"551","United Arab Emirates","ARE",2013,27
+"552","United Arab Emirates","ARE",2014,22
+"553","Uruguay","URY",2010,24
+"554","Uruguay","URY",2011,23
+"555","Uruguay","URY",2012,22
+"556","Uruguay","URY",2013,23
+"557","Uruguay","URY",2014,24
+"558","Uzbekistan","UZB",2010,65
+"559","Uzbekistan","UZB",2011,62
+"560","Uzbekistan","UZB",2012,57
+"561","Uzbekistan","UZB",2013,49
+"562","Uzbekistan","UZB",2014,39
+"563","Vanuatu","VUT",2010,37
+"564","Vanuatu","VUT",2011,37
+"565","Vanuatu","VUT",2012,40
+"566","Vanuatu","VUT",2013,43
+"567","Vanuatu","VUT",2014,46
+"568","Venezuela, RB","VEN",2010,18
+"569","Venezuela, RB","VEN",2011,14
+"570","Venezuela, RB","VEN",2012,13
+"571","Venezuela, RB","VEN",2013,13
+"572","Venezuela, RB","VEN",2014,12
+"573","Vietnam","VNM",2010,122
+"574","Vietnam","VNM",2011,114
+"575","Vietnam","VNM",2012,108
+"576","Vietnam","VNM",2013,103
+"577","Vietnam","VNM",2014,99
+"578","Yemen, Rep.","YEM",2010,181
+"579","Yemen, Rep.","YEM",2011,179
+"580","Yemen, Rep.","YEM",2012,178
+"581","Yemen, Rep.","YEM",2013,176
+"582","Yemen, Rep.","YEM",2014,176
+"583","Zambia","ZMB",2010,452
+"584","Zambia","ZMB",2011,437
+"585","Zambia","ZMB",2012,422
+"586","Zambia","ZMB",2013,412
+"587","Zambia","ZMB",2014,408
+"588","Zimbabwe","ZWE",2010,277
+"589","Zimbabwe","ZWE",2011,265
+"590","Zimbabwe","ZWE",2012,254
+"591","Zimbabwe","ZWE",2013,246
+"592","Zimbabwe","ZWE",2014,244
