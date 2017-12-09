@@ -13,7 +13,7 @@ final_score_only <- read_csv("d:/Documents/GitHub/IntroDSproject/Final score dat
 ```
 
 ```{r}
- final_score_only <- final_score_only[rowSums(is.na(final_score_only)) < 10, ]
+ final_score_only <- final_score_only[rowSums(is.na(final_score_only)) < 6, ]
  i <- which(is.na(final_score_only), arr.ind = TRUE)
  final_score_only[i] <- rowMeans(final_score_only[,3:15], na.rm = TRUE)[i[,1]]
  
