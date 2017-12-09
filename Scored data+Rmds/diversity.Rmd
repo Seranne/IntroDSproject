@@ -1,0 +1,27 @@
+---
+title: "ethnic frac"
+author: "Shravanthi Seshasayee"
+date: "9 December 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(rvest)
+library(dplyr)
+library(tidyverse)
+
+```
+
+```{r}
+url <- "https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level"
+pop <- read_csv("/IntroDSproject/WDI data split/Population.csv")
+h <- read_html(url)
+efindex <- h %>% html_nodes("table") %>% html_table(fill = TRUE) %>%
+        .[[3]]
+
+diversity <- select(efindex, "Country", "Ethnic Diversity Rank")
+
+write.csv(diversity, file = "diversity_score.csv")
+```
+
+
