@@ -1,0 +1,374 @@
+"","CountryName","CountryCode","Year","ST.INT.DPRT"
+"1","Albania","ALB",2010,3443000
+"2","Albania","ALB",2011,4120000
+"3","Albania","ALB",2012,3959000
+"4","Albania","ALB",2013,3928000
+"5","Algeria","DZA",2010,1757000
+"6","Algeria","DZA",2011,1715000
+"7","Algeria","DZA",2012,1911000
+"8","Argentina","ARG",2010,5307000
+"9","Argentina","ARG",2011,6686000
+"10","Argentina","ARG",2012,7266000
+"11","Argentina","ARG",2013,7544000
+"12","Armenia","ARM",2010,563000
+"13","Armenia","ARM",2011,715000
+"14","Armenia","ARM",2012,965000
+"15","Armenia","ARM",2013,1083000
+"16","Australia","AUS",2010,7103000
+"17","Australia","AUS",2011,7788000
+"18","Australia","AUS",2012,8212000
+"19","Australia","AUS",2013,8768000
+"20","Austria","AUT",2010,9882000
+"21","Austria","AUT",2011,9874000
+"22","Austria","AUT",2012,10960000
+"23","Austria","AUT",2013,10671000
+"24","Azerbaijan","AZE",2010,3176000
+"25","Azerbaijan","AZE",2011,3550000
+"26","Azerbaijan","AZE",2012,3874000
+"27","Azerbaijan","AZE",2013,4285000
+"28","Belarus","BLR",2010,415000
+"29","Belarus","BLR",2011,320000
+"30","Belarus","BLR",2012,493000
+"31","Belarus","BLR",2013,708000
+"32","Belgium","BEL",2010,8801000
+"33","Belgium","BEL",2011,9727000
+"34","Belgium","BEL",2012,9576000
+"35","Belgium","BEL",2013,10818000
+"36","Bolivia","BOL",2010,604000
+"37","Bolivia","BOL",2011,775000
+"38","Bolivia","BOL",2012,788000
+"39","Bolivia","BOL",2013,837000
+"40","Brazil","BRA",2010,6498000
+"41","Brazil","BRA",2011,7805000
+"42","Brazil","BRA",2012,8466000
+"43","Brazil","BRA",2013,8666000
+"44","Bulgaria","BGR",2010,3676000
+"45","Bulgaria","BGR",2011,3803000
+"46","Bulgaria","BGR",2012,3758000
+"47","Bulgaria","BGR",2013,3930000
+"48","Cambodia","KHM",2010,505000
+"49","Cambodia","KHM",2011,710000
+"50","Cambodia","KHM",2012,792000
+"51","Cambodia","KHM",2013,872000
+"52","Canada","CAN",2010,28680000
+"53","Canada","CAN",2011,30450000
+"54","Canada","CAN",2012,32276000
+"55","Canada","CAN",2013,32977000
+"56","Central African Republic","CAF",2010,38000
+"57","Chad","TCD",2010,39000
+"58","Chad","TCD",2011,76000
+"59","Chad","TCD",2012,79000
+"60","Chad","TCD",2013,86000
+"61","Chile","CHL",2010,2219000
+"62","Chile","CHL",2011,2638000
+"63","Chile","CHL",2012,2837000
+"64","Chile","CHL",2013,2999000
+"65","China","CHN",2010,57386000
+"66","China","CHN",2011,70250000
+"67","China","CHN",2012,83183000
+"68","China","CHN",2013,98185000
+"69","Colombia","COL",2010,2342000
+"70","Colombia","COL",2011,2522000
+"71","Colombia","COL",2012,3165000
+"72","Colombia","COL",2013,3605000
+"73","Congo, Rep.","COG",2012,161000
+"74","Congo, Rep.","COG",2013,180000
+"75","Costa Rica","CRI",2010,662000
+"76","Costa Rica","CRI",2011,717000
+"77","Costa Rica","CRI",2012,773000
+"78","Costa Rica","CRI",2013,790000
+"79","Croatia","HRV",2010,1873000
+"80","Croatia","HRV",2011,2280000
+"81","Croatia","HRV",2012,2680000
+"82","Croatia","HRV",2013,2927000
+"83","Cuba","CUB",2010,251000
+"84","Cuba","CUB",2011,253000
+"85","Cuba","CUB",2012,213000
+"86","Cuba","CUB",2013,287000
+"87","Cyprus","CYP",2010,1067000
+"88","Cyprus","CYP",2011,1026000
+"89","Czech Republic","CZE",2010,8673000
+"90","Czech Republic","CZE",2011,5279000
+"91","Czech Republic","CZE",2012,5419000
+"92","Czech Republic","CZE",2013,5304000
+"93","Denmark","DNK",2010,7726000
+"94","Denmark","DNK",2011,7846000
+"95","Denmark","DNK",2012,7843000
+"96","Denmark","DNK",2013,6977000
+"97","Dominican Republic","DOM",2010,401000
+"98","Dominican Republic","DOM",2011,408000
+"99","Dominican Republic","DOM",2012,418000
+"100","Dominican Republic","DOM",2013,436000
+"101","Ecuador","ECU",2010,899000
+"102","Ecuador","ECU",2011,1022000
+"103","Ecuador","ECU",2012,1022000
+"104","Ecuador","ECU",2013,1138000
+"105","Egypt, Arab Rep.","EGY",2010,4618000
+"106","Egypt, Arab Rep.","EGY",2011,4863000
+"107","Egypt, Arab Rep.","EGY",2012,5678000
+"108","Egypt, Arab Rep.","EGY",2013,5782000
+"109","Estonia","EST",2010,955000
+"110","Estonia","EST",2011,1054000
+"111","Estonia","EST",2012,1147000
+"112","Estonia","EST",2013,1166000
+"113","Fiji","FJI",2010,128000
+"114","Fiji","FJI",2011,132000
+"115","Fiji","FJI",2012,132000
+"116","Finland","FIN",2010,6633000
+"117","Finland","FIN",2011,7274000
+"118","Finland","FIN",2012,9055000
+"119","Finland","FIN",2013,8562000
+"120","France","FRA",2010,25041000
+"121","France","FRA",2011,26155000
+"122","France","FRA",2012,25450000
+"123","France","FRA",2013,26243000
+"124","French Polynesia","PYF",2010,89000
+"125","French Polynesia","PYF",2011,84000
+"126","French Polynesia","PYF",2012,83000
+"127","French Polynesia","PYF",2013,80000
+"128","Georgia","GEO",2010,2086000
+"129","Georgia","GEO",2011,2237000
+"130","Georgia","GEO",2012,2734000
+"131","Georgia","GEO",2013,3220000
+"132","Greece","GRC",2010,3799000
+"133","Greece","GRC",2011,4942000
+"134","Greece","GRC",2012,4681000
+"135","Greece","GRC",2013,4594000
+"136","Guatemala","GTM",2010,1136000
+"137","Guatemala","GTM",2011,1080000
+"138","Guatemala","GTM",2012,1104000
+"139","Guatemala","GTM",2013,1171000
+"140","Honduras","HND",2010,408000
+"141","Honduras","HND",2011,449000
+"142","Honduras","HND",2012,464000
+"143","Honduras","HND",2013,471000
+"144","Hong Kong SAR, China","HKG",2010,84442000
+"145","Hong Kong SAR, China","HKG",2011,84816000
+"146","Hong Kong SAR, China","HKG",2012,85276000
+"147","Hong Kong SAR, China","HKG",2013,84414000
+"148","Hungary","HUN",2010,16082000
+"149","Hungary","HUN",2011,16634000
+"150","Hungary","HUN",2012,16143000
+"151","Hungary","HUN",2013,15997000
+"152","Iceland","ISL",2010,299000
+"153","Iceland","ISL",2011,341000
+"154","Iceland","ISL",2012,358000
+"155","Iceland","ISL",2013,365000
+"156","India","IND",2010,12988000
+"157","India","IND",2011,13994000
+"158","India","IND",2012,14920000
+"159","India","IND",2013,16626000
+"160","Indonesia","IDN",2010,6235000
+"161","Indonesia","IDN",2011,6750000
+"162","Indonesia","IDN",2012,7454000
+"163","Indonesia","IDN",2013,7973000
+"164","Ireland","IRL",2010,6917000
+"165","Ireland","IRL",2011,6514000
+"166","Ireland","IRL",2012,6600000
+"167","Ireland","IRL",2013,6579000
+"168","Israel","ISR",2010,4269000
+"169","Israel","ISR",2011,4387000
+"170","Israel","ISR",2012,4349000
+"171","Israel","ISR",2013,4757000
+"172","Italy","ITA",2010,29823000
+"173","Italy","ITA",2011,29295000
+"174","Italy","ITA",2012,28810000
+"175","Italy","ITA",2013,27798000
+"176","Japan","JPN",2010,16637000
+"177","Japan","JPN",2011,16994000
+"178","Japan","JPN",2012,18491000
+"179","Japan","JPN",2013,17473000
+"180","Jordan","JOR",2010,2708000
+"181","Jordan","JOR",2011,1931000
+"182","Jordan","JOR",2012,1567000
+"183","Jordan","JOR",2013,1498000
+"184","Kazakhstan","KAZ",2010,6019000
+"185","Kazakhstan","KAZ",2011,8020000
+"186","Kazakhstan","KAZ",2012,9066000
+"187","Kazakhstan","KAZ",2013,10144000
+"188","Korea, Rep.","KOR",2010,12488000
+"189","Korea, Rep.","KOR",2011,12694000
+"190","Korea, Rep.","KOR",2012,13737000
+"191","Korea, Rep.","KOR",2013,14846000
+"192","Kyrgyz Republic","KGZ",2010,597000
+"193","Kyrgyz Republic","KGZ",2011,931000
+"194","Kyrgyz Republic","KGZ",2012,1326000
+"195","Kyrgyz Republic","KGZ",2013,1401000
+"196","Latvia","LVA",2010,3332000
+"197","Latvia","LVA",2011,3257000
+"198","Lithuania","LTU",2010,1411000
+"199","Lithuania","LTU",2011,1526000
+"200","Lithuania","LTU",2012,1708000
+"201","Lithuania","LTU",2013,1764000
+"202","Macao SAR, China","MAC",2010,753000
+"203","Macao SAR, China","MAC",2011,908000
+"204","Macao SAR, China","MAC",2012,1291000
+"205","Macao SAR, China","MAC",2013,1446000
+"206","Malta","MLT",2010,294000
+"207","Malta","MLT",2011,309000
+"208","Malta","MLT",2012,331000
+"209","Malta","MLT",2013,363000
+"210","Mauritius","MUS",2010,212000
+"211","Mauritius","MUS",2011,219000
+"212","Mauritius","MUS",2012,237000
+"213","Mauritius","MUS",2013,250000
+"214","Mexico","MEX",2010,14334000
+"215","Mexico","MEX",2011,14799000
+"216","Mexico","MEX",2012,15581000
+"217","Mexico","MEX",2013,15911000
+"218","Moldova","MDA",2010,117000
+"219","Moldova","MDA",2011,136000
+"220","Moldova","MDA",2012,146000
+"221","Moldova","MDA",2013,157000
+"222","Morocco","MAR",2010,2175000
+"223","Morocco","MAR",2011,2192000
+"224","Morocco","MAR",2012,2316000
+"225","Morocco","MAR",2013,2194000
+"226","Nepal","NPL",2010,765000
+"227","Nepal","NPL",2011,774000
+"228","Nepal","NPL",2012,862000
+"229","Nepal","NPL",2013,983000
+"230","Netherlands","NLD",2010,18368000
+"231","Netherlands","NLD",2011,18560000
+"232","Netherlands","NLD",2012,18628000
+"233","Netherlands","NLD",2013,18094000
+"234","New Caledonia","NCL",2010,132000
+"235","New Caledonia","NCL",2011,124000
+"236","New Caledonia","NCL",2012,121000
+"237","New Caledonia","NCL",2013,121000
+"238","New Zealand","NZL",2010,2026000
+"239","New Zealand","NZL",2011,2093000
+"240","New Zealand","NZL",2012,2169000
+"241","New Zealand","NZL",2013,2193000
+"242","Nicaragua","NIC",2010,908000
+"243","Nicaragua","NIC",2011,912000
+"244","Nicaragua","NIC",2012,979000
+"245","Nicaragua","NIC",2013,994000
+"246","Oman","OMN",2010,1655000
+"247","Oman","OMN",2011,2065000
+"248","Oman","OMN",2012,2911000
+"249","Oman","OMN",2013,3153000
+"250","Panama","PAN",2010,392000
+"251","Panama","PAN",2011,414000
+"252","Panama","PAN",2012,447000
+"253","Panama","PAN",2013,619000
+"254","Paraguay","PRY",2010,302000
+"255","Paraguay","PRY",2011,347000
+"256","Paraguay","PRY",2012,4e+05
+"257","Paraguay","PRY",2013,440000
+"258","Peru","PER",2010,2058000
+"259","Peru","PER",2011,2132000
+"260","Peru","PER",2012,2296000
+"261","Peru","PER",2013,2364000
+"262","Poland","POL",2010,42760000
+"263","Poland","POL",2011,43270000
+"264","Poland","POL",2012,9300000
+"265","Poland","POL",2013,10050000
+"266","Puerto Rico","PRI",2010,980000
+"267","Puerto Rico","PRI",2011,924000
+"268","Puerto Rico","PRI",2012,876000
+"269","Puerto Rico","PRI",2013,839000
+"270","Romania","ROM",2010,10905000
+"271","Romania","ROM",2011,10936000
+"272","Romania","ROM",2012,11149000
+"273","Romania","ROM",2013,11364000
+"274","Russian Federation","RUS",2010,39323000
+"275","Russian Federation","RUS",2011,43726000
+"276","Russian Federation","RUS",2012,47813000
+"277","Russian Federation","RUS",2013,54069000
+"278","Samoa","WSM",2010,56000
+"279","Samoa","WSM",2011,57000
+"280","Samoa","WSM",2012,56000
+"281","Samoa","WSM",2013,51000
+"282","Saudi Arabia","SAU",2010,17827000
+"283","Saudi Arabia","SAU",2011,15280000
+"284","Saudi Arabia","SAU",2012,18671000
+"285","Saudi Arabia","SAU",2013,19154000
+"286","Seychelles","SYC",2010,59000
+"287","Seychelles","SYC",2011,57000
+"288","Seychelles","SYC",2012,54000
+"289","Sierra Leone","SLE",2010,76000
+"290","Sierra Leone","SLE",2011,99000
+"291","Sierra Leone","SLE",2012,104000
+"292","Singapore","SGP",2010,7342000
+"293","Singapore","SGP",2011,7753000
+"294","Singapore","SGP",2012,8048000
+"295","Singapore","SGP",2013,8647000
+"296","Slovak Republic","SVK",2010,2692000
+"297","Slovak Republic","SVK",2011,3285000
+"298","Slovak Republic","SVK",2012,2689000
+"299","Slovak Republic","SVK",2013,2129000
+"300","Slovenia","SVN",2010,2874000
+"301","Slovenia","SVN",2011,2722000
+"302","Slovenia","SVN",2012,2474000
+"303","Slovenia","SVN",2013,2612000
+"304","South Africa","ZAF",2010,5165000
+"305","South Africa","ZAF",2011,5455000
+"306","South Africa","ZAF",2012,5031000
+"307","South Africa","ZAF",2013,5168000
+"308","Spain","ESP",2010,12379000
+"309","Spain","ESP",2011,13347000
+"310","Spain","ESP",2012,12185000
+"311","Spain","ESP",2013,11246000
+"312","Sri Lanka","LKA",2010,1122000
+"313","Sri Lanka","LKA",2011,1239000
+"314","Sri Lanka","LKA",2012,1269000
+"315","Sri Lanka","LKA",2013,1262000
+"316","Swaziland","SWZ",2010,1141000
+"317","Swaziland","SWZ",2011,1264000
+"318","Swaziland","SWZ",2012,1397000
+"319","Swaziland","SWZ",2013,1573000
+"320","Sweden","SWE",2010,13042000
+"321","Sweden","SWE",2011,14651000
+"322","Sweden","SWE",2012,15548000
+"323","Sweden","SWE",2013,15917000
+"324","Switzerland","CHE",2010,10011000
+"325","Switzerland","CHE",2011,10466000
+"326","Switzerland","CHE",2012,12098000
+"327","Switzerland","CHE",2013,12403000
+"328","Syrian Arab Republic","SYR",2010,6259000
+"329","Tajikistan","TJK",2012,15000
+"330","Tajikistan","TJK",2013,15000
+"331","Thailand","THA",2010,5451000
+"332","Thailand","THA",2011,5397000
+"333","Thailand","THA",2012,5721000
+"334","Thailand","THA",2013,5970000
+"335","Trinidad and Tobago","TTO",2010,273000
+"336","Tunisia","TUN",2010,2250000
+"337","Tunisia","TUN",2011,2303000
+"338","Turkey","TUR",2010,6557000
+"339","Turkey","TUR",2011,6282000
+"340","Turkey","TUR",2012,5803000
+"341","Turkey","TUR",2013,7526000
+"342","Tuvalu","TUV",2011,2100
+"343","Uganda","UGA",2010,324000
+"344","Uganda","UGA",2011,367000
+"345","Uganda","UGA",2012,382000
+"346","Uganda","UGA",2013,378000
+"347","Ukraine","UKR",2010,17180000
+"348","Ukraine","UKR",2011,19773000
+"349","Ukraine","UKR",2012,21433000
+"350","Ukraine","UKR",2013,23761000
+"351","United Kingdom","GBR",2010,55562000
+"352","United Kingdom","GBR",2011,56836000
+"353","United Kingdom","GBR",2012,56538000
+"354","United Kingdom","GBR",2013,58510000
+"355","United States","USA",2010,61061000
+"356","United States","USA",2011,59209000
+"357","United States","USA",2012,60696000
+"358","United States","USA",2013,61569000
+"359","Uruguay","URY",2010,1027000
+"360","Uruguay","URY",2011,1534000
+"361","Uruguay","URY",2012,1816000
+"362","Uruguay","URY",2013,2281000
+"363","Uzbekistan","UZB",2010,1610000
+"364","Vanuatu","VUT",2010,21000
+"365","Vanuatu","VUT",2011,22000
+"366","Vanuatu","VUT",2012,23000
+"367","Vanuatu","VUT",2013,26000
+"368","Venezuela, RB","VEN",2010,1477000
+"369","Venezuela, RB","VEN",2011,1719000
+"370","Venezuela, RB","VEN",2012,1734000
+"371","Venezuela, RB","VEN",2013,1931000
+"372","Zimbabwe","ZWE",2010,650000
+"373","Zimbabwe","ZWE",2011,693000
