@@ -8,18 +8,19 @@ output: html_document
 # Ranking number of international departures as a proportion of total population
 ```{r}
 tourism <- read.csv("F://IntroDSproject/WDI data split/Tourism.csv")
+
 tourism <- select(tourism, "CountryName", "Year", "ST.INT.DPRT")
 tourism <- tourism[order(-tourism$Year),]
 tourism <- tourism %>% distinct(CountryName, .keep_all = TRUE)
 View(tourism)
 
 pop <- read.csv("F://IntroDSproject/WDI data split/Population.csv")
+
 pop <- filter(pop, pop$Year == "2013")
 pop <- select(pop, "CountryName", "SP.POP.TOTL")
 tour <- left_join(tourism, pop, by = "CountryName")
 
-tourism.score = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL))
-tour <- tour %>% mutate(tourism.score)
+tour <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL)))
 View(tour)
 
 write.csv(tour, file = "Tourism_score.csv")
