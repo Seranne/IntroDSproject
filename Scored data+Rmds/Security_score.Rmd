@@ -35,7 +35,9 @@ homicide <- mutate(homicide, rank.homi = as.numeric(as.factor(rank(VC.IHR.PSRC.P
 ```{r}
 #Lower country.scores have higher security 
 security_score <- left_join(legal, homicide, by = "CountryName")
+
 security_score <- select(security_score, "CountryName", "IC.LGL.CRED.XQ", "rank.legal", "VC.IHR.PSRC.P5", "rank.homi")
+
 security_score <- mutate(security_score, finalscore_security = as.numeric(as.factor(rank(((rank.legal+rank.homi)/2)))))
 View(security_score)
 
