@@ -21,6 +21,4 @@ envir_mod <- environment %>%
   select(CountryName, finalrank_env)
 
 write.csv(envir_mod, "Environment_score.csv")
-
-                                       
 ```

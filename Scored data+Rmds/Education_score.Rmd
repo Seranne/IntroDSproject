@@ -1,5 +1,5 @@
 ---
-title: "Education and Gender"
+title: "Education_score"
 output: html_document
 ---
 
@@ -31,22 +31,7 @@ litjoin <- left_join(En1, En2, "CountryName")
 Education <- select(litjoin,"CountryName", "rank_eng1", "rank_eng2")
 Education <- Education%>% mutate(score_edu = (rank_eng1 + rank_eng2)/2)
 Education <- Education %>% mutate(finalrank_edu = rank(Education$score_edu))
+
 write.csv(Education, file = "Education_score.csv")
-
-
-Gender <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Gender.csv")
-
-En3<- select(Gender, "CountryName", "CountryCode", "Year", "SG.GEN.PARL.ZS")
-En3 <- En3[order(-En3$Year),]
-En3<- na.omit(En3)
-En3 <- En3%>% distinct(CountryName, .keep_all = TRUE)
-En3 <- En3 %>% mutate(rank_eng3 = rank(-En3$SG.GEN.PARL.ZS))
-En3$rank_eng3<- as.numeric(as.factor(En3$rank_eng3))
-
-Gender<- select(En3,"CountryName", "rank_eng3")
-Gender <- Gender%>% mutate(score_edu = rank_eng3)
-Gender <- Gender %>% mutate(finalrank_gen = rank(Gender$score_edu))
-
-write.csv(Gender, file = "Gender_score.csv")
 ```
 
