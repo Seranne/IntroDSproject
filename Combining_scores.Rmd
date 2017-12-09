@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library("dplyr")
 library("tidyverse")
+library(readr)
 ```
 
 ```{r}
@@ -47,6 +48,6 @@ final_score_table <- Communication_score %>%
   inner_join(childwelfare_score, by='CountryName')%>%
   inner_join(diversity_score, by='CountryName')
 
-write.csv(final_score_table, file = "final_score_table")
+write.csv(final_score_table, file = "final_score_table.csv")
 ```
 
