@@ -15,7 +15,7 @@ final_score_only <- read_csv("d:/Documents/GitHub/IntroDSproject/Final score dat
 ```{r}
  final_score_only <- final_score_only[rowSums(is.na(final_score_only)) < 10, ]
  i <- which(is.na(final_score_only), arr.ind = TRUE)
- final_score_only[i] <- rowMeans(final_score_only[,3:15], na.rm = TRUE)[i[,2]]
+ final_score_only[i] <- rowMeans(final_score_only[,3:15], na.rm = TRUE)[i[,1]]
  
  final_score_only<- final_score_only %>% mutate(ourindex = (final_score_only$finalscore_child +final_score_only$finalrank_comm +final_score_only$finalrank_diversity+final_score_only$finalrank_edu+final_score_only$finalrank_emission+final_score_only$finalrank_empl+final_score_only$finalrank_eng+final_score_only$finalrank_env+final_score_only$finalrank_deficit+final_score_only$finalrank_gen+final_score_only$finalrank_GDP+final_score_only$finalrank_pop+final_score_only$finalscore_security+final_score_only$finalrank_tourism+final_score_only$finalrank_hpi) /15)
  final_score_only <- final_score_only %>% mutate(finalindex = rank(final_score_only$ourindex))
