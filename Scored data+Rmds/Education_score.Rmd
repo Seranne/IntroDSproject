@@ -1,0 +1,37 @@
+---
+title: "Education_score"
+output: html_document
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+Education <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Education.csv")
+En1<- select(Education, "CountryName", "CountryCode", "Year", "SE.ADT.1524.LT.ZS")
+En1 <- En1[order(-En1$Year),]
+En1<- na.omit(En1)
+En1 <- En1%>% distinct(CountryName, .keep_all = TRUE)
+En1 <- En1 %>% mutate(rank_eng1 = rank(-En1$SE.ADT.1524.LT.ZS))
+En1$rank_eng1<- as.numeric(as.factor(En1$rank_eng1))
+
+
+En2<- select(Education, "CountryName", "CountryCode", "Year", "SE.ADT.LITR.ZS")
+En2 <- En2[order(-En2$Year),]
+En2<- na.omit(En2)
+En2 <- En2%>% distinct(CountryName, .keep_all = TRUE)
+En2 <- En2 %>% mutate(rank_eng2 = rank(-En2$SE.ADT.LITR.ZS))
+En2$rank_eng2<- as.numeric(as.factor(En2$rank_eng2))
+
+litjoin <- left_join(En1, En2, "CountryName")
+Education <- select(litjoin,"CountryName", "rank_eng1", "rank_eng2")
+Education <- Education%>% mutate(score_edu = (rank_eng1 + rank_eng2)/2)
+Education <- Education %>% mutate(finalrank_edu = rank(Education$score_edu))
+
+write.csv(Education, file = "Education_score.csv")
+```
+

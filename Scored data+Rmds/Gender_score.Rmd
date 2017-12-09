@@ -1,0 +1,28 @@
+---
+title: "Gender_score"
+output: html_document
+---
+```{r}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+Gender <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Gender.csv")
+
+Gen<- select(Gender, "CountryName", "CountryCode", "Year", "SG.GEN.PARL.ZS")
+Gen <- Gen[order(-Gen$Year),]
+Gen<- na.omit(Gen)
+Gen <- Gen%>% distinct(CountryName, .keep_all = TRUE)
+Gen <- Gen %>% mutate(rank_gen = rank(-Gen$SG.GEN.PARL.ZS))
+Gen$rank_gen<- as.numeric(as.factor(Gen$rank_gen))
+
+Gender<- select(Gen,"CountryName", "rank_eng3")
+Gender <- Gender%>% mutate(score_gen = rank_gen)
+Gender <- Gender %>% mutate(finalrank_gen = rank(Gender$score_gen))
+
+write.csv(Gender, file = "Gender_score.csv")
+```
+
