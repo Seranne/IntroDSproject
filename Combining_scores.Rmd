@@ -35,20 +35,20 @@ happyplanet_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rm
 
 ```{r}
 final_score_table <- Communication_score %>%
-    inner_join(Education_score, by='CountryName') %>%
-    inner_join(Emissions_score, by='CountryName') %>%
-  inner_join(Environment_score, by='CountryName') %>%
-  inner_join(FoodDeficit_score, by='CountryName') %>%
-  inner_join(Gender_score, by='CountryName') %>%
-  inner_join(Population_score, by='CountryName') %>%
-  inner_join(Employment_score, by='CountryName') %>%
-  inner_join(Energy_score, by='CountryName') %>%
-  inner_join(Security_score, by='CountryName') %>%
-  inner_join(Tourism_score, by='CountryName') %>%
-  inner_join(GDP_score, by='CountryName') %>%
-  inner_join(childwelfare_score, by='CountryName')%>%
-  inner_join(diversity_score, by='CountryName')%>%
-  inner_join(happyplanet_score, by='CountryName')
+    full_join(Education_score, by='CountryName') %>%
+    full_join(Emissions_score, by='CountryName') %>%
+  full_join(Environment_score, by='CountryName') %>%
+  full_join(FoodDeficit_score, by='CountryName') %>%
+  full_join(Gender_score, by='CountryName') %>%
+  full_join(Population_score, by='CountryName') %>%
+  full_join(Employment_score, by='CountryName') %>%
+  full_join(Energy_score, by='CountryName') %>%
+  full_join(Security_score, by='CountryName') %>%
+  full_join(Tourism_score, by='CountryName') %>%
+  full_join(GDP_score, by='CountryName') %>%
+  full_join(childwelfare_score, by='CountryName')%>%
+  full_join(diversity_score, by='CountryName')%>%
+  full_join(happyplanet_score, by='CountryName')
 
 write.csv(final_score_table, file = "final_score_table.csv")
 ```
