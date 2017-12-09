@@ -1,0 +1,45 @@
+---
+title: "Gh_variables"
+output: html_document
+---
+```{r}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+gh <- read_csv("Original Data/online-data-chapter-2-whr-2017.csv")
+
+gh1 <- gh %>% select(country, year, `Social support`, Generosity, `Freedom to make life choices`, `Perceptions of corruption`, `Confidence in national government`, `Positive affect`, `Negative affect`) %>% filter(year == 2016)
+
+whr <- read_csv("Original Data/gh2017.csv")
+
+whr <- gh2017 %>% select(Country, Dystopia.Residual) %>% mutate(country = Country)
+
+WHR <- left_join(gh, whr, "country")
+
+write.csv(final_whr, file = "final_whr.csv")
+
+#Citizen report of positive feelings
+pos_affect <- WHR %>% 
+  group_by(country) %>% 
+  summarise(mean_pa = mean(`Positive affect`)) %>%
+  na.omit() %>%
+  mutate(finalrank_pos = rank(mean_pa))
+
+write.csv(pos_affect, file = "Positive Affect.csv")
+
+#Citizen report of negative feelings
+neg_affect <- WHR %>% 
+  group_by(country) %>% 
+  summarise(mean_na = mean(`Negative affect`)) %>%
+  na.omit() %>%
+  mutate(finalrank_neg = rank(mean_na))
+View(neg_affect)
+write.csv(neg_affect, file = "Negative Affect.csv")
+
+
+```
+
