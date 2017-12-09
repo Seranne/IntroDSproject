@@ -1,0 +1,47 @@
+---
+title: "Children"
+author: "Shravanthi Seshasayee"
+date: "3 December 2017"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+library(tidyverse)
+```
+
+
+# Ranking number of international departures as a proportion of total population
+```{r}
+chld <- read.csv("F://IntroDSproject/WDI data split/Children.csv")
+
+# Share of children not in education, employment or training: lowest gets highest rank 
+neet <- select(chld, "CountryName", "Year", "SL.UEM.NEET.ZS")
+neet <- neet[order(-neet$Year),]
+neet <- na.omit(neet)
+neet <- neet %>% distinct(CountryName, .keep_all = TRUE)
+
+
+
+# Infant mortality rate - lowest gets highest rank 
+imr <- select(chld, "CountryName", "Year", "SP.DYN.IMRT.IN")
+imr <- imr[order(-imr$Year),]
+imr <- na.omit(imr)
+imr <- imr %>% distinct(CountryName, .keep_all = TRUE)
+imr <- mutate(imr, rank.imr = as.numeric(as.factor(rank((SP.DYN.IMRT.IN)))))
+
+
+#Lower country.scores have higher security 
+childwelfare <- left_join(imr, neet, by = "CountryName")
+childwelfare <- select(childwelfare, "CountryName", "SL.UEM.NEET.ZS", "SP.DYN.IMRT.IN", "rank.imr")
+
+# Filling missing values in NEET using average of othercountry NEET scores 
+avgneet <- mean(neet$SL.UEM.NEET.ZS)
+childwelfare$SL.UEM.NEET.ZS[is.na(childwelfare$SL.UEM.NEET.ZS)] <- avgneet
+childwelfare <- mutate(childwelfare, rank.neet = as.numeric(as.factor(rank((SL.UEM.NEET.ZS)))))
+childwelfare <- mutate(childwelfare, country.score = as.numeric(as.factor(rank(((rank.neet+rank.imr)/2)))))
+View(childwelfare)
+
+
+write.csv(childwelfare, file = "childwelfare_score.csv")
+```

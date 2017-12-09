@@ -1,9 +1,21 @@
 ---
-title: "WDI - Energy"
+title: "Discard Code"
 author: "Seranne Motilal, Shravanthi Seshasayee, Sanjana Sunderesan"
 date: "3 December 2017"
 output: html_document
 ---
+```{r}
+#Children in employment, unpaid family workers
+chldlabour <- select(chld, "CountryName", "Year", "SL.FAM.0714.ZS")
+crime[crime == 0] <- NA
+chldlabour <- chldlabour[order(-chldlabour$Year),]
+chldlabour <- na.omit(chldlabour)
+chldlabour <- chldlabour %>% distinct(CountryName, .keep_all = TRUE)
+chldlabour <- mutate(chldlabour, rank.chldlabour = as.numeric(as.factor(rank(-(IC.LGL.CRED.XQ)))))
+View(chldlabour)
+
+```
+
 ```{r}
 wdi <- read.csv("F://IntroDSProject/ourWDI.csv")
 
