@@ -1,4 +1,4 @@
-"","CountryName","Ethnic Diversity Rank"
+"","CountryName","finalrank_diversity"
 "1","Papua New Guinea",1
 "2","Tanzania",2
 "3","Democratic Republic of Congo",3
@@ -17,7 +17,7 @@
 "16","Somalia",16
 "17","India",17
 "18","Nigeria",18
-"19","Yugoslavia (1943–1992)",19
+"19","Yugoslavia (1943â€“1992)",19
 "20","Central African Republic",20
 "21","Ivory Coast",21
 "22","Lebanon",22
@@ -35,8 +35,8 @@
 "34","Senegal",34
 "35","Zambia",35
 "36","Namibia",36
-"37","USSR (1922–1991)",37
-"38","Sudan (1955–2011)",38
+"37","USSR (1922â€“1991)",37
+"38","Sudan (1955â€“2011)",38
 "39","Kuwait",39
 "40","Burkina Faso",40
 "41","Bosnia and Herzegovina",41
@@ -62,7 +62,7 @@
 "61","Latvia",61
 "62","Syria",62
 "63","Switzerland",63
-"64","Kingdom of Yugoslavia (1918–1943)",64
+"64","Kingdom of Yugoslavia (1918â€“1943)",64
 "65","Belgium",65
 "66","Fiji",66
 "67","Saudi Arabia",67
@@ -79,7 +79,7 @@
 "78","Moldova",78
 "79","Jordan",79
 "80","Panama",80
-"81","Czechoslovakia (1918–1992)",81
+"81","Czechoslovakia (1918â€“1992)",81
 "82","Spain",82
 "83","Chile",83
 "84","Guatemala",84
