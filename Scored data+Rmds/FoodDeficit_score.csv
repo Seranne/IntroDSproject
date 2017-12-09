@@ -1,122 +1,120 @@
-"","CountryName","Year","SN.ITK.DFCT","deficit.score"
-"1","Afghanistan",2014,155,73
+"","CountryName","Year","SN.ITK.DFCT","finalrank_deficit"
+"1","Afghanistan",2014,155,71
 "2","Algeria",2014,24,16
-"3","Angola",2014,114,62
+"3","Angola",2014,114,61
 "4","Argentina",2014,6,3
 "5","Armenia",2014,41,27
 "6","Azerbaijan",2014,11,6
-"7","Bangladesh",2014,118,63
+"7","Bangladesh",2014,118,62
 "8","Barbados",2014,23,15
 "9","Belize",2014,41,27
 "10","Benin",2014,62,36
-"11","Bolivia",2014,128,68
-"12","Botswana",2014,197,82
+"11","Bolivia",2014,128,66
+"12","Botswana",2014,197,80
 "13","Brazil",2014,12,7
 "14","Brunei Darussalam",2014,16,9
-"15","Burkina Faso",2014,167,75
+"15","Burkina Faso",2014,167,73
 "16","Cabo Verde",2014,71,40
-"17","Cambodia",2014,111,61
+"17","Cambodia",2014,111,60
 "18","Cameroon",2014,66,37
 "19","Caribbean small states",2014,57.53753,33
-"20","Central African Republic",2014,287,95
-"21","Chad",2014,264,93
+"20","Central African Republic",2014,287,93
+"21","Chad",2014,264,91
 "22","Chile",2014,24,16
 "23","China",2014,85,49
 "24","Colombia",2014,81,47
-"25","Congo, Rep.",2014,223,87
+"25","Congo, Rep.",2014,223,85
 "26","Costa Rica",2014,41,27
-"27","Cote d'Ivoire",2014,103,56
+"27","Cote d'Ivoire",2014,103,55
 "28","Cuba",2014,9,4
-"29","Djibouti",2014,143,70
-"30","Dominican Republic",2014,104,57
+"29","Djibouti",2014,143,68
+"30","Dominican Republic",2014,104,56
 "31","Ecuador",2014,72,41
 "32","Egypt, Arab Rep.",2014,14,8
-"33","El Salvador",2014,93,53
-"34","Ethiopia",2014,261,92
+"33","El Salvador",2014,93,52
+"34","Ethiopia",2014,261,90
 "35","Fiji",2014,30,17
 "36","Gabon",2014,22,14
 "37","Gambia, The",2014,37,23
 "38","Georgia",2014,74,43
 "39","Ghana",2014,24,16
-"40","Guatemala",2014,92,52
-"41","Guinea",2014,128,68
-"42","Guinea-Bissau",2014,120,65
+"40","Guatemala",2014,92,51
+"41","Guinea",2014,128,66
+"42","Guinea-Bissau",2014,120,63
 "43","Guyana",2014,68,39
-"44","Haiti",2014,523,98
+"44","Haiti",2014,523,96
 "45","Honduras",2014,84,48
-"46","India",2014,109,60
+"46","India",2014,109,59
 "47","Indonesia",2014,59,35
 "48","Iran, Islamic Rep.",2014,33,19
-"49","Iraq",2014,190,81
+"49","Iraq",2014,190,79
 "50","Jamaica",2014,56,32
 "51","Jordan",2014,12,7
 "52","Kazakhstan",2014,18,11
-"53","Kenya",2014,156,74
+"53","Kenya",2014,156,72
 "54","Kiribati",2014,23,15
-"55","Korea, Dem. Rep.",2014,303,96
+"55","Korea, Dem. Rep.",2014,303,94
 "56","Korea, Rep.",2014,6,3
 "57","Kuwait",2014,17,10
 "58","Kyrgyz Republic",2014,41,27
-"59","Lao PDR",2014,154,72
+"59","Lao PDR",2014,154,70
 "60","Lebanon",2014,35,21
 "61","Lesotho",2014,78,46
-"62","Liberia",2014,220,86
-"63","Madagascar",2014,208,84
-"64","Malawi",2014,148,71
+"62","Liberia",2014,220,84
+"63","Madagascar",2014,208,82
+"64","Malawi",2014,148,69
 "65","Malaysia",2014,23,15
 "66","Maldives",2014,40,26
 "67","Mali",2014,23,15
 "68","Mauritania",2014,41,27
 "69","Mauritius",2014,36,22
 "70","Mexico",2014,32,18
-"71","Middle income",2014,85.27275,50
-"72","Mongolia",2014,173,78
-"73","Morocco",2014,34,20
-"74","Mozambique",2014,204,83
-"75","Myanmar",2014,122,66
-"76","Namibia",2014,278,94
-"77","Nepal",2014,87,51
-"78","Nicaragua",2014,123,67
-"79","Niger",2014,67,38
-"80","Nigeria",2014,38,24
-"81","Other small states",2014,128.9532,69
-"82","Pacific island small states",2014,44.03216,29
-"83","Pakistan",2014,169,76
-"84","Panama",2014,73,42
-"85","Paraguay",2014,75,44
-"86","Peru",2014,58,34
-"87","Philippines",2014,78,46
-"88","Rwanda",2014,248,90
-"89","Samoa",2014,20,12
-"90","Sao Tome and Principe",2014,42,28
-"91","Saudi Arabia",2014,10,5
-"92","Senegal",2014,108,59
-"93","Sierra Leone",2014,190,81
-"94","Small states",2014,105.5094,58
-"95","Solomon Islands",2014,77,45
-"96","South Africa",2014,16,9
-"97","South Asia",2014,118.0414,64
-"98","Sri Lanka",2014,216,85
-"99","St. Vincent and the Grenadines",2014,41,27
-"100","Suriname",2014,59,35
-"101","Swaziland",2014,186,80
-"102","Tajikistan",2014,245,89
-"103","Tanzania",2014,258,91
-"104","Thailand",2014,49,31
-"105","Timor-Leste",2014,197,82
-"106","Togo",2014,102,55
-"107","Trinidad and Tobago",2014,67,38
-"108","Tunisia",2014,5,2
-"109","Turkey",2014,2,1
-"110","Turkmenistan",2014,21,13
-"111","Uganda",2014,172,77
-"112","United Arab Emirates",2014,22,14
-"113","Uruguay",2014,24,16
-"114","Uzbekistan",2014,39,25
-"115","Vanuatu",2014,46,30
-"116","Venezuela, RB",2014,12,7
-"117","Vietnam",2014,99,54
-"118","Yemen, Rep.",2014,176,79
-"119","Zambia",2014,408,97
-"120","Zimbabwe",2014,244,88
-"121","Sudan",2011,176,79
+"71","Mongolia",2014,173,76
+"72","Morocco",2014,34,20
+"73","Mozambique",2014,204,81
+"74","Myanmar",2014,122,64
+"75","Namibia",2014,278,92
+"76","Nepal",2014,87,50
+"77","Nicaragua",2014,123,65
+"78","Niger",2014,67,38
+"79","Nigeria",2014,38,24
+"80","Other small states",2014,128.9532,67
+"81","Pacific island small states",2014,44.03216,29
+"82","Pakistan",2014,169,74
+"83","Panama",2014,73,42
+"84","Paraguay",2014,75,44
+"85","Peru",2014,58,34
+"86","Philippines",2014,78,46
+"87","Rwanda",2014,248,88
+"88","Samoa",2014,20,12
+"89","Sao Tome and Principe",2014,42,28
+"90","Saudi Arabia",2014,10,5
+"91","Senegal",2014,108,58
+"92","Sierra Leone",2014,190,79
+"93","Small states",2014,105.5094,57
+"94","Solomon Islands",2014,77,45
+"95","South Africa",2014,16,9
+"96","Sri Lanka",2014,216,83
+"97","St. Vincent and the Grenadines",2014,41,27
+"98","Suriname",2014,59,35
+"99","Swaziland",2014,186,78
+"100","Tajikistan",2014,245,87
+"101","Tanzania",2014,258,89
+"102","Thailand",2014,49,31
+"103","Timor-Leste",2014,197,80
+"104","Togo",2014,102,54
+"105","Trinidad and Tobago",2014,67,38
+"106","Tunisia",2014,5,2
+"107","Turkey",2014,2,1
+"108","Turkmenistan",2014,21,13
+"109","Uganda",2014,172,75
+"110","United Arab Emirates",2014,22,14
+"111","Uruguay",2014,24,16
+"112","Uzbekistan",2014,39,25
+"113","Vanuatu",2014,46,30
+"114","Venezuela, RB",2014,12,7
+"115","Vietnam",2014,99,53
+"116","Yemen, Rep.",2014,176,77
+"117","Zambia",2014,408,95
+"118","Zimbabwe",2014,244,86
+"119","Sudan",2011,176,77

@@ -14,7 +14,7 @@ emissions_mod <- emissions %>%
   group_by(CountryName) %>% 
   summarise(mean_CO2 = mean(EN.ATM.CO2E.PC)) %>%
   na.omit() %>%
-  mutate(finalrank_CO2 = rank(mean_CO2))
+  mutate(finalrank_emission = rank(mean_CO2))
 
 write.csv(emissions_mod, "Emissions_score.csv")
 ```

@@ -15,7 +15,8 @@ deficit <- deficit %>% distinct(CountryName, .keep_all = TRUE)
 View(deficit)
 
 deficit.score = as.numeric(as.factor(rank((deficit$SN.ITK.DFCT))))
-deficit <- deficit %>% mutate(deficit.score)
+deficit <- deficit %>% mutate(finalrank_deficit = 
+                                as.numeric(as.factor(rank((deficit$SN.ITK.DFCT)))))
 View(deficit)
 
 write.csv(deficit, file = "FoodDeficit_score.csv")
