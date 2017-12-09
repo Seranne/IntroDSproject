@@ -1,0 +1,49 @@
+---
+title: "happy planet"
+output: html_document
+---
+
+```{r}
+library("dplyr")
+library("tidyverse")
+library(readr)
+```
+
+
+
+```{r}
+hpi_data_2016 <- read_csv("d:/Documents/GitHub/IntroDSproject/Original Data/hpi-data-2016.csv")
+colnames(hpi_data_2016)[2] <- "CountryName"
+ hpi_data_20161<- select(hpi_data_2016, "CountryName", "Inequality-adjusted_Life_Expectancy")
+hpi_data_20161<- na.omit(hpi_data_20161)
+ hpi_data_20161 <- hpi_data_20161%>% distinct(CountryName, .keep_all = TRUE)
+ hpi_data_20161 <- hpi_data_20161 %>% mutate(finalrank_hpi1 = rank(-hpi_data_20161$`Inequality-adjusted_Life_Expectancy`))
+ hpi_data_20161$finalrank_hpi1<- as.numeric(as.factor(hpi_data_20161$finalrank_hpi1))
+ 
+ hpi_data_20162<- select(hpi_data_2016, "CountryName",  "Inequality-adjusted_Wellbeing")
+ hpi_data_20162<- na.omit(hpi_data_20162)
+ hpi_data_20162 <- hpi_data_20162%>% distinct(CountryName, .keep_all = TRUE)
+ hpi_data_20162 <- hpi_data_20162 %>% mutate(finalrank_hpi2 = rank(-hpi_data_20162$`Inequality-adjusted_Wellbeing`))
+ hpi_data_20162$finalrank_hpi2<- as.numeric(as.factor(hpi_data_20162$finalrank_hpi2))
+ 
+ hpi_data_20163<- select(hpi_data_2016, "CountryName",  "Happy_Planet_Index")
+ hpi_data_20163<- na.omit(hpi_data_20163)
+ hpi_data_20163 <- hpi_data_20163%>% distinct(CountryName, .keep_all = TRUE)
+ hpi_data_20163 <- hpi_data_20163 %>% mutate(finalrank_hpi3 = rank(-hpi_data_20163$Happy_Planet_Index))
+ hpi_data_20163$finalrank_hpi3<- as.numeric(as.factor(hpi_data_20163$finalrank_hpi3))
+ 
+
+ 
+ Enjoin <- left_join(hpi_data_20161, hpi_data_20162, "CountryName")
+hpi_data_2016 <- left_join(Enjoin, hpi_data_20163, "CountryName")
+
+ hpi_data_2016<- select(hpi_data_2016,"CountryName", "finalrank_hpi1", "finalrank_hpi2", "finalrank_hpi3")
+ 
+
+ 
+ hpi_data_2016 <- hpi_data_2016 %>% mutate(score_hpi = ((finalrank_hpi1 + finalrank_hpi2 + finalrank_hpi3)/3))
+ hpi_data_2016 <- hpi_data_2016 %>% mutate(finalrank_hpi = rank(hpi_data_2016$score_hpi))
+ 
+ write.csv(hpi_data_2016, file = "happyplanet_score.csv")
+```
+
