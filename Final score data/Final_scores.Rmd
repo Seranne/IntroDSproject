@@ -1,0 +1,26 @@
+---
+title: "Final_scores"
+output: html_document
+---
+# This contains the columns with only the required final ranks for each variable
+```{r}
+final_score <- final_score_table %>% select(CountryName,
+                                            CountryCode, 
+                                            finalscore_child,
+                                            finalrank_comm,
+                                            `Ethnic Diversity Rank`,
+                                            finalrank_edu,
+                                            finalrank_emission,
+                                            finalrank_empl,
+                                            finalrank_eng,
+                                            finalrank_env,
+                                            finalrank_deficit,
+                                            finalrank_gen,
+                                            finalrank_GDP,
+                                            finalrank_pop,
+                                            finalscore_security,
+                                            finalrank_tourism)
+
+write_csv(final_score , "final_score_only.csv")
+```
+

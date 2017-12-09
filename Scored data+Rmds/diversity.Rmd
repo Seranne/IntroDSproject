@@ -21,6 +21,7 @@ efindex <- h %>% html_nodes("table") %>% html_table(fill = TRUE) %>%
 
 diversity <- select(efindex, "Country", "Ethnic Diversity Rank")
 colnames(diversity)[1] <- "CountryName"
+colnames(diversity)[2] <- "finalrank_diversity"
 
 
 write.csv(diversity, file = "diversity_score.csv")
