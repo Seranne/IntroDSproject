@@ -10,7 +10,7 @@ library(readr)
 ```
 
 
-
+Used inequality adjusted life expectancy, inequality adjusted well being and happy planet index
 ```{r}
 hpi_data_2016 <- read_csv("d:/Documents/GitHub/IntroDSproject/Original Data/hpi-data-2016.csv")
 colnames(hpi_data_2016)[2] <- "CountryName"
