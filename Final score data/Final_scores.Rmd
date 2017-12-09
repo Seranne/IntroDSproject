@@ -20,7 +20,9 @@ final_score <- final_score_table %>% select(CountryName,
                                             finalrank_pop,
                                             finalscore_security,
                                             finalrank_tourism,
-                                            finalrank_hpi)
+                                            finalrank_hpi,
+                                            finalrank_neg,
+                                            finalrank_pos)
 
 write_csv(final_score , "final_score_only.csv")
 ```
