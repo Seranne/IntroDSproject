@@ -91,7 +91,7 @@ write.csv(Gender, file = "Gender.csv")
 
 
 Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
-write.csv(population, file = "Population.csv")
+write.csv(Population, file = "Population.csv")
 
 Employment<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
 write.csv(Employment, file = "Employment.csv")

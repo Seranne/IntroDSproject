@@ -17,10 +17,5 @@ emissions_mod <- emissions %>%
   mutate(finalrank_CO2 = rank(mean_CO2))
 
 write.csv(emissions_mod, "Emissions_score.csv")
+```
 
-                                       
-<<<<<<< HEAD
-```
-=======
-```
->>>>>>> 18989483dccb8eefddf6e58a39bc9db3c88e99cc
