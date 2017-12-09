@@ -40,6 +40,15 @@ neg_affect <- WHR %>%
 View(neg_affect)
 write.csv(neg_affect, file = "Negative Affect.csv")
 
+#Dystopia score
+
+dystopia <- WHR %>% 
+  group_by(CountryName) %>% 
+  summarise(mean_dys = mean(Dystopia.Residual)) %>%
+  na.omit() %>%
+  mutate(finalrank_dys = rank(mean_dys))
+View(dystopia)
+write.csv(dystopia, file = "Dystopia_score.csv")
 
 ```
 
