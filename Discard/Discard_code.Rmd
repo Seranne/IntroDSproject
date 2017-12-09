@@ -4,6 +4,19 @@ author: "Seranne Motilal, Shravanthi Seshasayee, Sanjana Sunderesan"
 date: "3 December 2017"
 output: html_document
 ---
+
+```{r}
+#International migrant stock
+
+migstock <- select(pop, "CountryName", "Year", "SM.POP.TOTL.ZS")
+#crime[crime == 0] <- NA
+migstock <- migstock[order(-migstock$Year),]
+migstock <- na.omit(migstock)
+migstock <- migstock %>% distinct(CountryName, .keep_all = TRUE)
+migstock <- mutate(migstock, rank.migstock = as.numeric(as.factor(rank(-(SM.POP.TOTL.ZS)))))
+
+```
+
 ```{r}
 #Children in employment, unpaid family workers
 chldlabour <- select(chld, "CountryName", "Year", "SL.FAM.0714.ZS")
