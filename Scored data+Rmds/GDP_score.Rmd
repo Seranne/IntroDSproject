@@ -1,0 +1,65 @@
+---
+title: "GDP_score"
+output: html_document
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+GDP_base <- read_csv("/Users/Sanjana/Desktop/OneDrive - Harvard University/Fall 2017/BST 260-Introduction to Data Science/IntroDSproject/WDI data split/GDP.csv")
+
+gdp_1 <- GDP_base %>% 
+  select(CountryName, Year, MS.MIL.XPND.GD.ZS) %>%
+  na.omit() %>%
+  group_by(CountryName) %>% 
+  summarise(mean_mil = mean(MS.MIL.XPND.GD.ZS)) %>%
+  mutate(finalrank_mil = rank(mean_mil))
+
+gdp_2 <- GDP_base %>% 
+  select(CountryName, Year, NY.GDP.MKTP.PP.CD) %>%
+  na.omit() %>%
+  group_by(CountryName) %>% 
+  summarise(mean_ppp = mean(NY.GDP.MKTP.PP.CD)) %>%
+  mutate(finalrank_ppp = rank(mean_ppp))
+
+gdp_3 <- GDP_base %>% 
+  select(CountryName, Year, NY.GDP.PCAP.CD) %>%
+  na.omit() %>%
+  group_by(CountryName) %>% 
+  summarise(mean_gdp = mean(NY.GDP.PCAP.CD)) %>%
+  mutate(finalrank_gdp = rank(mean_gdp))
+
+gdp_4 <- GDP_base %>% 
+  select(CountryName, Year, NY.GDP.PCAP.KD.ZG) %>%
+  na.omit() %>%
+  group_by(CountryName) %>% 
+  summarise(mean_gdpg = mean(NY.GDP.PCAP.KD.ZG)) %>%
+  mutate(finalrank_gdpg = rank(mean_gdpg))
+
+gdp_5 <- GDP_base %>% 
+  select(CountryName, Year, FP.CPI.TOTL.ZG) %>%
+  na.omit() %>%
+  group_by(CountryName) %>% 
+  summarise(mean_infl = mean(FP.CPI.TOTL.ZG)) %>%
+  mutate(finalrank_infl = rank(mean_infl))
+
+GDP_a <- left_join(gdp_1, gdp_2, "CountryName")
+GDP_b <- left_join(gdp_3, gdp_4, "CountryName")
+GDPjoin <- left_join(GDP_a, GDP_b, "CountryName")
+GDP_3 <- left_join (GDPjoin, gdp_5, "Country Name")
+
+GDP1 <- GDPjoin %>% select(CountryName, finalrank_mil, finalrank_ppp, finalrank_gdp, finalrank_gdpg, finalrank_infl)
+
+GDP2 <- GDP2[rowSums(is.na(GDP2)) < 2, ]
+i <- which(is.na(GDP2), arr.ind = TRUE)
+GD2P[i] <- rowMeans(GDP2[,-1], na.rm = TRUE)[i[,1]]
+
+GDP2 <- GDP2 %>% mutate(score_gdp = (finalrank_mil + finalrank_ppp+ finalrank_gdp + finalrank_gdpg + finalrank_infl)/5)
+GDP2 <- GDP2 %>% mutate(finalrank_GDP = rank(GDP2$score_gdp))
+write.csv(GDP2,"GDP_score.csv")
+```
