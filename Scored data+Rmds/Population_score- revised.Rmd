@@ -1,0 +1,64 @@
+---
+title: "Population"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+Population <- read_csv("../WDI data split/Population.csv")
+
+ Population <- Population[order(-Population$Year),]
+ Population[rowSums(is.na(Population)) < ncol(Population)/2, ]
+ Population<- aggregate(x=Population[c("EN.POP.DNST","SI.POV.GINI","SM.POP.TOTL.ZS","SP.DYN.LE00.IN", "SP.POP.TOTL")], by=list(name=Population$CountryName), FUN = "mean" , na.rm = TRUE)
+ ?aggregate
+ colnames(Population)[1] <- "CountryName"
+  Population[rowSums(is.na(Population1)) < ncol(Population)/2, ]
+ Population <- Population%>% distinct(CountryName, .keep_all = TRUE)
+
+ Population1<- select(Population, "CountryName", "EN.POP.DNST")
+ #Population1 <- Population1[order(-Population1$Year),]
+ #Population1<- na.omit(Population1)
+ #Population1 <- Population1%>% distinct(CountryName, .keep_all = TRUE)
+ Population1 <- Population1 %>% mutate(finalrank_pop1 = rank(Population1$EN.POP.DNST))
+ Population1$finalrank_pop1<- as.numeric(as.factor(Population1$finalrank_pop1))
+ 
+ Population2<- select(Population, "CountryName", "SI.POV.GINI")
+ #Population2 <- Population2[order(-Population2$Year),]
+ #Population2<- na.omit(Population2)
+ #Population2 <- Population2%>% distinct(CountryName, .keep_all = TRUE)
+ Population2 <- Population2 %>% mutate(finalrank_pop2 = rank(Population2$SI.POV.GINI))
+ Population2$finalrank_pop2<- as.numeric(as.factor(Population2$finalrank_pop2))
+ 
+ Population3<- select(Population, "CountryName", "SP.DYN.LE00.IN")
+ #Population3 <- Population3[order(-Population3$Year),]
+ #Population3<- na.omit(Population3)
+ #Population3 <- Population3%>% distinct(CountryName, .keep_all = TRUE)
+ Population3 <- Population3 %>% mutate(finalrank_pop3 = rank(-Population3$SP.DYN.LE00.IN))
+ Population3$finalrank_pop3<- as.numeric(as.factor(Population3$finalrank_pop3))
+ 
+
+ 
+ Enjoin <- left_join(Population1, Population2, "CountryName")
+Population <- left_join(Enjoin, Population3, "CountryName")
+
+ Population<- select(Population,"CountryName", "finalrank_pop1", "finalrank_pop2", "finalrank_pop3")
+ 
+ #Population <- Population[rowSums(is.na(Population)) < 2, ]
+ #i <- which(is.na(Population), arr.ind = TRUE)
+ #Population[i] <- rowMeans(Population[,-1], na.rm = TRUE)[i[,1]]
+ 
+ Population <- Population %>% mutate(score_pop = ((finalrank_pop1 + finalrank_pop2 + finalrank_pop3)/3))
+ Population <- Population %>% mutate(finalrank_pop = rank(Population$score_pop))
+ 
+ write.csv(Population, file = "Population_score.csv")
+```
