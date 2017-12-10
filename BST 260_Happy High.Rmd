@@ -53,7 +53,6 @@ From each of our sources, we selected variables most relevant to the creation of
 
 A country-wise ranking was then generated for each variable, in every category. Every country then received a category-wise composite score, calculated as 
 
-
 # Exploratory Analysis: What visualizations did you use to look at your data in different ways? What are the different statistical methods you considered? Justify the decisions you made, and show any major changes to your ideas. How did you reach these conclusions?
 
 - Scatterplot of the WHR countries ranks?
