@@ -142,7 +142,60 @@ regions <-read.csv(url)
 regions <- regions %>% select(name, region, sub.region)
 colnames(regions)[1] <- "CountryName"
 final_score <- left_join(final_score, regions, "CountryName")
- 
- write.csv(final_score, file = "CalculatedOurindex.csv")
+write.csv(final_score, file = "CalculatedOurindex.csv")
+```
+
+# Fixing Regions
+```{r}
+read.csv("/IntroDSproject/Final score data/CalculatedOurindex.csv")
+levels(CalculatedOurindex$CountryName)[levels(CalculatedOurindex$CountryName) == "Egypt, Arab Rep."] <- "Egypt"
+levels(CalculatedOurindex$CountryName)[levels(CalculatedOurindex$CountryName) == "Lao PDR"] <- "Laos"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Bolivia" & is.na(CalculatedOurindex$sub.region)] <- "South America"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Egypt" & is.na(CalculatedOurindex$sub.region)] <- "Northern Africa"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Caribbean small states" & is.na(CalculatedOurindex$sub.region)] <- "South America"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Venezuela" & is.na(CalculatedOurindex$sub.region)] <- "South America"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Cote d'Ivoire" & is.na(CalculatedOurindex$sub.region)] <- "Western Africa"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Democratic Republic of Congo" & is.na(CalculatedOurindex$sub.region)] <- "Middle Africa"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Tanzania" & is.na(CalculatedOurindex$sub.region)] <- "Middle Africa"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Republic of Congo" & is.na(CalculatedOurindex$sub.region)] <- "Western Africa"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Iran" & is.na(CalculatedOurindex$sub.region)] <- "Western Asia"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Laos" & is.na(CalculatedOurindex$sub.region)] <- "South-Eastern Asia"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Macedonia" & is.na(CalculatedOurindex$sub.region)] <- "Southern Europe"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Moldova" & is.na(CalculatedOurindex$sub.region)] <- "Eastern Europe"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Russia" & is.na(CalculatedOurindex$sub.region)] <- "Eastern Europe"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "United Kingdom" & is.na(CalculatedOurindex$sub.region)] <- "Western Europe"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "South Korea" & is.na(CalculatedOurindex$sub.region)] <- "South-Eastern Asia"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Vietnam" & is.na(CalculatedOurindex$sub.region)] <- "South-Eastern Asia"
+
+CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Syria" & is.na(CalculatedOurindex$sub.region)] <- "Western Asia"
+
+CalculatedOurindex$region[CalculatedOurindex$sub.region == "South America" & is.na(CalculatedOurindex$region)] <- "Americas"
+
+CalculatedOurindex$region[(CalculatedOurindex$sub.region == "Western Africa" | CalculatedOurindex$sub.region == "Middle Africa" | CalculatedOurindex$sub.region == "Northern Africa")  & is.na(CalculatedOurindex$region)] <- "Africa"
+
+CalculatedOurindex$region[(CalculatedOurindex$sub.region == "Western Asia" | CalculatedOurindex$sub.region == "South-Eastern Asia")  & is.na(CalculatedOurindex$region)] <- "Asia"
+
+CalculatedOurindex$region[(CalculatedOurindex$sub.region == "Western Europe" | CalculatedOurindex$sub.region == "Eastern Europe" | CalculatedOurindex$sub.region == "Southern Europe")  & is.na(CalculatedOurindex$region)] <- "Europe"
+
+#CalculatedOurindex <- CalculatedOurindex[rowSums(is.na(CalculatedOurindex)) > 0,]
+
+write.csv(CalculatedOurindex, file = "CalculatedOurindex.csv")
+
 ```
 
