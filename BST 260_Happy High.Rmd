@@ -36,14 +36,18 @@ We began our project with the goal of identifying yearly-changes in a country's 
 
 In order to develop our well-being index, we extracted data from a number of resources, categorized below: (To make a table displaying our variables with categories). 
 ```{r}
-cnames <- c("Category", "Indicator Variable", "Data Source")
+org = c("World Bank", "United Nations Sustainable Development Solutions Network", "New Economics Foundation", "Wikipedia (Fearon's Analysis)")
+dat <- c("World Development Indicators (2010-17)", "World Happiness Report", "Happy Planet Index", "Ethnic Fractionalization Index")
 
-categs <- c("Population Charateristics", "Child Welfare", "Gender", "Employment","Economic Indicators", "Energy Indicators", "Emissions", "Connectivity", "Environmental Welfare", "Food Deficit", "Sense of Security", "Travel for Leisure"  )
+datasources <- data.frame("Source" = org, "Data" = dat)
+
+categs <- c("Population Charateristics", "Child Welfare", "Gender", "Employment","Economic Indicators", "Energy Indicators", "Emissions", "Connectivity", "Environmental Welfare", "Food Deficit", "Sense of Security", "Travel for Leisure")
+
+print(kable(datasources))
+print(kable(categs))
 
 #dsources <- c("World Bank: World Development Indicators", "Happy Planet Index", "Wikipedia", "UN SDSN: World Happiness Report")
-
-dframe1 %>% data.frame("Indicators" = categs) %>% kable
-
+#dframe1 %>% data.frame("Indicators" = categs) %>% kable
 ```
 
 From each of our sources, we selected variables most relevant to the creation of our composite index (based on literature review). A Pearson's correlation was run across all chosen variables [REF in the Google Doc], to identify variables with high correlation, and assign these correlated variables with lower weights in our final composite score, to avoid double counting of similar variables. 
