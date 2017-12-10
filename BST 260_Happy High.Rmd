@@ -197,7 +197,7 @@ energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.
  energy[i] <- rowMeans(energy[,-1], na.rm = TRUE)[i[,1]]
  
 # Highest aggregate score is ranked 1
-energy<- energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 + finalrank_eng4)/4)
+energy_score <- energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 + finalrank_eng4)/4)
 energy <- energy %>% mutate(finalrank_eng = rank(-energy$score_eng))
 ```
 
@@ -208,7 +208,7 @@ CO2 Emissions score:
 emissions <- WDI4%>% filter(IndicatorCode == "EN.ATM.CO2E.PC")%>% spread(IndicatorCode, Value)
 
 # Lowest score gets ranked 1
-emissions <- emissions %>% 
+emissions_score <- emissions %>% 
   group_by(CountryName) %>% 
   summarise(mean_CO2 = mean(EN.ATM.CO2E.PC)) %>%
   na.omit() %>%
@@ -223,7 +223,7 @@ Composite Environmental well-being score:
 envir <- WDI4 %>% filter(IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "AG.LND.FRST.ZS") %>% spread(IndicatorCode, Value)
 
 # Highest score gets ranked 1
-envir <- envir %>% 
+environment_score <- envir %>% 
   group_by(CountryName) %>% 
   na.omit() %>%
   summarise(mean_agland = mean(AG.LND.FRST.ZS), mean_protect = mean(ER.PTD.TOTL.ZS)) %>%
@@ -247,7 +247,7 @@ comm <- comm %>% mutate(rankcell = rank(IT.CEL.SETS.P2))
 comm <- comm %>% mutate(ranknet = rank(IT.NET.USER.P2))
 comm <- comm %>% mutate(score = (rankcell+ranknet)/2)
 comm <- comm %>% mutate(finalrank_comm = rank(-comm$score))
-comm2 <- select(comm, "CountryName", "CountryCode","finalrank_comm" )
+communications_score <- select(comm, "CountryName", "CountryCode","finalrank_comm" )
 ```
 
 Child Welfare score:
@@ -294,7 +294,7 @@ deficit <- deficit %>% distinct(CountryName, .keep_all = TRUE)
 View(deficit)
 
 deficit.score = as.numeric(as.factor(rank((deficit$SN.ITK.DFCT))))
-deficit <- deficit %>% mutate(finalrank_deficit = 
+deficit_score <- deficit %>% mutate(finalrank_deficit = 
                                 as.numeric(as.factor(rank((deficit$SN.ITK.DFCT)))))
 ```
 
@@ -357,7 +357,7 @@ i <- which(is.na(GDP2), arr.ind = TRUE)
 GDP2[i] <- rowMeans(GDP2[,-1], na.rm = TRUE)[i[,1]]
 
 GDP2 <- GDP2 %>% mutate(score_gdp = (finalrank_mil + finalrank_ppp+ finalrank_gdp + finalrank_gdpg + finalrank_infl)/5)
-GDP2 <- GDP2 %>% mutate(finalrank_GDP = rank(GDP2$score_gdp))
+economy_score <- GDP2 %>% mutate(finalrank_GDP = rank(GDP2$score_gdp))
 ```
 
 Education score:
@@ -382,7 +382,7 @@ En2$rank_eng2<- as.numeric(as.factor(En2$rank_eng2))
 litjoin <- left_join(En1, En2, "CountryName")
 Education <- select(litjoin,"CountryName", "rank_eng1", "rank_eng2")
 Education <- Education%>% mutate(score_edu = (rank_eng1 + rank_eng2)/2)
-Education <- Education %>% mutate(finalrank_edu = rank(Education$score_edu))
+education_score <- Education %>% mutate(finalrank_edu = rank(Education$score_edu))
 ```
 
 Gender score:
@@ -396,8 +396,8 @@ gender <- select(gender, "CountryName", "CountryCode", "Year", "SG.GEN.PARL.ZS")
 gender <- gender[order(-gender$Year),]
 gender <- na.omit(gender)
 gender <- gender%>% distinct(CountryName, .keep_all = TRUE)
-gender <- gender %>% mutate(finalrank_gen = rank(-gender$SG.GEN.PARL.ZS))
-gender$finalrank_gen<- as.numeric(as.factor(gender$finalrank_gen))
+gender_score <- gender %>% mutate(finalrank_gen = rank(-gender$SG.GEN.PARL.ZS))
+gender_score$finalrank_gen<- as.numeric(as.factor(gender_score$finalrank_gen))
 ```
 
 Employment score:
@@ -408,14 +408,11 @@ empl <- select(empl, "CountryName", "Year", "SL.EMP.WORK.ZS")
 empl <- empl[order(-empl$Year),]
 empl <- empl %>% distinct(CountryName, .keep_all = TRUE)
 
-empl <- empl %>% mutate(finalrank_empl =
+employment_score <- empl %>% mutate(finalrank_empl =
                           as.numeric(as.factor(rank(-(empl$SL.EMP.WORK.ZS)))))
-
-write.csv(empl, file = "Employment_score.csv")
 ```
 
-
-# Population indicators for each country 
+Population score:
 
 ```{r}
 Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
@@ -442,17 +439,17 @@ Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "S
  Population3$finalrank_pop3<- as.numeric(as.factor(Population3$finalrank_pop3))
  
 Popjoin <- left_join(Population1, Population2, "CountryName")
-Population <- left_join(Popjoin, Population3, "CountryName")
+population_score <- left_join(Popjoin, Population3, "CountryName")
 
-Population<- select(Population,"CountryName", "finalrank_pop1", "finalrank_pop2", "finalrank_pop3")
+population_score <- select(population_score,"CountryName", "finalrank_pop1", "finalrank_pop2", "finalrank_pop3")
  
-Population <- Population[rowSums(is.na(Population)) < 2, ]
-i <- which(is.na(Population), arr.ind = TRUE)
-Population[i] <- rowMeans(Population[,-1], na.rm = TRUE)[i[,1]]
+population_score <- population_score[rowSums(is.na(Population)) < 2, ]
+i <- which(is.na(population_score), arr.ind = TRUE)
+population_score[i] <- rowMeans(population_score[,-1], na.rm = TRUE)[i[,1]]
  
-Population <- Population %>% mutate(score_pop = ((finalrank_pop1 + finalrank_pop2 + finalrank_pop3)/3))
+population_score <- population_score %>% mutate(score_pop = ((finalrank_pop1 + finalrank_pop2 + finalrank_pop3)/3))
 
-Population <- Population %>% mutate(finalrank_pop = rank(Population$score_pop))
+population_score <- population_score %>% mutate(finalrank_pop = rank(score_pop))
 ```
 
 Security score:
@@ -499,7 +496,7 @@ Population <- filter(Population, pop$Year == "2013")
 Population <- select(Population, "CountryName", "SP.POP.TOTL")
 tour <- left_join(tourism, Population, by = "CountryName")
 
-tour <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL)))
+tourism_score <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL)))
 ```
 
 
@@ -569,18 +566,18 @@ Positive_Affect <- read_csv("../Scored data+Rmds/Positive Affect.csv")
 
 
 ```{r}
-final_score_table <- Communication_score %>%
-  full_join(Education_score, by='CountryName') %>%
-  full_join(Emissions_score, by='CountryName') %>%
-  full_join(Environment_score, by='CountryName') %>%
-  full_join(FoodDeficit_score, by='CountryName') %>%
-  full_join(Gender_score, by='CountryName') %>%
-  full_join(Population_score, by='CountryName') %>%
-  full_join(Employment_score, by='CountryName') %>%
-  full_join(Energy_score, by='CountryName') %>%
-  full_join(Security_score, by='CountryName') %>%
-  full_join(Tourism_score, by='CountryName') %>%
-  full_join(GDP_score, by='CountryName') %>%
+final_score_table <- communication_score %>%
+  full_join(education_score, by='CountryName') %>%
+  full_join(emissions_score, by='CountryName') %>%
+  full_join(environment_score, by='CountryName') %>%
+  full_join(foodDeficit_score, by='CountryName') %>%
+  full_join(gender_score, by='CountryName') %>%
+  full_join(population_score, by='CountryName') %>%
+  full_join(employment_score, by='CountryName') %>%
+  full_join(energy_score, by='CountryName') %>%
+  full_join(security_score, by='CountryName') %>%
+  full_join(tourism_score, by='CountryName') %>%
+  full_join(economy_score, by='CountryName') %>%
   full_join(childwelfare_score, by='CountryName')%>%
   full_join(diversity_score, by='CountryName')%>%
   full_join(happyplanet_score, by='CountryName')%>%
