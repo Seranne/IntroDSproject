@@ -197,7 +197,6 @@ energy<- energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalr
 energy <- energy %>% mutate(finalrank_eng = rank(-energy$score_eng))
 ```
 
-
 CO2 Emissions score:
 
 ```{r}
@@ -298,10 +297,9 @@ deficit <- deficit %>% mutate(finalrank_deficit =
 # Tourism indicators for each country 
 tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
 write.csv(Tourism, file = "Tourism.csv")
-```
+
 # Security indicators for each country 
 security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
-```
 
 # Economic indicators for each country 
 gdp <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
@@ -310,14 +308,28 @@ gdp <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY
 education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
 
 # Gender indicators for each country 
+
+```{r}
 gender <- WDI4 %>% filter(IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SP.UWT.TFRT") %>% spread(IndicatorCode, Value)
+
+gender <- select(gender, "CountryName", "CountryCode", "Year", "SG.GEN.PARL.ZS")
+gender <- gender[order(-gender$Year),]
+gender <- na.omit(gender)
+gender <- gender%>% distinct(CountryName, .keep_all = TRUE)
+gender <- gender %>% mutate(rank_gen = rank(-gender$SG.GEN.PARL.ZS))
+gender$rank_gen<- as.numeric(as.factor(gender$rank_gen))
+
+gender<- select(gender,"CountryName", "rank_gen")
+gender <- gender%>% mutate(score_gen = rank_gen)
+gender <- gender %>% mutate(finalrank_gen = rank(gender$score_gen))
+```
 
 # Population indicators for each country 
 population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
 
 # Employment indicators for each country 
 employment<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
-```
+
 
 # Extracting Data from the World Happiness Report Dataset
 
