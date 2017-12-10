@@ -11,28 +11,29 @@ knitr::opts_chunk$set(echo = TRUE)
 library("dplyr")
 library("tidyverse")
 library(readr)
+
 ```
 
 #Gather all the variable indices join to create on table 
 
 ```{r}
-Communication_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Communication_score.csv")
-Education_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Education_score.csv")
-Emissions_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Emissions_score.csv")
-Employment_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Employment_score.csv")
-Energy_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Energy_score.csv")
-Environment_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Environment_score.csv")
-FoodDeficit_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/FoodDeficit_score.csv")
-Gender_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Gender_score.csv")
-Population_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Population_score.csv")
-Security_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Security_score.csv")
-Tourism_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Tourism_score.csv")
-GDP_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/GDP_score.csv")
-childwelfare_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/childwelfare_score.csv")
-diversity_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/diversity_score.csv")
-happyplanet_score <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/happyplanet_score.csv")
-Negative_Affect <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Negative Affect.csv")
-Positive_Affect <- read_csv("d:/Documents/GitHub/IntroDSproject/Scored data+Rmds/Positive Affect.csv")
+Communication_score <- read_csv("../Scored data+Rmds/Communication_score.csv")
+Education_score <- read_csv("../Scored data+Rmds/Education_score.csv")
+Emissions_score <- read_csv("../Scored data+Rmds/Emissions_score.csv")
+Employment_score <- read_csv("../Scored data+Rmds/Employment_score.csv")
+Energy_score <- read_csv("../Scored data+Rmds/Energy_score.csv")
+Environment_score <- read_csv("../Scored data+Rmds/Environment_score.csv")
+FoodDeficit_score <- read_csv("../Scored data+Rmds/FoodDeficit_score.csv")
+Gender_score <- read_csv("../Scored data+Rmds/Gender_score.csv")
+Population_score <- read_csv("../Scored data+Rmds/Population_score.csv")
+Security_score <- read_csv("../Scored data+Rmds/Security_score.csv")
+Tourism_score <- read_csv("../Scored data+Rmds/Tourism_score.csv")
+GDP_score <- read_csv("../Scored data+Rmds/GDP_score.csv")
+childwelfare_score <- read_csv("../Scored data+Rmds/childwelfare_score.csv")
+diversity_score <- read_csv("../Scored data+Rmds/diversity_score.csv")
+happyplanet_score <- read_csv("../Scored data+Rmds/happyplanet_score.csv")
+Negative_Affect <- read_csv("../Scored data+Rmds/Negative Affect.csv")
+Positive_Affect <- read_csv("../Scored data+Rmds/Positive Affect.csv")
 ```
 
 
@@ -88,7 +89,7 @@ write_csv(final_score , "final_score_only.csv")
 
 ```{r}
 
-final_score_only <- read_csv("d:/Documents/GitHub/IntroDSproject/Final score data/final_score_only.csv")
+final_score_only <- read_csv("../Final score data/final_score_only.csv")
 url <- "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
 
 regions <-read.csv(url)
