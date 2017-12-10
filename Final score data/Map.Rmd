@@ -7,12 +7,13 @@ output: html_document
 library(tidyverse)
 library(rworldmap)
 library(ggplot2)
+library(gridExtra)
 
 ourindex <- read_csv("CalculatedOurindex.csv")
 test <- joinCountryData2Map(ourindex, joinCode = "NAME", nameJoinColumn = "CountryName")
 
 par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
-mapCountryData( test, nameColumnToPlot="finalindex" )
+p1 <- mapCountryData( test, nameColumnToPlot="finalindex" )
 ```
 
 
@@ -48,4 +49,29 @@ mapCountryData(finalindexplot,
                oceanCol='lightblue',
                missingCountryCol='white')
 ```
+
+
+# WHR
+
+```{r}
+whr <- read_csv("/IntroDSproject/Source Data/World Happiness Report/2016.csv")
+View(whr)
+tester <- joinCountryData2Map(whr, joinCode = "NAME", nameJoinColumn = "Country")
+
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+p2 <- mapCountryData(tester, nameColumnToPlot="Happiness Rank")
+
+
+```
+
+```{r}
+mp <- NULL
+mapWorld <- borders("world", colour="gray50", fill="gray50") # create a layer of borders
+mp <- ggplot() +   mapWorld
+
+#Now Layer the cities on top
+mp <- mp+ geom_point(whr, aes(x=Country, y=Happiness.Rank) ,color="blue", size=3) 
+mp
+```
+
 

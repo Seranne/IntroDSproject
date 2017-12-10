@@ -74,7 +74,7 @@ final_score <- final_score_table %>% select(CountryName,
                                             finalrank_pop,
                                             finalscore_security,
                                             finalrank_tourism,
-                                            finalrank_hpi,
+                                            finalrank_hpi2,
                                             finalrank_neg,
                                             finalrank_pos)
 ```
@@ -103,7 +103,7 @@ final_score <- final_score_table %>% select(CountryName,
                                             "finalrank_pop",
                                             "finalscore_security",
                                             "finalrank_tourism",
-                                            "finalrank_hpi",
+                                            "finalrank_hpi2",
                                             "finalrank_neg",
                                             "finalrank_pos")], by=list(name=final_score$CountryName), FUN = "mean" , na.rm = TRUE)
  colnames(final_score)[1] <- "CountryName"
@@ -129,7 +129,7 @@ final_score<- final_score %>%
                         finalrank_pop + 
                         finalscore_security + 
                         finalrank_tourism + 
-                        finalrank_hpi + 
+                        finalrank_hpi2 + 
                         finalrank_neg + 
                         finalrank_pos)/17) %>% 
   mutate(finalindex = rank(ourindex))

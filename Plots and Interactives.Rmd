@@ -18,13 +18,37 @@ library(rworldmap)
 #which(is.na(CalculatedOurindex), arr.ind=TRUE)
 #data.frame[row_number, column_number] = new_value
 ```
-
 Plots/Models we could make:
 
 1. EDA:
 
-- Existing WHR scores by country 
-- Existing HPI scores by counrty 
+- Existing WHR scores by Region 
+
+```{r, echo=TRUE}
+whr <- read_csv("/IntroDSproject/Source Data/World Happiness Report/2016.csv")
+our <- read_csv("/IntroDSproject/Final score data/CalculatedOurindex.csv")
+View(whr)
+colnames(whr)[3] <- "happiness.rank"
+colnames(whr)[7] <- "gdp"
+
+
+x <- whr %>% filter(!is.na(gdp)) %>% select("gdp")
+x<- x$gdp
+max(x)
+x <- cut(as.numeric(x), c(0, 0.1005, 1.2236, 1.82427))
+x = factor(x, labels = c("Low-Income Countries", "Middle Income Countres", "High-Income Countries"))
+
+whr %>% ggplot(aes(x = Region, y = -happiness.rank, col = x)) + geom_point() + geom_jitter(width = 0, height = 0.5) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + scale_colour_manual(breaks = c("Low-Income Countries", "Middle Income Countres", "High-Income Countries"), values = c("red", "blue", "green")) + ylab("2016 World Happiness Report Ranking") + xlab("Countries by Region") + ggtitle("2016 World Happiness Report Ranking")
+
+```
+
+
+- Existing HPI scores by Region
+
+
+
+
+
 - Difference between EF indices distribution and existing WHR (this is what they didn't consider!)
 - Sample Category Rankings 
 
@@ -43,7 +67,6 @@ Plots/Models we could make:
 
 ```
 
-### Ignore
 ```{r}
 gh15 <- read_csv("/IntroDSproject/Source Data/World Happiness Report/2015.csv")
 colnames(gh15)[1] <-"country"
@@ -69,42 +92,8 @@ ggplot() +
   labs(title = 'Test"'
        ,subtitle = "Testing still ")
 
-class(gh15$happiness.rank)
+```
 
-
-plot1 <- ggplot(gh15, aes(country, happiness.rank, col = Region)) + geom_point() + geom_map(map_id = )
-plot1
-
-worldMapEnv
-
-worldMap <- borders("world", colour="gray50", fill="gray50")
-
-gh15 %>% ggplot() + 
-    geom_map(aes(fill = value), map = , color='grey', size=0.3) +
-    theme_few()+
-    theme(legend.position = "bottom",
-         axis.ticks = element_blank(), 
-         axis.title = element_blank(), 
-         axis.text =  element_blank()) +
-    scale_fill_gradient(low="white", high="darkblue", name="Number of Affiliates") +
-    guides(fill = guide_colorbar(barwidth = 10, barheight = .5))
-
-
-world<-map_data('world')
-
-p <- ggplot(legend=FALSE) +
-geom_polygon( data=world, aes(x=long, y=lat,group=group)) +
-xlab("") + ylab("")
-
-# add a single point
-class(gh15$happiness.rank)
-
-p <- p + geom_point(data=gh15,aes( gh15$`Happiness Score` ,happiness.rank),colour="green",size=4)
-p
-
-#Now Layer the cities on top
-mp <- mp+ geom_point(gh15, aes(country, region) ,col = gh15$happiness.rank, size=3) 
-mp
 
 
 ```

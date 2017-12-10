@@ -31,7 +31,6 @@ We began our project with the goal of identifying yearly-changes in a country's 
 - Is there a change in the average ranking of a country's happiness and well-being, given the inclusion of a more comprehensive variable list representing its physical, social, cultural, economic and political enviroments?
 - Are are specific variables which contribute more to this derived composite index, than others?
 
-
 # Data: Source, scraping method, cleanup, etc.
 
 In order to develop our well-being index, we extracted data from a number of resources, categorized below: (To make a table displaying our variables with categories). 
