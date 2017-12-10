@@ -78,6 +78,7 @@ levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Gambia, The"] <- "Gambia"
 levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Venezuela, RB"] <- "Venezuela"
 levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Yemen, Rep."] <- "Yemen"
 
+write.csv(WDI4, file = "ourWDI.csv")
 
 energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC") %>% spread(IndicatorCode, Value)
 write.csv(energy, file = "Energy.csv")

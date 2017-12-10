@@ -1,0 +1,454 @@
+"","CountryName","CountryCode","Year","SL.EMP.WORK.ZS"
+"1","Albania","ALB",2010,43.8
+"2","Albania","ALB",2011,39
+"3","Albania","ALB",2012,35.7
+"4","Albania","ALB",2013,40.2
+"5","Algeria","DZA",2010,33
+"6","Algeria","DZA",2011,67
+"7","Algeria","DZA",2013,69
+"8","Algeria","DZA",2014,70.9
+"9","American Samoa","ASM",2010,96.9
+"10","Argentina","ARG",2010,76.4
+"11","Argentina","ARG",2011,76.9
+"12","Argentina","ARG",2012,77
+"13","Argentina","ARG",2013,75.3
+"14","Armenia","ARM",2010,56.9
+"15","Armenia","ARM",2011,55.6
+"16","Armenia","ARM",2012,56.5
+"17","Armenia","ARM",2013,57.2
+"18","Aruba","ABW",2010,89.3
+"19","Australia","AUS",2010,88.2
+"20","Australia","AUS",2011,88.7
+"21","Australia","AUS",2012,89.4
+"22","Australia","AUS",2013,89.6
+"23","Austria","AUT",2010,86.2
+"24","Austria","AUT",2011,86.7
+"25","Austria","AUT",2012,86.9
+"26","Austria","AUT",2013,86.8
+"27","Austria","AUT",2014,86.7
+"28","Azerbaijan","AZE",2010,31.9
+"29","Azerbaijan","AZE",2011,31.7
+"30","Azerbaijan","AZE",2012,33.3
+"31","Azerbaijan","AZE",2013,33.5
+"32","Bahamas","BHS",2011,85.4
+"33","Bahrain","BHR",2010,96.8
+"34","Bangladesh","BGD",2010,14.6
+"35","Bangladesh","BGD",2011,29.4
+"36","Barbados","BRB",2013,83.2
+"37","Belgium","BEL",2010,85.6
+"38","Belgium","BEL",2011,85.7
+"39","Belgium","BEL",2012,85.7
+"40","Belgium","BEL",2013,84.9
+"41","Belgium","BEL",2014,85.4
+"42","Benin","BEN",2010,8.1
+"43","Bermuda","BMU",2010,86.6
+"44","Bermuda","BMU",2012,82.4
+"45","Bhutan","BTN",2010,31.1
+"46","Bhutan","BTN",2011,28.9
+"47","Bhutan","BTN",2012,27.5
+"48","Bolivia","BOL",2011,39.5
+"49","Bosnia and Herzegovina","BIH",2010,73.5
+"50","Bosnia and Herzegovina","BIH",2011,74.8
+"51","Bosnia and Herzegovina","BIH",2012,72.6
+"52","Bosnia and Herzegovina","BIH",2013,74.6
+"53","Botswana","BWA",2010,68.2
+"54","Brazil","BRA",2011,68
+"55","Brazil","BRA",2012,68.6
+"56","Brazil","BRA",2013,68.7
+"57","Bulgaria","BGR",2010,87.2
+"58","Bulgaria","BGR",2011,87.9
+"59","Bulgaria","BGR",2012,88.4
+"60","Bulgaria","BGR",2013,87.9
+"61","Bulgaria","BGR",2014,87.5
+"62","Burundi","BDI",2010,5.9
+"63","Cambodia","KHM",2010,29.8
+"64","Cambodia","KHM",2011,31.4
+"65","Cambodia","KHM",2012,35.8
+"66","Cameroon","CMR",2010,20.3
+"67","Canada","CAN",2010,90.7
+"68","Canada","CAN",2011,91
+"69","Canada","CAN",2012,91.1
+"70","Canada","CAN",2013,91.2
+"71","Canada","CAN",2014,91.2
+"72","Cayman Islands","CYM",2011,91.1
+"73","Cayman Islands","CYM",2012,91.6
+"74","Cayman Islands","CYM",2013,91.5
+"75","Chile","CHL",2010,73.5
+"76","Chile","CHL",2011,68.5
+"77","China","CHN",2010,90.8
+"78","China","CHN",2011,89.6
+"79","China","CHN",2012,88.8
+"80","China","CHN",2013,87.9
+"81","Colombia","COL",2010,46.3
+"82","Colombia","COL",2011,46.3
+"83","Colombia","COL",2012,46.4
+"84","Colombia","COL",2013,47.4
+"85","Costa Rica","CRI",2010,76.1
+"86","Costa Rica","CRI",2011,76
+"87","Costa Rica","CRI",2012,76.1
+"88","Costa Rica","CRI",2013,75.5
+"89","Cote d'Ivoire","CIV",2012,18.1
+"90","Croatia","HRV",2010,78.2
+"91","Croatia","HRV",2011,78.2
+"92","Croatia","HRV",2012,80.3
+"93","Croatia","HRV",2013,81.9
+"94","Croatia","HRV",2014,84.4
+"95","Cuba","CUB",2010,83.8
+"96","Cuba","CUB",2011,77.3
+"97","Cyprus","CYP",2010,81.4
+"98","Cyprus","CYP",2011,82.1
+"99","Cyprus","CYP",2012,83.4
+"100","Cyprus","CYP",2013,82.4
+"101","Cyprus","CYP",2014,82.1
+"102","Czech Republic","CZE",2010,82.3
+"103","Czech Republic","CZE",2011,81.9
+"104","Czech Republic","CZE",2012,81.6
+"105","Czech Republic","CZE",2013,82.1
+"106","Czech Republic","CZE",2014,82
+"107","Denmark","DNK",2010,90.9
+"108","Denmark","DNK",2011,90.9
+"109","Denmark","DNK",2012,90.9
+"110","Denmark","DNK",2013,91
+"111","Denmark","DNK",2014,91.1
+"112","Dominican Republic","DOM",2010,41.9
+"113","Dominican Republic","DOM",2011,51.4
+"114","Dominican Republic","DOM",2012,52.1
+"115","Dominican Republic","DOM",2013,54.5
+"116","Ecuador","ECU",2010,54.8
+"117","Ecuador","ECU",2011,52.6
+"118","Ecuador","ECU",2012,45.1
+"119","Ecuador","ECU",2013,56.8
+"120","Egypt, Arab Rep.","EGY",2010,62.2
+"121","Egypt, Arab Rep.","EGY",2011,61.2
+"122","Egypt, Arab Rep.","EGY",2012,62.5
+"123","Egypt, Arab Rep.","EGY",2013,61.1
+"124","El Salvador","SLV",2010,58.2
+"125","El Salvador","SLV",2011,58.3
+"126","El Salvador","SLV",2012,58.2
+"127","El Salvador","SLV",2013,53.5
+"128","Estonia","EST",2010,91.5
+"129","Estonia","EST",2011,91.3
+"130","Estonia","EST",2012,91.1
+"131","Estonia","EST",2013,90.9
+"132","Estonia","EST",2014,90.9
+"133","Ethiopia","ETH",2010,50.8
+"134","Ethiopia","ETH",2011,49.5
+"135","Ethiopia","ETH",2012,50.1
+"136","Ethiopia","ETH",2013,10
+"137","Finland","FIN",2010,86.6
+"138","Finland","FIN",2011,86.6
+"139","Finland","FIN",2012,86.4
+"140","Finland","FIN",2013,86.6
+"141","Finland","FIN",2014,86
+"142","France","FRA",2010,88.5
+"143","France","FRA",2011,88.3
+"144","France","FRA",2012,88.5
+"145","France","FRA",2013,88.8
+"146","France","FRA",2014,88.5
+"147","Gabon","GAB",2010,65.4
+"148","Gambia","GMB",2012,23.5
+"149","Georgia","GEO",2010,38
+"150","Georgia","GEO",2011,38
+"151","Georgia","GEO",2012,38.4
+"152","Georgia","GEO",2013,38.4
+"153","Germany","DEU",2010,88.4
+"154","Germany","DEU",2011,88.3
+"155","Germany","DEU",2012,88.4
+"156","Germany","DEU",2013,88.8
+"157","Germany","DEU",2014,89
+"158","Ghana","GHA",2010,18.2
+"159","Greece","GRC",2010,64.4
+"160","Greece","GRC",2011,63.8
+"161","Greece","GRC",2012,63.4
+"162","Greece","GRC",2013,63
+"163","Greece","GRC",2014,64
+"164","Guatemala","GTM",2010,51.2
+"165","Guatemala","GTM",2011,57
+"166","Guatemala","GTM",2012,52.8
+"167","Guatemala","GTM",2013,44.5
+"168","Guinea","GIN",2010,4.1
+"169","Guinea","GIN",2011,4.1
+"170","Guinea","GIN",2012,4.1
+"171","Honduras","HND",2010,44.3
+"172","Hong Kong SAR, China","HKG",2010,90.1
+"173","Hong Kong SAR, China","HKG",2011,89.9
+"174","Hong Kong SAR, China","HKG",2012,89.8
+"175","Hong Kong SAR, China","HKG",2013,89.9
+"176","Hungary","HUN",2010,87.7
+"177","Hungary","HUN",2011,87.9
+"178","Hungary","HUN",2012,88.3
+"179","Hungary","HUN",2013,88.7
+"180","Hungary","HUN",2014,88.7
+"181","Iceland","ISL",2010,86.9
+"182","Iceland","ISL",2011,86.9
+"183","Iceland","ISL",2012,86.1
+"184","Iceland","ISL",2013,86.9
+"185","Iceland","ISL",2014,87.1
+"186","India","IND",2010,18.1
+"187","Indonesia","IDN",2010,35.4
+"188","Indonesia","IDN",2011,39.4
+"189","Indonesia","IDN",2012,46.5
+"190","Indonesia","IDN",2013,36.5
+"191","Iran","IRN",2010,55.4
+"192","Iran","IRN",2014,55.9
+"193","Ireland","IRL",2010,83.1
+"194","Ireland","IRL",2011,83.6
+"195","Ireland","IRL",2012,83.6
+"196","Ireland","IRL",2013,82.7
+"197","Ireland","IRL",2014,82.7
+"198","Israel","ISR",2010,87.2
+"199","Israel","ISR",2011,87.3
+"200","Israel","ISR",2012,87.3
+"201","Israel","ISR",2013,87.4
+"202","Italy","ITA",2010,74.7
+"203","Italy","ITA",2011,75
+"204","Italy","ITA",2012,75.1
+"205","Italy","ITA",2013,75.2
+"206","Italy","ITA",2014,75.3
+"207","Jamaica","JAM",2011,59.9
+"208","Jamaica","JAM",2012,59.2
+"209","Japan","JPN",2010,87.3
+"210","Japan","JPN",2011,87.7
+"211","Japan","JPN",2012,87.8
+"212","Japan","JPN",2013,88
+"213","Jordan","JOR",2010,83.5
+"214","Jordan","JOR",2011,84.3
+"215","Jordan","JOR",2012,84.1
+"216","Kazakhstan","KAZ",2010,66.7
+"217","Kazakhstan","KAZ",2011,67.2
+"218","Kazakhstan","KAZ",2012,68.3
+"219","Kazakhstan","KAZ",2013,69.4
+"220","Kenya","KEN",2013,96.4
+"221","Kiribati","KIR",2010,40.5
+"222","South Korea","KOR",2010,71.2
+"223","South Korea","KOR",2011,71.8
+"224","South Korea","KOR",2012,71.8
+"225","South Korea","KOR",2013,72.6
+"226","Kosovo","KSV",2012,74.5
+"227","Kuwait","KWT",2011,96.8
+"228","Kyrgyzstan","KGZ",2010,56.9
+"229","Kyrgyzstan","KGZ",2011,57.2
+"230","Kyrgyzstan","KGZ",2012,57.2
+"231","Kyrgyzstan","KGZ",2013,52.7
+"232","Lao PDR","LAO",2010,15.6
+"233","Latvia","LVA",2010,88.5
+"234","Latvia","LVA",2011,88.7
+"235","Latvia","LVA",2012,88.6
+"236","Latvia","LVA",2013,88.4
+"237","Latvia","LVA",2014,88.4
+"238","Liberia","LBR",2010,18.1
+"239","Lithuania","LTU",2010,89.1
+"240","Lithuania","LTU",2011,89.4
+"241","Lithuania","LTU",2012,88.9
+"242","Lithuania","LTU",2013,88.2
+"243","Lithuania","LTU",2014,87.9
+"244","Luxembourg","LUX",2010,91.7
+"245","Luxembourg","LUX",2011,91.4
+"246","Luxembourg","LUX",2012,91
+"247","Luxembourg","LUX",2013,90.9
+"248","Luxembourg","LUX",2014,91.1
+"249","Macao SAR, China","MAC",2010,92.2
+"250","Macao SAR, China","MAC",2011,92.5
+"251","Macao SAR, China","MAC",2012,92.7
+"252","Macao SAR, China","MAC",2013,93.2
+"253","Macedonia","MKD",2010,71.5
+"254","Macedonia","MKD",2011,71.8
+"255","Macedonia","MKD",2012,73.2
+"256","Macedonia","MKD",2013,71.9
+"257","Macedonia","MKD",2014,73.3
+"258","Madagascar","MDG",2010,9.3
+"259","Madagascar","MDG",2012,11.2
+"260","Malaysia","MYS",2010,74.3
+"261","Malaysia","MYS",2011,76.6
+"262","Malaysia","MYS",2012,74.9
+"263","Malaysia","MYS",2013,73.9
+"264","Malaysia","MYS",2014,75.1
+"265","Maldives","MDV",2010,65.4
+"266","Malta","MLT",2010,85.6
+"267","Malta","MLT",2011,86.5
+"268","Malta","MLT",2012,86.5
+"269","Malta","MLT",2013,86.1
+"270","Malta","MLT",2014,86.2
+"271","Mauritius","MUS",2010,80
+"272","Mauritius","MUS",2011,81
+"273","Mauritius","MUS",2012,79.4
+"274","Mexico","MEX",2010,65.3
+"275","Mexico","MEX",2011,66.3
+"276","Mexico","MEX",2012,66.3
+"277","Mexico","MEX",2013,67
+"278","Moldova","MDA",2010,70.7
+"279","Moldova","MDA",2011,70.6
+"280","Moldova","MDA",2012,70.8
+"281","Moldova","MDA",2013,68.8
+"282","Moldova","MDA",2014,67.3
+"283","Mongolia","MNG",2010,42.5
+"284","Mongolia","MNG",2011,43.4
+"285","Mongolia","MNG",2012,47.5
+"286","Montenegro","MNE",2010,83.1
+"287","Montenegro","MNE",2011,83.6
+"288","Montenegro","MNE",2012,82.4
+"289","Morocco","MAR",2010,44.2
+"290","Morocco","MAR",2011,43.4
+"291","Morocco","MAR",2012,43.7
+"292","Namibia","NAM",2010,63.9
+"293","Namibia","NAM",2011,67.7
+"294","Namibia","NAM",2012,63
+"295","Namibia","NAM",2013,63.6
+"296","Netherlands","NLD",2010,85
+"297","Netherlands","NLD",2011,85
+"298","Netherlands","NLD",2012,84.7
+"299","Netherlands","NLD",2013,83.9
+"300","Netherlands","NLD",2014,83.3
+"301","New Zealand","NZL",2010,83.8
+"302","New Zealand","NZL",2011,83.4
+"303","New Zealand","NZL",2012,83.4
+"304","New Zealand","NZL",2013,84.7
+"305","Nicaragua","NIC",2010,46
+"306","Norway","NOR",2010,92.3
+"307","Norway","NOR",2011,93
+"308","Norway","NOR",2012,93
+"309","Norway","NOR",2013,93
+"310","Norway","NOR",2014,92.8
+"311","Oman","OMN",2010,96.3
+"312","Panama","PAN",2010,65.9
+"313","Panama","PAN",2011,67.6
+"314","Panama","PAN",2012,68.1
+"315","Panama","PAN",2013,67.7
+"316","Panama","PAN",2014,67.3
+"317","Paraguay","PRY",2010,51.6
+"318","Paraguay","PRY",2011,52.6
+"319","Paraguay","PRY",2012,51.3
+"320","Paraguay","PRY",2013,54.8
+"321","Paraguay","PRY",2014,55.6
+"322","Peru","PER",2010,46.5
+"323","Peru","PER",2011,46.9
+"324","Peru","PER",2012,48.2
+"325","Philippines","PHL",2010,54.4
+"326","Philippines","PHL",2011,55.2
+"327","Philippines","PHL",2012,56.6
+"328","Philippines","PHL",2013,58.2
+"329","Poland","POL",2010,77
+"330","Poland","POL",2011,77.1
+"331","Poland","POL",2012,77.6
+"332","Poland","POL",2013,78.2
+"333","Poland","POL",2014,78.6
+"334","Portugal","PRT",2010,76.9
+"335","Portugal","PRT",2011,78.5
+"336","Portugal","PRT",2012,77.9
+"337","Portugal","PRT",2013,78.1
+"338","Portugal","PRT",2014,80.3
+"339","Puerto Rico","PRI",2010,85.3
+"340","Puerto Rico","PRI",2011,84.7
+"341","Puerto Rico","PRI",2012,84.4
+"342","Qatar","QAT",2011,99.5
+"343","Qatar","QAT",2012,99.5
+"344","Qatar","QAT",2013,99.3
+"345","Romania","ROM",2010,64.8
+"346","Romania","ROM",2011,66.8
+"347","Romania","ROM",2012,66.6
+"348","Romania","ROM",2013,67.2
+"349","Romania","ROM",2014,67.9
+"350","Russia","RUS",2010,93.1
+"351","Russia","RUS",2011,92.9
+"352","Russia","RUS",2012,93.1
+"353","Russia","RUS",2013,92.7
+"354","Rwanda","RWA",2012,17.8
+"355","Samoa","WSM",2011,51.7
+"356","Samoa","WSM",2012,64.1
+"357","San Marino","SMR",2010,91
+"358","Saudi Arabia","SAU",2013,94.6
+"359","Senegal","SEN",2011,22.3
+"360","Serbia","SRB",2010,67.6
+"361","Serbia","SRB",2011,69.9
+"362","Serbia","SRB",2012,69.6
+"363","Serbia","SRB",2013,67.6
+"364","Seychelles","SYC",2011,85.8
+"365","Singapore","SGP",2010,85.5
+"366","Singapore","SGP",2011,85
+"367","Singapore","SGP",2012,84.7
+"368","Singapore","SGP",2013,85.1
+"369","Slovakia","SVK",2010,84
+"370","Slovakia","SVK",2011,84.1
+"371","Slovakia","SVK",2012,84.5
+"372","Slovakia","SVK",2013,84.5
+"373","Slovakia","SVK",2014,84.6
+"374","Slovenia","SVN",2010,82.7
+"375","Slovenia","SVN",2011,83.2
+"376","Slovenia","SVN",2012,83.8
+"377","Slovenia","SVN",2013,83.1
+"378","Slovenia","SVN",2014,81.4
+"379","South Africa","ZAF",2010,84.4
+"380","South Africa","ZAF",2011,84.5
+"381","South Africa","ZAF",2012,84.8
+"382","South Africa","ZAF",2013,85.5
+"383","South Africa","ZAF",2014,85.9
+"384","Spain","ESP",2010,83.3
+"385","Spain","ESP",2011,83.6
+"386","Spain","ESP",2012,82.7
+"387","Spain","ESP",2013,82.1
+"388","Spain","ESP",2014,82.4
+"389","Sri Lanka","LKA",2010,55.5
+"390","Sri Lanka","LKA",2011,54.9
+"391","Sri Lanka","LKA",2012,56.4
+"392","Sri Lanka","LKA",2013,53.8
+"393","Suriname","SUR",2013,2.9
+"394","Sweden","SWE",2010,89
+"395","Sweden","SWE",2011,89.6
+"396","Sweden","SWE",2012,89.5
+"397","Sweden","SWE",2013,89.4
+"398","Sweden","SWE",2014,89.7
+"399","Switzerland","CHE",2010,84.7
+"400","Switzerland","CHE",2011,84.6
+"401","Switzerland","CHE",2012,84.7
+"402","Switzerland","CHE",2013,84.7
+"403","Switzerland","CHE",2014,84.9
+"404","Syria","SYR",2010,63.2
+"405","Syria","SYR",2011,62.6
+"406","Tanzania","TZA",2011,12.7
+"407","Tanzania","TZA",2013,16.2
+"408","Thailand","THA",2010,44.4
+"409","Thailand","THA",2011,44
+"410","Thailand","THA",2012,43.7
+"411","Thailand","THA",2013,41.4
+"412","Timor-Leste","TMP",2010,28.3
+"413","Trinidad and Tobago","TTO",2010,77.4
+"414","Trinidad and Tobago","TTO",2013,77.9
+"415","Tunisia","TUN",2010,68.5
+"416","Tunisia","TUN",2011,71.2
+"417","Tunisia","TUN",2012,71.4
+"418","Tunisia","TUN",2013,72
+"419","Turkey","TUR",2010,60.9
+"420","Turkey","TUR",2011,61.7
+"421","Turkey","TUR",2012,62.9
+"422","Turkey","TUR",2013,64.1
+"423","Turkey","TUR",2014,66.1
+"424","Uganda","UGA",2013,19.6
+"425","Ukraine","UKR",2011,80.7
+"426","Ukraine","UKR",2012,81.2
+"427","Ukraine","UKR",2013,80.9
+"428","Ukraine","UKR",2014,84.1
+"429","United Kingdom","GBR",2010,85.7
+"430","United Kingdom","GBR",2011,85.6
+"431","United Kingdom","GBR",2012,84.9
+"432","United Kingdom","GBR",2013,84.9
+"433","United Kingdom","GBR",2014,84.4
+"434","United States of America","USA",2010,93
+"435","United States of America","USA",2011,93.2
+"436","United States of America","USA",2012,93.2
+"437","United States of America","USA",2013,93.4
+"438","Uruguay","URY",2010,73.1
+"439","Uruguay","URY",2011,71.6
+"440","Uruguay","URY",2012,72.6
+"441","Uruguay","URY",2013,72.4
+"442","Venezuela","VEN",2010,57
+"443","Venezuela","VEN",2011,57.2
+"444","Venezuela","VEN",2012,58.4
+"445","Venezuela","VEN",2013,59.2
+"446","Vietnam","VNM",2011,34.6
+"447","Vietnam","VNM",2012,34.7
+"448","Vietnam","VNM",2013,34.8
+"449","Yemen","YEM",2010,65.9
+"450","Zambia","ZMB",2010,20.8
+"451","Zambia","ZMB",2012,20.4
+"452","Zimbabwe","ZWE",2011,24.9
+"453","Zimbabwe","ZWE",2012,34
