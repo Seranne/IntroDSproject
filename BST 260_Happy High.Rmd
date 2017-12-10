@@ -61,18 +61,18 @@ A country-wise ranking was then generated for each variable, in every category. 
 
 ## Methods: 
 
-# Deriving data from the World Development Indicators
+# Extracting data from the World Bank World Development Indicators
 
-The World Bank's World Development Indicators were downloaded from [Kaggle](https://www.kaggle.com/worldbank/world-development-indicators), and this dataset is available for download as a .csv from [this link](https://drive.google.com/open?id=1ilfW3OIrVs6b4EsFPFbW-dw_vQiQgetU). However, given the large size of this data, our initial cleaned dataset is available as a smaller-sized url-linked csv, on which the rest of the code was run.
+The World Bank's World Development Indicators were downloaded from [Kaggle](https://www.kaggle.com/worldbank/world-development-indicators), and this dataset is available for download as a .csv from [this link](https://drive.google.com/open?id=1ilfW3OIrVs6b4EsFPFbW-dw_vQiQgetU). However, given the large size of this data, our initial stage dataset is available as a smaller-sized url-linked csv (in the following code chunk), on which the rest of the code was run.
 
 ```{r, eval=FALSE}
 # Replace path name with that of the downloaded csv file
-Indicators_csv <- read_csv("d:/Documents/IntroDSproject/Indicators_csv")
+Indicators_csv <- read_csv("Download/Path/Here.csv")
 
-# Filtering by Year
+# Filter by Year
 WDI <- filter(Indicators_csv, Year == "2010"| Year == "2011" | Year == "2012"| Year == "2013" | Year == "2014" | Year == "2015" | Year == "2016" | Year =="2017")
 
-# Removing Aggregated Country classifications, by country code
+# Remove Aggregated Country classifications, by country code
 WDInew <- filter(WDI, CountryCode != "WBG")
 WDInew <- filter(WDInew, CountryCode != "WLD")
 WDInew <- filter(WDInew, CountryCode != "UMC")
@@ -104,69 +104,136 @@ WDInew <- filter(WDInew, CountryCode != "NAC")
 WDInew <- filter(WDInew, CountryCode != "SAS")
 WDInew <- filter(WDInew, CountryCode != "MIC")
 
-# Filtering dataset to only include variables of interest 
+# Filter dataset to only include variables of interest 
 WDI2 <- filter(WDInew, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC"| IndicatorCode == "EN.ATM.CO2E.PC"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SP.DYN.IMRT.IN"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
 
 write.csv(WDI2, file = "ourWDI.csv")
 ```
 
-If the above original dataset was not downloaded, the code below runs on the .csv generated at the end of
+If the above original dataset was not downloaded, the code below runs on the .csv generated at the end of the above code chunk 
 
-```
+```{r}
+# Load dataset
+url <- "https://raw.githubusercontent.com/Seranne/IntroDSproject/master/ourWDI.csv"
+WDI4 <- read.csv(url)
+WDI4<- select(WDI4,"CountryName","CountryCode", "IndicatorCode", "Year","Value")
 
-WDI4<- select(WDI2,"CountryName","CountryCode", "IndicatorCode", "Year","Value")
+# Change Country Names to standard names
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Micronesia, Fed. Sts."] <- "Micronesia"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "United States"] <- "United States of America"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Congo, Rep."] <- "Republic of Congo"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Russian Federation"] <- "Russia"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Congo, Dem. Rep."] <- "Democratic Republic of Congo"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Eygpt, Arab Rep."] <- "Egypt"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Iran, Islamic Rep."] <- "Iran"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Korea, Dem. Rep"] <- "North Korea"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Korea, Rep."] <- "South Korea"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Kyrgyz Republic"] <- "Kyrgyzstan"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Slovak Republic"] <- "Slovakia"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Syrian Arab Republic"] <- "Syria"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "China & Hong Kong SAR, China"] <- "Hong Kong"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Macedonia, FYR"] <- "Macedonia"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Bahamas, The"] <- "Bahamas"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Gambia, The"] <- "Gambia"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Venezuela, RB"] <- "Venezuela"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Yemen, Rep."] <- "Yemen"
 
+# Remove pending aggregrated regions
+WDI4 <- filter(WDI4, CountryCode != "OSS")
+WDI4 <- filter(WDI4, CountryCode != "SST")
+
+# Generate table with only Energy indicators for each country 
 energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC") %>% spread(IndicatorCode, Value)
 write.csv(energy, file = "Energy.csv")
 
-
+# Generate table with only Emissions indicators for each country 
 emissions <- WDI4%>% filter(IndicatorCode == "EN.ATM.CO2E.PC")%>% spread(IndicatorCode, Value)
 write.csv(emissions, file = "Emissions.csv")
 
-
+# Generate table with only Environment indicators for each country 
 environnment1 <- WDI4 %>% filter(IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "AG.LND.FRST.ZS") %>% spread(IndicatorCode, Value)
 write.csv(environnment1, file = "Environment.csv")
 
-
+# Generate table with only Security indicators for each country 
 Security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
 write.csv(Security, file = "Security.csv")
 
+# Generate table with only Communications indicators for each country 
 comm <- WDI4 %>% filter(IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2")  %>% spread(IndicatorCode, Value)
 write.csv(comm, file = "Communication.csv")
 
-
+# Generate table with only Economic indicators for each country 
 GDP <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
 write.csv(GDP, file = "GDP.csv")
 
+# Generate table with only Education indicators for each country 
 Education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
 write.csv(Education, file = "Education.csv")
 
+# Generate table with only Gender indicators for each country 
 Gender <- WDI4 %>% filter(IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SP.UWT.TFRT") %>% spread(IndicatorCode, Value)
 write.csv(Gender, file = "Gender.csv")
 
-
+# Generate table with only Population indicators for each country 
 Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
 write.csv(Population, file = "Population.csv")
 
+# Generate table with only Employment indicators for each country 
 Employment<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
 write.csv(Employment, file = "Employment.csv")
 
+# Generate table with only Child Welfare indicators for each country 
 Children<- WDI4 %>% filter(IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS" | IndicatorCode == "SP.DYN.IMRT.IN") %>% spread(IndicatorCode, Value)
 write.csv(Children, file = "Children.csv")
 
+# Generate table with only Food Deficit indicators for each country 
 FoodDeficit <- WDI4 %>% filter(IndicatorCode == "SN.ITK.DFCT") %>% spread(IndicatorCode, Value)
 write.csv(FoodDeficit, file = "Food_deficit.csv")
 
+# Generate table with only Tourism indicators for each country 
 Tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
 write.csv(Tourism, file = "Tourism.csv")
 ```
 
-#Deriving Data from the World Happiness Report Dataset
+# Extracting Data from the World Happiness Report Dataset
 
-# Deriving Data from the Happy Panet Index
+UN SDSN World Happiness Report Data is available for the years 2015, 2016 and 2017, and these were downloaded from ____. 
+
+```{r}
+# Load datasets
+url1 <- "https://github.com/Seranne/IntroDSproject/blob/master/Source%20Data/World%20Happiness%20Report/2015.csv"
+url2 <- "https://github.com/Seranne/IntroDSproject/blob/master/Source%20Data/World%20Happiness%20Report/2016.csv"
+url3 <- "https://github.com/Seranne/IntroDSproject/blob/master/Source%20Data/World%20Happiness%20Report/2017.csv"
+
+gh2015 <- read.csv(url1)
+gh2016 <- read.csv(url2)
+gh2017 <- read.csv(url3)
+
+# Selecting required indicators
+GHI2015 <- select(gh2015, "Country", "Region", "Family", "Freedom", "Trust (Government Corruption)", "Generosity", "Dystopia Residual")
+GH2016 <- select(gh2016, "Country", "Region", "Family", "Freedom", "Trust (Government Corruption)", "Generosity", "Dystopia Residual")
+GH2017 <- select(gh2017, "Country", "Family", "Freedom", "Trust..Government.Corruption.", "Generosity", "Dystopia.Residual")
+```
+
+# Extracting Data from the Happy Planet Index
+
+2016 Happy Planet Index data is available through [this link](http://happyplanetindex.org/countries). A cleaned .CSV is available through the code below, on which further analysis was run.
+
+```{r, EVAL=FALSE}
+# Load dataset
+hpi_data_2016 <- readxl::read_xlsx("Your/File/Path/Here.xlsx")
+
+# Select indicators of interest 
+HPI2016 <- select(hpi_data_2016, "Country", "Region", "Average_Wellbeing_(0-10)", "Happy_Life_Years", "Footprint_(gha/capita)", "Inequality_of_Outcomes", "Inequality-adjusted_Life_Expectancy", "Inequality-adjusted_Wellbeing")
+write.csv(HPI2016, file = "cleaned_hpi_2016.csv")
+
+read.csv("https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Cleaned_Data/cleaned_hpi_2016.csv")
+```
+
 
 # Checking for correlations between indicators chosen based on literature review
 
+#Generating Category-based scores for each country
 # Deriving category-level scores 
 
 # Deriving new well-rounded well-being index 

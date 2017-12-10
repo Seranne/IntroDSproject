@@ -14,15 +14,13 @@ ourindex <- read_csv("CalculatedOurindex.csv")
 
 #Add the data you want to map countries by to map.world
 
-map.world <- left_join(ourindex, map.world, "CountryName")
-map.world <- map.world %>% select(finalindex, CountryName, region, sub.region, lat, long)
-
+map.world <- left_join(map.world,ourindex,"CountryName")
 gg <- ggplot()
 gg <- gg + theme()
 gg <- gg + geom_map(data=map.world, map=map.world, aes(map_id=region, x=long, y=lat, fill=finalindex))
 
-gg <- gg + scale_fill_gradient(low = "green", high = "brown3", guide = "colourbar")
-gg <- gg + coord_equal()
+gg <- gg + scale_fill_gradient(low = "green", high = "brown", guide = "colourbar")
+#gg <- gg + coord_equal()
 gg
 ```
 
