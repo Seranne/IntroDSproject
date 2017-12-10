@@ -17,30 +17,34 @@ library(ggplot2)
 ```
 
 # Overview and Motivation
-The World Happiness Report is a composite measure of country-level happiness based on economic and social factors such as per capita GDP, social support, healthy life expectancy at birth, freedom to make life choices, generosity and perceptions of corruption, released annually by the UN Sustainble Development Solutions Network. In the present landscape of shifting political and economic climates across the world, we believe it is important to expand and include measures which encompass a wider narrative of the human experience. We are keen to understand the association between country-level physical, financial, social, cultural, political, and environmental indicators and the parent country's ranking on an overall well-being index. For instance, tt would be interesting to learn more about the influences of variables such as Gini Coefficients, literacy levels, deforestation, climate etc. on the happiness ranking of a country. 
+
+[The World Happiness Report](http://worldhappiness.report/overview/) is a composite measure of country-level happiness based on economic and social factors such as per capita GDP, social support, healthy life expectancy at birth, freedom to make life choices, generosity and perceptions of corruption, released annually by the United Nations Sustainble Development Solutions Network. In the present landscape of shifting political and economic climates across the world, we believe it is important to expand and include measures which encompass a wider narrative of the human experience. 
+
+We are keen to understand the association between country-level physical, financial, social, cultural, political, and environmental indicators and the parent country's ranking on an overall well-being index. For instance, [literature](https://bmcpublichealth.biomedcentral.com/articles/10.1186/1471-2458-13-496) shows that "fear of crime represents a complex set of responses to the environment. It may play a role in mediating environmental impacts on health and wellbeing". Conversely, in his [book](http://www.palgrave.com/us/book/9780333548080), "Politics, Women and Well-being", Robin Jeffrey discusses the key role played by a more gender-equal society in the overall health and improvement of a state in India. 
+
+Similar to these findings, we strongly believe it is of great relevance to learn more about the influences of variables such as Gini Coefficients, literacy levels, deforestation, climate etc. on the happiness and well-being of a country as a whole.
 
 We hope to understand the underlying variables most responsible for these scores, and identify conceptual and measurement gaps in the development of an overall score of country-level well-being. We believe that factors such as racial diversity, environmental sustainability, and population skew, among others, are either missing or underrepresented in the present composite measure. We aim to modify this to build a more well-rounded measure of the well-being of a country.  
 We believe that this information could potentially inform policies to improve overall country happiness and human flourishing.  
 
-# Related Work:  Anything that inspired you, such as a paper, a web site, or something we discussed in class.
-
-# Initial Questions: What questions are you trying to answer? How did these questions evolve over the course of the project? What new questions did you consider in the course of your analysis?
+# Initial Questions: 
 
 We began our project with the goal of identifying yearly-changes in a country's happiness and well-being. However, as we learnt more about how these composite indices are derived, we grew keen to understand the factors considered in the creation of a well-being score. Over the course of our literature review, we identified more variables we believe are relevant to a population's well-being, and decided to create a new, incremented ranking of country well-being with this additional data. Thus, our project seeks to answer: 
 
-- Is there a change in the average ranking of a country's happiness and well-being, given the inclusion of a more comprehensive variable list representing its physical, social, cultural, economic and political enviroments?
-- Are are specific variables which contribute more to this derived composite index, than others?
+Is there a change in the average ranking of a country's happiness and well-being, given the inclusion of a more comprehensive variable list representing its physical, social, cultural, economic and political enviroments?
 
-# Data: Source, scraping method, cleanup, etc.
+# Methods:
 
-In order to develop our well-being index, we extracted data from a number of resources, categorized below: (To make a table displaying our variables with categories). 
+In order to develop our well-being index, we extracted data from a number of resources, categorized below: 
+
 ```{r}
 org = c("World Bank", "United Nations Sustainable Development Solutions Network", "New Economics Foundation", "Wikipedia (Fearon's Analysis)")
 dat <- c("World Development Indicators (2010-17)", "World Happiness Report", "Happy Planet Index", "Ethnic Fractionalization Index")
 
 datasources <- data.frame("Source" = org, "Data" = dat)
+categs <- c("Child Welfare", "Gender", "Employment","Economic Indicators", "Energy Indicators", "Emissions", "Connectivity", "Environmental Welfare", "Food Deficit", "Sense of Security", "Travel for Leisure")
 
-categs <- c("Population Charateristics", "Child Welfare", "Gender", "Employment","Economic Indicators", "Energy Indicators", "Emissions", "Connectivity", "Environmental Welfare", "Food Deficit", "Sense of Security", "Travel for Leisure")
+categs <- data.frame("Population Characteristics" = categs)
 
 print(kable(datasources))
 print(kable(categs))
@@ -49,13 +53,14 @@ print(kable(categs))
 #dframe1 %>% data.frame("Indicators" = categs) %>% kable
 ```
 
-From each of our sources, we selected variables most relevant to the creation of our composite index (based on literature review). A Pearson's correlation was run across all chosen variables [REF in the Google Doc], to identify variables with high correlation, and assign these correlated variables with lower weights in our final composite score, to avoid double counting of similar variables. 
+From each of our sources, we selected variables most relevant to the creation of our composite index (based on literature review). After a review of the [Handbook on Constructing Composite Score Indicators](https://www.oecd.org/std/42495745.pdf) released by the OECD examining weighting techniques in social and demographix index development, we decided to provide equal weightage to all variables, to provide countries with lesser-utilized variables equal opportunity to receive higher ranks in the final index.
 
-A country-wise ranking was then generated for each variable, in every category. Every country then received a category-wise composite score, calculated as 
+A country-wise ranking was then generated for each variable, in every category. Every country then received a category-wise composite score, calculated as an equally-weighted average of the mean variable ranks. 
+
+# Exploratory Analysis: 
 
 
-# Exploratory Analysis: What visualizations did you use to look at your data in different ways? What are the different statistical methods you considered? Justify the decisions you made, and show any major changes to your ideas. How did you reach these conclusions?
-
+- Samples in the WHR (1000 per country not taking into acount population density or total population), doesn't take into consideration - 
 - Scatterplot of the WHR countries ranks?
 - Association between maybe ethnic fractionalization/total population/environmental biodiversity and these ranks? [T perhaps justify why we don't think that these ranks are very accurate]
 
