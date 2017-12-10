@@ -148,8 +148,10 @@ write.csv(final_score, file = "CalculatedOurindex.csv")
 # Fixing Regions
 ```{r}
 read.csv("/IntroDSproject/Final score data/CalculatedOurindex.csv")
-levels(CalculatedOurindex$CountryName)[levels(CalculatedOurindex$CountryName) == "Egypt, Arab Rep."] <- "Egypt"
-levels(CalculatedOurindex$CountryName)[levels(CalculatedOurindex$CountryName) == "Lao PDR"] <- "Laos"
+class(CalculatedOurindex$CountryName)
+
+CalculatedOurindex$CountryName[(CalculatedOurindex$CountryName) == "Egypt, Arab Rep."] <- "Egypt"
+CalculatedOurindex$CountryName[(CalculatedOurindex$CountryName) == "Lao PDR"] <- "Laos"
 
 CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Bolivia" & is.na(CalculatedOurindex$sub.region)] <- "South America"
 
