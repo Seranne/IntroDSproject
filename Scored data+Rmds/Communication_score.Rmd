@@ -10,7 +10,7 @@ library(ggplot2)
 ```
 
 ```{r}
-Communication <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Communication.csv")
+Communication <- read_csv("../WDI data split/Communication.csv")
 Communication<- na.omit(Communication)
 Communication <- Communication[order(-Communication$Year),]
 Communication <- Communication %>% distinct(CountryName, .keep_all = TRUE)

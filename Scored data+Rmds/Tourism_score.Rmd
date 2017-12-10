@@ -7,14 +7,14 @@ output: html_document
 
 # Ranking number of international departures as a proportion of total population
 ```{r}
-tourism <- read.csv("F://IntroDSproject/WDI data split/Tourism.csv")
+tourism <- read_csv("../WDI data split/Tourism.csv")
 
 tourism <- select(tourism, "CountryName", "Year", "ST.INT.DPRT")
 tourism <- tourism[order(-tourism$Year),]
 tourism <- tourism %>% distinct(CountryName, .keep_all = TRUE)
 View(tourism)
 
-pop <- read.csv("F://IntroDSproject/WDI data split/Population.csv")
+pop <- read.csv("../WDI data split/Population.csv")
 
 pop <- filter(pop, pop$Year == "2013")
 pop <- select(pop, "CountryName", "SP.POP.TOTL")

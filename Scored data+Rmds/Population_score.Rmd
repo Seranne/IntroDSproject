@@ -15,7 +15,7 @@ library(ggplot2)
 ```
 
 ```{r}
-Population <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Population.csv")
+Population <- read_csv("../WDI data split/Population.csv")
  Population1<- select(Population, "CountryName", "CountryCode", "Year", "EN.POP.DNST")
  Population1 <- Population1[order(-Population1$Year),]
  Population1<- na.omit(Population1)

@@ -8,7 +8,7 @@ output: html_document
 ```{r}
 #Least food deficit will rank 1
 
-deficit <- read.csv("F://IntroDSproject/WDI data split/Food_deficit.csv")
+deficit <- read.csv("../WDI data split/Food_deficit.csv")
 deficit <- select(deficit, "CountryName", "Year", "SN.ITK.DFCT")
 deficit <- deficit[order(-deficit$Year),]
 deficit <- deficit %>% distinct(CountryName, .keep_all = TRUE)

@@ -11,7 +11,7 @@ library(ggplot2)
 ```
 
 ```{r}
-GDP_base <- read_csv("/Users/Sanjana/Desktop/OneDrive - Harvard University/Fall 2017/BST 260-Introduction to Data Science/IntroDSproject/WDI data split/GDP.csv")
+GDP_base <- read_csv("../WDI data split/GDP.csv")
 
 #Individual data frames for each variable of GDP
 

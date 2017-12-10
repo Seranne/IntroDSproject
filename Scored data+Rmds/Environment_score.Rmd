@@ -11,6 +11,7 @@ library(ggplot2)
 ```
 
 ```{r}
+environment <- read_csv("../WDI data split/Environment.csv")
 envir_mod <- environment %>% 
   group_by(CountryName) %>% 
   na.omit() %>%

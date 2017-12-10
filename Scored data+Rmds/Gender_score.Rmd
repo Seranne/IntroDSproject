@@ -10,7 +10,7 @@ library(ggplot2)
 ```
 
 ```{r}
-Gender <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Gender.csv")
+Gender <- read_csv("../WDI data split/Gender.csv")
 
 Gen<- select(Gender, "CountryName", "CountryCode", "Year", "SG.GEN.PARL.ZS")
 Gen <- Gen[order(-Gen$Year),]

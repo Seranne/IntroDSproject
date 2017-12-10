@@ -6,7 +6,7 @@ output: html_document
 ---
 ```{r}
 library(tidyverse)
-security <- read_csv("F://IntroDSproject/WDI data split/Security.csv")
+security <- read_csv("../WDI data split/Security.csv")
 ```
 
 

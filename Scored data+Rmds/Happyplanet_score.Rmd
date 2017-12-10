@@ -12,7 +12,7 @@ library(readr)
 
 Used inequality adjusted life expectancy, inequality adjusted well being and happy planet index
 ```{r}
-hpi_data_2016 <- read_csv("d:/Documents/GitHub/IntroDSproject/Original Data/hpi-data-2016.csv")
+hpi_data_2016 <- read_csv("../Original Data/hpi-data-2016.csv")
 colnames(hpi_data_2016)[2] <- "CountryName"
  hpi_data_20161<- select(hpi_data_2016, "CountryName", "Inequality-adjusted_Life_Expectancy")
 hpi_data_20161<- na.omit(hpi_data_20161)

@@ -14,7 +14,7 @@ library(tidyverse)
 
 ```{r}
 url <- "https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level"
-pop <- read_csv("/IntroDSproject/WDI data split/Population.csv")
+pop <- read_csv("../WDI data split/Population.csv")
 h <- read_html(url)
 efindex <- h %>% html_nodes("table") %>% html_table(fill = TRUE) %>%
         .[[3]]

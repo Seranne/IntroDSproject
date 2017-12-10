@@ -12,7 +12,7 @@ library(tidyverse)
 
 
 ```{r}
-chld <- read.csv("F://IntroDSproject/WDI data split/Children.csv")
+chld <- read.csv("../WDI data split/Children.csv")
 
 # Share of children not in education, employment or training: lowest gets highest rank 
 neet <- select(chld, "CountryName", "Year", "SL.UEM.NEET.ZS")
