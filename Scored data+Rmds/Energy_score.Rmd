@@ -30,7 +30,7 @@ Energy <- read_csv("../WDI data split/Energy.csv")
  Energy3 <- Energy3[order(-Energy3$Year),]
  Energy3<- na.omit(Energy3)
  Energy3 <- Energy3%>% distinct(CountryName, .keep_all = TRUE)
- Energy3 <- Energy3 %>% mutate(finalrank_eng3 = rank(Energy3$EG.USE.COMM.FO.ZS))
+ Energy3 <- Energy3 %>% mutate(finalrank_eng3 = rank(-Energy3$EG.USE.COMM.FO.ZS))
  Energy3$finalrank_eng3<- as.numeric(as.factor(Energy3$finalrank_eng3))
  
  Energy4<- select(Energy, "CountryName", "CountryCode", "Year", "EG.USE.ELEC.KH.PC")
