@@ -155,9 +155,13 @@ Composite Energy Score:
 # Selecting indicators of interest 
 Energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC") %>% spread(IndicatorCode, Value)
 
+<<<<<<< HEAD
 
 #reoving rows with too many na's and filling in remaining na's with same country means
  Energy <- Energy[order(-Energy$Year),]
+=======
+Energy <- Energy[order(-Energy$Year),]
+>>>>>>> 3081b7b0338774f1563d5cbfc16517056e7601fb
  Energy[rowSums(is.na(Energy)) < ncol(Energy)/2, ]
  Energy<- aggregate(x=Energy[c("EG.ELC.ACCS.ZS","EG.FEC.RNEW.ZS","EG.USE.COMM.FO.ZS","EG.USE.ELEC.KH.PC")], by=list(name=Energy$CountryName), FUN = "mean" , na.rm = TRUE)
  colnames(Energy)[1] <- "CountryName"
@@ -166,6 +170,7 @@ Energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.
 
  # Access to Electricity (% of population); Highest score gets ranked 1
  Energy1<- select(Energy, "CountryName",  "EG.ELC.ACCS.ZS")
+<<<<<<< HEAD
  Energy1 <- Energy1 %>% mutate(finalrank_eng1 = rank(-Energy1$EG.ELC.ACCS.ZS))
  Energy1$finalrank_eng1<- as.numeric(as.factor(Energy1$finalrank_eng1))
  
@@ -190,6 +195,7 @@ Energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.
 # Highest aggregate score is ranked 1
 Energy_score <- Energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 )/3)
 Energy_score <- Energy_score %>% mutate(finalrank_eng = rank(Energy_score$score_eng))
+
 ```
 
 CO2 Emissions score:
@@ -592,6 +598,7 @@ write.csv(dystopia, file = "Dystopia_score.csv")
 hpi_data_2016 <- readxl::read_xlsx("Your/File/Path/Here.xlsx")
 hpi_data_2016 <- read_csv("../IntroDSproject/Original Data/hpi-data-2016.csv")
 
+<<<<<<< HEAD
 #As other variables have been Covered in previous categories, only wellbeing index was selected for our score
 
 colnames(hpi_data_2016)[2] <- "CountryName"
@@ -607,7 +614,6 @@ hpi_data_2016<- select(hpi_data_20162,"CountryName",  "finalrank_hpi2")
  happyplanet_score <- hpi_data_2016 %>% mutate(score_hpi = finalrank_hpi2 )
  happyplanet_score <- happyplanet_score %>% mutate(finalrank_hpi = rank(happyplanet_score$score_hpi))
  
-
 
 ```
 
@@ -744,7 +750,7 @@ regions <- regions %>% select(name, region, sub.region)
 colnames(regions)[1] <- "CountryName"
 final_score <- left_join(final_score, regions, "CountryName")
  
- write.csv(final_score, file = "CalculatedOurindex.csv")
+
 
  write.csv(final_score, file = "CalculatedOurindex.csv")
 ```
