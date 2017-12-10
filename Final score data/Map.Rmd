@@ -48,7 +48,6 @@ mapCountryData(finalindexplot,
                oceanCol='lightblue',
                missingCountryCol='white',
                borderCol='black')
-
 ```
 
 # WHR
