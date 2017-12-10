@@ -250,7 +250,7 @@ comm <- comm %>% mutate(finalrank_comm = rank(-comm$score))
 communications_score <- select(comm, "CountryName", "CountryCode","finalrank_comm" )
 ```
 
-Child Welfare score:
+Composite Child Welfare score:
 
 ```{r}
 children<- WDI4 %>% filter(IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS" | IndicatorCode == "SP.DYN.IMRT.IN") %>% spread(IndicatorCode, Value)
@@ -301,11 +301,12 @@ deficit_score <- deficit %>% mutate(finalrank_deficit =
 Economic score: 
 
 ```{r}
+# Selecting relevant economic indicators
 GDP_base <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
 
 #Individual data frames for each variable of GDP
 
-#Military expenditure- As the expenditure increases, the rank drops.
+#Military expenditure (% of GDP) - Lowest expenditure will be ranked 1
 gdp_1 <- GDP_base %>% 
   select(CountryName, Year, MS.MIL.XPND.GD.ZS) %>%
   na.omit() %>%
@@ -313,7 +314,7 @@ gdp_1 <- GDP_base %>%
   summarise(mean_mil = mean(MS.MIL.XPND.GD.ZS)) %>%
   mutate(finalrank_mil = rank(mean_mil))
 
-#GDP per capita - Higher the country's GDP, higher its rank
+#GDP per capita (in USD) - Country with the highest GDP will be ranked 1
 gdp_2 <- GDP_base %>% 
   select(CountryName, Year, NY.GDP.MKTP.PP.CD) %>%
   na.omit() %>%
@@ -321,7 +322,7 @@ gdp_2 <- GDP_base %>%
   summarise(mean_ppp = mean(NY.GDP.MKTP.PP.CD)) %>%
   mutate(finalrank_ppp = rank(-mean_ppp))
 
-#GDP per capita, PPP - Higher the country's GDP PPP, higher its rank
+#GDP per capita, PPP (in current international dollar) - Country with the highest GDP will be ranked 1
 gdp_3 <- GDP_base %>% 
   select(CountryName, Year, NY.GDP.PCAP.CD) %>%
   na.omit() %>%
@@ -329,7 +330,7 @@ gdp_3 <- GDP_base %>%
   summarise(mean_gdp = mean(NY.GDP.PCAP.CD)) %>%
   mutate(finalrank_gdp = rank(-mean_gdp))
 
-#GDP per capita growth - Higher the country's GDP oer capita growth, higher its rank
+#GDP per capita growth (annual %) - Country with highest GDP will be ranked 1
 gdp_4 <- GDP_base %>% 
   select(CountryName, Year, NY.GDP.PCAP.KD.ZG) %>%
   na.omit() %>%
@@ -337,7 +338,7 @@ gdp_4 <- GDP_base %>%
   summarise(mean_gdpg = mean(NY.GDP.PCAP.KD.ZG)) %>%
   mutate(finalrank_gdpg = rank(-mean_gdpg))
 
-#Inflation- As the inflation increases, the country's rank drops
+#Inflation (annula %) - Country with the lowest annual inflation % will rank 1
 gdp_5 <- GDP_base %>% 
   select(CountryName, Year, FP.CPI.TOTL.ZG) %>%
   na.omit() %>%
@@ -356,6 +357,7 @@ GDP2 <- GDP2[rowSums(is.na(GDP2)) < 4, ]
 i <- which(is.na(GDP2), arr.ind = TRUE)
 GDP2[i] <- rowMeans(GDP2[,-1], na.rm = TRUE)[i[,1]]
 
+# Country with the highest average score will rank 1
 GDP2 <- GDP2 %>% mutate(score_gdp = (finalrank_mil + finalrank_ppp+ finalrank_gdp + finalrank_gdpg + finalrank_infl)/5)
 economy_score <- GDP2 %>% mutate(finalrank_GDP = rank(GDP2$score_gdp))
 ```
@@ -363,7 +365,11 @@ economy_score <- GDP2 %>% mutate(finalrank_GDP = rank(GDP2$score_gdp))
 Education score:
 
 ```{r}
+# Selecting relevant indicator variables: Youth literacy rate, population 15-24 years, both sexes (%) and Adult literacy rate, population 15+ years, both sexes (%) 
+
 Education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
+
+# Highest rate of youth literacy will be ranked 1
 En1<- select(Education, "CountryName", "CountryCode", "Year", "SE.ADT.1524.LT.ZS")
 En1 <- En1[order(-En1$Year),]
 En1<- na.omit(En1)
@@ -371,7 +377,7 @@ En1 <- En1%>% distinct(CountryName, .keep_all = TRUE)
 En1 <- En1 %>% mutate(rank_eng1 = rank(-En1$SE.ADT.1524.LT.ZS))
 En1$rank_eng1<- as.numeric(as.factor(En1$rank_eng1))
 
-
+# Highest rate of adult literacy will be ranked 1
 En2<- select(Education, "CountryName", "CountryCode", "Year", "SE.ADT.LITR.ZS")
 En2 <- En2[order(-En2$Year),]
 En2<- na.omit(En2)
@@ -379,6 +385,7 @@ En2 <- En2%>% distinct(CountryName, .keep_all = TRUE)
 En2 <- En2 %>% mutate(rank_eng2 = rank(-En2$SE.ADT.LITR.ZS))
 En2$rank_eng2<- as.numeric(as.factor(En2$rank_eng2))
 
+# Country with the highest average literacy rte will be ranked 1
 litjoin <- left_join(En1, En2, "CountryName")
 Education <- select(litjoin,"CountryName", "rank_eng1", "rank_eng2")
 Education <- Education%>% mutate(score_edu = (rank_eng1 + rank_eng2)/2)
@@ -403,6 +410,9 @@ gender_score$finalrank_gen<- as.numeric(as.factor(gender_score$finalrank_gen))
 Employment score:
 
 ```{r}
+# Select indicator variable: Wage and salaried workers, total (% of total employed)
+# country with the highest % of wage and salaried workers will be ranked 1
+
 empl<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
 empl <- select(empl, "CountryName", "Year", "SL.EMP.WORK.ZS")
 empl <- empl[order(-empl$Year),]
@@ -415,8 +425,11 @@ employment_score <- empl %>% mutate(finalrank_empl =
 Population score:
 
 ```{r}
+# Select relevant indicator variables
+
 Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
 
+# Population density (people per sq. km of land area): Lowest ranked 1
  Population1<- select(Population, "CountryName", "CountryCode", "Year", "EN.POP.DNST")
  Population1 <- Population1[order(-Population1$Year),]
  Population1<- na.omit(Population1)
@@ -424,6 +437,7 @@ Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "S
  Population1 <- Population1 %>% mutate(finalrank_pop1 = rank(Population1$EN.POP.DNST))
  Population1$finalrank_pop1<- as.numeric(as.factor(Population1$finalrank_pop1))
  
+ # GINI index: Lowest ranked 1
  Population2<- select(Population, "CountryName", "CountryCode", "Year", "SI.POV.GINI")
  Population2 <- Population2[order(-Population2$Year),]
  Population2<- na.omit(Population2)
@@ -431,6 +445,8 @@ Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "S
  Population2 <- Population2 %>% mutate(finalrank_pop2 = rank(Population2$SI.POV.GINI))
  Population2$finalrank_pop2<- as.numeric(as.factor(Population2$finalrank_pop2))
  
+ 
+# Life expectancy at birth (total, in years): Highest ranked 1
  Population3<- select(Population, "CountryName", "CountryCode", "Year", "SP.DYN.LE00.IN")
  Population3 <- Population3[order(-Population3$Year),]
  Population3<- na.omit(Population3)
@@ -438,11 +454,12 @@ Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "S
  Population3 <- Population3 %>% mutate(finalrank_pop3 = rank(-Population3$SP.DYN.LE00.IN))
  Population3$finalrank_pop3<- as.numeric(as.factor(Population3$finalrank_pop3))
  
+
+ # Total score: highest ranked 1 
 Popjoin <- left_join(Population1, Population2, "CountryName")
 population_score <- left_join(Popjoin, Population3, "CountryName")
-
 population_score <- select(population_score,"CountryName", "finalrank_pop1", "finalrank_pop2", "finalrank_pop3")
- 
+
 population_score <- population_score[rowSums(is.na(Population)) < 2, ]
 i <- which(is.na(population_score), arr.ind = TRUE)
 population_score[i] <- rowMeans(population_score[,-1], na.rm = TRUE)[i[,1]]
@@ -452,9 +469,10 @@ population_score <- population_score %>% mutate(score_pop = ((finalrank_pop1 + f
 population_score <- population_score %>% mutate(finalrank_pop = rank(score_pop))
 ```
 
-Security score:
+Sense of Security Composite score:
 
 ```{r}
+
 security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
 
 #Strength of legal system - rank generates best legal strength at 1
@@ -484,6 +502,7 @@ security_score <- mutate(security_score, finalscore_security = as.numeric(as.fac
 Tourism score:
 
 ```{r}
+# Selecting indicator: number of international departures (% of total population)
 tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
 write.csv(Tourism, file = "Tourism.csv")
 
@@ -496,6 +515,7 @@ Population <- filter(Population, pop$Year == "2013")
 Population <- select(Population, "CountryName", "SP.POP.TOTL")
 tour <- left_join(tourism, Population, by = "CountryName")
 
+# Highest score will get a rank of 1 
 tourism_score <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL)))
 ```
 
