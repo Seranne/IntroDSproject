@@ -9,6 +9,10 @@ output: html_document
 library(dplyr)
 library(tidyverse)
 library(knitr)
+library(readr)
+library(tidyverse)
+
+
 ```
 
 # Overview and Motivation
@@ -41,10 +45,10 @@ dframe1 %>% data.frame("Indicators" = categs) %>% kable
 
 ```
 
-From each of our sources, we selected variables most relevant to the creation of our composite index (based on literature review). A Pearson's correlation was run across all chosen variables, to identify 
+From each of our sources, we selected variables most relevant to the creation of our composite index (based on literature review). A Pearson's correlation was run across all chosen variables [REF in the Google Doc], to identify variables with high correlation, and assign these correlated variables with lower weights in our final composite score, to avoid double counting of similar variables. 
 
+A country-wise ranking was then generated for each variable, in every category. Every country then received a category-wise composite score, calculated as 
 
-and generated a country-wise ranking for each variable, in every category. Every category then received its own composite scoring  
 
 # Exploratory Analysis: What visualizations did you use to look at your data in different ways? What are the different statistical methods you considered? Justify the decisions you made, and show any major changes to your ideas. How did you reach these conclusions?
 
@@ -59,24 +63,16 @@ and generated a country-wise ranking for each variable, in every category. Every
 
 # Deriving data from the World Development Indicators
 
-```{r}
+The World Bank's World Development Indicators were downloaded from [Kaggle](https://www.kaggle.com/worldbank/world-development-indicators), and this dataset is available for download as a .csv from [this link](https://drive.google.com/open?id=1ilfW3OIrVs6b4EsFPFbW-dw_vQiQgetU). However, given the large size of this data, our initial cleaned dataset is available as a smaller-sized url-linked csv, on which the rest of the code was run.
 
-```{r}
-library(readr)
-library(tidyverse)
-```
-
-```{r}
+```{r, eval=FALSE}
+# Replace path name with that of the downloaded csv file
 Indicators_csv <- read_csv("d:/Documents/IntroDSproject/Indicators_csv")
+
 # Filtering by Year
 WDI <- filter(Indicators_csv, Year == "2010"| Year == "2011" | Year == "2012"| Year == "2013" | Year == "2014" | Year == "2015" | Year == "2016" | Year =="2017")
-```
 
-```{r}
-#ourWDI <- read_csv("F://IntroDSproject/ourWDI.csv")
-
-# Removing Aggregated country values              
-
+# Removing Aggregated Country classifications, by country code
 WDInew <- filter(WDI, CountryCode != "WBG")
 WDInew <- filter(WDInew, CountryCode != "WLD")
 WDInew <- filter(WDInew, CountryCode != "UMC")
@@ -108,11 +104,16 @@ WDInew <- filter(WDInew, CountryCode != "NAC")
 WDInew <- filter(WDInew, CountryCode != "SAS")
 WDInew <- filter(WDInew, CountryCode != "MIC")
 
-
+# Filtering dataset to only include variables of interest 
 WDI2 <- filter(WDInew, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC"| IndicatorCode == "EN.ATM.CO2E.PC"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SP.DYN.IMRT.IN"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
 
-
 write.csv(WDI2, file = "ourWDI.csv")
+```
+
+If the above original dataset was not downloaded, the code below runs on the .csv generated at the end of
+
+```
+
 WDI4<- select(WDI2,"CountryName","CountryCode", "IndicatorCode", "Year","Value")
 
 energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC") %>% spread(IndicatorCode, Value)
