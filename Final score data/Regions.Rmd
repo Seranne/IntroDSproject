@@ -4,11 +4,24 @@ output: html_document
 ---
 ```{r}
 url <- "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
+read.csv("/IntroDSproject/Final score data/final_score_only.csv")
 
 regions <-read.csv(url)
 regions <- regions %>% select(name, region, sub.region)
 colnames(regions)[1] <- "CountryName"
 final_score_only <- left_join(final_score_only, regions, "CountryName")
 write.csv(final_score_only, "final_score_only.csv")
+```
+
+
+# Filling NAs in with average regional values
+```{r}
+library(dplyr)
+library(tidyverse)
+library(dslabs)
+
+unique(na.omit(final_score_only$sub.region))
+
+testing <- final_score_only %>% group_by(sub.region) %>% mutate(meandiversity = mean(finalrank_diversity, na.rm = TRUE))
 ```
 
