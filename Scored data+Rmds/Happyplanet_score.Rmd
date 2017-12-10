@@ -22,11 +22,10 @@ colnames(hpi_data_2016)[2] <- "CountryName"
  hpi_data_20162$finalrank_hpi2<- as.numeric(as.factor(hpi_data_20162$finalrank_hpi2))
  
 hpi_data_2016<- select(hpi_data_20162,"CountryName",  "finalrank_hpi2")
- 
 
  
- hpi_data_2016 <- hpi_data_2016 %>% mutate(score_hpi = finalrank_hpi2 )
- hpi_data_2016 <- hpi_data_2016 %>% mutate(finalrank_hpi = rank(hpi_data_2016$score_hpi))
+ happyplanet_score <- hpi_data_2016 %>% mutate(score_hpi = finalrank_hpi2 )
+ happyplanet_score <- happyplanet_score %>% mutate(finalrank_hpi = rank(happyplanet_score$score_hpi))
  
  write.csv(hpi_data_2016, file = "happyplanet_score.csv")
 ```

@@ -16,17 +16,11 @@ Communication <- read_csv("../WDI data split/Communication.csv")
  Communication[rowSums(is.na(Communication)) < ncol(Communication)/2, ]
  Communication<- aggregate(x=Communication[c("IT.CEL.SETS.P2","IT.NET.USER.P2")], by=list(name=Communication$CountryName), FUN = "mean" , na.rm = TRUE)
  colnames(Communication)[1] <- "CountryName"
- # Communication[rowSums(is.na(Communication1)) < ncol(Communication)/2, ]
- #Communication <- Communication%>% distinct(CountryName, .keep_all = TRUE)
-
-#Communication<- na.omit(Communication)
-#Communication <- Communication[order(-Communication$Year),]
-#Communication <- Communication %>% distinct(CountryName, .keep_all = TRUE)
 Communication <- Communication %>% mutate(rankcell = rank(IT.CEL.SETS.P2)) 
 Communication <- Communication %>% mutate(ranknet = rank(IT.NET.USER.P2))
 Communication <- Communication %>% mutate(score = (rankcell+ranknet)/2)
 Communication <- Communication %>% mutate(finalrank_comm = rank(-Communication$score))
-Communication2 <- select(Communication, "CountryName", "finalrank_comm" )
+Communication_score <- select(Communication, "CountryName", "finalrank_comm" )
 
 write.csv(Communication2, file = "Communication_score.csv")
 ```

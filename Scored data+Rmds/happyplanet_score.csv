@@ -1,141 +1,141 @@
-"","CountryName","finalrank_hpi2","score_hpi","finalrank_hpi"
-"1","Afghanistan",40,40,132.5
-"2","Albania",23,23,64
-"3","Algeria",22,22,58.5
-"4","Argentina",14,14,28
-"5","Armenia",37,37,120.5
-"6","Australia",6,6,10.5
-"7","Austria",5,5,8.5
-"8","Bangladesh",31,31,93.5
-"9","Belarus",21,21,53.5
-"10","Belgium",9,9,17.5
-"11","Belize",17,17,37
-"12","Benin",43,43,138
-"13","Bhutan",22,22,58.5
-"14","Bolivia",19,19,45
-"15","Bosnia and Herzegovina",32,32,98.5
-"16","Botswana",31,31,93.5
-"17","Brazil",12,12,24
-"18","Bulgaria",37,37,120.5
-"19","Burkina Faso",38,38,125
-"20","Burundi",42,42,136.5
-"21","Cambodia",39,39,129
-"22","Cameroon",37,37,120.5
-"23","Canada",5,5,8.5
-"24","Chad",37,37,120.5
-"25","Chile",13,13,26
-"26","China",28,28,77.5
-"27","Colombia",17,17,37
-"28","Comoros",37,37,120.5
-"29","Costa Rica",7,7,13
-"30","Cote d'Ivoire",39,39,129
-"31","Croatia",19,19,45
-"32","Cyprus",17,17,37
-"33","Czech Republic",15,15,31.5
-"34","Denmark",4,4,6.5
-"35","Djibouti",36,36,115.5
-"36","Dominican Republic",33,33,103
-"37","Ecuador",19,19,45
-"38","Egypt",37,37,120.5
-"39","El Salvador",21,21,53.5
-"40","Estonia",24,24,67.5
-"41","Ethiopia",32,32,98.5
-"42","Finland",4,4,6.5
-"43","France",12,12,24
-"44","Gabon",39,39,129
-"45","Georgia",36,36,115.5
-"46","Germany",11,11,21.5
-"47","Ghana",28,28,77.5
-"48","Greece",29,29,85
-"49","Guatemala",22,22,58.5
-"50","Guinea",41,41,134.5
-"51","Haiti",34,34,108.5
-"52","Honduras",35,35,112.5
-"53","Hong Kong",23,23,64
-"54","Hungary",32,32,98.5
-"55","Iceland",3,3,4
-"56","India",32,32,98.5
-"57","Indonesia",23,23,64
-"58","Iran",34,34,108.5
-"59","Iraq",31,31,93.5
-"60","Ireland",8,8,15.5
-"61","Israel",7,7,13
-"62","Italy",21,21,53.5
-"63","Jamaica",24,24,67.5
-"64","Japan",18,18,40.5
-"65","Kazakhstan",20,20,50
-"66","Kenya",33,33,103
-"67","Kyrgyzstan",25,25,69.5
-"68","Latvia",27,27,72
-"69","Lebanon",34,34,108.5
-"70","Lesotho",31,31,93.5
-"71","Liberia",33,33,103
-"72","Lithuania",20,20,50
-"73","Luxembourg",8,8,15.5
-"74","Macedonia",33,33,103
-"75","Malawi",39,39,129
-"76","Malaysia",17,17,37
-"77","Malta",19,19,45
-"78","Mauritania",29,29,85
-"79","Mauritius",23,23,64
-"80","Mexico",7,7,13
-"81","Mongolia",28,28,77.5
-"82","Montenegro",28,28,77.5
-"83","Morocco",29,29,85
-"84","Mozambique",29,29,85
-"85","Myanmar",34,34,108.5
-"86","Namibia",30,30,89
-"87","Nepal",36,36,115.5
-"88","Netherlands",2,2,2
-"89","New Zealand",6,6,10.5
-"90","Nicaragua",26,26,71
-"91","Niger",39,39,129
-"92","Nigeria",22,22,58.5
-"93","Norway",3,3,4
-"94","Oman",11,11,21.5
-"95","Pakistan",28,28,77.5
-"96","Palestine",33,33,103
-"97","Panama",12,12,24
-"98","Paraguay",19,19,45
-"99","Peru",21,21,53.5
-"100","Philippines",30,30,89
-"101","Poland",19,19,45
-"102","Portugal",31,31,93.5
-"103","Republic of Congo",40,40,132.5
-"104","Romania",28,28,77.5
-"105","Russia",22,22,58.5
-"106","Rwanda",42,42,136.5
-"107","Senegal",41,41,134.5
-"108","Serbia",28,28,77.5
-"109","Sierra Leone",34,34,108.5
-"110","Slovakia",20,20,50
-"111","Slovenia",17,17,37
-"112","South Africa",28,28,77.5
-"113","South Korea",19,19,45
-"114","Spain",15,15,31.5
-"115","Sri Lanka",36,36,115.5
-"116","Suriname",15,15,31.5
-"117","Swaziland",30,30,89
-"118","Sweden",3,3,4
-"119","Switzerland",1,1,1
-"120","Syria",44,44,139
-"121","Tajikistan",31,31,93.5
-"122","Tanzania",38,38,125
-"123","Thailand",14,14,28
-"124","Togo",45,45,140
-"125","Trinidad and Tobago",14,14,28
-"126","Tunisia",34,34,108.5
-"127","Turkey",25,25,69.5
-"128","Turkmenistan",23,23,64
-"129","Uganda",35,35,112.5
-"130","Ukraine",28,28,77.5
-"131","United Kingdom",9,9,17.5
-"132","United States of America",10,10,19.5
-"133","Uruguay",16,16,34
-"134","Uzbekistan",18,18,40.5
-"135","Vanuatu",15,15,31.5
-"136","Venezuela",10,10,19.5
-"137","Vietnam",22,22,58.5
-"138","Yemen",38,38,125
-"139","Zambia",29,29,85
-"140","Zimbabwe",28,28,77.5
+"","CountryName","finalrank_hpi2"
+"1","Afghanistan",40
+"2","Albania",23
+"3","Algeria",22
+"4","Argentina",14
+"5","Armenia",37
+"6","Australia",6
+"7","Austria",5
+"8","Bangladesh",31
+"9","Belarus",21
+"10","Belgium",9
+"11","Belize",17
+"12","Benin",43
+"13","Bhutan",22
+"14","Bolivia",19
+"15","Bosnia and Herzegovina",32
+"16","Botswana",31
+"17","Brazil",12
+"18","Bulgaria",37
+"19","Burkina Faso",38
+"20","Burundi",42
+"21","Cambodia",39
+"22","Cameroon",37
+"23","Canada",5
+"24","Chad",37
+"25","Chile",13
+"26","China",28
+"27","Colombia",17
+"28","Comoros",37
+"29","Costa Rica",7
+"30","Cote d'Ivoire",39
+"31","Croatia",19
+"32","Cyprus",17
+"33","Czech Republic",15
+"34","Denmark",4
+"35","Djibouti",36
+"36","Dominican Republic",33
+"37","Ecuador",19
+"38","Egypt",37
+"39","El Salvador",21
+"40","Estonia",24
+"41","Ethiopia",32
+"42","Finland",4
+"43","France",12
+"44","Gabon",39
+"45","Georgia",36
+"46","Germany",11
+"47","Ghana",28
+"48","Greece",29
+"49","Guatemala",22
+"50","Guinea",41
+"51","Haiti",34
+"52","Honduras",35
+"53","Hong Kong",23
+"54","Hungary",32
+"55","Iceland",3
+"56","India",32
+"57","Indonesia",23
+"58","Iran",34
+"59","Iraq",31
+"60","Ireland",8
+"61","Israel",7
+"62","Italy",21
+"63","Jamaica",24
+"64","Japan",18
+"65","Kazakhstan",20
+"66","Kenya",33
+"67","Kyrgyzstan",25
+"68","Latvia",27
+"69","Lebanon",34
+"70","Lesotho",31
+"71","Liberia",33
+"72","Lithuania",20
+"73","Luxembourg",8
+"74","Macedonia",33
+"75","Malawi",39
+"76","Malaysia",17
+"77","Malta",19
+"78","Mauritania",29
+"79","Mauritius",23
+"80","Mexico",7
+"81","Mongolia",28
+"82","Montenegro",28
+"83","Morocco",29
+"84","Mozambique",29
+"85","Myanmar",34
+"86","Namibia",30
+"87","Nepal",36
+"88","Netherlands",2
+"89","New Zealand",6
+"90","Nicaragua",26
+"91","Niger",39
+"92","Nigeria",22
+"93","Norway",3
+"94","Oman",11
+"95","Pakistan",28
+"96","Palestine",33
+"97","Panama",12
+"98","Paraguay",19
+"99","Peru",21
+"100","Philippines",30
+"101","Poland",19
+"102","Portugal",31
+"103","Republic of Congo",40
+"104","Romania",28
+"105","Russia",22
+"106","Rwanda",42
+"107","Senegal",41
+"108","Serbia",28
+"109","Sierra Leone",34
+"110","Slovakia",20
+"111","Slovenia",17
+"112","South Africa",28
+"113","South Korea",19
+"114","Spain",15
+"115","Sri Lanka",36
+"116","Suriname",15
+"117","Swaziland",30
+"118","Sweden",3
+"119","Switzerland",1
+"120","Syria",44
+"121","Tajikistan",31
+"122","Tanzania",38
+"123","Thailand",14
+"124","Togo",45
+"125","Trinidad and Tobago",14
+"126","Tunisia",34
+"127","Turkey",25
+"128","Turkmenistan",23
+"129","Uganda",35
+"130","Ukraine",28
+"131","United Kingdom",9
+"132","United States of America",10
+"133","Uruguay",16
+"134","Uzbekistan",18
+"135","Vanuatu",15
+"136","Venezuela",10
+"137","Vietnam",22
+"138","Yemen",38
+"139","Zambia",29
+"140","Zimbabwe",28
