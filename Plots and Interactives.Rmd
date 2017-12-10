@@ -59,6 +59,21 @@ colnames(gh17)[1] <-"country"
 colnames(gh17)[2] <- "happiness.rank"
 
 
+rankfac <- as.factor(gh15$happiness.rank)
+map.world <- map_data("world")
+map.world_joined <- left_join(map.world, gh15, by = c('region' = 'country'))
+#map.world_joined <- map.world_joined %>% mutate(fill_flg = ifelse(is.na(happiness.rank),F,T))
+head(map.world_joined)
+
+ggplot() +
+  geom_polygon(data = map.world_joined, aes(x = long, y = lat, group = group, fill = rankfac)) +
+    scale_fill_manual(values = c("#CCCCCC","#e60000")) +
+  labs(title = 'Test"'
+       ,subtitle = "Testing still ")
+
+class(gh15$happiness.rank)
+
+
 plot1 <- ggplot(gh15, aes(country, happiness.rank, col = Region)) + geom_point() + geom_map(map_id = )
 plot1
 
