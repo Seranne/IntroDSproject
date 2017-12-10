@@ -1,0 +1,93 @@
+---
+title: "Plots and Interactives"
+author: "Seranne Motital, Shravanthi Seshasayee, Sanjana Sunderesan"
+date: "9 December 2017"
+output: html_document
+---
+```{r}
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(maps)
+library(ggmap)
+library(rworldmap)
+
+
+
+```
+
+```{r}
+# To change individual NAs to a particular value 
+#which(is.na(CalculatedOurindex), arr.ind=TRUE)
+#data.frame[row_number, column_number] = new_value
+```
+
+Plots/Models we could make:
+
+1. EDA:
+
+- Existing WHR scores by country 
+
+```{r}
+gh15 <- read_csv("/IntroDSproject/Source Data/World Happiness Report/2015.csv")
+colnames(gh15)[1] <-"country"
+colnames(gh15)[3] <- "happiness.rank"
+View(gh15)
+gh16 <- read_csv("/IntroDSproject/Source Data/World Happiness Report/2016.csv")
+colnames(gh16)[1] <-"country"
+colnames(gh16)[3] <- "happiness.rank"
+gh17 <- read_csv("/IntroDSproject/Source Data/World Happiness Report/2017.csv")
+colnames(gh17)[1] <-"country"
+colnames(gh17)[2] <- "happiness.rank"
+
+
+plot1 <- ggplot(gh15, aes(country, happiness.rank, col = Region)) + geom_point() + geom_map(map_id = )
+plot1
+
+worldMapEnv
+
+worldMap <- borders("world", colour="gray50", fill="gray50")
+
+ggplot(gh15, aes(map_id = gh15$Region)) + 
+    geom_map(aes(fill = value), map = worldMap, color='grey', size=0.3) + 
+    expand_limits(x = worldMap$long, y = worldMap$lat) +
+    theme_few()+
+    theme(legend.position = "bottom",
+         axis.ticks = element_blank(), 
+         axis.title = element_blank(), 
+         axis.text =  element_blank()) +
+    scale_fill_gradient(low="white", high="darkblue", name="Number of Affiliates") +
+    guides(fill = guide_colorbar(barwidth = 10, barheight = .5))
+
+
+
+
+#Now Layer the cities on top
+mp <- mp+ geom_point(gh15, aes(country, region) ,col = gh15$happiness.rank, size=3) 
+mp
+
+
+```
+
+
+- Existing HPI scores by counrty 
+- Difference between EF indices distribution and existing WHR (this is what they didn't consider!)
+- Sample Category Rankings 
+
+2. Results
+
+- Sample category rankings 
+- Our Index rankings by country 
+- 
+
+
+3. Predictions/Interactives
+- Shiny app for a country in our index where you could change value of something, and its rank moves?
+
+
+
+
+```{r}
+
+```
+
