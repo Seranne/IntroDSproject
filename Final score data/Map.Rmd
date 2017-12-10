@@ -2,11 +2,23 @@
 title: "World plot"
 output: html_document
 ---
+```{r}
+library(rworldmap)
+library(ggplot2)
+library(gridExtra)
+library(dplyr)
+library(tidyverse)
+library(maps)
+library(rworldmap)
+library(ggthemes)
+library(forcats)
+```
 
 #WHR happiness index
 
-```{r}
-whr <- read_csv("../Source Data/World Happiness Report/2016.csv")
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+url <- "https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Source%20Data/World%20Happiness%20Report/2016.csv"
+whr <- read_csv(url)
 
 par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
 
@@ -23,7 +35,7 @@ cutVector <- quantile(whrplot@data[["Happiness Rank"]],na.rm=TRUE)
 
 #classify the data to a factor
 whrplot@data[["Happy-categories"]] <- cut(whrplot@data[["Happiness Rank"]],
-                                                 c(1,25,75,100,125,150,180),
+                                                 c(1,25,75,100,125,150,200),
                                                  include.lowest=TRUE )
 #rename the categories
 levels(whrplot@data[["Happy-categories"]]) <- c('Very High', 'High','High Average','Low Average','Low','Very Low')  
@@ -39,62 +51,66 @@ mapCountryData(whrplot,
                borderCol='black')
 ```
 
-```{r}
-mp <- NULL
-mapWorld <- borders("world", colour="gray50", fill="gray50") # create a layer of borders
-mp <- ggplot() +   mapWorld
-
-#Now Layer the cities on top
-mp <- mp+ geom_point(whr, aes(x=Country, y=Happiness.Rank) ,color="blue", size=3) 
-mp
-```
-
 
 ```{r}
-CalculatedOurindex <- read_csv("CalculatedOurindex.csv")
+url <- "https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Final%20score%20data/CalculatedOurindex.csv"
+CalculatedOurindex <- read_csv(url)
 CalculatedOurindex$finalindex <- as.numeric(CalculatedOurindex$finalindex )
 CalculatedOurindex$region <- as.factor(CalculatedOurindex$region)
 
 ```
 
+#Scatter plot showing the distribution of country ranks by region
 ```{r}
-ggplot(CalculatedOurindex, aes(CalculatedOurindex$CountryName,CalculatedOurindex$finalindex, colour=CalculatedOurindex$region)) + geom_point(size=2, stat="identity") + labs(colour = "Regions",title = "Scatter plot showing the distribution of country ranks by region", x = "Country", y = "Wellbeing Index ranking") + theme_igray()+ 
+CalculatedOurindex %>%
+  ggplot(aes(x = CountryName,
+             y = finalindex,
+             colour=CalculatedOurindex$region))+ 
+  geom_point(size=2, stat="identity") +
+  labs(colour = "Regions",
+       title = "Scatter plot showing the distribution of country ranks by region", 
+       x = "Country", 
+       y = "Well-being Index ranking")+ 
+  theme_igray()+ 
   theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 2.2)) 
 
 ```
-
+#Plot showing the mean regional rank
 ```{r}
-a<- CalculatedOurindex %>%  group_by(region) %>% summarise(mean(finalindex)) 
-a
+a<- CalculatedOurindex %>%  group_by(region) %>% summarise(fi = mean(finalindex))
 
-ggplot(a, aes(a$region,a$`mean(finalindex)`, colour = a$region)) + geom_point(show.legend = FALSE, size = 7) + aes(x = fct_reorder(region,`mean(finalindex)`))  + labs(title = "Plot showing the mean regional rank", x = "Region", y = "Mean Wellbeing Index ranking per region") + theme_igray()
+a %>%
+  ggplot(aes(x = region, 
+             y = fi, 
+             colour = region))+ 
+  geom_point(show.legend = FALSE, size = 7)+ 
+  aes(x = fct_reorder(region,
+                      fi))+ 
+  labs(title = "Plot showing the mean regional rank", 
+       x = "Region", 
+       y = "Mean Wellbeing Index ranking per region")+ 
+  theme_igray()
 ```
-
+#Scatter plot showing the distribution of country ranks by region
 ```{r}
-ggplot(CalculatedOurindex, aes(CalculatedOurindex$region,CalculatedOurindex$finalindex, colour=CalculatedOurindex$region)) + geom_boxplot(show.legend = FALSE)+aes(x = fct_reorder(region,finalindex)) + labs(colour = "Regions",title = "Scatter plot showing the distribution of country ranks by region", x = "Country", y = "Wellbeing Index ranking") + theme_igray()
-
+CalculatedOurindex %>% 
+  ggplot(aes(x = region,
+             y = finalindex,
+              fill = region))+
+  geom_boxplot(show.legend = FALSE)+
+  aes(x = fct_reorder(region,finalindex)) + 
+  labs(colour = "Regions",
+       title = "Scatter plot showing the distribution of country ranks by region", 
+       x = "Country", 
+       y = "Wellbeing Index ranking") + 
+  theme_igray()
 ```
-
-```{r}
-library(rworldmap)
-library(ggplot2)
-library(gridExtra)
-library(dplyr)
-library(tidyverse)
-library(maps)
-library(rworldmap)
-library(ggthemes)
-library(forcats)
-
-ourindex <- read_csv("CalculatedOurindex.csv")
-```
-
-
+#Our Happiness Index
 ```{r}
 par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
 
 #joining the data to a map
-finalindexplot <- joinCountryData2Map(ourindex,
+finalindexplot <- joinCountryData2Map(CalculatedOurindex,
                                       joinCode = "NAME",
                                       nameJoinColumn = "CountryName"
 )
@@ -123,16 +139,12 @@ mapCountryData(finalindexplot,
                borderCol='black')
 ```
 
+#Emission ranks
 ```{r}
-
-ourindex <-  read_csv("CalculatedOurindex.csv")
-test <- joinCountryData2Map(ourindex, joinCode = "NAME", nameJoinColumn = "CountryName")
-
-
 par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
 
 #joining the data to a map
-finalrank_emission <- joinCountryData2Map(ourindex,
+finalrank_emission <- joinCountryData2Map(CalculatedOurindex,
                                       joinCode = "NAME",
                                       nameJoinColumn = "CountryName"
 )
@@ -160,12 +172,12 @@ mapCountryData(finalrank_emission,
 
 ```
 
-
+#Gender ranks
 ```{r}
 par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
 
 #joining the data to a map
-finalrank_genplot <- joinCountryData2Map(ourindex,
+finalrank_genplot <- joinCountryData2Map(CalculatedOurindex,
                                       joinCode = "NAME",
                                       nameJoinColumn = "CountryName"
 )
@@ -190,8 +202,40 @@ mapCountryData(finalrank_genplot,
                oceanCol='lightblue',
                missingCountryCol='white', 
                borderCol='black')
-
-
 ```
+
+#Diversity ranks
+
+```{r}
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+
+#joining the data to a map
+finalrankdiv <- joinCountryData2Map(CalculatedOurindex,
+                                      joinCode = "NAME",
+                                      nameJoinColumn = "CountryName"
+)
+
+#creating a user defined colour palette
+op <- palette(c('darkgreen','green','yellow','orange', 'red', 'darkblue'))
+
+#classify the data to a factor
+finalrankdiv@data[["Happy-categories"]] <- cut(finalrankdiv@data[["finalrank_gen"]],
+                                                 c(1,27,54,108,135,163,190),
+                                                 include.lowest=TRUE )
+#rename the categories
+levels(finalrankdiv@data[["Happy-categories"]]) <- c('Very High', 'High','High Average','Low Average','Low','Very Low')
+
+
+#mapping
+mapCountryData(finalrankdiv,
+               nameColumnToPlot='Happy-categories',
+               catMethod='categorical',
+               mapTitle='Percentage women in parliament', 
+               colourPalette='palette',
+               oceanCol='lightblue',
+               missingCountryCol='white', 
+               borderCol='black')
+```
+
 
 
