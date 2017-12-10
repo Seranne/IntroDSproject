@@ -4,10 +4,15 @@ output: html_document
 ---
 
 ```{r}
-library(tidyverse)
 library(rworldmap)
 library(ggplot2)
 library(gridExtra)
+library(dplyr)
+library(tidyverse)
+library(maps)
+library(rworldmap)
+library(ggthemes)
+library(forcats)
 
 ourindex <- read_csv("CalculatedOurindex.csv")
 test <- joinCountryData2Map(ourindex, joinCode = "NAME", nameJoinColumn = "CountryName")
@@ -27,17 +32,17 @@ finalindexplot <- joinCountryData2Map(ourindex,
 )
 
 #creating a user defined colour palette
-op <- palette(c('green','yellow','orange', 'red'))
-#op <- heat.colors(7, alpha = 1)
+op <- palette(c('blue','green', 'yellow','orange','red'))
+
 #find quartile breaks
 cutVector <- quantile(finalindexplot@data[["finalindex"]],na.rm=TRUE) 
 
 #classify the data to a factor
 finalindexplot@data[["Happy-categories"]] <- cut(finalindexplot@data[["finalindex"]],
-                                                 cutVector,
+                                                 c(1,25,75,100,125,150,180),
                                                  include.lowest=TRUE )
 #rename the categories
-levels(finalindexplot@data[["Happy-categories"]]) <- c('High','Med','Low','Very Low')  
+levels(finalindexplot@data[["Happy-categories"]]) <- c('Very High', 'High','High Average','Low Average','Low','Very Low')  
 
 #mapping
 mapCountryData(finalindexplot, 
@@ -46,10 +51,9 @@ mapCountryData(finalindexplot,
                mapTitle='Happiness Index', 
                colourPalette='palette',
                oceanCol='lightblue',
-               missingCountryCol='white')
-
+               missingCountryCol='white',
+               borderCol='black')
 ```
-
 
 # WHR
 
@@ -72,6 +76,114 @@ mp <- ggplot() +   mapWorld
 #Now Layer the cities on top
 mp <- mp+ geom_point(whr, aes(x=Country, y=Happiness.Rank) ,color="blue", size=3) 
 mp
+```
+
+
+```{r}
+
+CalculatedOurindex <- read_csv("../IntroDSproject/Final score data/CalculatedOurindex.csv")
+CalculatedOurindex$finalindex <- as.numeric(CalculatedOurindex$finalindex )
+CalculatedOurindex$region <- as.factor(CalculatedOurindex$region)
+
+```
+
+```{r}
+ggplot(CalculatedOurindex, aes(CalculatedOurindex$CountryName,CalculatedOurindex$finalindex, colour=CalculatedOurindex$region)) + geom_point(size=2, stat="identity") + labs(colour = "Regions",title = "Scatter plot showing the distribution of country ranks by region", x = "Country", y = "Wellbeing Index ranking") + theme_igray()+ 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 2.2)) 
+
+```
+
+```{r}
+a<- CalculatedOurindex %>%  group_by(region) %>% summarise(mean(finalindex)) 
+a
+
+ggplot(a, aes(a$region,a$`mean(finalindex)`, colour = a$region)) + geom_point(show.legend = FALSE, size = 7) + aes(x = fct_reorder(region,`mean(finalindex)`))  + labs(title = "Plot showing the mean regional rank", x = "Region", y = "Mean Wellbeing Index ranking per region") + theme_igray()
+```
+
+```{r}
+ggplot(CalculatedOurindex, aes(CalculatedOurindex$region,CalculatedOurindex$finalindex, colour=CalculatedOurindex$region)) + geom_boxplot(show.legend = FALSE)+aes(x = fct_reorder(region,finalindex)) + labs(colour = "Regions",title = "Scatter plot showing the distribution of country ranks by region", x = "Country", y = "Wellbeing Index ranking") + theme_igray()
+
+```
+
+```{r}
+
+ourindex <- read_csv("CalculatedOurindex.csv")
+test <- joinCountryData2Map(ourindex, joinCode = "NAME", nameJoinColumn = "CountryName")
+
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+mapCountryData( test, nameColumnToPlot="finalindex" )
+```
+
+
+```{r}
+
+ourindex <-  read_csv("../IntroDSproject/Final score data/CalculatedOurindex.csv")
+test <- joinCountryData2Map(ourindex, joinCode = "NAME", nameJoinColumn = "CountryName")
+
+
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+
+#joining the data to a map
+finalrank_emission <- joinCountryData2Map(ourindex,
+                                      joinCode = "NAME",
+                                      nameJoinColumn = "CountryName"
+)
+
+#creating a user defined colour palette
+op <- palette(c('darkgreen','green','yellow','orange', 'red', 'darkblue'))
+
+#classify the data to a factor
+finalrank_emission@data[["Happy-categories"]] <- cut(finalrank_emission@data[["finalrank_emission"]],
+                                                 c(1,27,54,108,135,163,190),
+                                                 include.lowest=TRUE )
+#rename the categories
+levels(finalrank_emission@data[["Happy-categories"]]) <- c('Very Low', 'Low','Low Average','High Average','High','Very High')
+
+
+#mapping
+mapCountryData(finalrank_emission,
+               nameColumnToPlot='Happy-categories',
+               catMethod='categorical',
+               mapTitle='Emission Index', 
+               colourPalette='palette',
+               oceanCol='lightblue',
+               missingCountryCol='white', 
+               borderCol='black')
+
+```
+
+
+```{r}
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+
+#joining the data to a map
+finalrank_genplot <- joinCountryData2Map(ourindex,
+                                      joinCode = "NAME",
+                                      nameJoinColumn = "CountryName"
+)
+
+#creating a user defined colour palette
+op <- palette(c('darkgreen','green','yellow','orange', 'red', 'darkblue'))
+
+#classify the data to a factor
+finalrank_genplot@data[["Happy-categories"]] <- cut(finalrank_genplot@data[["finalrank_gen"]],
+                                                 c(1,27,54,108,135,163,190),
+                                                 include.lowest=TRUE )
+#rename the categories
+levels(finalrank_genplot@data[["Happy-categories"]]) <- c('Very High', 'High','High Average','Low Average','Low','Very Low')
+
+
+#mapping
+mapCountryData(finalrank_genplot,
+               nameColumnToPlot='Happy-categories',
+               catMethod='categorical',
+               mapTitle='Percentage women in parliament', 
+               colourPalette='palette',
+               oceanCol='lightblue',
+               missingCountryCol='white', 
+               borderCol='black')
+
+
 ```
 
 
