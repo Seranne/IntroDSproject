@@ -39,8 +39,6 @@ Plots/Models we could make:
 - Shiny app for a country in our index where you could change value of something, and its rank moves?
 
 
-
-
 ```{r}
 
 ```
