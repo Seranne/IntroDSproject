@@ -119,11 +119,11 @@
 "118","Colombia","COL",2012,106
 "119","Colombia","COL",2013,96
 "120","Colombia","COL",2014,81
-"121","Republic of Congo","COG",2010,245
-"122","Republic of Congo","COG",2011,241
-"123","Republic of Congo","COG",2012,233
-"124","Republic of Congo","COG",2013,225
-"125","Republic of Congo","COG",2014,223
+"121","Congo, Rep.","COG",2010,245
+"122","Congo, Rep.","COG",2011,241
+"123","Congo, Rep.","COG",2012,233
+"124","Congo, Rep.","COG",2013,225
+"125","Congo, Rep.","COG",2014,223
 "126","Costa Rica","CRI",2010,36
 "127","Costa Rica","CRI",2011,37
 "128","Costa Rica","CRI",2012,37
@@ -179,11 +179,11 @@
 "178","Gabon","GAB",2012,24
 "179","Gabon","GAB",2013,22
 "180","Gabon","GAB",2014,22
-"181","Gambia","GMB",2010,71
-"182","Gambia","GMB",2011,55
-"183","Gambia","GMB",2012,44
-"184","Gambia","GMB",2013,37
-"185","Gambia","GMB",2014,37
+"181","Gambia, The","GMB",2010,71
+"182","Gambia, The","GMB",2011,55
+"183","Gambia, The","GMB",2012,44
+"184","Gambia, The","GMB",2013,37
+"185","Gambia, The","GMB",2014,37
 "186","Georgia","GEO",2010,58
 "187","Georgia","GEO",2011,68
 "188","Georgia","GEO",2012,78
@@ -234,11 +234,11 @@
 "233","Indonesia","IDN",2012,76
 "234","Indonesia","IDN",2013,67
 "235","Indonesia","IDN",2014,59
-"236","Iran","IRN",2010,48
-"237","Iran","IRN",2011,47
-"238","Iran","IRN",2012,44
-"239","Iran","IRN",2013,39
-"240","Iran","IRN",2014,33
+"236","Iran, Islamic Rep.","IRN",2010,48
+"237","Iran, Islamic Rep.","IRN",2011,47
+"238","Iran, Islamic Rep.","IRN",2012,44
+"239","Iran, Islamic Rep.","IRN",2013,39
+"240","Iran, Islamic Rep.","IRN",2014,33
 "241","Iraq","IRQ",2010,209
 "242","Iraq","IRQ",2011,203
 "243","Iraq","IRQ",2012,197
@@ -274,21 +274,21 @@
 "273","Korea, Dem. Rep.","PRK",2012,336
 "274","Korea, Dem. Rep.","PRK",2013,323
 "275","Korea, Dem. Rep.","PRK",2014,303
-"276","South Korea","KOR",2010,11
-"277","South Korea","KOR",2011,9
-"278","South Korea","KOR",2012,8
-"279","South Korea","KOR",2013,7
-"280","South Korea","KOR",2014,6
+"276","Korea, Rep.","KOR",2010,11
+"277","Korea, Rep.","KOR",2011,9
+"278","Korea, Rep.","KOR",2012,8
+"279","Korea, Rep.","KOR",2013,7
+"280","Korea, Rep.","KOR",2014,6
 "281","Kuwait","KWT",2010,11
 "282","Kuwait","KWT",2011,12
 "283","Kuwait","KWT",2012,14
 "284","Kuwait","KWT",2013,15
 "285","Kuwait","KWT",2014,17
-"286","Kyrgyzstan","KGZ",2010,61
-"287","Kyrgyzstan","KGZ",2011,55
-"288","Kyrgyzstan","KGZ",2012,50
-"289","Kyrgyzstan","KGZ",2013,45
-"290","Kyrgyzstan","KGZ",2014,41
+"286","Kyrgyz Republic","KGZ",2010,61
+"287","Kyrgyz Republic","KGZ",2011,55
+"288","Kyrgyz Republic","KGZ",2012,50
+"289","Kyrgyz Republic","KGZ",2013,45
+"290","Kyrgyz Republic","KGZ",2014,41
 "291","Lao PDR","LAO",2010,172
 "292","Lao PDR","LAO",2011,164
 "293","Lao PDR","LAO",2012,157
@@ -556,21 +556,21 @@
 "555","Vanuatu","VUT",2012,40
 "556","Vanuatu","VUT",2013,43
 "557","Vanuatu","VUT",2014,46
-"558","Venezuela","VEN",2010,18
-"559","Venezuela","VEN",2011,14
-"560","Venezuela","VEN",2012,13
-"561","Venezuela","VEN",2013,13
-"562","Venezuela","VEN",2014,12
+"558","Venezuela, RB","VEN",2010,18
+"559","Venezuela, RB","VEN",2011,14
+"560","Venezuela, RB","VEN",2012,13
+"561","Venezuela, RB","VEN",2013,13
+"562","Venezuela, RB","VEN",2014,12
 "563","Vietnam","VNM",2010,122
 "564","Vietnam","VNM",2011,114
 "565","Vietnam","VNM",2012,108
 "566","Vietnam","VNM",2013,103
 "567","Vietnam","VNM",2014,99
-"568","Yemen","YEM",2010,181
-"569","Yemen","YEM",2011,179
-"570","Yemen","YEM",2012,178
-"571","Yemen","YEM",2013,176
-"572","Yemen","YEM",2014,176
+"568","Yemen, Rep.","YEM",2010,181
+"569","Yemen, Rep.","YEM",2011,179
+"570","Yemen, Rep.","YEM",2012,178
+"571","Yemen, Rep.","YEM",2013,176
+"572","Yemen, Rep.","YEM",2014,176
 "573","Zambia","ZMB",2010,452
 "574","Zambia","ZMB",2011,437
 "575","Zambia","ZMB",2012,422
