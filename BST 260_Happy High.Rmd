@@ -284,9 +284,10 @@ childwelfare_score <- mutate(childwelfare, finalscore_child = as.numeric
 Food Deficit Score:
 
 ```{r}
+# Load dataset and select indicator: Depth of the food deficit (kilocalories per person per day)
 deficit <- WDI4 %>% filter(IndicatorCode == "SN.ITK.DFCT") %>% spread(IndicatorCode, Value)
 
-#Least food deficit will rank 1
+# Country with the least food deficit will rank 1
 deficit <- select(deficit, "CountryName", "Year", "SN.ITK.DFCT")
 deficit <- deficit[order(-deficit$Year),]
 deficit <- deficit %>% distinct(CountryName, .keep_all = TRUE)
@@ -314,18 +315,16 @@ education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode 
 # Gender indicators for each country 
 
 ```{r}
-gender <- WDI4 %>% filter(IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SP.UWT.TFRT") %>% spread(IndicatorCode, Value)
+# Select indicator variable to assess gender equity: Proportion of seats held by women in national partliaments (%)
+
+gender <- WDI4 %>% filter(IndicatorCode == "SG.GEN.PARL.ZS") %>% spread(IndicatorCode, Value)
 
 gender <- select(gender, "CountryName", "CountryCode", "Year", "SG.GEN.PARL.ZS")
 gender <- gender[order(-gender$Year),]
 gender <- na.omit(gender)
 gender <- gender%>% distinct(CountryName, .keep_all = TRUE)
-gender <- gender %>% mutate(rank_gen = rank(-gender$SG.GEN.PARL.ZS))
-gender$rank_gen<- as.numeric(as.factor(gender$rank_gen))
-
-gender<- select(gender,"CountryName", "rank_gen")
-gender <- gender%>% mutate(score_gen = rank_gen)
-gender <- gender %>% mutate(finalrank_gen = rank(gender$score_gen))
+gender <- gender %>% mutate(finalrank_gen = rank(-gender$SG.GEN.PARL.ZS))
+gender$finalrank_gen<- as.numeric(as.factor(gender$finalrank_gen))
 ```
 
 # Population indicators for each country 
