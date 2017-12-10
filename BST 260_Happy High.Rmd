@@ -519,6 +519,19 @@ tour <- left_join(tourism, Population, by = "CountryName")
 tourism_score <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL)))
 ```
 
+Ethnic Diversity: Ethniz Fractionalization is commonly used in Economics literature to compare the levels of ethnic, cultural, linguistic and religious fractionalization in different countries ([Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level)). We use this as a measure of ethnic diversity in a country. Inclusion of this measure is one of the key strengths of our  project, since this was not included in earlier World Happiness Indices, but has been shown to be associated with health and [well-being](http://ftp.iza.org/dp9726.pdf). At a time when more [future research](http://www.nuffieldfoundation.org/impact-ethnic-diversity-well-being-and-health) is also being undertaken in this domain, we find it particularly relevant to include this in our index.
+
+```{r}
+url <- "https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level"
+pop <- read_csv("../WDI data split/Population.csv")
+h <- read_html(url)
+efindex <- h %>% html_nodes("table") %>% html_table(fill = TRUE) %>%
+        .[[3]]
+
+diversity <- select(efindex, "Country", "Ethnic Diversity Rank")
+colnames(diversity)[1] <- "CountryName"
+colnames(diversity)[2] <- "finalrank_diversity"
+```
 
 # Extracting Data from the World Happiness Report Dataset
 
@@ -538,6 +551,48 @@ gh2017 <- read.csv(url3)
 GHI2015 <- select(gh2015, "Country", "Region", "Family", "Freedom", "Trust (Government Corruption)", "Generosity", "Dystopia Residual")
 GH2016 <- select(gh2016, "Country", "Region", "Family", "Freedom", "Trust (Government Corruption)", "Generosity", "Dystopia Residual")
 GH2017 <- select(gh2017, "Country", "Family", "Freedom", "Trust..Government.Corruption.", "Generosity", "Dystopia.Residual")
+
+gh <- read_csv("Original Data/online-data-chapter-2-whr-2017.csv")
+
+gh1 <- gh %>% select(country, year, `Social support`, Generosity, `Freedom to make life choices`, `Perceptions of corruption`, `Confidence in national government`, `Positive affect`, `Negative affect`) %>% filter(year == 2016)
+
+whr <- read_csv("Original Data/gh2017.csv")
+
+whr <- whr %>% select(Country, Dystopia.Residual) %>% mutate(country = Country)
+
+WHR <- left_join(gh, whr, "country")  
+colnames(WHR)[2] <- "CountryName"
+write.csv(WHR, file = "final_whr.csv")
+
+#Citizen report of positive feelings
+pos_affect <- WHR %>% 
+  group_by(CountryName) %>% 
+  summarise(mean_pa = mean(`Positive affect`)) %>%
+  na.omit() %>%
+  mutate(finalrank_pos = rank(mean_pa))
+
+write.csv(pos_affect, file = "Positive Affect.csv")
+
+#Citizen report of negative feelings
+neg_affect <- WHR %>% 
+  group_by(CountryName) %>% 
+  summarise(mean_na = mean(`Negative affect`)) %>%
+  na.omit() %>%
+  mutate(finalrank_neg = rank(mean_na))
+View(neg_affect)
+write.csv(neg_affect, file = "Negative Affect.csv")
+
+#Dystopia score
+
+dystopia <- WHR %>% 
+  group_by(CountryName) %>% 
+  summarise(mean_dys = mean(Dystopia.Residual)) %>%
+  na.omit() %>%
+  mutate(finalrank_dys = rank(mean_dys))
+View(dystopia)
+write.csv(dystopia, file = "Dystopia_score.csv")
+
+
 ```
 
 # Extracting Data from the Happy Planet Index
@@ -550,6 +605,42 @@ hpi_data_2016 <- readxl::read_xlsx("Your/File/Path/Here.xlsx")
 
 # Select indicators of interest 
 HPI2016 <- select(hpi_data_2016, "Country", "Region", "Average_Wellbeing_(0-10)", "Happy_Life_Years", "Footprint_(gha/capita)", "Inequality_of_Outcomes", "Inequality-adjusted_Life_Expectancy", "Inequality-adjusted_Wellbeing")
+
+```{r}
+hpi_data_2016 <- read_csv("../Original Data/hpi-data-2016.csv")
+colnames(hpi_data_2016)[2] <- "CountryName"
+ hpi_data_20161<- select(hpi_data_2016, "CountryName", "Inequality-adjusted_Life_Expectancy")
+hpi_data_20161<- na.omit(hpi_data_20161)
+ hpi_data_20161 <- hpi_data_20161%>% distinct(CountryName, .keep_all = TRUE)
+ hpi_data_20161 <- hpi_data_20161 %>% mutate(finalrank_hpi1 = rank(-hpi_data_20161$`Inequality-adjusted_Life_Expectancy`))
+ hpi_data_20161$finalrank_hpi1<- as.numeric(as.factor(hpi_data_20161$finalrank_hpi1))
+ 
+ hpi_data_20162<- select(hpi_data_2016, "CountryName",  "Inequality-adjusted_Wellbeing")
+ hpi_data_20162<- na.omit(hpi_data_20162)
+ hpi_data_20162 <- hpi_data_20162%>% distinct(CountryName, .keep_all = TRUE)
+ hpi_data_20162 <- hpi_data_20162 %>% mutate(finalrank_hpi2 = rank(-hpi_data_20162$`Inequality-adjusted_Wellbeing`))
+ hpi_data_20162$finalrank_hpi2<- as.numeric(as.factor(hpi_data_20162$finalrank_hpi2))
+ 
+ hpi_data_20163<- select(hpi_data_2016, "CountryName",  "Happy_Planet_Index")
+ hpi_data_20163<- na.omit(hpi_data_20163)
+ hpi_data_20163 <- hpi_data_20163%>% distinct(CountryName, .keep_all = TRUE)
+ hpi_data_20163 <- hpi_data_20163 %>% mutate(finalrank_hpi3 = rank(-hpi_data_20163$Happy_Planet_Index))
+ hpi_data_20163$finalrank_hpi3<- as.numeric(as.factor(hpi_data_20163$finalrank_hpi3))
+ 
+
+ 
+ Enjoin <- left_join(hpi_data_20161, hpi_data_20162, "CountryName")
+hpi_data_2016 <- left_join(Enjoin, hpi_data_20163, "CountryName")
+
+ hpi_data_2016<- select(hpi_data_2016,"CountryName", "finalrank_hpi1", "finalrank_hpi2", "finalrank_hpi3")
+ 
+
+ 
+ hpi_data_2016 <- hpi_data_2016 %>% mutate(score_hpi = ((finalrank_hpi1 + finalrank_hpi2 + finalrank_hpi3)/3))
+ hpi_data_2016 <- hpi_data_2016 %>% mutate(finalrank_hpi = rank(hpi_data_2016$score_hpi))
+ 
+
+
 ```
 
 ```{r}
