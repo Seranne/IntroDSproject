@@ -281,7 +281,7 @@ childwelfare_score <- mutate(childwelfare, finalscore_child = as.numeric
                        (as.factor(rank(((rank.neet+rank.imr)/2)))))
 ```
 
-Food Deficit Score:
+Food Deficit score:
 
 ```{r}
 deficit <- WDI4 %>% filter(IndicatorCode == "SN.ITK.DFCT") %>% spread(IndicatorCode, Value)
@@ -297,9 +297,8 @@ deficit <- deficit %>% mutate(finalrank_deficit =
                                 as.numeric(as.factor(rank((deficit$SN.ITK.DFCT)))))
 ```
 
+Economic score: 
 
-# Economic indicators for each country 
-gdp <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
 ```{r}
 GDP_base <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
 
@@ -360,10 +359,32 @@ GDP2 <- GDP2 %>% mutate(score_gdp = (finalrank_mil + finalrank_ppp+ finalrank_gd
 GDP2 <- GDP2 %>% mutate(finalrank_GDP = rank(GDP2$score_gdp))
 ```
 
-# Education indicators for each country 
-education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
+Education score:
 
-Gender indicators:
+```{r}
+Education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
+En1<- select(Education, "CountryName", "CountryCode", "Year", "SE.ADT.1524.LT.ZS")
+En1 <- En1[order(-En1$Year),]
+En1<- na.omit(En1)
+En1 <- En1%>% distinct(CountryName, .keep_all = TRUE)
+En1 <- En1 %>% mutate(rank_eng1 = rank(-En1$SE.ADT.1524.LT.ZS))
+En1$rank_eng1<- as.numeric(as.factor(En1$rank_eng1))
+
+
+En2<- select(Education, "CountryName", "CountryCode", "Year", "SE.ADT.LITR.ZS")
+En2 <- En2[order(-En2$Year),]
+En2<- na.omit(En2)
+En2 <- En2%>% distinct(CountryName, .keep_all = TRUE)
+En2 <- En2 %>% mutate(rank_eng2 = rank(-En2$SE.ADT.LITR.ZS))
+En2$rank_eng2<- as.numeric(as.factor(En2$rank_eng2))
+
+litjoin <- left_join(En1, En2, "CountryName")
+Education <- select(litjoin,"CountryName", "rank_eng1", "rank_eng2")
+Education <- Education%>% mutate(score_edu = (rank_eng1 + rank_eng2)/2)
+Education <- Education %>% mutate(finalrank_edu = rank(Education$score_edu))
+```
+
+Gender score:
 
 ```{r}
 gender <- WDI4 %>% filter(IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SP.UWT.TFRT") %>% spread(IndicatorCode, Value)
@@ -380,18 +401,107 @@ gender <- gender%>% mutate(score_gen = rank_gen)
 gender <- gender %>% mutate(finalrank_gen = rank(gender$score_gen))
 ```
 
+Employment score:
+
+```{r}
+empl<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
+empl <- select(empl, "CountryName", "Year", "SL.EMP.WORK.ZS")
+empl <- empl[order(-empl$Year),]
+empl <- empl %>% distinct(CountryName, .keep_all = TRUE)
+
+empl <- empl %>% mutate(finalrank_empl =
+                          as.numeric(as.factor(rank(-(empl$SL.EMP.WORK.ZS)))))
+
+write.csv(empl, file = "Employment_score.csv")
+```
+
+
 # Population indicators for each country 
-population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
 
-# Employment indicators for each country 
-employment<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
+```{r}
+Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
 
-# Tourism indicators for each country 
+ Population1<- select(Population, "CountryName", "CountryCode", "Year", "EN.POP.DNST")
+ Population1 <- Population1[order(-Population1$Year),]
+ Population1<- na.omit(Population1)
+ Population1 <- Population1%>% distinct(CountryName, .keep_all = TRUE)
+ Population1 <- Population1 %>% mutate(finalrank_pop1 = rank(Population1$EN.POP.DNST))
+ Population1$finalrank_pop1<- as.numeric(as.factor(Population1$finalrank_pop1))
+ 
+ Population2<- select(Population, "CountryName", "CountryCode", "Year", "SI.POV.GINI")
+ Population2 <- Population2[order(-Population2$Year),]
+ Population2<- na.omit(Population2)
+ Population2 <- Population2%>% distinct(CountryName, .keep_all = TRUE)
+ Population2 <- Population2 %>% mutate(finalrank_pop2 = rank(Population2$SI.POV.GINI))
+ Population2$finalrank_pop2<- as.numeric(as.factor(Population2$finalrank_pop2))
+ 
+ Population3<- select(Population, "CountryName", "CountryCode", "Year", "SP.DYN.LE00.IN")
+ Population3 <- Population3[order(-Population3$Year),]
+ Population3<- na.omit(Population3)
+ Population3 <- Population3%>% distinct(CountryName, .keep_all = TRUE)
+ Population3 <- Population3 %>% mutate(finalrank_pop3 = rank(-Population3$SP.DYN.LE00.IN))
+ Population3$finalrank_pop3<- as.numeric(as.factor(Population3$finalrank_pop3))
+ 
+Popjoin <- left_join(Population1, Population2, "CountryName")
+Population <- left_join(Popjoin, Population3, "CountryName")
+
+Population<- select(Population,"CountryName", "finalrank_pop1", "finalrank_pop2", "finalrank_pop3")
+ 
+Population <- Population[rowSums(is.na(Population)) < 2, ]
+i <- which(is.na(Population), arr.ind = TRUE)
+Population[i] <- rowMeans(Population[,-1], na.rm = TRUE)[i[,1]]
+ 
+Population <- Population %>% mutate(score_pop = ((finalrank_pop1 + finalrank_pop2 + finalrank_pop3)/3))
+
+Population <- Population %>% mutate(finalrank_pop = rank(Population$score_pop))
+```
+
+Security score:
+
+```{r}
+security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
+
+#Strength of legal system - rank generates best legal strength at 1
+legal <- select(security, "CountryName", "Year", "IC.LGL.CRED.XQ")
+#crime[crime == 0] <- NA
+legal <- legal[order(-legal$Year),]
+legal <- na.omit(legal)
+legal <- legal %>% distinct(CountryName, .keep_all = TRUE)
+legal <- mutate(legal, rank.legal = as.numeric(as.factor(rank(-(IC.LGL.CRED.XQ)))))
+
+#Intentional Homicide rate (per 100,000) - Rank generates least homicide rate at 1
+homicide <- select(security, "CountryName", "Year", "VC.IHR.PSRC.P5")
+homicide[homicide == 0] <- NA
+homicide <- homicide[order(-homicide$Year),]
+homicide<- na.omit(homicide)
+homicide <- homicide%>% distinct(CountryName, .keep_all = TRUE)
+homicide <- mutate(homicide, rank.homi = as.numeric(as.factor(rank(VC.IHR.PSRC.P5))))
+
+#Lower country.scores have higher security 
+security_score <- left_join(legal, homicide, by = "CountryName")
+
+security_score <- select(security_score, "CountryName", "IC.LGL.CRED.XQ", "rank.legal", "VC.IHR.PSRC.P5", "rank.homi")
+
+security_score <- mutate(security_score, finalscore_security = as.numeric(as.factor(rank(((rank.legal+rank.homi)/2)))))
+```
+
+Tourism score:
+
+```{r}
 tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
 write.csv(Tourism, file = "Tourism.csv")
 
-# Security indicators for each country 
-security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
+tourism <- select(tourism, "CountryName", "Year", "ST.INT.DPRT")
+tourism <- tourism[order(-tourism$Year),]
+tourism <- tourism %>% distinct(CountryName, .keep_all = TRUE)
+View(tourism)
+
+Population <- filter(Population, pop$Year == "2013")
+Population <- select(Population, "CountryName", "SP.POP.TOTL")
+tour <- left_join(tourism, Population, by = "CountryName")
+
+tour <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL)))
+```
 
 
 # Extracting Data from the World Happiness Report Dataset
