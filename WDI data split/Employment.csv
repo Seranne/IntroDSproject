@@ -30,7 +30,7 @@
 "29","Azerbaijan","AZE",2011,31.7
 "30","Azerbaijan","AZE",2012,33.3
 "31","Azerbaijan","AZE",2013,33.5
-"32","Bahamas, The","BHS",2011,85.4
+"32","Bahamas","BHS",2011,85.4
 "33","Bahrain","BHR",2010,96.8
 "34","Bangladesh","BGD",2010,14.6
 "35","Bangladesh","BGD",2011,29.4
@@ -146,7 +146,7 @@
 "145","France","FRA",2013,88.8
 "146","France","FRA",2014,88.5
 "147","Gabon","GAB",2010,65.4
-"148","Gambia, The","GMB",2012,23.5
+"148","Gambia","GMB",2012,23.5
 "149","Georgia","GEO",2010,38
 "150","Georgia","GEO",2011,38
 "151","Georgia","GEO",2012,38.4
@@ -189,8 +189,8 @@
 "188","Indonesia","IDN",2011,39.4
 "189","Indonesia","IDN",2012,46.5
 "190","Indonesia","IDN",2013,36.5
-"191","Iran, Islamic Rep.","IRN",2010,55.4
-"192","Iran, Islamic Rep.","IRN",2014,55.9
+"191","Iran","IRN",2010,55.4
+"192","Iran","IRN",2014,55.9
 "193","Ireland","IRL",2010,83.1
 "194","Ireland","IRL",2011,83.6
 "195","Ireland","IRL",2012,83.6
@@ -220,16 +220,16 @@
 "219","Kazakhstan","KAZ",2013,69.4
 "220","Kenya","KEN",2013,96.4
 "221","Kiribati","KIR",2010,40.5
-"222","Korea, Rep.","KOR",2010,71.2
-"223","Korea, Rep.","KOR",2011,71.8
-"224","Korea, Rep.","KOR",2012,71.8
-"225","Korea, Rep.","KOR",2013,72.6
+"222","South Korea","KOR",2010,71.2
+"223","South Korea","KOR",2011,71.8
+"224","South Korea","KOR",2012,71.8
+"225","South Korea","KOR",2013,72.6
 "226","Kosovo","KSV",2012,74.5
 "227","Kuwait","KWT",2011,96.8
-"228","Kyrgyz Republic","KGZ",2010,56.9
-"229","Kyrgyz Republic","KGZ",2011,57.2
-"230","Kyrgyz Republic","KGZ",2012,57.2
-"231","Kyrgyz Republic","KGZ",2013,52.7
+"228","Kyrgyzstan","KGZ",2010,56.9
+"229","Kyrgyzstan","KGZ",2011,57.2
+"230","Kyrgyzstan","KGZ",2012,57.2
+"231","Kyrgyzstan","KGZ",2013,52.7
 "232","Lao PDR","LAO",2010,15.6
 "233","Latvia","LVA",2010,88.5
 "234","Latvia","LVA",2011,88.7
@@ -251,11 +251,11 @@
 "250","Macao SAR, China","MAC",2011,92.5
 "251","Macao SAR, China","MAC",2012,92.7
 "252","Macao SAR, China","MAC",2013,93.2
-"253","Macedonia, FYR","MKD",2010,71.5
-"254","Macedonia, FYR","MKD",2011,71.8
-"255","Macedonia, FYR","MKD",2012,73.2
-"256","Macedonia, FYR","MKD",2013,71.9
-"257","Macedonia, FYR","MKD",2014,73.3
+"253","Macedonia","MKD",2010,71.5
+"254","Macedonia","MKD",2011,71.8
+"255","Macedonia","MKD",2012,73.2
+"256","Macedonia","MKD",2013,71.9
+"257","Macedonia","MKD",2014,73.3
 "258","Madagascar","MDG",2010,9.3
 "259","Madagascar","MDG",2012,11.2
 "260","Malaysia","MYS",2010,74.3
@@ -348,10 +348,10 @@
 "347","Romania","ROM",2012,66.6
 "348","Romania","ROM",2013,67.2
 "349","Romania","ROM",2014,67.9
-"350","Russian Federation","RUS",2010,93.1
-"351","Russian Federation","RUS",2011,92.9
-"352","Russian Federation","RUS",2012,93.1
-"353","Russian Federation","RUS",2013,92.7
+"350","Russia","RUS",2010,93.1
+"351","Russia","RUS",2011,92.9
+"352","Russia","RUS",2012,93.1
+"353","Russia","RUS",2013,92.7
 "354","Rwanda","RWA",2012,17.8
 "355","Samoa","WSM",2011,51.7
 "356","Samoa","WSM",2012,64.1
@@ -367,11 +367,11 @@
 "366","Singapore","SGP",2011,85
 "367","Singapore","SGP",2012,84.7
 "368","Singapore","SGP",2013,85.1
-"369","Slovak Republic","SVK",2010,84
-"370","Slovak Republic","SVK",2011,84.1
-"371","Slovak Republic","SVK",2012,84.5
-"372","Slovak Republic","SVK",2013,84.5
-"373","Slovak Republic","SVK",2014,84.6
+"369","Slovakia","SVK",2010,84
+"370","Slovakia","SVK",2011,84.1
+"371","Slovakia","SVK",2012,84.5
+"372","Slovakia","SVK",2013,84.5
+"373","Slovakia","SVK",2014,84.6
 "374","Slovenia","SVN",2010,82.7
 "375","Slovenia","SVN",2011,83.2
 "376","Slovenia","SVN",2012,83.8
@@ -402,8 +402,8 @@
 "401","Switzerland","CHE",2012,84.7
 "402","Switzerland","CHE",2013,84.7
 "403","Switzerland","CHE",2014,84.9
-"404","Syrian Arab Republic","SYR",2010,63.2
-"405","Syrian Arab Republic","SYR",2011,62.6
+"404","Syria","SYR",2010,63.2
+"405","Syria","SYR",2011,62.6
 "406","Tanzania","TZA",2011,12.7
 "407","Tanzania","TZA",2013,16.2
 "408","Thailand","THA",2010,44.4
@@ -432,22 +432,22 @@
 "431","United Kingdom","GBR",2012,84.9
 "432","United Kingdom","GBR",2013,84.9
 "433","United Kingdom","GBR",2014,84.4
-"434","United States","USA",2010,93
-"435","United States","USA",2011,93.2
-"436","United States","USA",2012,93.2
-"437","United States","USA",2013,93.4
+"434","United States of America","USA",2010,93
+"435","United States of America","USA",2011,93.2
+"436","United States of America","USA",2012,93.2
+"437","United States of America","USA",2013,93.4
 "438","Uruguay","URY",2010,73.1
 "439","Uruguay","URY",2011,71.6
 "440","Uruguay","URY",2012,72.6
 "441","Uruguay","URY",2013,72.4
-"442","Venezuela, RB","VEN",2010,57
-"443","Venezuela, RB","VEN",2011,57.2
-"444","Venezuela, RB","VEN",2012,58.4
-"445","Venezuela, RB","VEN",2013,59.2
+"442","Venezuela","VEN",2010,57
+"443","Venezuela","VEN",2011,57.2
+"444","Venezuela","VEN",2012,58.4
+"445","Venezuela","VEN",2013,59.2
 "446","Vietnam","VNM",2011,34.6
 "447","Vietnam","VNM",2012,34.7
 "448","Vietnam","VNM",2013,34.8
-"449","Yemen, Rep.","YEM",2010,65.9
+"449","Yemen","YEM",2010,65.9
 "450","Zambia","ZMB",2010,20.8
 "451","Zambia","ZMB",2012,20.4
 "452","Zimbabwe","ZWE",2011,24.9

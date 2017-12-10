@@ -66,12 +66,12 @@
 "65","Azerbaijan","AZE",2013,NA,NA,30
 "66","Azerbaijan","AZE",2014,NA,NA,28.9
 "67","Azerbaijan","AZE",2015,NA,NA,27.9
-"68","Bahamas, The","BHS",2010,NA,NA,11.4
-"69","Bahamas, The","BHS",2011,NA,NA,11.1
-"70","Bahamas, The","BHS",2012,NA,NA,10.9
-"71","Bahamas, The","BHS",2013,NA,NA,10.5
-"72","Bahamas, The","BHS",2014,NA,NA,10.2
-"73","Bahamas, The","BHS",2015,NA,NA,9.9
+"68","Bahamas","BHS",2010,NA,NA,11.4
+"69","Bahamas","BHS",2011,NA,NA,11.1
+"70","Bahamas","BHS",2012,NA,NA,10.9
+"71","Bahamas","BHS",2013,NA,NA,10.5
+"72","Bahamas","BHS",2014,NA,NA,10.2
+"73","Bahamas","BHS",2015,NA,NA,9.9
 "74","Bahrain","BHR",2010,NA,NA,7.1
 "75","Bahrain","BHR",2011,NA,NA,6.7
 "76","Bahrain","BHR",2012,NA,NA,6.3
@@ -235,18 +235,18 @@
 "234","Comoros","COM",2013,NA,NA,58.2
 "235","Comoros","COM",2014,NA,NA,56.6
 "236","Comoros","COM",2015,NA,NA,55.1
-"237","Congo, Dem. Rep.","ZAR",2010,80.2,NA,84.8
-"238","Congo, Dem. Rep.","ZAR",2011,NA,NA,82.6
-"239","Congo, Dem. Rep.","ZAR",2012,NA,NA,80.5
-"240","Congo, Dem. Rep.","ZAR",2013,NA,NA,78.3
-"241","Congo, Dem. Rep.","ZAR",2014,NA,NA,76.5
-"242","Congo, Dem. Rep.","ZAR",2015,NA,NA,74.5
-"243","Congo, Rep.","COG",2010,NA,NA,42.2
-"244","Congo, Rep.","COG",2011,NA,NA,39.6
-"245","Congo, Rep.","COG",2012,78.45,NA,37.6
-"246","Congo, Rep.","COG",2013,NA,NA,35.9
-"247","Congo, Rep.","COG",2014,NA,NA,34.4
-"248","Congo, Rep.","COG",2015,NA,NA,33.2
+"237","Democratic Republic of Congo","ZAR",2010,80.2,NA,84.8
+"238","Democratic Republic of Congo","ZAR",2011,NA,NA,82.6
+"239","Democratic Republic of Congo","ZAR",2012,NA,NA,80.5
+"240","Democratic Republic of Congo","ZAR",2013,NA,NA,78.3
+"241","Democratic Republic of Congo","ZAR",2014,NA,NA,76.5
+"242","Democratic Republic of Congo","ZAR",2015,NA,NA,74.5
+"243","Republic of Congo","COG",2010,NA,NA,42.2
+"244","Republic of Congo","COG",2011,NA,NA,39.6
+"245","Republic of Congo","COG",2012,78.45,NA,37.6
+"246","Republic of Congo","COG",2013,NA,NA,35.9
+"247","Republic of Congo","COG",2014,NA,NA,34.4
+"248","Republic of Congo","COG",2015,NA,NA,33.2
 "249","Costa Rica","CRI",2010,NA,19.45,8.9
 "250","Costa Rica","CRI",2011,76.3,17.43,8.8
 "251","Costa Rica","CRI",2012,NA,17.81,8.8
@@ -373,12 +373,12 @@
 "372","Gabon","GAB",2013,NA,NA,38
 "373","Gabon","GAB",2014,NA,NA,37
 "374","Gabon","GAB",2015,NA,NA,36.1
-"375","Gambia, The","GMB",2010,NA,NA,51.7
-"376","Gambia, The","GMB",2011,NA,NA,50.9
-"377","Gambia, The","GMB",2012,NA,NA,50.1
-"378","Gambia, The","GMB",2013,NA,NA,49.4
-"379","Gambia, The","GMB",2014,NA,NA,48.6
-"380","Gambia, The","GMB",2015,NA,NA,47.9
+"375","Gambia","GMB",2010,NA,NA,51.7
+"376","Gambia","GMB",2011,NA,NA,50.9
+"377","Gambia","GMB",2012,NA,NA,50.1
+"378","Gambia","GMB",2013,NA,NA,49.4
+"379","Gambia","GMB",2014,NA,NA,48.6
+"380","Gambia","GMB",2015,NA,NA,47.9
 "381","Georgia","GEO",2010,NA,NA,14.9
 "382","Georgia","GEO",2011,NA,NA,13.8
 "383","Georgia","GEO",2012,NA,NA,12.8
@@ -473,12 +473,12 @@
 "472","Indonesia","IDN",2013,NA,24.15,24.4
 "473","Indonesia","IDN",2014,NA,NA,23.6
 "474","Indonesia","IDN",2015,NA,NA,22.8
-"475","Iran, Islamic Rep.","IRN",2010,NA,34.35,16.4
-"476","Iran, Islamic Rep.","IRN",2011,NA,NA,15.7
-"477","Iran, Islamic Rep.","IRN",2012,NA,NA,15.1
-"478","Iran, Islamic Rep.","IRN",2013,NA,NA,14.5
-"479","Iran, Islamic Rep.","IRN",2014,NA,NA,13.9
-"480","Iran, Islamic Rep.","IRN",2015,NA,NA,13.4
+"475","Iran","IRN",2010,NA,34.35,16.4
+"476","Iran","IRN",2011,NA,NA,15.7
+"477","Iran","IRN",2012,NA,NA,15.1
+"478","Iran","IRN",2013,NA,NA,14.5
+"479","Iran","IRN",2014,NA,NA,13.9
+"480","Iran","IRN",2015,NA,NA,13.4
 "481","Iraq","IRQ",2010,NA,NA,30
 "482","Iraq","IRQ",2011,81.15,NA,29.3
 "483","Iraq","IRQ",2012,NA,NA,28.7
@@ -545,24 +545,24 @@
 "544","Korea, Dem. Rep.","PRK",2013,NA,NA,21.7
 "545","Korea, Dem. Rep.","PRK",2014,NA,NA,20.7
 "546","Korea, Dem. Rep.","PRK",2015,NA,NA,19.7
-"547","Korea, Rep.","KOR",2010,NA,19.2,3.5
-"548","Korea, Rep.","KOR",2011,NA,18.8,3.4
-"549","Korea, Rep.","KOR",2012,NA,NA,3.3
-"550","Korea, Rep.","KOR",2013,NA,NA,3.2
-"551","Korea, Rep.","KOR",2014,NA,NA,3
-"552","Korea, Rep.","KOR",2015,NA,NA,2.9
+"547","South Korea","KOR",2010,NA,19.2,3.5
+"548","South Korea","KOR",2011,NA,18.8,3.4
+"549","South Korea","KOR",2012,NA,NA,3.3
+"550","South Korea","KOR",2013,NA,NA,3.2
+"551","South Korea","KOR",2014,NA,NA,3
+"552","South Korea","KOR",2015,NA,NA,2.9
 "553","Kuwait","KWT",2010,NA,NA,9.2
 "554","Kuwait","KWT",2011,NA,NA,8.9
 "555","Kuwait","KWT",2012,NA,NA,8.5
 "556","Kuwait","KWT",2013,NA,NA,8.1
 "557","Kuwait","KWT",2014,NA,NA,7.7
 "558","Kuwait","KWT",2015,NA,NA,7.3
-"559","Kyrgyz Republic","KGZ",2010,NA,18.46,26.5
-"560","Kyrgyz Republic","KGZ",2011,NA,42.78,24.6
-"561","Kyrgyz Republic","KGZ",2012,NA,43.3,22.9
-"562","Kyrgyz Republic","KGZ",2013,NA,21.23,21.4
-"563","Kyrgyz Republic","KGZ",2014,NA,NA,20.1
-"564","Kyrgyz Republic","KGZ",2015,NA,NA,19
+"559","Kyrgyzstan","KGZ",2010,NA,18.46,26.5
+"560","Kyrgyzstan","KGZ",2011,NA,42.78,24.6
+"561","Kyrgyzstan","KGZ",2012,NA,43.3,22.9
+"562","Kyrgyzstan","KGZ",2013,NA,21.23,21.4
+"563","Kyrgyzstan","KGZ",2014,NA,NA,20.1
+"564","Kyrgyzstan","KGZ",2015,NA,NA,19
 "565","Lao PDR","LAO",2010,80.03,NA,59
 "566","Lao PDR","LAO",2011,NA,NA,57.1
 "567","Lao PDR","LAO",2012,NA,NA,55.4
@@ -615,12 +615,12 @@
 "614","Macao SAR, China","MAC",2011,NA,6.3,NA
 "615","Macao SAR, China","MAC",2012,NA,5.76,NA
 "616","Macao SAR, China","MAC",2013,NA,5.27,NA
-"617","Macedonia, FYR","MKD",2010,NA,25.52,8.7
-"618","Macedonia, FYR","MKD",2011,72.74,25.18,7.5
-"619","Macedonia, FYR","MKD",2012,NA,24.8,6.5
-"620","Macedonia, FYR","MKD",2013,NA,24.23,5.8
-"621","Macedonia, FYR","MKD",2014,NA,25.15,5.2
-"622","Macedonia, FYR","MKD",2015,NA,NA,4.8
+"617","Macedonia","MKD",2010,NA,25.52,8.7
+"618","Macedonia","MKD",2011,72.74,25.18,7.5
+"619","Macedonia","MKD",2012,NA,24.8,6.5
+"620","Macedonia","MKD",2013,NA,24.23,5.8
+"621","Macedonia","MKD",2014,NA,25.15,5.2
+"622","Macedonia","MKD",2015,NA,NA,4.8
 "623","Madagascar","MDG",2010,NA,NA,42.1
 "624","Madagascar","MDG",2011,NA,NA,40.6
 "625","Madagascar","MDG",2012,NA,NA,39.3
@@ -681,12 +681,12 @@
 "680","Mexico","MEX",2013,NA,NA,12.5
 "681","Mexico","MEX",2014,NA,NA,11.9
 "682","Mexico","MEX",2015,NA,NA,11.3
-"683","Micronesia, Fed. Sts.","FSM",2010,NA,NA,32.9
-"684","Micronesia, Fed. Sts.","FSM",2011,NA,NA,32
-"685","Micronesia, Fed. Sts.","FSM",2012,NA,NA,31.1
-"686","Micronesia, Fed. Sts.","FSM",2013,NA,NA,30.2
-"687","Micronesia, Fed. Sts.","FSM",2014,NA,NA,29.4
-"688","Micronesia, Fed. Sts.","FSM",2015,NA,NA,28.6
+"683","Micronesia","FSM",2010,NA,NA,32.9
+"684","Micronesia","FSM",2011,NA,NA,32
+"685","Micronesia","FSM",2012,NA,NA,31.1
+"686","Micronesia","FSM",2013,NA,NA,30.2
+"687","Micronesia","FSM",2014,NA,NA,29.4
+"688","Micronesia","FSM",2015,NA,NA,28.6
 "689","Moldova","MDA",2010,NA,28.37,14.7
 "690","Moldova","MDA",2011,NA,29.19,14.5
 "691","Moldova","MDA",2012,NA,29.26,14.3
@@ -783,399 +783,387 @@
 "782","Oman","OMN",2013,NA,NA,10
 "783","Oman","OMN",2014,NA,NA,10
 "784","Oman","OMN",2015,NA,NA,9.9
-"785","Other small states","OSS",2010,NA,NA,52.34127
-"786","Other small states","OSS",2011,NA,NA,50.50597
-"787","Other small states","OSS",2012,NA,NA,49.25872
-"788","Other small states","OSS",2013,NA,NA,47.84129
-"789","Other small states","OSS",2014,NA,NA,46.56606
-"790","Other small states","OSS",2015,NA,NA,45.47887
-"791","Pacific island small states","PSS",2010,NA,NA,24.06919
-"792","Pacific island small states","PSS",2011,NA,NA,23.82403
-"793","Pacific island small states","PSS",2012,NA,NA,23.54478
-"794","Pacific island small states","PSS",2013,NA,NA,23.16266
-"795","Pacific island small states","PSS",2014,NA,NA,22.73272
-"796","Pacific island small states","PSS",2015,NA,NA,22.29326
-"797","Pakistan","PAK",2010,NA,NA,73.5
-"798","Pakistan","PAK",2011,75.08,NA,72.1
-"799","Pakistan","PAK",2012,NA,NA,70.6
-"800","Pakistan","PAK",2013,NA,NA,69.1
-"801","Pakistan","PAK",2014,NA,NA,67.4
-"802","Pakistan","PAK",2015,NA,NA,65.8
-"803","Palau","PLW",2010,NA,NA,16.6
-"804","Palau","PLW",2011,NA,NA,16.2
-"805","Palau","PLW",2012,NA,NA,15.7
-"806","Palau","PLW",2013,NA,NA,15.1
-"807","Palau","PLW",2014,NA,NA,14.7
-"808","Palau","PLW",2015,NA,NA,14.2
-"809","Panama","PAN",2010,73.85,20.88,17
-"810","Panama","PAN",2011,NA,21.03,16.5
-"811","Panama","PAN",2012,68.5,17.58,16
-"812","Panama","PAN",2013,NA,NA,15.5
-"813","Panama","PAN",2014,NA,NA,15.1
-"814","Panama","PAN",2015,NA,NA,14.6
-"815","Papua New Guinea","PNG",2010,NA,NA,50.3
-"816","Papua New Guinea","PNG",2011,NA,NA,49.2
-"817","Papua New Guinea","PNG",2012,NA,NA,48
-"818","Papua New Guinea","PNG",2013,NA,NA,47
-"819","Papua New Guinea","PNG",2014,NA,NA,45.7
-"820","Papua New Guinea","PNG",2015,NA,NA,44.5
-"821","Paraguay","PRY",2010,NA,19.5,20.4
-"822","Paraguay","PRY",2011,NA,12.97,19.8
-"823","Paraguay","PRY",2012,NA,12.28,19.2
-"824","Paraguay","PRY",2013,NA,NA,18.6
-"825","Paraguay","PRY",2014,NA,NA,18.1
-"826","Paraguay","PRY",2015,NA,NA,17.5
-"827","Peru","PER",2010,NA,16.64,16.3
-"828","Peru","PER",2011,NA,16.91,15.6
-"829","Peru","PER",2012,NA,16.47,14.9
-"830","Peru","PER",2013,NA,15.34,14.2
-"831","Peru","PER",2014,NA,NA,13.6
-"832","Peru","PER",2015,NA,NA,13.1
-"833","Philippines","PHL",2010,NA,25.21,24.9
-"834","Philippines","PHL",2011,73.46,24.3,24.4
-"835","Philippines","PHL",2012,NA,24.78,23.9
-"836","Philippines","PHL",2013,NA,NA,23.3
-"837","Philippines","PHL",2014,NA,NA,22.8
-"838","Philippines","PHL",2015,NA,NA,22.2
-"839","Poland","POL",2010,NA,10.77,5
-"840","Poland","POL",2011,NA,11.5,4.7
-"841","Poland","POL",2012,NA,11.82,4.6
-"842","Poland","POL",2013,NA,12.21,4.5
-"843","Poland","POL",2014,NA,11.98,4.5
-"844","Poland","POL",2015,NA,NA,4.5
-"845","Portugal","PRT",2010,NA,11.44,3.1
-"846","Portugal","PRT",2011,NA,12.55,3.1
-"847","Portugal","PRT",2012,NA,13.91,3.1
-"848","Portugal","PRT",2013,NA,14.07,3.1
-"849","Portugal","PRT",2014,NA,12.28,3
-"850","Portugal","PRT",2015,NA,NA,3
-"851","Qatar","QAT",2010,NA,NA,7.7
-"852","Qatar","QAT",2011,NA,NA,7.5
-"853","Qatar","QAT",2012,NA,NA,7.3
-"854","Qatar","QAT",2013,NA,NA,7.2
-"855","Qatar","QAT",2014,NA,NA,7
-"856","Qatar","QAT",2015,NA,NA,6.8
-"857","Romania","ROM",2010,NA,16.6,12.1
-"858","Romania","ROM",2011,NA,17.47,11.5
-"859","Romania","ROM",2012,NA,16.81,10.9
-"860","Romania","ROM",2013,NA,16.96,10.5
-"861","Romania","ROM",2014,NA,17.01,10.1
-"862","Romania","ROM",2015,NA,NA,9.7
-"863","Russian Federation","RUS",2010,NA,NA,10.3
-"864","Russian Federation","RUS",2011,NA,12.69,9.8
-"865","Russian Federation","RUS",2012,NA,11.99,9.3
-"866","Russian Federation","RUS",2013,NA,NA,8.9
-"867","Russian Federation","RUS",2014,NA,NA,8.5
-"868","Russian Federation","RUS",2015,NA,NA,8.2
-"869","Rwanda","RWA",2010,80.45,NA,43.8
-"870","Rwanda","RWA",2011,NA,NA,40
-"871","Rwanda","RWA",2012,NA,NA,37.1
-"872","Rwanda","RWA",2013,NA,NA,34.7
-"873","Rwanda","RWA",2014,NA,NA,32.7
-"874","Rwanda","RWA",2015,NA,NA,31.1
-"875","Samoa","WSM",2010,NA,NA,16
-"876","Samoa","WSM",2011,NA,NA,16
-"877","Samoa","WSM",2012,NA,38.2,15.8
-"878","Samoa","WSM",2013,NA,NA,15.6
-"879","Samoa","WSM",2014,NA,NA,15.4
-"880","Samoa","WSM",2015,NA,NA,15
-"881","San Marino","SMR",2010,NA,NA,3.1
-"882","San Marino","SMR",2011,NA,NA,3
-"883","San Marino","SMR",2012,NA,NA,2.9
-"884","San Marino","SMR",2013,NA,NA,2.8
-"885","San Marino","SMR",2014,NA,NA,2.7
-"886","San Marino","SMR",2015,NA,NA,2.6
-"887","Sao Tome and Principe","STP",2010,NA,NA,39.8
-"888","Sao Tome and Principe","STP",2011,NA,NA,38.7
-"889","Sao Tome and Principe","STP",2012,NA,NA,37.5
-"890","Sao Tome and Principe","STP",2013,NA,NA,36.6
-"891","Sao Tome and Principe","STP",2014,NA,NA,35.5
-"892","Sao Tome and Principe","STP",2015,NA,NA,34.6
-"893","Saudi Arabia","SAU",2010,NA,NA,14.7
-"894","Saudi Arabia","SAU",2011,NA,20.57,14.2
-"895","Saudi Arabia","SAU",2012,NA,18.79,13.8
-"896","Saudi Arabia","SAU",2013,NA,18.42,13.3
-"897","Saudi Arabia","SAU",2014,NA,NA,12.9
-"898","Saudi Arabia","SAU",2015,NA,NA,12.5
-"899","Senegal","SEN",2010,NA,NA,46.7
-"900","Senegal","SEN",2011,85.46,NA,45.3
-"901","Senegal","SEN",2012,NA,NA,44.1
-"902","Senegal","SEN",2013,NA,NA,43.1
-"903","Senegal","SEN",2014,NA,NA,42.3
-"904","Senegal","SEN",2015,NA,NA,41.7
-"905","Serbia","SRB",2010,NA,21.19,6.6
-"906","Serbia","SRB",2011,NA,21.34,6.4
-"907","Serbia","SRB",2012,NA,21.48,6.2
-"908","Serbia","SRB",2013,NA,19.54,6
-"909","Serbia","SRB",2014,NA,NA,6
-"910","Serbia","SRB",2015,NA,NA,5.9
-"911","Seychelles","SYC",2010,NA,NA,12.2
-"912","Seychelles","SYC",2011,NA,20,12.2
-"913","Seychelles","SYC",2012,NA,NA,12.2
-"914","Seychelles","SYC",2013,NA,NA,12.1
-"915","Seychelles","SYC",2014,NA,NA,11.9
-"916","Seychelles","SYC",2015,NA,NA,11.7
-"917","Sierra Leone","SLE",2010,66.04,NA,107
-"918","Sierra Leone","SLE",2011,NA,NA,102.3
-"919","Sierra Leone","SLE",2012,NA,NA,97.9
-"920","Sierra Leone","SLE",2013,60.36,NA,93.8
-"921","Sierra Leone","SLE",2014,NA,NA,90.2
-"922","Sierra Leone","SLE",2015,NA,NA,87.1
-"923","Singapore","SGP",2010,NA,18.9,2.2
-"924","Singapore","SGP",2011,NA,NA,2.2
-"925","Singapore","SGP",2012,NA,NA,2.2
-"926","Singapore","SGP",2013,NA,NA,2.2
-"927","Singapore","SGP",2014,NA,NA,2.2
-"928","Singapore","SGP",2015,NA,NA,2.1
-"929","Slovak Republic","SVK",2010,NA,14.09,7
-"930","Slovak Republic","SVK",2011,NA,13.81,6.8
-"931","Slovak Republic","SVK",2012,NA,13.81,6.5
-"932","Slovak Republic","SVK",2013,NA,13.69,6.3
-"933","Slovak Republic","SVK",2014,NA,12.8,6.1
-"934","Slovak Republic","SVK",2015,NA,NA,5.8
-"935","Slovenia","SVN",2010,NA,7.11,2.7
-"936","Slovenia","SVN",2011,NA,7.08,2.6
-"937","Slovenia","SVN",2012,NA,9.28,2.4
-"938","Slovenia","SVN",2013,NA,9.24,2.3
-"939","Slovenia","SVN",2014,NA,9.42,2.2
-"940","Slovenia","SVN",2015,NA,NA,2.1
-"941","Small states","SST",2010,NA,NA,44.94545
-"942","Small states","SST",2011,NA,NA,43.54878
-"943","Small states","SST",2012,NA,NA,42.59094
-"944","Small states","SST",2013,NA,NA,41.47603
-"945","Small states","SST",2014,NA,NA,40.44817
-"946","Small states","SST",2015,NA,NA,39.56158
-"947","Solomon Islands","SLB",2010,NA,NA,26.6
-"948","Solomon Islands","SLB",2011,NA,NA,26.1
-"949","Solomon Islands","SLB",2012,NA,NA,25.5
-"950","Solomon Islands","SLB",2013,NA,NA,24.9
-"951","Solomon Islands","SLB",2014,NA,NA,24.2
-"952","Solomon Islands","SLB",2015,NA,NA,23.6
-"953","Somalia","SOM",2010,NA,NA,97.8
-"954","Somalia","SOM",2011,NA,NA,95.1
-"955","Somalia","SOM",2012,NA,NA,92.6
-"956","Somalia","SOM",2013,NA,NA,90.1
-"957","Somalia","SOM",2014,NA,NA,87.4
-"958","Somalia","SOM",2015,NA,NA,85
-"959","South Africa","ZAF",2010,NA,NA,38.2
-"960","South Africa","ZAF",2011,NA,NA,37.1
-"961","South Africa","ZAF",2012,NA,31.44,36.8
-"962","South Africa","ZAF",2013,NA,31.97,35.3
-"963","South Africa","ZAF",2014,NA,31.31,34.4
-"964","South Africa","ZAF",2015,NA,NA,33.6
-"965","South Sudan","SSD",2010,NA,NA,70.6
-"966","South Sudan","SSD",2011,NA,NA,68.3
-"967","South Sudan","SSD",2012,NA,NA,66.1
-"968","South Sudan","SSD",2013,NA,NA,64
-"969","South Sudan","SSD",2014,NA,NA,62
-"970","South Sudan","SSD",2015,NA,NA,60.3
-"971","Spain","ESP",2010,NA,17.81,3.9
-"972","Spain","ESP",2011,NA,18.25,3.8
-"973","Spain","ESP",2012,NA,18.6,3.7
-"974","Spain","ESP",2013,NA,18.63,3.7
-"975","Spain","ESP",2014,NA,17.14,3.6
-"976","Spain","ESP",2015,NA,NA,3.5
-"977","Sri Lanka","LKA",2010,NA,22.88,9.4
-"978","Sri Lanka","LKA",2011,NA,0.49,9.1
-"979","Sri Lanka","LKA",2012,NA,0.46,8.9
-"980","Sri Lanka","LKA",2013,NA,NA,8.7
-"981","Sri Lanka","LKA",2014,NA,NA,8.6
-"982","Sri Lanka","LKA",2015,NA,NA,8.4
-"983","St. Kitts and Nevis","KNA",2010,NA,NA,10
-"984","St. Kitts and Nevis","KNA",2011,NA,NA,9.6
-"985","St. Kitts and Nevis","KNA",2012,NA,NA,9.3
-"986","St. Kitts and Nevis","KNA",2013,NA,NA,9
-"987","St. Kitts and Nevis","KNA",2014,NA,NA,8.7
-"988","St. Kitts and Nevis","KNA",2015,NA,NA,8.4
-"989","St. Lucia","LCA",2010,NA,NA,14.1
-"990","St. Lucia","LCA",2011,NA,NA,13.9
-"991","St. Lucia","LCA",2012,NA,NA,13.6
-"992","St. Lucia","LCA",2013,NA,NA,13.3
-"993","St. Lucia","LCA",2014,NA,NA,13
-"994","St. Lucia","LCA",2015,NA,NA,12.7
-"995","St. Vincent and the Grenadines","VCT",2010,NA,NA,18.6
-"996","St. Vincent and the Grenadines","VCT",2011,NA,NA,18.2
-"997","St. Vincent and the Grenadines","VCT",2012,NA,NA,17.8
-"998","St. Vincent and the Grenadines","VCT",2013,NA,NA,17.4
-"999","St. Vincent and the Grenadines","VCT",2014,NA,NA,17
-"1000","St. Vincent and the Grenadines","VCT",2015,NA,NA,16.6
-"1001","Sudan","SDN",2010,NA,NA,53.3
-"1002","Sudan","SDN",2011,NA,NA,52.2
-"1003","Sudan","SDN",2012,NA,NA,51.1
-"1004","Sudan","SDN",2013,NA,NA,49.9
-"1005","Sudan","SDN",2014,NA,NA,48.8
-"1006","Sudan","SDN",2015,NA,NA,47.6
-"1007","Suriname","SUR",2010,NA,NA,22.1
-"1008","Suriname","SUR",2011,NA,NA,21.4
-"1009","Suriname","SUR",2012,NA,NA,20.8
-"1010","Suriname","SUR",2013,NA,NA,20.1
-"1011","Suriname","SUR",2014,NA,NA,19.5
-"1012","Suriname","SUR",2015,NA,NA,19
-"1013","Swaziland","SWZ",2010,75.17,NA,59.1
-"1014","Swaziland","SWZ",2011,NA,NA,53.6
-"1015","Swaziland","SWZ",2012,NA,NA,51.5
-"1016","Swaziland","SWZ",2013,NA,NA,48.4
-"1017","Swaziland","SWZ",2014,NA,NA,45.8
-"1018","Swaziland","SWZ",2015,NA,NA,44.5
-"1019","Sweden","SWE",2010,NA,7.67,2.5
-"1020","Sweden","SWE",2011,NA,7.53,2.4
-"1021","Sweden","SWE",2012,NA,7.83,2.4
-"1022","Sweden","SWE",2013,NA,7.44,2.4
-"1023","Sweden","SWE",2014,NA,7.16,2.4
-"1024","Sweden","SWE",2015,NA,NA,2.4
-"1025","Switzerland","CHE",2010,NA,6.7,3.9
-"1026","Switzerland","CHE",2011,NA,6.72,3.8
-"1027","Switzerland","CHE",2012,NA,6.85,3.7
-"1028","Switzerland","CHE",2013,NA,7.13,3.6
-"1029","Switzerland","CHE",2014,NA,7.27,3.5
-"1030","Switzerland","CHE",2015,NA,NA,3.4
-"1031","Syrian Arab Republic","SYR",2010,NA,NA,13.2
-"1032","Syrian Arab Republic","SYR",2011,NA,NA,12.8
-"1033","Syrian Arab Republic","SYR",2012,NA,NA,12.6
-"1034","Syrian Arab Republic","SYR",2013,NA,NA,12.1
-"1035","Syrian Arab Republic","SYR",2014,NA,NA,11.7
-"1036","Syrian Arab Republic","SYR",2015,NA,NA,11.1
-"1037","Tajikistan","TJK",2010,NA,NA,44.7
-"1038","Tajikistan","TJK",2011,NA,NA,43.3
-"1039","Tajikistan","TJK",2012,NA,NA,42.1
-"1040","Tajikistan","TJK",2013,NA,NA,40.9
-"1041","Tajikistan","TJK",2014,NA,NA,39.7
-"1042","Tajikistan","TJK",2015,NA,NA,38.5
-"1043","Tanzania","TZA",2010,NA,NA,42.4
-"1044","Tanzania","TZA",2011,91.79,NA,40.4
-"1045","Tanzania","TZA",2012,NA,NA,38.8
-"1046","Tanzania","TZA",2013,NA,31.8,37.6
-"1047","Tanzania","TZA",2014,NA,NA,36.2
-"1048","Tanzania","TZA",2015,NA,NA,35.2
-"1049","Thailand","THA",2010,NA,12.53,12.5
-"1050","Thailand","THA",2011,NA,12.55,12
-"1051","Thailand","THA",2012,NA,12.85,11.6
-"1052","Thailand","THA",2013,NA,14.69,11.2
-"1053","Thailand","THA",2014,NA,13.81,10.9
-"1054","Thailand","THA",2015,NA,NA,10.5
-"1055","Timor-Leste","TMP",2010,NA,NA,53.1
-"1056","Timor-Leste","TMP",2011,NA,NA,51.1
-"1057","Timor-Leste","TMP",2012,NA,NA,49.3
-"1058","Timor-Leste","TMP",2013,NA,NA,47.6
-"1059","Timor-Leste","TMP",2014,NA,NA,46.1
-"1060","Timor-Leste","TMP",2015,NA,NA,44.7
-"1061","Togo","TGO",2010,89.48,NA,59.3
-"1062","Togo","TGO",2011,NA,NA,57.9
-"1063","Togo","TGO",2012,NA,9,56.5
-"1064","Togo","TGO",2013,NA,NA,55
-"1065","Togo","TGO",2014,NA,NA,53.6
-"1066","Togo","TGO",2015,NA,NA,52.3
-"1067","Tonga","TON",2010,NA,NA,15
-"1068","Tonga","TON",2011,NA,NA,15
-"1069","Tonga","TON",2012,NA,NA,15
-"1070","Tonga","TON",2013,NA,NA,14.9
-"1071","Tonga","TON",2014,NA,NA,14.7
-"1072","Tonga","TON",2015,NA,NA,14.4
-"1073","Trinidad and Tobago","TTO",2010,NA,NA,21
-"1074","Trinidad and Tobago","TTO",2011,NA,NA,20.4
-"1075","Trinidad and Tobago","TTO",2012,NA,NA,19.7
-"1076","Trinidad and Tobago","TTO",2013,NA,52.52,19.2
-"1077","Trinidad and Tobago","TTO",2014,NA,NA,18.7
-"1078","Trinidad and Tobago","TTO",2015,NA,NA,18.2
-"1079","Tunisia","TUN",2010,NA,NA,14.9
-"1080","Tunisia","TUN",2011,NA,NA,14.2
-"1081","Tunisia","TUN",2012,78.12,NA,13.6
-"1082","Tunisia","TUN",2013,NA,25.4,13.1
-"1083","Tunisia","TUN",2014,NA,NA,12.6
-"1084","Tunisia","TUN",2015,NA,NA,12.1
-"1085","Turkey","TUR",2010,NA,32.29,16.4
-"1086","Turkey","TUR",2011,NA,29.56,15.3
-"1087","Turkey","TUR",2012,NA,28.72,14.2
-"1088","Turkey","TUR",2013,NA,25.53,13.2
-"1089","Turkey","TUR",2014,NA,24.79,12.3
-"1090","Turkey","TUR",2015,NA,NA,11.6
-"1091","Turkmenistan","TKM",2010,NA,NA,50.4
-"1092","Turkmenistan","TKM",2011,NA,NA,48.9
-"1093","Turkmenistan","TKM",2012,NA,NA,47.6
-"1094","Turkmenistan","TKM",2013,NA,NA,46.2
-"1095","Turkmenistan","TKM",2014,NA,NA,45
-"1096","Turkmenistan","TKM",2015,NA,NA,43.7
-"1097","Tuvalu","TUV",2010,NA,NA,26.3
-"1098","Tuvalu","TUV",2011,NA,NA,25.6
-"1099","Tuvalu","TUV",2012,NA,NA,24.9
-"1100","Tuvalu","TUV",2013,NA,NA,24.1
-"1101","Tuvalu","TUV",2014,NA,NA,23.4
-"1102","Tuvalu","TUV",2015,NA,NA,22.8
-"1103","Uganda","UGA",2010,NA,NA,49.5
-"1104","Uganda","UGA",2011,NA,NA,46.3
-"1105","Uganda","UGA",2012,85.7,NA,42.5
-"1106","Uganda","UGA",2013,NA,5.91,41.6
-"1107","Uganda","UGA",2014,NA,NA,39.1
-"1108","Uganda","UGA",2015,NA,NA,37.7
-"1109","Ukraine","UKR",2010,NA,NA,10.1
-"1110","Ukraine","UKR",2011,NA,NA,9.6
-"1111","Ukraine","UKR",2012,84.61,NA,9.1
-"1112","Ukraine","UKR",2013,NA,14.7,8.6
-"1113","Ukraine","UKR",2014,NA,19.98,8.1
-"1114","Ukraine","UKR",2015,NA,NA,7.7
-"1115","United Arab Emirates","ARE",2010,NA,NA,7.3
-"1116","United Arab Emirates","ARE",2011,NA,NA,7
-"1117","United Arab Emirates","ARE",2012,NA,NA,6.7
-"1118","United Arab Emirates","ARE",2013,NA,NA,6.4
-"1119","United Arab Emirates","ARE",2014,NA,NA,6.1
-"1120","United Arab Emirates","ARE",2015,NA,NA,5.9
-"1121","United Kingdom","GBR",2010,NA,13.62,4.4
-"1122","United Kingdom","GBR",2011,NA,14.25,4.2
-"1123","United Kingdom","GBR",2012,NA,13.88,4.1
-"1124","United Kingdom","GBR",2013,NA,13.25,3.9
-"1125","United Kingdom","GBR",2014,NA,11.87,3.7
-"1126","United Kingdom","GBR",2015,NA,NA,3.5
-"1127","United States","USA",2010,NA,17.64,6.3
-"1128","United States","USA",2011,NA,17.13,6.1
-"1129","United States","USA",2012,NA,16.49,6.1
-"1130","United States","USA",2013,NA,NA,5.9
-"1131","United States","USA",2014,NA,NA,5.7
-"1132","United States","USA",2015,NA,NA,5.6
-"1133","Uruguay","URY",2010,NA,20.48,10.6
-"1134","Uruguay","URY",2011,NA,NA,10.3
-"1135","Uruguay","URY",2012,NA,NA,10
-"1136","Uruguay","URY",2013,NA,20.51,9.5
-"1137","Uruguay","URY",2014,NA,NA,9.1
-"1138","Uruguay","URY",2015,NA,NA,8.7
-"1139","Uzbekistan","UZB",2010,NA,NA,39.6
-"1140","Uzbekistan","UZB",2011,NA,NA,38.4
-"1141","Uzbekistan","UZB",2012,NA,NA,37.2
-"1142","Uzbekistan","UZB",2013,NA,NA,36.1
-"1143","Uzbekistan","UZB",2014,NA,NA,35
-"1144","Uzbekistan","UZB",2015,NA,NA,33.9
-"1145","Vanuatu","VUT",2010,NA,NA,23.9
-"1146","Vanuatu","VUT",2011,NA,NA,24
-"1147","Vanuatu","VUT",2012,NA,NA,24
-"1148","Vanuatu","VUT",2013,NA,NA,23.8
-"1149","Vanuatu","VUT",2014,NA,NA,23.5
-"1150","Vanuatu","VUT",2015,NA,NA,23.1
-"1151","Venezuela, RB","VEN",2010,NA,19.19,14.3
-"1152","Venezuela, RB","VEN",2011,NA,NA,14.1
-"1153","Venezuela, RB","VEN",2012,NA,NA,13.8
-"1154","Venezuela, RB","VEN",2013,NA,NA,13.5
-"1155","Venezuela, RB","VEN",2014,NA,NA,13.2
-"1156","Venezuela, RB","VEN",2015,NA,NA,12.9
-"1157","Vietnam","VNM",2010,NA,NA,19.8
-"1158","Vietnam","VNM",2011,87.37,NA,19.3
-"1159","Vietnam","VNM",2012,84.29,11.3,18.8
-"1160","Vietnam","VNM",2013,NA,9.34,18.3
-"1161","Vietnam","VNM",2014,NA,NA,17.8
-"1162","Vietnam","VNM",2015,NA,NA,17.3
-"1163","Yemen, Rep.","YEM",2010,89.88,48.1,42.4
-"1164","Yemen, Rep.","YEM",2011,NA,NA,40.3
-"1165","Yemen, Rep.","YEM",2012,NA,NA,38.4
-"1166","Yemen, Rep.","YEM",2013,NA,NA,36.7
-"1167","Yemen, Rep.","YEM",2014,NA,NA,35.1
-"1168","Yemen, Rep.","YEM",2015,NA,NA,33.8
-"1169","Zambia","ZMB",2010,NA,NA,52.9
-"1170","Zambia","ZMB",2011,NA,NA,51.1
-"1171","Zambia","ZMB",2012,NA,28.3,49
-"1172","Zambia","ZMB",2013,NA,NA,46.5
-"1173","Zambia","ZMB",2014,NA,NA,44.7
-"1174","Zambia","ZMB",2015,NA,NA,43.3
-"1175","Zimbabwe","ZWE",2010,NA,NA,55.8
-"1176","Zimbabwe","ZWE",2011,NA,NA,54
-"1177","Zimbabwe","ZWE",2012,NA,NA,49.4
-"1178","Zimbabwe","ZWE",2013,NA,NA,48.8
-"1179","Zimbabwe","ZWE",2014,NA,NA,47.6
-"1180","Zimbabwe","ZWE",2015,NA,NA,46.6
+"785","Pacific island small states","PSS",2010,NA,NA,24.06919
+"786","Pacific island small states","PSS",2011,NA,NA,23.82403
+"787","Pacific island small states","PSS",2012,NA,NA,23.54478
+"788","Pacific island small states","PSS",2013,NA,NA,23.16266
+"789","Pacific island small states","PSS",2014,NA,NA,22.73272
+"790","Pacific island small states","PSS",2015,NA,NA,22.29326
+"791","Pakistan","PAK",2010,NA,NA,73.5
+"792","Pakistan","PAK",2011,75.08,NA,72.1
+"793","Pakistan","PAK",2012,NA,NA,70.6
+"794","Pakistan","PAK",2013,NA,NA,69.1
+"795","Pakistan","PAK",2014,NA,NA,67.4
+"796","Pakistan","PAK",2015,NA,NA,65.8
+"797","Palau","PLW",2010,NA,NA,16.6
+"798","Palau","PLW",2011,NA,NA,16.2
+"799","Palau","PLW",2012,NA,NA,15.7
+"800","Palau","PLW",2013,NA,NA,15.1
+"801","Palau","PLW",2014,NA,NA,14.7
+"802","Palau","PLW",2015,NA,NA,14.2
+"803","Panama","PAN",2010,73.85,20.88,17
+"804","Panama","PAN",2011,NA,21.03,16.5
+"805","Panama","PAN",2012,68.5,17.58,16
+"806","Panama","PAN",2013,NA,NA,15.5
+"807","Panama","PAN",2014,NA,NA,15.1
+"808","Panama","PAN",2015,NA,NA,14.6
+"809","Papua New Guinea","PNG",2010,NA,NA,50.3
+"810","Papua New Guinea","PNG",2011,NA,NA,49.2
+"811","Papua New Guinea","PNG",2012,NA,NA,48
+"812","Papua New Guinea","PNG",2013,NA,NA,47
+"813","Papua New Guinea","PNG",2014,NA,NA,45.7
+"814","Papua New Guinea","PNG",2015,NA,NA,44.5
+"815","Paraguay","PRY",2010,NA,19.5,20.4
+"816","Paraguay","PRY",2011,NA,12.97,19.8
+"817","Paraguay","PRY",2012,NA,12.28,19.2
+"818","Paraguay","PRY",2013,NA,NA,18.6
+"819","Paraguay","PRY",2014,NA,NA,18.1
+"820","Paraguay","PRY",2015,NA,NA,17.5
+"821","Peru","PER",2010,NA,16.64,16.3
+"822","Peru","PER",2011,NA,16.91,15.6
+"823","Peru","PER",2012,NA,16.47,14.9
+"824","Peru","PER",2013,NA,15.34,14.2
+"825","Peru","PER",2014,NA,NA,13.6
+"826","Peru","PER",2015,NA,NA,13.1
+"827","Philippines","PHL",2010,NA,25.21,24.9
+"828","Philippines","PHL",2011,73.46,24.3,24.4
+"829","Philippines","PHL",2012,NA,24.78,23.9
+"830","Philippines","PHL",2013,NA,NA,23.3
+"831","Philippines","PHL",2014,NA,NA,22.8
+"832","Philippines","PHL",2015,NA,NA,22.2
+"833","Poland","POL",2010,NA,10.77,5
+"834","Poland","POL",2011,NA,11.5,4.7
+"835","Poland","POL",2012,NA,11.82,4.6
+"836","Poland","POL",2013,NA,12.21,4.5
+"837","Poland","POL",2014,NA,11.98,4.5
+"838","Poland","POL",2015,NA,NA,4.5
+"839","Portugal","PRT",2010,NA,11.44,3.1
+"840","Portugal","PRT",2011,NA,12.55,3.1
+"841","Portugal","PRT",2012,NA,13.91,3.1
+"842","Portugal","PRT",2013,NA,14.07,3.1
+"843","Portugal","PRT",2014,NA,12.28,3
+"844","Portugal","PRT",2015,NA,NA,3
+"845","Qatar","QAT",2010,NA,NA,7.7
+"846","Qatar","QAT",2011,NA,NA,7.5
+"847","Qatar","QAT",2012,NA,NA,7.3
+"848","Qatar","QAT",2013,NA,NA,7.2
+"849","Qatar","QAT",2014,NA,NA,7
+"850","Qatar","QAT",2015,NA,NA,6.8
+"851","Romania","ROM",2010,NA,16.6,12.1
+"852","Romania","ROM",2011,NA,17.47,11.5
+"853","Romania","ROM",2012,NA,16.81,10.9
+"854","Romania","ROM",2013,NA,16.96,10.5
+"855","Romania","ROM",2014,NA,17.01,10.1
+"856","Romania","ROM",2015,NA,NA,9.7
+"857","Russia","RUS",2010,NA,NA,10.3
+"858","Russia","RUS",2011,NA,12.69,9.8
+"859","Russia","RUS",2012,NA,11.99,9.3
+"860","Russia","RUS",2013,NA,NA,8.9
+"861","Russia","RUS",2014,NA,NA,8.5
+"862","Russia","RUS",2015,NA,NA,8.2
+"863","Rwanda","RWA",2010,80.45,NA,43.8
+"864","Rwanda","RWA",2011,NA,NA,40
+"865","Rwanda","RWA",2012,NA,NA,37.1
+"866","Rwanda","RWA",2013,NA,NA,34.7
+"867","Rwanda","RWA",2014,NA,NA,32.7
+"868","Rwanda","RWA",2015,NA,NA,31.1
+"869","Samoa","WSM",2010,NA,NA,16
+"870","Samoa","WSM",2011,NA,NA,16
+"871","Samoa","WSM",2012,NA,38.2,15.8
+"872","Samoa","WSM",2013,NA,NA,15.6
+"873","Samoa","WSM",2014,NA,NA,15.4
+"874","Samoa","WSM",2015,NA,NA,15
+"875","San Marino","SMR",2010,NA,NA,3.1
+"876","San Marino","SMR",2011,NA,NA,3
+"877","San Marino","SMR",2012,NA,NA,2.9
+"878","San Marino","SMR",2013,NA,NA,2.8
+"879","San Marino","SMR",2014,NA,NA,2.7
+"880","San Marino","SMR",2015,NA,NA,2.6
+"881","Sao Tome and Principe","STP",2010,NA,NA,39.8
+"882","Sao Tome and Principe","STP",2011,NA,NA,38.7
+"883","Sao Tome and Principe","STP",2012,NA,NA,37.5
+"884","Sao Tome and Principe","STP",2013,NA,NA,36.6
+"885","Sao Tome and Principe","STP",2014,NA,NA,35.5
+"886","Sao Tome and Principe","STP",2015,NA,NA,34.6
+"887","Saudi Arabia","SAU",2010,NA,NA,14.7
+"888","Saudi Arabia","SAU",2011,NA,20.57,14.2
+"889","Saudi Arabia","SAU",2012,NA,18.79,13.8
+"890","Saudi Arabia","SAU",2013,NA,18.42,13.3
+"891","Saudi Arabia","SAU",2014,NA,NA,12.9
+"892","Saudi Arabia","SAU",2015,NA,NA,12.5
+"893","Senegal","SEN",2010,NA,NA,46.7
+"894","Senegal","SEN",2011,85.46,NA,45.3
+"895","Senegal","SEN",2012,NA,NA,44.1
+"896","Senegal","SEN",2013,NA,NA,43.1
+"897","Senegal","SEN",2014,NA,NA,42.3
+"898","Senegal","SEN",2015,NA,NA,41.7
+"899","Serbia","SRB",2010,NA,21.19,6.6
+"900","Serbia","SRB",2011,NA,21.34,6.4
+"901","Serbia","SRB",2012,NA,21.48,6.2
+"902","Serbia","SRB",2013,NA,19.54,6
+"903","Serbia","SRB",2014,NA,NA,6
+"904","Serbia","SRB",2015,NA,NA,5.9
+"905","Seychelles","SYC",2010,NA,NA,12.2
+"906","Seychelles","SYC",2011,NA,20,12.2
+"907","Seychelles","SYC",2012,NA,NA,12.2
+"908","Seychelles","SYC",2013,NA,NA,12.1
+"909","Seychelles","SYC",2014,NA,NA,11.9
+"910","Seychelles","SYC",2015,NA,NA,11.7
+"911","Sierra Leone","SLE",2010,66.04,NA,107
+"912","Sierra Leone","SLE",2011,NA,NA,102.3
+"913","Sierra Leone","SLE",2012,NA,NA,97.9
+"914","Sierra Leone","SLE",2013,60.36,NA,93.8
+"915","Sierra Leone","SLE",2014,NA,NA,90.2
+"916","Sierra Leone","SLE",2015,NA,NA,87.1
+"917","Singapore","SGP",2010,NA,18.9,2.2
+"918","Singapore","SGP",2011,NA,NA,2.2
+"919","Singapore","SGP",2012,NA,NA,2.2
+"920","Singapore","SGP",2013,NA,NA,2.2
+"921","Singapore","SGP",2014,NA,NA,2.2
+"922","Singapore","SGP",2015,NA,NA,2.1
+"923","Slovakia","SVK",2010,NA,14.09,7
+"924","Slovakia","SVK",2011,NA,13.81,6.8
+"925","Slovakia","SVK",2012,NA,13.81,6.5
+"926","Slovakia","SVK",2013,NA,13.69,6.3
+"927","Slovakia","SVK",2014,NA,12.8,6.1
+"928","Slovakia","SVK",2015,NA,NA,5.8
+"929","Slovenia","SVN",2010,NA,7.11,2.7
+"930","Slovenia","SVN",2011,NA,7.08,2.6
+"931","Slovenia","SVN",2012,NA,9.28,2.4
+"932","Slovenia","SVN",2013,NA,9.24,2.3
+"933","Slovenia","SVN",2014,NA,9.42,2.2
+"934","Slovenia","SVN",2015,NA,NA,2.1
+"935","Solomon Islands","SLB",2010,NA,NA,26.6
+"936","Solomon Islands","SLB",2011,NA,NA,26.1
+"937","Solomon Islands","SLB",2012,NA,NA,25.5
+"938","Solomon Islands","SLB",2013,NA,NA,24.9
+"939","Solomon Islands","SLB",2014,NA,NA,24.2
+"940","Solomon Islands","SLB",2015,NA,NA,23.6
+"941","Somalia","SOM",2010,NA,NA,97.8
+"942","Somalia","SOM",2011,NA,NA,95.1
+"943","Somalia","SOM",2012,NA,NA,92.6
+"944","Somalia","SOM",2013,NA,NA,90.1
+"945","Somalia","SOM",2014,NA,NA,87.4
+"946","Somalia","SOM",2015,NA,NA,85
+"947","South Africa","ZAF",2010,NA,NA,38.2
+"948","South Africa","ZAF",2011,NA,NA,37.1
+"949","South Africa","ZAF",2012,NA,31.44,36.8
+"950","South Africa","ZAF",2013,NA,31.97,35.3
+"951","South Africa","ZAF",2014,NA,31.31,34.4
+"952","South Africa","ZAF",2015,NA,NA,33.6
+"953","South Sudan","SSD",2010,NA,NA,70.6
+"954","South Sudan","SSD",2011,NA,NA,68.3
+"955","South Sudan","SSD",2012,NA,NA,66.1
+"956","South Sudan","SSD",2013,NA,NA,64
+"957","South Sudan","SSD",2014,NA,NA,62
+"958","South Sudan","SSD",2015,NA,NA,60.3
+"959","Spain","ESP",2010,NA,17.81,3.9
+"960","Spain","ESP",2011,NA,18.25,3.8
+"961","Spain","ESP",2012,NA,18.6,3.7
+"962","Spain","ESP",2013,NA,18.63,3.7
+"963","Spain","ESP",2014,NA,17.14,3.6
+"964","Spain","ESP",2015,NA,NA,3.5
+"965","Sri Lanka","LKA",2010,NA,22.88,9.4
+"966","Sri Lanka","LKA",2011,NA,0.49,9.1
+"967","Sri Lanka","LKA",2012,NA,0.46,8.9
+"968","Sri Lanka","LKA",2013,NA,NA,8.7
+"969","Sri Lanka","LKA",2014,NA,NA,8.6
+"970","Sri Lanka","LKA",2015,NA,NA,8.4
+"971","St. Kitts and Nevis","KNA",2010,NA,NA,10
+"972","St. Kitts and Nevis","KNA",2011,NA,NA,9.6
+"973","St. Kitts and Nevis","KNA",2012,NA,NA,9.3
+"974","St. Kitts and Nevis","KNA",2013,NA,NA,9
+"975","St. Kitts and Nevis","KNA",2014,NA,NA,8.7
+"976","St. Kitts and Nevis","KNA",2015,NA,NA,8.4
+"977","St. Lucia","LCA",2010,NA,NA,14.1
+"978","St. Lucia","LCA",2011,NA,NA,13.9
+"979","St. Lucia","LCA",2012,NA,NA,13.6
+"980","St. Lucia","LCA",2013,NA,NA,13.3
+"981","St. Lucia","LCA",2014,NA,NA,13
+"982","St. Lucia","LCA",2015,NA,NA,12.7
+"983","St. Vincent and the Grenadines","VCT",2010,NA,NA,18.6
+"984","St. Vincent and the Grenadines","VCT",2011,NA,NA,18.2
+"985","St. Vincent and the Grenadines","VCT",2012,NA,NA,17.8
+"986","St. Vincent and the Grenadines","VCT",2013,NA,NA,17.4
+"987","St. Vincent and the Grenadines","VCT",2014,NA,NA,17
+"988","St. Vincent and the Grenadines","VCT",2015,NA,NA,16.6
+"989","Sudan","SDN",2010,NA,NA,53.3
+"990","Sudan","SDN",2011,NA,NA,52.2
+"991","Sudan","SDN",2012,NA,NA,51.1
+"992","Sudan","SDN",2013,NA,NA,49.9
+"993","Sudan","SDN",2014,NA,NA,48.8
+"994","Sudan","SDN",2015,NA,NA,47.6
+"995","Suriname","SUR",2010,NA,NA,22.1
+"996","Suriname","SUR",2011,NA,NA,21.4
+"997","Suriname","SUR",2012,NA,NA,20.8
+"998","Suriname","SUR",2013,NA,NA,20.1
+"999","Suriname","SUR",2014,NA,NA,19.5
+"1000","Suriname","SUR",2015,NA,NA,19
+"1001","Swaziland","SWZ",2010,75.17,NA,59.1
+"1002","Swaziland","SWZ",2011,NA,NA,53.6
+"1003","Swaziland","SWZ",2012,NA,NA,51.5
+"1004","Swaziland","SWZ",2013,NA,NA,48.4
+"1005","Swaziland","SWZ",2014,NA,NA,45.8
+"1006","Swaziland","SWZ",2015,NA,NA,44.5
+"1007","Sweden","SWE",2010,NA,7.67,2.5
+"1008","Sweden","SWE",2011,NA,7.53,2.4
+"1009","Sweden","SWE",2012,NA,7.83,2.4
+"1010","Sweden","SWE",2013,NA,7.44,2.4
+"1011","Sweden","SWE",2014,NA,7.16,2.4
+"1012","Sweden","SWE",2015,NA,NA,2.4
+"1013","Switzerland","CHE",2010,NA,6.7,3.9
+"1014","Switzerland","CHE",2011,NA,6.72,3.8
+"1015","Switzerland","CHE",2012,NA,6.85,3.7
+"1016","Switzerland","CHE",2013,NA,7.13,3.6
+"1017","Switzerland","CHE",2014,NA,7.27,3.5
+"1018","Switzerland","CHE",2015,NA,NA,3.4
+"1019","Syria","SYR",2010,NA,NA,13.2
+"1020","Syria","SYR",2011,NA,NA,12.8
+"1021","Syria","SYR",2012,NA,NA,12.6
+"1022","Syria","SYR",2013,NA,NA,12.1
+"1023","Syria","SYR",2014,NA,NA,11.7
+"1024","Syria","SYR",2015,NA,NA,11.1
+"1025","Tajikistan","TJK",2010,NA,NA,44.7
+"1026","Tajikistan","TJK",2011,NA,NA,43.3
+"1027","Tajikistan","TJK",2012,NA,NA,42.1
+"1028","Tajikistan","TJK",2013,NA,NA,40.9
+"1029","Tajikistan","TJK",2014,NA,NA,39.7
+"1030","Tajikistan","TJK",2015,NA,NA,38.5
+"1031","Tanzania","TZA",2010,NA,NA,42.4
+"1032","Tanzania","TZA",2011,91.79,NA,40.4
+"1033","Tanzania","TZA",2012,NA,NA,38.8
+"1034","Tanzania","TZA",2013,NA,31.8,37.6
+"1035","Tanzania","TZA",2014,NA,NA,36.2
+"1036","Tanzania","TZA",2015,NA,NA,35.2
+"1037","Thailand","THA",2010,NA,12.53,12.5
+"1038","Thailand","THA",2011,NA,12.55,12
+"1039","Thailand","THA",2012,NA,12.85,11.6
+"1040","Thailand","THA",2013,NA,14.69,11.2
+"1041","Thailand","THA",2014,NA,13.81,10.9
+"1042","Thailand","THA",2015,NA,NA,10.5
+"1043","Timor-Leste","TMP",2010,NA,NA,53.1
+"1044","Timor-Leste","TMP",2011,NA,NA,51.1
+"1045","Timor-Leste","TMP",2012,NA,NA,49.3
+"1046","Timor-Leste","TMP",2013,NA,NA,47.6
+"1047","Timor-Leste","TMP",2014,NA,NA,46.1
+"1048","Timor-Leste","TMP",2015,NA,NA,44.7
+"1049","Togo","TGO",2010,89.48,NA,59.3
+"1050","Togo","TGO",2011,NA,NA,57.9
+"1051","Togo","TGO",2012,NA,9,56.5
+"1052","Togo","TGO",2013,NA,NA,55
+"1053","Togo","TGO",2014,NA,NA,53.6
+"1054","Togo","TGO",2015,NA,NA,52.3
+"1055","Tonga","TON",2010,NA,NA,15
+"1056","Tonga","TON",2011,NA,NA,15
+"1057","Tonga","TON",2012,NA,NA,15
+"1058","Tonga","TON",2013,NA,NA,14.9
+"1059","Tonga","TON",2014,NA,NA,14.7
+"1060","Tonga","TON",2015,NA,NA,14.4
+"1061","Trinidad and Tobago","TTO",2010,NA,NA,21
+"1062","Trinidad and Tobago","TTO",2011,NA,NA,20.4
+"1063","Trinidad and Tobago","TTO",2012,NA,NA,19.7
+"1064","Trinidad and Tobago","TTO",2013,NA,52.52,19.2
+"1065","Trinidad and Tobago","TTO",2014,NA,NA,18.7
+"1066","Trinidad and Tobago","TTO",2015,NA,NA,18.2
+"1067","Tunisia","TUN",2010,NA,NA,14.9
+"1068","Tunisia","TUN",2011,NA,NA,14.2
+"1069","Tunisia","TUN",2012,78.12,NA,13.6
+"1070","Tunisia","TUN",2013,NA,25.4,13.1
+"1071","Tunisia","TUN",2014,NA,NA,12.6
+"1072","Tunisia","TUN",2015,NA,NA,12.1
+"1073","Turkey","TUR",2010,NA,32.29,16.4
+"1074","Turkey","TUR",2011,NA,29.56,15.3
+"1075","Turkey","TUR",2012,NA,28.72,14.2
+"1076","Turkey","TUR",2013,NA,25.53,13.2
+"1077","Turkey","TUR",2014,NA,24.79,12.3
+"1078","Turkey","TUR",2015,NA,NA,11.6
+"1079","Turkmenistan","TKM",2010,NA,NA,50.4
+"1080","Turkmenistan","TKM",2011,NA,NA,48.9
+"1081","Turkmenistan","TKM",2012,NA,NA,47.6
+"1082","Turkmenistan","TKM",2013,NA,NA,46.2
+"1083","Turkmenistan","TKM",2014,NA,NA,45
+"1084","Turkmenistan","TKM",2015,NA,NA,43.7
+"1085","Tuvalu","TUV",2010,NA,NA,26.3
+"1086","Tuvalu","TUV",2011,NA,NA,25.6
+"1087","Tuvalu","TUV",2012,NA,NA,24.9
+"1088","Tuvalu","TUV",2013,NA,NA,24.1
+"1089","Tuvalu","TUV",2014,NA,NA,23.4
+"1090","Tuvalu","TUV",2015,NA,NA,22.8
+"1091","Uganda","UGA",2010,NA,NA,49.5
+"1092","Uganda","UGA",2011,NA,NA,46.3
+"1093","Uganda","UGA",2012,85.7,NA,42.5
+"1094","Uganda","UGA",2013,NA,5.91,41.6
+"1095","Uganda","UGA",2014,NA,NA,39.1
+"1096","Uganda","UGA",2015,NA,NA,37.7
+"1097","Ukraine","UKR",2010,NA,NA,10.1
+"1098","Ukraine","UKR",2011,NA,NA,9.6
+"1099","Ukraine","UKR",2012,84.61,NA,9.1
+"1100","Ukraine","UKR",2013,NA,14.7,8.6
+"1101","Ukraine","UKR",2014,NA,19.98,8.1
+"1102","Ukraine","UKR",2015,NA,NA,7.7
+"1103","United Arab Emirates","ARE",2010,NA,NA,7.3
+"1104","United Arab Emirates","ARE",2011,NA,NA,7
+"1105","United Arab Emirates","ARE",2012,NA,NA,6.7
+"1106","United Arab Emirates","ARE",2013,NA,NA,6.4
+"1107","United Arab Emirates","ARE",2014,NA,NA,6.1
+"1108","United Arab Emirates","ARE",2015,NA,NA,5.9
+"1109","United Kingdom","GBR",2010,NA,13.62,4.4
+"1110","United Kingdom","GBR",2011,NA,14.25,4.2
+"1111","United Kingdom","GBR",2012,NA,13.88,4.1
+"1112","United Kingdom","GBR",2013,NA,13.25,3.9
+"1113","United Kingdom","GBR",2014,NA,11.87,3.7
+"1114","United Kingdom","GBR",2015,NA,NA,3.5
+"1115","United States of America","USA",2010,NA,17.64,6.3
+"1116","United States of America","USA",2011,NA,17.13,6.1
+"1117","United States of America","USA",2012,NA,16.49,6.1
+"1118","United States of America","USA",2013,NA,NA,5.9
+"1119","United States of America","USA",2014,NA,NA,5.7
+"1120","United States of America","USA",2015,NA,NA,5.6
+"1121","Uruguay","URY",2010,NA,20.48,10.6
+"1122","Uruguay","URY",2011,NA,NA,10.3
+"1123","Uruguay","URY",2012,NA,NA,10
+"1124","Uruguay","URY",2013,NA,20.51,9.5
+"1125","Uruguay","URY",2014,NA,NA,9.1
+"1126","Uruguay","URY",2015,NA,NA,8.7
+"1127","Uzbekistan","UZB",2010,NA,NA,39.6
+"1128","Uzbekistan","UZB",2011,NA,NA,38.4
+"1129","Uzbekistan","UZB",2012,NA,NA,37.2
+"1130","Uzbekistan","UZB",2013,NA,NA,36.1
+"1131","Uzbekistan","UZB",2014,NA,NA,35
+"1132","Uzbekistan","UZB",2015,NA,NA,33.9
+"1133","Vanuatu","VUT",2010,NA,NA,23.9
+"1134","Vanuatu","VUT",2011,NA,NA,24
+"1135","Vanuatu","VUT",2012,NA,NA,24
+"1136","Vanuatu","VUT",2013,NA,NA,23.8
+"1137","Vanuatu","VUT",2014,NA,NA,23.5
+"1138","Vanuatu","VUT",2015,NA,NA,23.1
+"1139","Venezuela","VEN",2010,NA,19.19,14.3
+"1140","Venezuela","VEN",2011,NA,NA,14.1
+"1141","Venezuela","VEN",2012,NA,NA,13.8
+"1142","Venezuela","VEN",2013,NA,NA,13.5
+"1143","Venezuela","VEN",2014,NA,NA,13.2
+"1144","Venezuela","VEN",2015,NA,NA,12.9
+"1145","Vietnam","VNM",2010,NA,NA,19.8
+"1146","Vietnam","VNM",2011,87.37,NA,19.3
+"1147","Vietnam","VNM",2012,84.29,11.3,18.8
+"1148","Vietnam","VNM",2013,NA,9.34,18.3
+"1149","Vietnam","VNM",2014,NA,NA,17.8
+"1150","Vietnam","VNM",2015,NA,NA,17.3
+"1151","Yemen","YEM",2010,89.88,48.1,42.4
+"1152","Yemen","YEM",2011,NA,NA,40.3
+"1153","Yemen","YEM",2012,NA,NA,38.4
+"1154","Yemen","YEM",2013,NA,NA,36.7
+"1155","Yemen","YEM",2014,NA,NA,35.1
+"1156","Yemen","YEM",2015,NA,NA,33.8
+"1157","Zambia","ZMB",2010,NA,NA,52.9
+"1158","Zambia","ZMB",2011,NA,NA,51.1
+"1159","Zambia","ZMB",2012,NA,28.3,49
+"1160","Zambia","ZMB",2013,NA,NA,46.5
+"1161","Zambia","ZMB",2014,NA,NA,44.7
+"1162","Zambia","ZMB",2015,NA,NA,43.3
+"1163","Zimbabwe","ZWE",2010,NA,NA,55.8
+"1164","Zimbabwe","ZWE",2011,NA,NA,54
+"1165","Zimbabwe","ZWE",2012,NA,NA,49.4
+"1166","Zimbabwe","ZWE",2013,NA,NA,48.8
+"1167","Zimbabwe","ZWE",2014,NA,NA,47.6
+"1168","Zimbabwe","ZWE",2015,NA,NA,46.6

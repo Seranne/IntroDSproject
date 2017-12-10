@@ -54,12 +54,35 @@ WDInew <- filter(WDInew, CountryCode != "MIC")
 
 WDI2 <- filter(WDInew, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC"| IndicatorCode == "EN.ATM.CO2E.PC"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SP.DYN.IMRT.IN"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
 
-
-
-#WDI2 <- filter(WDI, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"| IndicatorCode == "EN.ATM.CO2E.PC"| IndicatorCode == "EN.ATM.GHGO.KT.CE"|IndicatorCode == "EN.ATM.METH.KT.CE"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
-
 write.csv(WDI2, file = "ourWDI.csv")
-WDI4<- select(WDI2,"CountryName","CountryCode", "IndicatorCode", "Year","Value")
+```
+
+```{r}
+WDI4 <- read.csv("/IntroDSproject/ourWDI.csv")
+WDI4<- select(WDI4,"CountryName","CountryCode", "IndicatorCode", "Year","Value")
+
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Micronesia, Fed. Sts."] <- "Micronesia"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "United States"] <- "United States of America"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Congo, Rep."] <- "Republic of Congo"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Russian Federation"] <- "Russia"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Congo, Dem. Rep."] <- "Democratic Republic of Congo"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Eygpt, Arab Rep."] <- "Egypt"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Iran, Islamic Rep."] <- "Iran"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Korea, Dem. Rep"] <- "North Korea"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Korea, Rep."] <- "South Korea"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Kyrgyz Republic"] <- "Kyrgyzstan"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Slovak Republic"] <- "Slovakia"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Syrian Arab Republic"] <- "Syria"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "China & Hong Kong SAR, China"] <- "Hong Kong"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Macedonia, FYR"] <- "Macedonia"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Bahamas, The"] <- "Bahamas"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Gambia, The"] <- "Gambia"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Venezuela, RB"] <- "Venezuela"
+levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Yemen, Rep."] <- "Yemen"
+
+WDI4 <- filter(WDI4, CountryCode != "OSS")
+WDI4 <- filter(WDI4, CountryCode != "SST")
+
 
 energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC") %>% spread(IndicatorCode, Value)
 write.csv(energy, file = "Energy.csv")
@@ -105,6 +128,13 @@ write.csv(FoodDeficit, file = "Food_deficit.csv")
 Tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
 write.csv(Tourism, file = "Tourism.csv")
 ```
+
+
+
+
+
+# Discard
+
 (AG.LND.FRST.ZS	Forest area (% of land area), 
 EG.ELC.ACCS.ZS	Access to electricity (% of population) 
 EG.FEC.RNEW.ZS	Renewable energy consumption (% of total final energy consumption), 
