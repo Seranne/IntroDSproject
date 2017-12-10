@@ -1,0 +1,28 @@
+---
+title: "World plot"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(rworldmap)
+library(ggplot2)
+map.world <- map_data(map="world")
+View(map.world)
+colnames(map.world)[5] <- "CountryName"
+ourindex <- read.csv("Final score data/CalculatedOurindex.csv")
+
+#Add the data you want to map countries by to map.world
+
+map.world <- left_join(ourindex, map.world, "CountryName")
+map.world <- map.world %>% select(finalindex, CountryName, region, sub.region, lat, long)
+
+gg <- ggplot()
+gg <- gg + theme()
+gg <- gg + geom_map(data=map.world, map=map.world, aes(map_id=region, x=long, y=lat, fill=finalindex))
+
+gg <- gg + scale_fill_gradient(low = "green", high = "brown3", guide = "colourbar")
+gg <- gg + coord_equal()
+gg
+```
+
