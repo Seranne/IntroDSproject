@@ -27,7 +27,28 @@ Plots/Models we could make:
 1. EDA:
 
 - Existing WHR scores by country 
+- Existing HPI scores by counrty 
+- Difference between EF indices distribution and existing WHR (this is what they didn't consider!)
+- Sample Category Rankings 
 
+2. Results
+
+- Sample category rankings 
+- Our Index rankings by country 
+- Our variables regressed against a negative outcome
+
+
+3. Predictions/Interactives
+- Shiny app for a country in our index where you could change value of something, and its rank moves?
+
+
+
+
+```{r}
+
+```
+
+### Ignore
 ```{r}
 gh15 <- read_csv("/IntroDSproject/Source Data/World Happiness Report/2015.csv")
 colnames(gh15)[1] <-"country"
@@ -48,9 +69,8 @@ worldMapEnv
 
 worldMap <- borders("world", colour="gray50", fill="gray50")
 
-ggplot(gh15, aes(map_id = gh15$Region)) + 
-    geom_map(aes(fill = value), map = worldMap, color='grey', size=0.3) + 
-    expand_limits(x = worldMap$long, y = worldMap$lat) +
+gh15 %>% ggplot() + 
+    geom_map(aes(fill = value), map = , color='grey', size=0.3) +
     theme_few()+
     theme(legend.position = "bottom",
          axis.ticks = element_blank(), 
@@ -60,7 +80,17 @@ ggplot(gh15, aes(map_id = gh15$Region)) +
     guides(fill = guide_colorbar(barwidth = 10, barheight = .5))
 
 
+world<-map_data('world')
 
+p <- ggplot(legend=FALSE) +
+geom_polygon( data=world, aes(x=long, y=lat,group=group)) +
+xlab("") + ylab("")
+
+# add a single point
+class(gh15$happiness.rank)
+
+p <- p + geom_point(data=gh15,aes( gh15$`Happiness Score` ,happiness.rank),colour="green",size=4)
+p
 
 #Now Layer the cities on top
 mp <- mp+ geom_point(gh15, aes(country, region) ,col = gh15$happiness.rank, size=3) 
@@ -68,26 +98,3 @@ mp
 
 
 ```
-
-
-- Existing HPI scores by counrty 
-- Difference between EF indices distribution and existing WHR (this is what they didn't consider!)
-- Sample Category Rankings 
-
-2. Results
-
-- Sample category rankings 
-- Our Index rankings by country 
-- 
-
-
-3. Predictions/Interactives
-- Shiny app for a country in our index where you could change value of something, and its rank moves?
-
-
-
-
-```{r}
-
-```
-
