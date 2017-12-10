@@ -455,7 +455,7 @@ Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "S
  Population3$finalrank_pop3<- as.numeric(as.factor(Population3$finalrank_pop3))
  
 
- # Total score: highest ranked 1 
+ # Total score: Best aggregrate score ranked 1 
 Popjoin <- left_join(Population1, Population2, "CountryName")
 population_score <- left_join(Popjoin, Population3, "CountryName")
 population_score <- select(population_score,"CountryName", "finalrank_pop1", "finalrank_pop2", "finalrank_pop3")

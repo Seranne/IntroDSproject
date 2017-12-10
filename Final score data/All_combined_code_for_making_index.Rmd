@@ -60,7 +60,6 @@ final_score_table <- Communication_score %>%
 # This contains the columns with only the required final ranks for each variable
 ```{r}
 final_score <- final_score_table %>% select(CountryName,
-                                            CountryCode, 
                                             finalscore_child,
                                             finalrank_comm,
                                             finalrank_diversity,
@@ -95,9 +94,32 @@ final_score <- left_join(final_score, regions, "CountryName")
 #drop countries with too many NA's and use of mean of the coutries other ranking to fill in NA'for remaining countries
 
 ```{r}
- final_score <- final_score[rowSums(is.na(final_score)) < 6, ]
+ #final_score <- final_score[order(-final_score$Year),]
+ final_score[rowSums(is.na(final_score)) < ncol(final_score)/2, ]
+ final_score<- aggregate(x=final_score[c("finalscore_child",
+                                            "finalrank_comm",
+                                            "finalrank_diversity",
+                                            "finalrank_edu",
+                                            "finalrank_emission",
+                                            "finalrank_empl",
+                                            "finalrank_eng",
+                                            "finalrank_env",
+                                            "finalrank_deficit",
+                                            "finalrank_gen",
+                                            "finalrank_GDP",
+                                            "finalrank_pop",
+                                            "finalscore_security",
+                                            "finalrank_tourism",
+                                            "finalrank_hpi",
+                                            "finalrank_neg",
+                                            "finalrank_pos")], by=list(name=final_score$CountryName), FUN = "mean" , na.rm = TRUE)
+ colnames(final_score)[1] <- "CountryName"
+  #final_score[rowSums(is.na(final_score1)) < ncol(final_score)/3, ]
+ #final_score <- final_score%>% distinct(CountryName, .keep_all = TRUE)
+ final_score <- final_score[rowSums(is.na(final_score)) < 8, ]
+ 
  i <- which(is.na(final_score), arr.ind = TRUE)
- final_score[i] <- rowMeans(final_score[,3:19], na.rm = TRUE)[i[,1]]
+ final_score[i] <- rowMeans(final_score[,2:18], na.rm = TRUE)[i[,1]]
  
 final_score<- final_score %>% 
    mutate(ourindex = (finalscore_child + 
