@@ -13,7 +13,39 @@ test <- joinCountryData2Map(ourindex, joinCode = "NAME", nameJoinColumn = "Count
 
 par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
 mapCountryData( test, nameColumnToPlot="finalindex" )
-
 ```
 
+
+```{r}
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+
+#joining the data to a map
+finalindexplot <- joinCountryData2Map(ourindex,
+                                      joinCode = "NAME",
+                                      nameJoinColumn = "CountryName"
+)
+
+#creating a user defined colour palette
+op <- palette(c('green','yellow','orange', 'red'))
+
+#find quartile breaks
+cutVector <- quantile(finalindexplot@data[["finalindex"]],na.rm=TRUE) 
+
+#classify the data to a factor
+finalindexplot@data[["Happy-categories"]] <- cut(finalindexplot@data[["finalindex"]],
+                                                 cutVector,
+                                                 include.lowest=TRUE )
+
+#rename the categories
+levels(finalindexplot@data[["Happy-categories"]]) <- c('High', 'Med','Low', 'Very Low')  
+
+#mapping
+mapCountryData(finalindexplot, 
+               nameColumnToPlot='Happy-categories',
+               catMethod='categorical',
+               mapTitle='Happiness Index', 
+               colourPalette='palette',
+               oceanCol='lightblue',
+               missingCountryCol='white')
+```
 
