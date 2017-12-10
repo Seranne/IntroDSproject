@@ -29,20 +29,20 @@ finalindexplot <- joinCountryData2Map(ourindex,
 op <- palette(c('green','yellow','orange', 'red'))
 
 #find quartile breaks
-cutVector <- quantile(finalindexplot@data[["finalindex"]],na.rm=TRUE) 
+#cutVector <- quantile(finalindexplot@data[["finalindex"]],na.rm=TRUE) 
 
 #classify the data to a factor
-finalindexplot@data[["Happy-categories"]] <- cut(finalindexplot@data[["finalindex"]],
-                                                 cutVector,
-                                                 include.lowest=TRUE )
+#finalindexplot@data[["Happy-categories"]] <- cut(finalindexplot@data[["finalindex"]],
+                                                 #cutVector,
+                                                 #include.lowest=TRUE )
 
 #rename the categories
-levels(finalindexplot@data[["Happy-categories"]]) <- c('High', 'Med','Low', 'Very Low')  
+#levels(finalindexplot@data[["Happy-categories"]]) <- c('High', 'Med','Low', 'Very Low')  
 
 #mapping
 mapCountryData(finalindexplot, 
-               nameColumnToPlot='Happy-categories',
-               catMethod='categorical',
+               nameColumnToPlot='finalindex',
+               #catMethod='categorical',
                mapTitle='Happiness Index', 
                colourPalette='palette',
                oceanCol='lightblue',
