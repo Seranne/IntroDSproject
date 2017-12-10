@@ -1,9 +1,9 @@
 "","CountryName","CountryCode","finalrank_comm"
-"1","Afghanistan","AFG",174.5
-"2","Albania","ALB",99
-"3","Algeria","DZA",144.5
-"4","Andorra","ADO",72.5
-"5","Angola","AGO",164
+"1","Afghanistan","AFG",172.5
+"2","Albania","ALB",98.5
+"3","Algeria","DZA",142.5
+"4","Andorra","ADO",72
+"5","Angola","AGO",162
 "6","Antigua and Barbuda","ATG",62
 "7","Argentina","ARG",24
 "8","Armenia","ARM",92
@@ -11,196 +11,194 @@
 "10","Australia","AUS",21
 "11","Austria","AUT",11
 "12","Azerbaijan","AZE",85
-"13","Bahamas, The","BHS",106
+"13","Bahamas","BHS",106
 "14","Bahrain","BHR",1
-"15","Bangladesh","BGD",169.5
+"15","Bangladesh","BGD",167
 "16","Barbados","BRB",64
-"17","Belarus","BLR",66
+"17","Belarus","BLR",66.5
 "18","Belgium","BEL",46
-"19","Belize","BLZ",158
-"20","Benin","BEN",159.5
+"19","Belize","BLZ",157.5
+"20","Benin","BEN",156
 "21","Bermuda","BMU",64
-"22","Bhutan","BTN",140
-"23","Bolivia","BOL",131
-"24","Bosnia and Herzegovina","BIH",110
+"22","Bhutan","BTN",138
+"23","Bolivia","BOL",129
+"24","Bosnia and Herzegovina","BIH",109
 "25","Botswana","BWA",80
 "26","Brazil","BRA",51.5
-"27","Brunei Darussalam","BRN",72.5
+"27","Brunei Darussalam","BRN",74
 "28","Bulgaria","BGR",56
-"29","Burkina Faso","BFA",176
-"30","Burundi","BDI",203
-"31","Cabo Verde","CPV",96
+"29","Burkina Faso","BFA",174
+"30","Burundi","BDI",201
+"31","Cabo Verde","CPV",98.5
 "32","Cambodia","KHM",107
-"33","Cameroon","CMR",165
-"34","Canada","CAN",83.5
-"35","Caribbean small states","CSS",102.5
+"33","Cameroon","CMR",163
+"34","Canada","CAN",81.5
+"35","Caribbean small states","CSS",103
 "36","Cayman Islands","CYM",15
-"37","Central African Republic","CAF",199
-"38","Chad","TCD",199
+"37","Central African Republic","CAF",197
+"38","Chad","TCD",197
 "39","Chile","CHL",37.5
-"40","China","CHN",120
+"40","China","CHN",119.5
 "41","Colombia","COL",89
-"42","Comoros","COM",189
-"43","Congo, Dem. Rep.","ZAR",193
-"44","Congo, Rep.","COG",143
+"42","Comoros","COM",187
+"43","Democratic Republic of Congo","ZAR",191
+"44","Republic of Congo","COG",141
 "45","Costa Rica","CRI",58.5
-"46","Cote d'Ivoire","CIV",139
+"46","Cote d'Ivoire","CIV",137
 "47","Croatia","HRV",86
-"48","Cuba","CUB",171
-"49","Cyprus","CYP",96
+"48","Cuba","CUB",169
+"49","Cyprus","CYP",94.5
 "50","Czech Republic","CZE",29
 "51","Denmark","DNK",13
-"52","Djibouti","DJI",187
+"52","Djibouti","DJI",185
 "53","Dominica","DMA",54
-"54","Dominican Republic","DOM",127
+"54","Dominican Republic","DOM",126
 "55","Ecuador","ECU",118
-"56","Egypt, Arab Rep.","EGY",110
-"57","El Salvador","SLV",87.5
-"58","Equatorial Guinea","GNQ",163
-"59","Eritrea","ERI",204.5
+"56","Egypt, Arab Rep.","EGY",111
+"57","El Salvador","SLV",88
+"58","Equatorial Guinea","GNQ",160.5
+"59","Eritrea","ERI",202.5
 "60","Estonia","EST",5
-"61","Ethiopia","ETH",202
+"61","Ethiopia","ETH",200
 "62","Faeroe Islands","FRO",16.5
-"63","Fiji","FJI",124.5
+"63","Fiji","FJI",123.5
 "64","Finland","FIN",10
-"65","France","FRA",72.5
+"65","France","FRA",72
 "66","French Polynesia","PYF",115
-"67","Gabon","GAB",98
-"68","Gambia, The","GMB",124.5
+"67","Gabon","GAB",96.5
+"68","Gambia","GMB",123.5
 "69","Georgia","GEO",79
 "70","Germany","DEU",33
-"71","Ghana","GHA",119
-"72","Greece","GRC",69.5
-"73","Greenland","GRL",83.5
-"74","Grenada","GRD",94
-"75","Guatemala","GTM",129
-"76","Guinea","GIN",186
-"77","Guinea-Bissau","GNB",192
-"78","Guyana","GUY",146
-"79","Haiti","HTI",177
-"80","Honduras","HND",141.5
+"71","Ghana","GHA",119.5
+"72","Greece","GRC",70
+"73","Greenland","GRL",81.5
+"74","Grenada","GRD",96.5
+"75","Guatemala","GTM",127
+"76","Guinea","GIN",184
+"77","Guinea-Bissau","GNB",190
+"78","Guyana","GUY",145
+"79","Haiti","HTI",175
+"80","Honduras","HND",140
 "81","Hong Kong SAR, China","HKG",6
 "82","Hungary","HUN",48
-"83","Iceland","ISL",35.5
-"84","India","IND",156
+"83","Iceland","ISL",34.5
+"84","India","IND",154
 "85","Indonesia","IDN",117
-"86","Iran, Islamic Rep.","IRN",135
-"87","Iraq","IRQ",153.5
-"88","Ireland","IRL",69.5
-"89","Israel","ISR",49
-"90","Italy","ITA",35.5
+"86","Iran","IRN",133
+"87","Iraq","IRQ",151
+"88","Ireland","IRL",69
+"89","Israel","ISR",50
+"90","Italy","ITA",36
 "91","Jamaica","JAM",121
 "92","Japan","JPN",31
 "93","Jordan","JOR",60.5
-"94","Kazakhstan","KAZ",34
-"95","Kenya","KEN",138
-"96","Kiribati","KIR",190.5
-"97","Korea, Dem. Rep.","PRK",204.5
-"98","Korea, Rep.","KOR",44
+"94","Kazakhstan","KAZ",34.5
+"95","Kenya","KEN",136
+"96","Kiribati","KIR",188.5
+"97","Korea, Dem. Rep.","PRK",202.5
+"98","South Korea","KOR",44
 "99","Kuwait","KWT",4
-"100","Kyrgyz Republic","KGZ",93
-"101","Lao PDR","LAO",173
+"100","Kyrgyzstan","KGZ",93
+"101","Lao PDR","LAO",171
 "102","Latvia","LVA",42.5
-"103","Lebanon","LBN",96
-"104","Lesotho","LSO",148
-"105","Liberia","LBR",178
-"106","Libya","LBY",87.5
-"107","Liechtenstein","LIE",50
+"103","Lebanon","LBN",94.5
+"104","Lesotho","LSO",144
+"105","Liberia","LBR",176
+"106","Libya","LBY",87
+"107","Liechtenstein","LIE",49
 "108","Lithuania","LTU",25.5
 "109","Luxembourg","LUX",3
 "110","Macao SAR, China","MAC",9
-"111","Macedonia, FYR","MKD",76.5
-"112","Madagascar","MDG",195.5
-"113","Malawi","MWI",194
+"111","Macedonia","MKD",76
+"112","Madagascar","MDG",193.5
+"113","Malawi","MWI",192
 "114","Malaysia","MYS",32
 "115","Maldives","MDV",40
 "116","Mali","MLI",112
 "117","Malta","MLT",41
-"118","Marshall Islands","MHL",184
-"119","Mauritania","MRT",155
-"120","Mauritius","MUS",81.5
-"121","Mexico","MEX",132
+"118","Marshall Islands","MHL",182
+"119","Mauritania","MRT",153
+"120","Mauritius","MUS",83.5
+"121","Mexico","MEX",130
 "122","Moldova","MDA",104
-"123","Monaco","MCO",72.5
-"124","Mongolia","MNG",130
+"123","Monaco","MCO",72
+"124","Mongolia","MNG",128
 "125","Montenegro","MNE",27
 "126","Morocco","MAR",57
-"127","Mozambique","MOZ",181
-"128","Myanmar","MMR",197
-"129","Namibia","NAM",133
-"130","Nepal","NPL",157
+"127","Mozambique","MOZ",179
+"128","Myanmar","MMR",195
+"129","Namibia","NAM",131
+"130","Nepal","NPL",155
 "131","Netherlands","NLD",29
 "132","New Caledonia","NCL",100
 "133","New Zealand","NZL",47
-"134","Nicaragua","NIC",126
-"135","Niger","NER",201
-"136","Nigeria","NGA",136
+"134","Nicaragua","NIC",125
+"135","Niger","NER",199
+"136","Nigeria","NGA",134
 "137","Norway","NOR",23
 "138","Oman","OMN",16.5
-"139","Other small states","OSS",128
-"140","Pacific island small states","PSS",147
-"141","Pakistan","PAK",166.5
-"142","Panama","PAN",51.5
-"143","Papua New Guinea","PNG",188
-"144","Paraguay","PRY",113
-"145","Peru","PER",122
-"146","Philippines","PHL",110
-"147","Poland","POL",25.5
-"148","Portugal","PRT",76.5
-"149","Puerto Rico","PRI",91
-"150","Qatar","QAT",8
-"151","Romania","ROM",102.5
-"152","Russian Federation","RUS",18.5
-"153","Rwanda","RWA",180
-"154","Samoa","WSM",166.5
-"155","Sao Tome and Principe","STP",161
-"156","Saudi Arabia","SAU",18.5
-"157","Senegal","SEN",141.5
-"158","Serbia","SRB",75
-"159","Seychelles","SYC",39
-"160","Sierra Leone","SLE",179
-"161","Singapore","SGP",7
-"162","Slovak Republic","SVK",45
-"163","Slovenia","SVN",60.5
-"164","Small states","SST",123
-"165","Solomon Islands","SLB",182
-"166","Somalia","SOM",199
-"167","South Africa","ZAF",53
-"168","South Sudan","SSD",185
-"169","Spain","ESP",64
-"170","Sri Lanka","LKA",134
-"171","St. Kitts and Nevis","KNA",42.5
-"172","St. Lucia","LCA",108
-"173","St. Vincent and the Grenadines","VCT",101
-"174","Sudan","SDN",153.5
-"175","Suriname","SUR",55
-"176","Swaziland","SWZ",150.5
-"177","Sweden","SWE",14
-"178","Switzerland","CHE",12
-"179","Syrian Arab Republic","SYR",152
-"180","Tajikistan","TJK",144.5
-"181","Tanzania","TZA",190.5
-"182","Thailand","THA",81.5
-"183","Timor-Leste","TMP",195.5
-"184","Togo","TGO",183
-"185","Tonga","TON",150.5
-"186","Trinidad and Tobago","TTO",37.5
-"187","Tunisia","TUN",78
-"188","Turkey","TUR",116
-"189","Turkmenistan","TKM",114
-"190","Uganda","UGA",174.5
-"191","Ukraine","UKR",68
-"192","United Arab Emirates","ARE",2
-"193","United Kingdom","GBR",22
-"194","United States","USA",67
-"195","Uruguay","URY",29
-"196","Uzbekistan","UZB",137
-"197","Vanuatu","VUT",169.5
-"198","Venezuela, RB","VEN",105
-"199","Vietnam","VNM",58.5
-"200","Yemen, Rep.","YEM",159.5
-"201","Zambia","ZMB",168
-"202","Zimbabwe","ZWE",149
-"203","Micronesia, Fed. Sts.","FSM",172
-"204","Tuvalu","TUV",162
-"205","San Marino","SMR",90
+"139","Pacific island small states","PSS",146.5
+"140","Pakistan","PAK",164
+"141","Panama","PAN",51.5
+"142","Papua New Guinea","PNG",186
+"143","Paraguay","PRY",113
+"144","Peru","PER",122
+"145","Philippines","PHL",110
+"146","Poland","POL",25.5
+"147","Portugal","PRT",77
+"148","Puerto Rico","PRI",90.5
+"149","Qatar","QAT",8
+"150","Romania","ROM",102
+"151","Russia","RUS",18.5
+"152","Rwanda","RWA",178
+"153","Samoa","WSM",165
+"154","Sao Tome and Principe","STP",159
+"155","Saudi Arabia","SAU",18.5
+"156","Senegal","SEN",139
+"157","Serbia","SRB",75
+"158","Seychelles","SYC",39
+"159","Sierra Leone","SLE",177
+"160","Singapore","SGP",7
+"161","Slovakia","SVK",45
+"162","Slovenia","SVN",60.5
+"163","Solomon Islands","SLB",180
+"164","Somalia","SOM",197
+"165","South Africa","ZAF",53
+"166","South Sudan","SSD",183
+"167","Spain","ESP",64
+"168","Sri Lanka","LKA",132
+"169","St. Kitts and Nevis","KNA",42.5
+"170","St. Lucia","LCA",108
+"171","St. Vincent and the Grenadines","VCT",101
+"172","Sudan","SDN",152
+"173","Suriname","SUR",55
+"174","Swaziland","SWZ",148.5
+"175","Sweden","SWE",14
+"176","Switzerland","CHE",12
+"177","Syria","SYR",150
+"178","Tajikistan","TJK",142.5
+"179","Tanzania","TZA",188.5
+"180","Thailand","THA",83.5
+"181","Timor-Leste","TMP",193.5
+"182","Togo","TGO",181
+"183","Tonga","TON",148.5
+"184","Trinidad and Tobago","TTO",37.5
+"185","Tunisia","TUN",78
+"186","Turkey","TUR",116
+"187","Turkmenistan","TKM",114
+"188","Uganda","UGA",172.5
+"189","Ukraine","UKR",68
+"190","United Arab Emirates","ARE",2
+"191","United Kingdom","GBR",22
+"192","United States of America","USA",66.5
+"193","Uruguay","URY",29
+"194","Uzbekistan","UZB",135
+"195","Vanuatu","VUT",168
+"196","Venezuela","VEN",105
+"197","Vietnam","VNM",58.5
+"198","Yemen","YEM",157.5
+"199","Zambia","ZMB",166
+"200","Zimbabwe","ZWE",146.5
+"201","Micronesia","FSM",170
+"202","Tuvalu","TUV",160.5
+"203","San Marino","SMR",90.5
