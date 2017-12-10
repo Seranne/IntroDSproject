@@ -299,20 +299,72 @@ deficit <- deficit %>% mutate(finalrank_deficit =
 ```
 
 
-# Tourism indicators for each country 
-tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
-write.csv(Tourism, file = "Tourism.csv")
-
-# Security indicators for each country 
-security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
-
 # Economic indicators for each country 
 gdp <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
+```{r}
+GDP_base <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
+
+#Individual data frames for each variable of GDP
+
+#Military expenditure- As the expenditure increases, the rank drops.
+gdp_1 <- GDP_base %>% 
+  select(CountryName, Year, MS.MIL.XPND.GD.ZS) %>%
+  na.omit() %>%
+  group_by(CountryName) %>% 
+  summarise(mean_mil = mean(MS.MIL.XPND.GD.ZS)) %>%
+  mutate(finalrank_mil = rank(mean_mil))
+
+#GDP per capita - Higher the country's GDP, higher its rank
+gdp_2 <- GDP_base %>% 
+  select(CountryName, Year, NY.GDP.MKTP.PP.CD) %>%
+  na.omit() %>%
+  group_by(CountryName) %>% 
+  summarise(mean_ppp = mean(NY.GDP.MKTP.PP.CD)) %>%
+  mutate(finalrank_ppp = rank(-mean_ppp))
+
+#GDP per capita, PPP - Higher the country's GDP PPP, higher its rank
+gdp_3 <- GDP_base %>% 
+  select(CountryName, Year, NY.GDP.PCAP.CD) %>%
+  na.omit() %>%
+  group_by(CountryName) %>% 
+  summarise(mean_gdp = mean(NY.GDP.PCAP.CD)) %>%
+  mutate(finalrank_gdp = rank(-mean_gdp))
+
+#GDP per capita growth - Higher the country's GDP oer capita growth, higher its rank
+gdp_4 <- GDP_base %>% 
+  select(CountryName, Year, NY.GDP.PCAP.KD.ZG) %>%
+  na.omit() %>%
+  group_by(CountryName) %>% 
+  summarise(mean_gdpg = mean(NY.GDP.PCAP.KD.ZG)) %>%
+  mutate(finalrank_gdpg = rank(-mean_gdpg))
+
+#Inflation- As the inflation increases, the country's rank drops
+gdp_5 <- GDP_base %>% 
+  select(CountryName, Year, FP.CPI.TOTL.ZG) %>%
+  na.omit() %>%
+  group_by(CountryName) %>% 
+  summarise(mean_infl = mean(FP.CPI.TOTL.ZG)) %>%
+  mutate(finalrank_infl = rank(mean_infl))
+
+#Joining the ranks from all of the variables
+GDP_a <- left_join(gdp_1, gdp_2, "CountryName")
+GDPjoin <- left_join(GDP_a, gdp_3, "CountryName")
+GDPjoin <- left_join(GDPjoin, gdp_4, "CountryName")
+GDPjoin <- left_join (GDPjoin, gdp_5, "CountryName")
+GDP2 <- GDPjoin %>% select(CountryName, finalrank_mil, finalrank_ppp, finalrank_gdp, finalrank_gdpg, finalrank_infl)
+
+GDP2 <- GDP2[rowSums(is.na(GDP2)) < 4, ]
+i <- which(is.na(GDP2), arr.ind = TRUE)
+GDP2[i] <- rowMeans(GDP2[,-1], na.rm = TRUE)[i[,1]]
+
+GDP2 <- GDP2 %>% mutate(score_gdp = (finalrank_mil + finalrank_ppp+ finalrank_gdp + finalrank_gdpg + finalrank_infl)/5)
+GDP2 <- GDP2 %>% mutate(finalrank_GDP = rank(GDP2$score_gdp))
+```
 
 # Education indicators for each country 
 education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
 
-# Gender indicators for each country 
+Gender indicators:
 
 ```{r}
 # Select indicator variable to assess gender equity: Proportion of seats held by women in national partliaments (%)
@@ -332,6 +384,13 @@ population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "S
 
 # Employment indicators for each country 
 employment<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
+
+# Tourism indicators for each country 
+tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
+write.csv(Tourism, file = "Tourism.csv")
+
+# Security indicators for each country 
+security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
 
 
 # Extracting Data from the World Happiness Report Dataset
