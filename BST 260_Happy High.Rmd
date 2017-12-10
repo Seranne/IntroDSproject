@@ -155,7 +155,13 @@ Composite Energy Score:
 # Selecting indicators of interest 
 Energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC") %>% spread(IndicatorCode, Value)
 
+<<<<<<< HEAD
+
+#reoving rows with too many na's and filling in remaining na's with same country means
+ Energy <- Energy[order(-Energy$Year),]
+=======
 Energy <- Energy[order(-Energy$Year),]
+>>>>>>> 3081b7b0338774f1563d5cbfc16517056e7601fb
  Energy[rowSums(is.na(Energy)) < ncol(Energy)/2, ]
  Energy<- aggregate(x=Energy[c("EG.ELC.ACCS.ZS","EG.FEC.RNEW.ZS","EG.USE.COMM.FO.ZS","EG.USE.ELEC.KH.PC")], by=list(name=Energy$CountryName), FUN = "mean" , na.rm = TRUE)
  colnames(Energy)[1] <- "CountryName"
@@ -164,35 +170,32 @@ Energy <- Energy[order(-Energy$Year),]
 
  # Access to Electricity (% of population); Highest score gets ranked 1
  Energy1<- select(Energy, "CountryName",  "EG.ELC.ACCS.ZS")
- #Energy1 <- Energy1[order(-Energy1$Year),]
- #Energy1<- na.omit(Energy1)
- #Energy1 <- Energy1%>% distinct(CountryName, .keep_all = TRUE)
+<<<<<<< HEAD
  Energy1 <- Energy1 %>% mutate(finalrank_eng1 = rank(-Energy1$EG.ELC.ACCS.ZS))
  Energy1$finalrank_eng1<- as.numeric(as.factor(Energy1$finalrank_eng1))
-
-  # Renewable Energy Consumption (% of final energy consumption); Highest score gets ranked 1 
+ 
+  # Renewable Energy Consumption (% of final energy consumption); Highest percentage gets ranked 1
+ 
  Energy2<- select(Energy, "CountryName",  "EG.FEC.RNEW.ZS")
- #Energy2 <- Energy2[order(-Energy2$Year),]
- #Energy2<- na.omit(Energy2)
- #Energy2 <- Energy2%>% distinct(CountryName, .keep_all = TRUE)
  Energy2 <- Energy2 %>% mutate(finalrank_eng2 = rank(-Energy2$EG.FEC.RNEW.ZS))
  Energy2$finalrank_eng2<- as.numeric(as.factor(Energy2$finalrank_eng2))
-
-# Fossil fuel energy consumption (% of total);lowest consumption ranked 1
+ 
+  # Fossil fuel energy consumption (% of total);lowest consumption ranked 1
+ 
  Energy3<- select(Energy, "CountryName",  "EG.USE.COMM.FO.ZS")
- #Energy3 <- Energy3[order(-Energy3$Year),]
- #Energy3<- na.omit(Energy3)
- #Energy3 <- Energy3%>% distinct(CountryName, .keep_all = TRUE)
  Energy3 <- Energy3 %>% mutate(finalrank_eng3 = rank(Energy3$EG.USE.COMM.FO.ZS))
  Energy3$finalrank_eng3<- as.numeric(as.factor(Energy3$finalrank_eng3))
  
-  Enjoin <- left_join(Energy1, Energy2, "CountryName")
+ 
+ Enjoin <- left_join(Energy1, Energy2, "CountryName")
  Energy<- left_join(Enjoin, Energy3, "CountryName")
- #Energy<- left_join(Ener, Energy4, "CountryName")
  Energy<- select(Energy,"CountryName", "finalrank_eng1", "finalrank_eng2", "finalrank_eng3")
+ 
+ 
+# Highest aggregate score is ranked 1
+Energy_score <- Energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 )/3)
+Energy_score <- Energy_score %>% mutate(finalrank_eng = rank(Energy_score$score_eng))
 
-  Energy<- Energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 )/3)
- Energy <- Energy %>% mutate(finalrank_eng = rank(Energy$score_eng))
 ```
 
 CO2 Emissions score:
@@ -233,15 +236,16 @@ Communication/Connectivity score:
 # Score based on Mobile cellular subscriptions (per 100 people) and Internet Users (per 100 people)
 # Highest score gets ranked 1 
 
-comm <- WDI4 %>% filter(IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2")  %>% spread(IndicatorCode, Value)
-comm <- na.omit(comm)
-comm <- comm[order(-comm$Year),]
-comm <- comm %>% distinct(CountryName, .keep_all = TRUE)
-comm <- comm %>% mutate(rankcell = rank(IT.CEL.SETS.P2)) 
-comm <- comm %>% mutate(ranknet = rank(IT.NET.USER.P2))
-comm <- comm %>% mutate(score = (rankcell+ranknet)/2)
-comm <- comm %>% mutate(finalrank_comm = rank(-comm$score))
-communications_score <- select(comm, "CountryName", "CountryCode","finalrank_comm" )
+Communication <- WDI4 %>% filter(IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2")  %>% spread(IndicatorCode, Value)
+ Communication <- Communication[order(-Communication$Year),]
+ Communication[rowSums(is.na(Communication)) < ncol(Communication)/2, ]
+ Communication<- aggregate(x=Communication[c("IT.CEL.SETS.P2","IT.NET.USER.P2")], by=list(name=Communication$CountryName), FUN = "mean" , na.rm = TRUE)
+ colnames(Communication)[1] <- "CountryName"
+Communication <- Communication %>% mutate(rankcell = rank(IT.CEL.SETS.P2)) 
+Communication <- Communication %>% mutate(ranknet = rank(IT.NET.USER.P2))
+Communication <- Communication %>% mutate(score = (rankcell+ranknet)/2)
+Communication <- Communication %>% mutate(finalrank_comm = rank(-Communication$score))
+Communication_score <- select(Communication, "CountryName", "finalrank_comm" )
 ```
 
 Composite Child Welfare score:
@@ -383,7 +387,7 @@ En2$rank_eng2<- as.numeric(as.factor(En2$rank_eng2))
 litjoin <- left_join(En1, En2, "CountryName")
 Education <- select(litjoin,"CountryName", "rank_eng1", "rank_eng2")
 Education <- Education%>% mutate(score_edu = (rank_eng1 + rank_eng2)/2)
-education_score <- Education %>% mutate(finalrank_edu = rank(Education$score_edu))
+Education_score <- Education %>% mutate(finalrank_edu = rank(Education$score_edu))
 ```
 
 Gender score:
@@ -397,8 +401,8 @@ gender <- select(gender, "CountryName", "CountryCode", "Year", "SG.GEN.PARL.ZS")
 gender <- gender[order(-gender$Year),]
 gender <- na.omit(gender)
 gender <- gender%>% distinct(CountryName, .keep_all = TRUE)
-gender_score <- gender %>% mutate(finalrank_gen = rank(-gender$SG.GEN.PARL.ZS))
-gender_score$finalrank_gen<- as.numeric(as.factor(gender_score$finalrank_gen))
+Gender_score <- gender %>% mutate(finalrank_gen = rank(-gender$SG.GEN.PARL.ZS))
+Gender_score$finalrank_gen<- as.numeric(as.factor(Gender_score$finalrank_gen))
 ```
 
 Employment score:
@@ -423,44 +427,40 @@ Population score:
 
 Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
 
+ Population <- Population[order(-Population$Year),]
+ Population[rowSums(is.na(Population)) < ncol(Population)/2, ]
+ Population<- aggregate(x=Population[c("EN.POP.DNST","SI.POV.GINI","SM.POP.TOTL.ZS","SP.DYN.LE00.IN", "SP.POP.TOTL")], by=list(name=Population$CountryName), FUN = "mean" , na.rm = TRUE)
+ colnames(Population)[1] <- "CountryName"
+  Population[rowSums(is.na(Population1)) < ncol(Population)/2, ]
+ Population <- Population%>% distinct(CountryName, .keep_all = TRUE)
+
 # Population density (people per sq. km of land area): Lowest ranked 1
- Population1<- select(Population, "CountryName", "CountryCode", "Year", "EN.POP.DNST")
- Population1 <- Population1[order(-Population1$Year),]
- Population1<- na.omit(Population1)
- Population1 <- Population1%>% distinct(CountryName, .keep_all = TRUE)
+ Population1<- select(Population, "CountryName", "EN.POP.DNST")
  Population1 <- Population1 %>% mutate(finalrank_pop1 = rank(Population1$EN.POP.DNST))
  Population1$finalrank_pop1<- as.numeric(as.factor(Population1$finalrank_pop1))
  
  # GINI index: Lowest ranked 1
- Population2<- select(Population, "CountryName", "CountryCode", "Year", "SI.POV.GINI")
- Population2 <- Population2[order(-Population2$Year),]
- Population2<- na.omit(Population2)
- Population2 <- Population2%>% distinct(CountryName, .keep_all = TRUE)
+ Population2<- select(Population, "CountryName", "SI.POV.GINI")
  Population2 <- Population2 %>% mutate(finalrank_pop2 = rank(Population2$SI.POV.GINI))
  Population2$finalrank_pop2<- as.numeric(as.factor(Population2$finalrank_pop2))
  
  
 # Life expectancy at birth (total, in years): Highest ranked 1
- Population3<- select(Population, "CountryName", "CountryCode", "Year", "SP.DYN.LE00.IN")
- Population3 <- Population3[order(-Population3$Year),]
- Population3<- na.omit(Population3)
- Population3 <- Population3%>% distinct(CountryName, .keep_all = TRUE)
+ Population3<- select(Population, "CountryName", "SP.DYN.LE00.IN")
  Population3 <- Population3 %>% mutate(finalrank_pop3 = rank(-Population3$SP.DYN.LE00.IN))
  Population3$finalrank_pop3<- as.numeric(as.factor(Population3$finalrank_pop3))
  
 
  # Total score: Best aggregrate score ranked 1 
-Popjoin <- left_join(Population1, Population2, "CountryName")
-population_score <- left_join(Popjoin, Population3, "CountryName")
-population_score <- select(population_score,"CountryName", "finalrank_pop1", "finalrank_pop2", "finalrank_pop3")
+ Popjoin <- left_join(Population1, Population2, "CountryName")
+Population <- left_join(Popjoin, Population3, "CountryName")
 
-population_score <- population_score[rowSums(is.na(Population)) < 2, ]
-i <- which(is.na(population_score), arr.ind = TRUE)
-population_score[i] <- rowMeans(population_score[,-1], na.rm = TRUE)[i[,1]]
+ Population<- select(Population,"CountryName", "finalrank_pop1", "finalrank_pop2", "finalrank_pop3")
  
-population_score <- population_score %>% mutate(score_pop = ((finalrank_pop1 + finalrank_pop2 + finalrank_pop3)/3))
+ 
+ Population_score <- Population %>% mutate(score_pop = ((finalrank_pop1 + finalrank_pop2 + finalrank_pop3)/3))
+ Population_score <- Population_score %>% mutate(finalrank_pop = rank(Population_score$score_pop))
 
-population_score <- population_score %>% mutate(finalrank_pop = rank(score_pop))
 ```
 
 Sense of Security Composite score:
@@ -596,16 +596,24 @@ write.csv(dystopia, file = "Dystopia_score.csv")
 ```{r, EVAL=FALSE}
 # Load dataset
 hpi_data_2016 <- readxl::read_xlsx("Your/File/Path/Here.xlsx")
+hpi_data_2016 <- read_csv("../IntroDSproject/Original Data/hpi-data-2016.csv")
 
-# Select indicators of interest 
- hpi_data_2016<- select(hpi_data_2016, "CountryName", "Inequality-adjusted_Wellbeing")
+<<<<<<< HEAD
+#As other variables have been Covered in previous categories, only wellbeing index was selected for our score
+
 colnames(hpi_data_2016)[2] <- "CountryName"
- hpi_data_2016<- na.omit(hpi_data_2016)
- hpi_data_2016 <- hpi_data_2016%>% distinct(CountryName, .keep_all = TRUE)
- hpi_data_2016 <- hpi_data_2016 %>% mutate(finalrank_hpi = rank(-hpi_data_2016$`Inequality-adjusted_Wellbeing`))
- hpi_data_2016$finalrank_hpi<- as.numeric(as.factor(hpi_data_2016$finalrank_hpi))
+ hpi_data_20162<- select(hpi_data_2016, "CountryName", "Inequality-adjusted_Wellbeing")
+ hpi_data_20162<- na.omit(hpi_data_20162)
+ hpi_data_20162 <- hpi_data_20162%>% distinct(CountryName, .keep_all = TRUE)
+ hpi_data_20162 <- hpi_data_20162 %>% mutate(finalrank_hpi2 = rank(-hpi_data_20162$`Inequality-adjusted_Wellbeing`))
+ hpi_data_20162$finalrank_hpi2<- as.numeric(as.factor(hpi_data_20162$finalrank_hpi2))
  
-hpi_data_2016<- select(hpi_data_2016,"CountryName",  "finalrank_hpi2")
+hpi_data_2016<- select(hpi_data_20162,"CountryName",  "finalrank_hpi2")
+ 
+
+ happyplanet_score <- hpi_data_2016 %>% mutate(score_hpi = finalrank_hpi2 )
+ happyplanet_score <- happyplanet_score %>% mutate(finalrank_hpi = rank(happyplanet_score$score_hpi))
+ 
 
 ```
 
@@ -686,23 +694,32 @@ final_score <- final_score_table %>% select(CountryName,
 ```
 
 
-#fill in regional data
-
-```{r}
-url <- "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
-
-regions <-read.csv(url)
-regions <- regions %>% select(name, region, sub.region)
-colnames(regions)[1] <- "CountryName"
-final_score <- left_join(final_score, regions, "CountryName")
-```
-
 #drop countries with too many NA's and use of mean of the coutries other ranking to fill in NA'for remaining countries
 
 ```{r}
-final_score <- final_score[rowSums(is.na(final_score)) < 6, ]
-i <- which(is.na(final_score), arr.ind = TRUE)
-final_score[i] <- rowMeans(final_score[,3:19], na.rm = TRUE)[i[,1]]
+ final_score[rowSums(is.na(final_score)) < ncol(final_score)/2, ]
+ final_score<- aggregate(x=final_score[c("finalscore_child",
+                                            "finalrank_comm",
+                                            "finalrank_diversity",
+                                            "finalrank_edu",
+                                            "finalrank_emission",
+                                            "finalrank_empl",
+                                            "finalrank_eng",
+                                            "finalrank_env",
+                                            "finalrank_deficit",
+                                            "finalrank_gen",
+                                            "finalrank_GDP",
+                                            "finalrank_pop",
+                                            "finalscore_security",
+                                            "finalrank_tourism",
+                                            "finalrank_hpi",
+                                            "finalrank_neg",
+                                            "finalrank_pos")], by=list(name=final_score$CountryName), FUN = "mean" , na.rm = TRUE)
+ colnames(final_score)[1] <- "CountryName"
+ 
+ final_score <- final_score[rowSums(is.na(final_score)) < 8, ]
+ i <- which(is.na(final_score), arr.ind = TRUE)
+ final_score[i] <- rowMeans(final_score[,2:18], na.rm = TRUE)[i[,1]]
  
 final_score<- final_score %>% 
    mutate(ourindex = (finalscore_child + 
@@ -723,7 +740,18 @@ final_score<- final_score %>%
                         finalrank_neg + 
                         finalrank_pos)/17) %>% 
   mutate(finalindex = rank(ourindex))
+
+#fill in regional data
  
+url <- "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
+
+regions <-read.csv(url)
+regions <- regions %>% select(name, region, sub.region)
+colnames(regions)[1] <- "CountryName"
+final_score <- left_join(final_score, regions, "CountryName")
+ 
+
+
  write.csv(final_score, file = "CalculatedOurindex.csv")
 ```
 
