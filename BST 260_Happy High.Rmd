@@ -153,52 +153,46 @@ Composite Energy Score:
 
 ```{r}
 # Selecting indicators of interest 
-energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC") %>% spread(IndicatorCode, Value)
+Energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC") %>% spread(IndicatorCode, Value)
 
-# Access to Electricity (% of population); Highest score gets ranked 1
- energy1<- select(energy, "CountryName", "CountryCode", "Year", "EG.ELC.ACCS.ZS")
- energy1 <- energy1[order(-energy1$Year),]
- energy1<- na.omit(energy1)
- energy1 <- energy1%>% distinct(CountryName, .keep_all = TRUE)
- energy1 <- energy1 %>% mutate(finalrank_eng1 = rank(-energy1$EG.ELC.ACCS.ZS))
- energy1$finalrank_eng1<- as.numeric(as.factor(energy1$finalrank_eng1))
+Energy <- Energy[order(-Energy$Year),]
+ Energy[rowSums(is.na(Energy)) < ncol(Energy)/2, ]
+ Energy<- aggregate(x=Energy[c("EG.ELC.ACCS.ZS","EG.FEC.RNEW.ZS","EG.USE.COMM.FO.ZS","EG.USE.ELEC.KH.PC")], by=list(name=Energy$CountryName), FUN = "mean" , na.rm = TRUE)
+ colnames(Energy)[1] <- "CountryName"
+  Energy[rowSums(is.na(Energy1)) < ncol(Energy)/2, ]
+ Energy <- Energy%>% distinct(CountryName, .keep_all = TRUE)
+
+ # Access to Electricity (% of population); Highest score gets ranked 1
+ Energy1<- select(Energy, "CountryName",  "EG.ELC.ACCS.ZS")
+ #Energy1 <- Energy1[order(-Energy1$Year),]
+ #Energy1<- na.omit(Energy1)
+ #Energy1 <- Energy1%>% distinct(CountryName, .keep_all = TRUE)
+ Energy1 <- Energy1 %>% mutate(finalrank_eng1 = rank(-Energy1$EG.ELC.ACCS.ZS))
+ Energy1$finalrank_eng1<- as.numeric(as.factor(Energy1$finalrank_eng1))
+
+  # Renewable Energy Consumption (% of final energy consumption); Highest score gets ranked 1 
+ Energy2<- select(Energy, "CountryName",  "EG.FEC.RNEW.ZS")
+ #Energy2 <- Energy2[order(-Energy2$Year),]
+ #Energy2<- na.omit(Energy2)
+ #Energy2 <- Energy2%>% distinct(CountryName, .keep_all = TRUE)
+ Energy2 <- Energy2 %>% mutate(finalrank_eng2 = rank(-Energy2$EG.FEC.RNEW.ZS))
+ Energy2$finalrank_eng2<- as.numeric(as.factor(Energy2$finalrank_eng2))
+
+# Fossil fuel energy consumption (% of total);lowest consumption ranked 1
+ Energy3<- select(Energy, "CountryName",  "EG.USE.COMM.FO.ZS")
+ #Energy3 <- Energy3[order(-Energy3$Year),]
+ #Energy3<- na.omit(Energy3)
+ #Energy3 <- Energy3%>% distinct(CountryName, .keep_all = TRUE)
+ Energy3 <- Energy3 %>% mutate(finalrank_eng3 = rank(Energy3$EG.USE.COMM.FO.ZS))
+ Energy3$finalrank_eng3<- as.numeric(as.factor(Energy3$finalrank_eng3))
  
- # Renewable Energy Consumption (% of final energy consumption); Highest score gets ranked 1
- energy2<- select(energy, "CountryName", "CountryCode", "Year", "EG.FEC.RNEW.ZS")
- energy2 <- energy2[order(-energy2$Year),]
- energy2<- na.omit(energy2)
- energy2 <- energy2%>% distinct(CountryName, .keep_all = TRUE)
- energy2 <- energy2 %>% mutate(finalrank_eng2 = rank(energy2$EG.FEC.RNEW.ZS))
- energy2$finalrank_eng2<- as.numeric(as.factor(energy2$finalrank_eng2))
- 
- # Fossil fuel energy consumption (% of total);lowest consumption ranked 1
- energy3<- select(energy, "CountryName", "CountryCode", "Year", "EG.USE.COMM.FO.ZS")
- energy3 <- energy3[order(-energy3$Year),]
- energy3<- na.omit(energy3)
- energy3 <- energy3%>% distinct(CountryName, .keep_all = TRUE)
- energy3 <- energy3 %>% mutate(finalrank_eng3 = rank(energy3$EG.USE.COMM.FO.ZS))
- energy3$finalrank_eng3<- as.numeric(as.factor(energy3$finalrank_eng3))
- 
- #Electric Power consumption (kW/capita); highest score gets ranked 1 
- energy4<- select(energy, "CountryName", "CountryCode", "Year", "EG.USE.ELEC.KH.PC")
- energy4 <- energy4[order(-energy4$Year),]
- energy4<- na.omit(energy4)
- energy4 <- energy4%>% distinct(CountryName, .keep_all = TRUE)
- energy4 <- energy4 %>% mutate(finalrank_eng4 = rank(-energy4$EG.USE.ELEC.KH.PC))
- energy4$finalrank_eng4<- as.numeric(as.factor(energy4$finalrank_eng4))
- 
- Enjoin <- left_join(energy1, energy2, "CountryName")
- Ener<- left_join(Enjoin, energy3, "CountryName")
- energy<- left_join(Ener, energy4, "CountryName")
- energy<- select(energy,"CountryName", "finalrank_eng1", "finalrank_eng2", "finalrank_eng3", "finalrank_eng4")
- 
- energy <- energy[rowSums(is.na(energy)) < 3, ]
- i <- which(is.na(energy), arr.ind = TRUE)
- energy[i] <- rowMeans(energy[,-1], na.rm = TRUE)[i[,1]]
- 
-# Highest aggregate score is ranked 1
-energy_score <- energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 + finalrank_eng4)/4)
-energy <- energy %>% mutate(finalrank_eng = rank(-energy$score_eng))
+  Enjoin <- left_join(Energy1, Energy2, "CountryName")
+ Energy<- left_join(Enjoin, Energy3, "CountryName")
+ #Energy<- left_join(Ener, Energy4, "CountryName")
+ Energy<- select(Energy,"CountryName", "finalrank_eng1", "finalrank_eng2", "finalrank_eng3")
+
+  Energy<- Energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 )/3)
+ Energy <- Energy %>% mutate(finalrank_eng = rank(Energy$score_eng))
 ```
 
 CO2 Emissions score:
@@ -604,42 +598,14 @@ write.csv(dystopia, file = "Dystopia_score.csv")
 hpi_data_2016 <- readxl::read_xlsx("Your/File/Path/Here.xlsx")
 
 # Select indicators of interest 
-HPI2016 <- select(hpi_data_2016, "Country", "Region", "Average_Wellbeing_(0-10)", "Happy_Life_Years", "Footprint_(gha/capita)", "Inequality_of_Outcomes", "Inequality-adjusted_Life_Expectancy", "Inequality-adjusted_Wellbeing")
-
-```{r}
-hpi_data_2016 <- read_csv("../Original Data/hpi-data-2016.csv")
+ hpi_data_2016<- select(hpi_data_2016, "CountryName", "Inequality-adjusted_Wellbeing")
 colnames(hpi_data_2016)[2] <- "CountryName"
- hpi_data_20161<- select(hpi_data_2016, "CountryName", "Inequality-adjusted_Life_Expectancy")
-hpi_data_20161<- na.omit(hpi_data_20161)
- hpi_data_20161 <- hpi_data_20161%>% distinct(CountryName, .keep_all = TRUE)
- hpi_data_20161 <- hpi_data_20161 %>% mutate(finalrank_hpi1 = rank(-hpi_data_20161$`Inequality-adjusted_Life_Expectancy`))
- hpi_data_20161$finalrank_hpi1<- as.numeric(as.factor(hpi_data_20161$finalrank_hpi1))
+ hpi_data_2016<- na.omit(hpi_data_2016)
+ hpi_data_2016 <- hpi_data_2016%>% distinct(CountryName, .keep_all = TRUE)
+ hpi_data_2016 <- hpi_data_2016 %>% mutate(finalrank_hpi = rank(-hpi_data_2016$`Inequality-adjusted_Wellbeing`))
+ hpi_data_2016$finalrank_hpi<- as.numeric(as.factor(hpi_data_2016$finalrank_hpi))
  
- hpi_data_20162<- select(hpi_data_2016, "CountryName",  "Inequality-adjusted_Wellbeing")
- hpi_data_20162<- na.omit(hpi_data_20162)
- hpi_data_20162 <- hpi_data_20162%>% distinct(CountryName, .keep_all = TRUE)
- hpi_data_20162 <- hpi_data_20162 %>% mutate(finalrank_hpi2 = rank(-hpi_data_20162$`Inequality-adjusted_Wellbeing`))
- hpi_data_20162$finalrank_hpi2<- as.numeric(as.factor(hpi_data_20162$finalrank_hpi2))
- 
- hpi_data_20163<- select(hpi_data_2016, "CountryName",  "Happy_Planet_Index")
- hpi_data_20163<- na.omit(hpi_data_20163)
- hpi_data_20163 <- hpi_data_20163%>% distinct(CountryName, .keep_all = TRUE)
- hpi_data_20163 <- hpi_data_20163 %>% mutate(finalrank_hpi3 = rank(-hpi_data_20163$Happy_Planet_Index))
- hpi_data_20163$finalrank_hpi3<- as.numeric(as.factor(hpi_data_20163$finalrank_hpi3))
- 
-
- 
- Enjoin <- left_join(hpi_data_20161, hpi_data_20162, "CountryName")
-hpi_data_2016 <- left_join(Enjoin, hpi_data_20163, "CountryName")
-
- hpi_data_2016<- select(hpi_data_2016,"CountryName", "finalrank_hpi1", "finalrank_hpi2", "finalrank_hpi3")
- 
-
- 
- hpi_data_2016 <- hpi_data_2016 %>% mutate(score_hpi = ((finalrank_hpi1 + finalrank_hpi2 + finalrank_hpi3)/3))
- hpi_data_2016 <- hpi_data_2016 %>% mutate(finalrank_hpi = rank(hpi_data_2016$score_hpi))
- 
-
+hpi_data_2016<- select(hpi_data_2016,"CountryName",  "finalrank_hpi2")
 
 ```
 
