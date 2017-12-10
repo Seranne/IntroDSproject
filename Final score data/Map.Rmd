@@ -8,9 +8,9 @@ library(tidyverse)
 library(rworldmap)
 library(ggplot2)
 map.world <- map_data(map="world")
-View(map.world)
+
 colnames(map.world)[5] <- "CountryName"
-ourindex <- read.csv("Final score data/CalculatedOurindex.csv")
+ourindex <- read_csv("CalculatedOurindex.csv")
 
 #Add the data you want to map countries by to map.world
 
