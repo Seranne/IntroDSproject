@@ -80,16 +80,9 @@ final_score <- final_score_table %>% select(CountryName,
 ```
 
 
-#fill in regional data
 
-```{r}
-url <- "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
 
-regions <-read.csv(url)
-regions <- regions %>% select(name, region, sub.region)
-colnames(regions)[1] <- "CountryName"
-final_score <- left_join(final_score, regions, "CountryName")
-```
+
 
 #drop countries with too many NA's and use of mean of the coutries other ranking to fill in NA'for remaining countries
 
@@ -140,6 +133,15 @@ final_score<- final_score %>%
                         finalrank_neg + 
                         finalrank_pos)/17) %>% 
   mutate(finalindex = rank(ourindex))
+
+#fill in regional data
+
+url <- "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
+
+regions <-read.csv(url)
+regions <- regions %>% select(name, region, sub.region)
+colnames(regions)[1] <- "CountryName"
+final_score <- left_join(final_score, regions, "CountryName")
  
  write.csv(final_score, file = "CalculatedOurindex.csv")
 ```
