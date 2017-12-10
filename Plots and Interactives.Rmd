@@ -42,6 +42,17 @@ whr %>% ggplot(aes(x = Region, y = -happiness.rank, col = x)) + geom_point() + g
 
 ```
 
+```{r, EVAL = FALSE}
+x <- read.csv("/IntroDSproject/Final score data/CalculatedOurindex.csv")
+
+#x <- cut(as.numeric(x), c(0, 0.1005, 1.2236, 1.82427))
+
+x <- x %>% group_by(sub.region) %>% mutate(meanrank = round(mean(finalindex, na.rm = TRUE)))
+
+x %>% ggplot(aes(sub.region, meanrank)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +geom_bar()
+```
+
+
 
 - Existing HPI scores by Region
 
