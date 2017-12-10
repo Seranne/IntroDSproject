@@ -77,8 +77,11 @@ WDI <- filter(Indicators_csv, Year == "2010"| Year == "2011" | Year == "2012"| Y
 WDInew <- filter(WDI, CountryCode != "WBG")
 WDInew <- filter(WDInew, CountryCode != "WLD")
 WDInew <- filter(WDInew, CountryCode != "UMC")
-WDInew <- filter(WDInew, CountryCode != "SSA")
+WDInew <- filter(WDInew, CountryCode != "SST")
 WDInew <- filter(WDInew, CountryCode != "SSF")
+WDInew <- filter(WDInew, CountryCode != "SSA")
+WDInew <- filter(WDInew, CountryCode != "SAS")
+WDInew <- filter(WDInew, CountryCode != "OSS")
 WDInew <- filter(WDInew, CountryCode != "OED")
 WDInew <- filter(WDInew, CountryCode != "MNA")
 WDInew <- filter(WDInew, CountryCode != "MEA")
@@ -90,6 +93,8 @@ WDInew <- filter(WDInew, CountryCode != "LAC")
 WDInew <- filter(WDInew, CountryCode != "LCN")
 WDInew <- filter(WDInew, CountryCode != "OEC")
 WDInew <- filter(WDInew, CountryCode != "NOC")
+WDInew <- filter(WDInew, CountryCode != "NAC")
+WDInew <- filter(WDInew, CountryCode != "MIC")
 WDInew <- filter(WDInew, CountryCode != "HIC")
 WDInew <- filter(WDInew, CountryCode != "HPC")
 WDInew <- filter(WDInew, CountryCode != "FCS")
@@ -101,9 +106,6 @@ WDInew <- filter(WDInew, CountryCode != "EAP")
 WDInew <- filter(WDInew, CountryCode != "EAS")
 WDInew <- filter(WDInew, CountryCode != "CEB")
 WDInew <- filter(WDInew, CountryCode != "ARB")
-WDInew <- filter(WDInew, CountryCode != "NAC")
-WDInew <- filter(WDInew, CountryCode != "SAS")
-WDInew <- filter(WDInew, CountryCode != "MIC")
 
 # Filter dataset to only include variables of interest 
 WDI2 <- filter(WDInew, IndicatorCode == "AG.LND.FRST.ZS" | IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC"| IndicatorCode == "EN.ATM.CO2E.PC"|IndicatorCode == "ER.PTD.TOTL.ZS"| IndicatorCode == "EN.POP.DNST"|IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "FP.CPI.TOTL.ZG"|IndicatorCode == "GC.XPN.COMP.ZS"|IndicatorCode == "IC.FRM.CRIM.ZS"|IndicatorCode == "IC.FRM.FEMM.ZS"|IndicatorCode == "IC.LGL.CRED.XQ"|IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2"|IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS"|IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SG.VAW.REAS.ZS"|IndicatorCode == "SH.DTH.MORT"|IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SL.EMP.WORK.ZS"|IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SP.DYN.IMRT.IN"|IndicatorCode == "SL.UEM.NEET.ZS"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SN.ITK.DFCT"|IndicatorCode == "SP.DYN.LE00.IN"|IndicatorCode == "SP.UWT.TFRT"|IndicatorCode == "ST.INT.DPRT"|IndicatorCode == "SP.POP.TOTL"|IndicatorCode == "VC.IHR.PSRC.P5")
@@ -138,10 +140,6 @@ levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Bahamas, The"] <- "Bahamas
 levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Gambia, The"] <- "Gambia"
 levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Venezuela, RB"] <- "Venezuela"
 levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Yemen, Rep."] <- "Yemen"
-
-# Remove pending aggregrated regions
-WDI4 <- filter(WDI4, CountryCode != "OSS")
-WDI4 <- filter(WDI4, CountryCode != "SST")
 ```
 
 
@@ -194,9 +192,9 @@ energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.
  i <- which(is.na(energy), arr.ind = TRUE)
  energy[i] <- rowMeans(energy[,-1], na.rm = TRUE)[i[,1]]
  
- # Highest aggregate score is ranked 1
- energy<- energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 + finalrank_eng4)/4)
- energy <- energy %>% mutate(finalrank_eng = rank(-energy$score_eng))
+# Highest aggregate score is ranked 1
+energy<- energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 + finalrank_eng4)/4)
+energy <- energy %>% mutate(finalrank_eng = rank(-energy$score_eng))
 ```
 
 
@@ -249,26 +247,6 @@ comm <- comm %>% mutate(finalrank_comm = rank(-comm$score))
 comm2 <- select(comm, "CountryName", "CountryCode","finalrank_comm" )
 ```
 
-# Security indicators for each country 
-security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
-```
-
-# Economic indicators for each country 
-gdp <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
-
-# Education indicators for each country 
-education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
-
-# Gender indicators for each country 
-gender <- WDI4 %>% filter(IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SP.UWT.TFRT") %>% spread(IndicatorCode, Value)
-
-# Population indicators for each country 
-population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
-
-# Employment indicators for each country 
-employment<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
-```
-
 Child Welfare score:
 
 ```{r}
@@ -300,12 +278,45 @@ childwelfare_score <- mutate(childwelfare, finalscore_child = as.numeric
                        (as.factor(rank(((rank.neet+rank.imr)/2)))))
 ```
 
-# Food Deficit indicators for each country 
-FoodDeficit <- WDI4 %>% filter(IndicatorCode == "SN.ITK.DFCT") %>% spread(IndicatorCode, Value)
+Food Deficit Score:
+
+```{r}
+deficit <- WDI4 %>% filter(IndicatorCode == "SN.ITK.DFCT") %>% spread(IndicatorCode, Value)
+
+#Least food deficit will rank 1
+deficit <- select(deficit, "CountryName", "Year", "SN.ITK.DFCT")
+deficit <- deficit[order(-deficit$Year),]
+deficit <- deficit %>% distinct(CountryName, .keep_all = TRUE)
+View(deficit)
+
+deficit.score = as.numeric(as.factor(rank((deficit$SN.ITK.DFCT))))
+deficit <- deficit %>% mutate(finalrank_deficit = 
+                                as.numeric(as.factor(rank((deficit$SN.ITK.DFCT)))))
+```
+
 
 # Tourism indicators for each country 
 tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
 write.csv(Tourism, file = "Tourism.csv")
+```
+# Security indicators for each country 
+security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
+```
+
+# Economic indicators for each country 
+gdp <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
+
+# Education indicators for each country 
+education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
+
+# Gender indicators for each country 
+gender <- WDI4 %>% filter(IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SP.UWT.TFRT") %>% spread(IndicatorCode, Value)
+
+# Population indicators for each country 
+population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
+
+# Employment indicators for each country 
+employment<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
 ```
 
 # Extracting Data from the World Happiness Report Dataset
@@ -373,11 +384,10 @@ Positive_Affect <- read_csv("../Scored data+Rmds/Positive Affect.csv")
 ```
 
 
-
 ```{r}
 final_score_table <- Communication_score %>%
-    full_join(Education_score, by='CountryName') %>%
-    full_join(Emissions_score, by='CountryName') %>%
+  full_join(Education_score, by='CountryName') %>%
+  full_join(Emissions_score, by='CountryName') %>%
   full_join(Environment_score, by='CountryName') %>%
   full_join(FoodDeficit_score, by='CountryName') %>%
   full_join(Gender_score, by='CountryName') %>%
@@ -392,9 +402,8 @@ final_score_table <- Communication_score %>%
   full_join(happyplanet_score, by='CountryName')%>%
   full_join(Negative_Affect, by='CountryName')%>%
   full_join(Positive_Affect, by='CountryName')
-
-write.csv(final_score_table, file = "final_score_table.csv")
 ```
+
 # This contains the columns with only the required final ranks for each variable
 ```{r}
 final_score <- final_score_table %>% select(CountryName,
@@ -416,38 +425,49 @@ final_score <- final_score_table %>% select(CountryName,
                                             finalrank_hpi,
                                             finalrank_neg,
                                             finalrank_pos)
-
-write_csv(final_score , "final_score_only.csv")
 ```
 
 
 #fill in regional data
 
 ```{r}
-
-final_score_only <- read_csv("../Final score data/final_score_only.csv")
 url <- "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
 
 regions <-read.csv(url)
 regions <- regions %>% select(name, region, sub.region)
 colnames(regions)[1] <- "CountryName"
-final_score_only <- left_join(final_score_only, regions, "CountryName")
-write.csv(final_score_only, "final_score_only.csv")
-
+final_score <- left_join(final_score, regions, "CountryName")
 ```
 
 #drop countries with too many NA's and use of mean of the coutries other ranking to fill in NA'for remaining countries
 
 ```{r}
- final_score_only <- final_score_only[rowSums(is.na(final_score_only)) < 6, ]
- i <- which(is.na(final_score_only), arr.ind = TRUE)
- final_score_only[i] <- rowMeans(final_score_only[,3:19], na.rm = TRUE)[i[,1]]
+final_score <- final_score[rowSums(is.na(final_score)) < 6, ]
+i <- which(is.na(final_score), arr.ind = TRUE)
+final_score[i] <- rowMeans(final_score[,3:19], na.rm = TRUE)[i[,1]]
  
- final_score_only<- final_score_only %>% mutate(ourindex = (final_score_only$finalscore_child +final_score_only$finalrank_comm +final_score_only$finalrank_diversity+final_score_only$finalrank_edu+final_score_only$finalrank_emission+final_score_only$finalrank_empl+final_score_only$finalrank_eng+final_score_only$finalrank_env+final_score_only$finalrank_deficit+final_score_only$finalrank_gen+final_score_only$finalrank_GDP+final_score_only$finalrank_pop+final_score_only$finalscore_security+final_score_only$finalrank_tourism+final_score_only$finalrank_hpi + final_score_only$finalrank_neg + final_score_only$finalrank_pos) /17)
- final_score_only <- final_score_only %>% mutate(finalindex = rank(final_score_only$ourindex))
+final_score<- final_score %>% 
+   mutate(ourindex = (finalscore_child + 
+                        finalrank_comm + 
+                        finalrank_diversity + 
+                        finalrank_edu + 
+                        finalrank_emission + 
+                        finalrank_empl + 
+                        finalrank_eng + 
+                        finalrank_env + 
+                        finalrank_deficit + 
+                        finalrank_gen + 
+                        finalrank_GDP + 
+                        finalrank_pop + 
+                        finalscore_security + 
+                        finalrank_tourism + 
+                        finalrank_hpi + 
+                        finalrank_neg + 
+                        finalrank_pos)/17) %>% 
+  mutate(finalindex = rank(ourindex))
  
- write.csv(final_score_only, file = "CalculatedOurindex.csv")
-
+ write.csv(final_score, file = "CalculatedOurindex.csv")
+```
 
 
 ## Final Analysis: What did you learn about the data? How did you answer the questions? How can you justify your answers?
