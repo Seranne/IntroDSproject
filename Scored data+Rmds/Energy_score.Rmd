@@ -11,7 +11,7 @@ library(ggplot2)
 ```
 
 ```{r}
-Energy <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Energy.csv")
+Energy <- read_csv("../WDI data split/Energy.csv")
  Energy1<- select(Energy, "CountryName", "CountryCode", "Year", "EG.ELC.ACCS.ZS")
  Energy1 <- Energy1[order(-Energy1$Year),]
  Energy1<- na.omit(Energy1)

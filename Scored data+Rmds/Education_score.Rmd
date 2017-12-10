@@ -11,7 +11,7 @@ library(ggplot2)
 ```
 
 ```{r}
-Education <- read_csv("d:/Documents/GitHub/IntroDSproject/WDI data split/Education.csv")
+Education <- read_csv("../WDI data split/Education.csv")
 En1<- select(Education, "CountryName", "CountryCode", "Year", "SE.ADT.1524.LT.ZS")
 En1 <- En1[order(-En1$Year),]
 En1<- na.omit(En1)
