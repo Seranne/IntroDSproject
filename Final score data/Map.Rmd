@@ -27,7 +27,7 @@ finalindexplot <- joinCountryData2Map(ourindex,
 )
 
 #creating a user defined colour palette
-#op <- palette(c('green','yellow','orange', 'red'))
+op <- palette(c('green','yellow','orange', 'red'))
 #op <- heat.colors(7, alpha = 1)
 
 #find quartile breaks
@@ -38,14 +38,14 @@ finalindexplot@data[["Happy-categories"]] <- cut(finalindexplot@data[["finalinde
                                                  c(1,25,75,100,125,150,190),
                                                  include.lowest=TRUE )
 #rename the categories
-levels(finalindexplot@data[["Happy-categories"]]) <- c('Very High', 'High','jkjk','Med','Low','Very Low')  
+levels(finalindexplot@data[["Happy-categories"]]) <- c('Very High', 'High','High Average','Low Average','Low','Very Low')  
 
 #mapping
 mapCountryData(finalindexplot, 
                nameColumnToPlot='Happy-categories',
                catMethod='categorical',
                mapTitle='Happiness Index', 
-               colourPalette='diverging',
+               colourPalette='palette',
                oceanCol='lightblue',
                missingCountryCol='white',
                borderCol='black')
