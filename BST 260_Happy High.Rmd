@@ -1,5 +1,6 @@
 ---
 title: "BST 260_Happy Highs"
+sub_title: "Exploring the Realm of Happiness and Well-being"
 author: "Seranne Motital, Shravanthi Seshasayee, Sanjana Sunderesan"
 date: "9 December 2017"
 output: html_document
@@ -11,8 +12,8 @@ library(tidyverse)
 library(knitr)
 library(readr)
 library(tidyverse)
-
-
+library(readr)
+library(ggplot2)
 ```
 
 # Overview and Motivation
@@ -141,63 +142,175 @@ levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Yemen, Rep."] <- "Yemen"
 # Remove pending aggregrated regions
 WDI4 <- filter(WDI4, CountryCode != "OSS")
 WDI4 <- filter(WDI4, CountryCode != "SST")
+```
 
-# Generate table with only Energy indicators for each country 
+
+# Generating Category scores for each country
+
+Composite Energy Score: 
+
+```{r}
+# Selecting indicators of interest 
 energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC") %>% spread(IndicatorCode, Value)
-write.csv(energy, file = "Energy.csv")
 
-# Generate table with only Emissions indicators for each country 
+# Access to Electricity (% of population); Highest score gets ranked 1
+ energy1<- select(energy, "CountryName", "CountryCode", "Year", "EG.ELC.ACCS.ZS")
+ energy1 <- energy1[order(-energy1$Year),]
+ energy1<- na.omit(energy1)
+ energy1 <- energy1%>% distinct(CountryName, .keep_all = TRUE)
+ energy1 <- energy1 %>% mutate(finalrank_eng1 = rank(-energy1$EG.ELC.ACCS.ZS))
+ energy1$finalrank_eng1<- as.numeric(as.factor(energy1$finalrank_eng1))
+ 
+ # Renewable Energy Consumption (% of final energy consumption); Highest score gets ranked 1
+ energy2<- select(energy, "CountryName", "CountryCode", "Year", "EG.FEC.RNEW.ZS")
+ energy2 <- energy2[order(-energy2$Year),]
+ energy2<- na.omit(energy2)
+ energy2 <- energy2%>% distinct(CountryName, .keep_all = TRUE)
+ energy2 <- energy2 %>% mutate(finalrank_eng2 = rank(energy2$EG.FEC.RNEW.ZS))
+ energy2$finalrank_eng2<- as.numeric(as.factor(energy2$finalrank_eng2))
+ 
+ # Fossil fuel energy consumption (% of total);lowest consumption ranked 1
+ energy3<- select(energy, "CountryName", "CountryCode", "Year", "EG.USE.COMM.FO.ZS")
+ energy3 <- energy3[order(-energy3$Year),]
+ energy3<- na.omit(energy3)
+ energy3 <- energy3%>% distinct(CountryName, .keep_all = TRUE)
+ energy3 <- energy3 %>% mutate(finalrank_eng3 = rank(energy3$EG.USE.COMM.FO.ZS))
+ energy3$finalrank_eng3<- as.numeric(as.factor(energy3$finalrank_eng3))
+ 
+ #Electric Power consumption (kW/capita); highest score gets ranked 1 
+ energy4<- select(energy, "CountryName", "CountryCode", "Year", "EG.USE.ELEC.KH.PC")
+ energy4 <- energy4[order(-energy4$Year),]
+ energy4<- na.omit(energy4)
+ energy4 <- energy4%>% distinct(CountryName, .keep_all = TRUE)
+ energy4 <- energy4 %>% mutate(finalrank_eng4 = rank(-energy4$EG.USE.ELEC.KH.PC))
+ energy4$finalrank_eng4<- as.numeric(as.factor(energy4$finalrank_eng4))
+ 
+ Enjoin <- left_join(energy1, energy2, "CountryName")
+ Ener<- left_join(Enjoin, energy3, "CountryName")
+ energy<- left_join(Ener, energy4, "CountryName")
+ energy<- select(energy,"CountryName", "finalrank_eng1", "finalrank_eng2", "finalrank_eng3", "finalrank_eng4")
+ 
+ energy <- energy[rowSums(is.na(energy)) < 3, ]
+ i <- which(is.na(energy), arr.ind = TRUE)
+ energy[i] <- rowMeans(energy[,-1], na.rm = TRUE)[i[,1]]
+ 
+ # Highest aggregate score is ranked 1
+ energy<- energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 + finalrank_eng4)/4)
+ energy <- energy %>% mutate(finalrank_eng = rank(-energy$score_eng))
+```
+
+
+CO2 Emissions score:
+
+```{r}
+# Select indicator variable: CO2 emissions (metric tons per capita)
 emissions <- WDI4%>% filter(IndicatorCode == "EN.ATM.CO2E.PC")%>% spread(IndicatorCode, Value)
-write.csv(emissions, file = "Emissions.csv")
 
-# Generate table with only Environment indicators for each country 
-environnment1 <- WDI4 %>% filter(IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "AG.LND.FRST.ZS") %>% spread(IndicatorCode, Value)
-write.csv(environnment1, file = "Environment.csv")
+# Lowest score gets ranked 1
+emissions <- emissions %>% 
+  group_by(CountryName) %>% 
+  summarise(mean_CO2 = mean(EN.ATM.CO2E.PC)) %>%
+  na.omit() %>%
+  mutate(finalrank_emission = rank(mean_CO2))
+```
 
-# Generate table with only Security indicators for each country 
-Security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
-write.csv(Security, file = "Security.csv")
+Composite Environmental well-being score: 
 
-# Generate table with only Communications indicators for each country 
+```{r}
+# Selecting indicator variables: Terrestrial and marine protected areas (% of total territorial area) and Forest area (% of land area)
+
+envir <- WDI4 %>% filter(IndicatorCode == "ER.PTD.TOTL.ZS"|IndicatorCode == "AG.LND.FRST.ZS") %>% spread(IndicatorCode, Value)
+
+# Highest score gets ranked 1
+envir <- envir %>% 
+  group_by(CountryName) %>% 
+  na.omit() %>%
+  summarise(mean_agland = mean(AG.LND.FRST.ZS), mean_protect = mean(ER.PTD.TOTL.ZS)) %>%
+  mutate(rank_agland = rank(mean_agland), rank_protect = rank(mean_protect)) %>%
+  mutate(score = (rank_agland+rank_protect)/2) %>%
+  mutate(finalrank_env = rank(-score)) %>%
+  select(CountryName, finalrank_env)
+```
+
+Communication/Connectivity score: 
+
+```{r}
+# Score based on Mobile cellular subscriptions (per 100 people) and Internet Users (per 100 people)
+# Highest score gets ranked 1 
+
 comm <- WDI4 %>% filter(IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2")  %>% spread(IndicatorCode, Value)
-write.csv(comm, file = "Communication.csv")
+comm <- na.omit(comm)
+comm <- comm[order(-comm$Year),]
+comm <- comm %>% distinct(CountryName, .keep_all = TRUE)
+comm <- comm %>% mutate(rankcell = rank(IT.CEL.SETS.P2)) 
+comm <- comm %>% mutate(ranknet = rank(IT.NET.USER.P2))
+comm <- comm %>% mutate(score = (rankcell+ranknet)/2)
+comm <- comm %>% mutate(finalrank_comm = rank(-comm$score))
+comm2 <- select(comm, "CountryName", "CountryCode","finalrank_comm" )
+```
 
-# Generate table with only Economic indicators for each country 
-GDP <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
-write.csv(GDP, file = "GDP.csv")
+# Security indicators for each country 
+security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
+```
 
-# Generate table with only Education indicators for each country 
-Education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
-write.csv(Education, file = "Education.csv")
+# Economic indicators for each country 
+gdp <- WDI4 %>% filter(IndicatorCode == "MS.MIL.XPND.GD.ZS"|IndicatorCode == "NY.GDP.PCAP.CD"|IndicatorCode == "NY.GDP.MKTP.PP.CD"|IndicatorCode == "NY.GDP.PCAP.KD.ZG"|IndicatorCode == "FP.CPI.TOTL.ZG") %>% spread(IndicatorCode, Value)
 
-# Generate table with only Gender indicators for each country 
-Gender <- WDI4 %>% filter(IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SP.UWT.TFRT") %>% spread(IndicatorCode, Value)
-write.csv(Gender, file = "Gender.csv")
+# Education indicators for each country 
+education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
 
-# Generate table with only Population indicators for each country 
-Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
-write.csv(Population, file = "Population.csv")
+# Gender indicators for each country 
+gender <- WDI4 %>% filter(IndicatorCode == "SG.GEN.PARL.ZS"|IndicatorCode == "SP.UWT.TFRT") %>% spread(IndicatorCode, Value)
 
-# Generate table with only Employment indicators for each country 
-Employment<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
-write.csv(Employment, file = "Employment.csv")
+# Population indicators for each country 
+population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
 
-# Generate table with only Child Welfare indicators for each country 
-Children<- WDI4 %>% filter(IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS" | IndicatorCode == "SP.DYN.IMRT.IN") %>% spread(IndicatorCode, Value)
-write.csv(Children, file = "Children.csv")
+# Employment indicators for each country 
+employment<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
+```
 
-# Generate table with only Food Deficit indicators for each country 
+Child Welfare score:
+
+```{r}
+children<- WDI4 %>% filter(IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS" | IndicatorCode == "SP.DYN.IMRT.IN") %>% spread(IndicatorCode, Value)
+
+# Share of children not in education, employment or training: lowest score gets ranked 1 
+neet <- select(children, "CountryName", "Year", "SL.UEM.NEET.ZS")
+neet <- neet[order(-neet$Year),]
+neet <- na.omit(neet)
+neet <- neet %>% distinct(CountryName, .keep_all = TRUE)
+
+# Infant mortality rate: lowest score gets ranked 1
+imr <- select(children, "CountryName", "Year", "SP.DYN.IMRT.IN")
+imr <- imr[order(-imr$Year),]
+imr <- na.omit(imr)
+imr <- imr %>% distinct(CountryName, .keep_all = TRUE)
+imr <- mutate(imr, rank.imr = as.numeric(as.factor(rank((SP.DYN.IMRT.IN)))))
+
+# Lowest aggregrate score gets ranked 1, indicating best child welfare score 
+
+childwelfare <- left_join(imr, neet, by = "CountryName")
+childwelfare <- select(childwelfare, "CountryName", "SL.UEM.NEET.ZS", "SP.DYN.IMRT.IN", "rank.imr")
+
+# Filling missing values in NEET using average of othercountry NEET scores 
+avgneet <- mean(neet$SL.UEM.NEET.ZS)
+childwelfare$SL.UEM.NEET.ZS[is.na(childwelfare$SL.UEM.NEET.ZS)] <- avgneet
+childwelfare <- mutate(childwelfare, rank.neet = as.numeric(as.factor(rank((SL.UEM.NEET.ZS)))))
+childwelfare_score <- mutate(childwelfare, finalscore_child = as.numeric
+                       (as.factor(rank(((rank.neet+rank.imr)/2)))))
+```
+
+# Food Deficit indicators for each country 
 FoodDeficit <- WDI4 %>% filter(IndicatorCode == "SN.ITK.DFCT") %>% spread(IndicatorCode, Value)
-write.csv(FoodDeficit, file = "Food_deficit.csv")
 
-# Generate table with only Tourism indicators for each country 
-Tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
+# Tourism indicators for each country 
+tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
 write.csv(Tourism, file = "Tourism.csv")
 ```
 
 # Extracting Data from the World Happiness Report Dataset
 
-UN SDSN World Happiness Report Data is available for the years 2015, 2016 and 2017, and these were downloaded from ____. 
+UN SDSN World Happiness Report Data is available for the years 2015, 2016 and 2017:
 
 ```{r}
 # Load datasets
@@ -217,7 +330,7 @@ GH2017 <- select(gh2017, "Country", "Family", "Freedom", "Trust..Government.Corr
 
 # Extracting Data from the Happy Planet Index
 
-2016 Happy Planet Index data is available through [this link](http://happyplanetindex.org/countries). A cleaned .CSV is available through the code below, on which further analysis was run.
+2016 Happy Planet Index data is available through [this link](http://happyplanetindex.org/countries). A cleaned .CSV is available through the code below this one, on which further analysis was run.
 
 ```{r, EVAL=FALSE}
 # Load dataset
@@ -225,18 +338,115 @@ hpi_data_2016 <- readxl::read_xlsx("Your/File/Path/Here.xlsx")
 
 # Select indicators of interest 
 HPI2016 <- select(hpi_data_2016, "Country", "Region", "Average_Wellbeing_(0-10)", "Happy_Life_Years", "Footprint_(gha/capita)", "Inequality_of_Outcomes", "Inequality-adjusted_Life_Expectancy", "Inequality-adjusted_Wellbeing")
-write.csv(HPI2016, file = "cleaned_hpi_2016.csv")
+```
 
-read.csv("https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Cleaned_Data/cleaned_hpi_2016.csv")
+```{r}
+# Load dataset
+HPI2016 <- read.csv("https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Cleaned_Data/cleaned_hpi_2016.csv")
 ```
 
 
 # Checking for correlations between indicators chosen based on literature review
 
-#Generating Category-based scores for each country
-# Deriving category-level scores 
-
 # Deriving new well-rounded well-being index 
+
+#Gather all the variable indices join to create on table 
+
+```{r}
+Communication_score <- read_csv("../Scored data+Rmds/Communication_score.csv")
+Education_score <- read_csv("../Scored data+Rmds/Education_score.csv")
+Emissions_score <- read_csv("../Scored data+Rmds/Emissions_score.csv")
+Employment_score <- read_csv("../Scored data+Rmds/Employment_score.csv")
+Energy_score <- read_csv("../Scored data+Rmds/Energy_score.csv")
+Environment_score <- read_csv("../Scored data+Rmds/Environment_score.csv")
+FoodDeficit_score <- read_csv("../Scored data+Rmds/FoodDeficit_score.csv")
+Gender_score <- read_csv("../Scored data+Rmds/Gender_score.csv")
+Population_score <- read_csv("../Scored data+Rmds/Population_score.csv")
+Security_score <- read_csv("../Scored data+Rmds/Security_score.csv")
+Tourism_score <- read_csv("../Scored data+Rmds/Tourism_score.csv")
+GDP_score <- read_csv("../Scored data+Rmds/GDP_score.csv")
+childwelfare_score <- read_csv("../Scored data+Rmds/childwelfare_score.csv")
+diversity_score <- read_csv("../Scored data+Rmds/diversity_score.csv")
+happyplanet_score <- read_csv("../Scored data+Rmds/happyplanet_score.csv")
+Negative_Affect <- read_csv("../Scored data+Rmds/Negative Affect.csv")
+Positive_Affect <- read_csv("../Scored data+Rmds/Positive Affect.csv")
+```
+
+
+
+```{r}
+final_score_table <- Communication_score %>%
+    full_join(Education_score, by='CountryName') %>%
+    full_join(Emissions_score, by='CountryName') %>%
+  full_join(Environment_score, by='CountryName') %>%
+  full_join(FoodDeficit_score, by='CountryName') %>%
+  full_join(Gender_score, by='CountryName') %>%
+  full_join(Population_score, by='CountryName') %>%
+  full_join(Employment_score, by='CountryName') %>%
+  full_join(Energy_score, by='CountryName') %>%
+  full_join(Security_score, by='CountryName') %>%
+  full_join(Tourism_score, by='CountryName') %>%
+  full_join(GDP_score, by='CountryName') %>%
+  full_join(childwelfare_score, by='CountryName')%>%
+  full_join(diversity_score, by='CountryName')%>%
+  full_join(happyplanet_score, by='CountryName')%>%
+  full_join(Negative_Affect, by='CountryName')%>%
+  full_join(Positive_Affect, by='CountryName')
+
+write.csv(final_score_table, file = "final_score_table.csv")
+```
+# This contains the columns with only the required final ranks for each variable
+```{r}
+final_score <- final_score_table %>% select(CountryName,
+                                            CountryCode, 
+                                            finalscore_child,
+                                            finalrank_comm,
+                                            finalrank_diversity,
+                                            finalrank_edu,
+                                            finalrank_emission,
+                                            finalrank_empl,
+                                            finalrank_eng,
+                                            finalrank_env,
+                                            finalrank_deficit,
+                                            finalrank_gen,
+                                            finalrank_GDP,
+                                            finalrank_pop,
+                                            finalscore_security,
+                                            finalrank_tourism,
+                                            finalrank_hpi,
+                                            finalrank_neg,
+                                            finalrank_pos)
+
+write_csv(final_score , "final_score_only.csv")
+```
+
+
+#fill in regional data
+
+```{r}
+
+final_score_only <- read_csv("../Final score data/final_score_only.csv")
+url <- "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
+
+regions <-read.csv(url)
+regions <- regions %>% select(name, region, sub.region)
+colnames(regions)[1] <- "CountryName"
+final_score_only <- left_join(final_score_only, regions, "CountryName")
+write.csv(final_score_only, "final_score_only.csv")
+
+```
+
+#drop countries with too many NA's and use of mean of the coutries other ranking to fill in NA'for remaining countries
+
+```{r}
+ final_score_only <- final_score_only[rowSums(is.na(final_score_only)) < 6, ]
+ i <- which(is.na(final_score_only), arr.ind = TRUE)
+ final_score_only[i] <- rowMeans(final_score_only[,3:19], na.rm = TRUE)[i[,1]]
+ 
+ final_score_only<- final_score_only %>% mutate(ourindex = (final_score_only$finalscore_child +final_score_only$finalrank_comm +final_score_only$finalrank_diversity+final_score_only$finalrank_edu+final_score_only$finalrank_emission+final_score_only$finalrank_empl+final_score_only$finalrank_eng+final_score_only$finalrank_env+final_score_only$finalrank_deficit+final_score_only$finalrank_gen+final_score_only$finalrank_GDP+final_score_only$finalrank_pop+final_score_only$finalscore_security+final_score_only$finalrank_tourism+final_score_only$finalrank_hpi + final_score_only$finalrank_neg + final_score_only$finalrank_pos) /17)
+ final_score_only <- final_score_only %>% mutate(finalindex = rank(final_score_only$ourindex))
+ 
+ write.csv(final_score_only, file = "CalculatedOurindex.csv")
 
 
 
