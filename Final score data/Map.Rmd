@@ -26,8 +26,8 @@ finalindexplot <- joinCountryData2Map(ourindex,
 )
 
 #creating a user defined colour palette
-#op <- palette(c('green','yellow','orange', 'red'))
-op <- heat.colors(7, alpha = 1)
+op <- palette(c('green','yellow','orange', 'red'))
+#op <- heat.colors(7, alpha = 1)
 #find quartile breaks
 cutVector <- quantile(finalindexplot@data[["finalindex"]],na.rm=TRUE) 
 
@@ -40,14 +40,12 @@ levels(finalindexplot@data[["Happy-categories"]]) <- c('High','Med','Low','Very 
 
 #mapping
 mapCountryData(finalindexplot, 
-               nameCountryColumn = 'CountryName',
-               nameColumnToPlot='finalindex',
+               nameColumnToPlot='Happy-categories',
+               catMethod='categorical',
                mapTitle='Happiness Index', 
                colourPalette='palette',
                oceanCol='lightblue',
-               missingCountryCol='white', 
-               mapRegion='Europe', 
-               borderCol='black')
+               missingCountryCol='white')
 
 ```
 
