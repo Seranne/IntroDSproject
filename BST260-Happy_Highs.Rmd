@@ -61,6 +61,21 @@ mapCountryData(whrplot,
                borderCol='black')
 ```
 
+```{r}
+whr <- read_csv("https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Source%20Data/World%20Happiness%20Report/2016.csv")
+
+colnames(whr)[3] <- "happiness.rank"
+colnames(whr)[7] <- "gdp"
+
+
+x <- whr %>% filter(!is.na(gdp)) %>% select("gdp")
+x<- x$gdp
+max(x)
+x <- cut(as.numeric(x), c(0, 0.1005, 1.2236, 1.82427))
+x = factor(x, labels = c("Low-Income Countries", "Middle Income Countres", "High-Income Countries"))
+
+whr %>% ggplot(aes(x = Region, y = -happiness.rank, col = x)) + geom_point() + geom_jitter(width = 0, height = 0.5) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + scale_colour_manual(breaks = c("Low-Income Countries", "Middle Income Countres", "High-Income Countries"), values = c("red", "blue", "green")) + ylab("2016 World Happiness Report Ranking") + xlab("Countries by Region") + ggtitle("2016 World Happiness Report Ranking") + labs(colour = "")
+```
 We are keen to understand the association between country-level physical, financial, social, cultural, political, and environmental indicators and the parent country's ranking on an overall well-being index. For instance, [literature](https://bmcpublichealth.biomedcentral.com/articles/10.1186/1471-2458-13-496) shows that "fear of crime represents a complex set of responses to the environment. It may play a role in mediating environmental impacts on health and wellbeing". Conversely, in his [book](http://www.palgrave.com/us/book/9780333548080), "Politics, Women and Well-being", Robin Jeffrey discusses the key role played by a more gender-equal society in the overall health and improvement of a state in India. 
 
 Similar to these findings, we strongly believe it is of great relevance to learn more about the influences of variables such as Gini Coefficients, literacy levels, deforestation, climate etc. on the happiness and well-being of a country as a whole.
@@ -885,22 +900,23 @@ final_score$region[(final_score$sub.region == "Western Asia" | final_score$sub.r
 final_score$region[(final_score$sub.region == "Western Europe" | final_score$sub.region == "Eastern Europe" | final_score$sub.region == "Southern Europe")  & is.na(final_score$region)] <- "Europe"
 
 final_score <- final_score %>% select("CountryName", "region","sub.region","ourindex", "finalindex")
-colnames(final_score)[1] <- "Country"
-colnames(final_score)[2] <- "Region"
-colnames(final_score)[3] <- "Sub-Region"
-colnames(final_score)[4] <- "Composite Score"
-colnames(final_score)[5] <- "Well-Being Rank"
+fscore <- final_score
+colnames(fscore)[1] <- "Country"
+colnames(fscore)[2] <- "Region"
+colnames(fscore)[3] <- "Sub-Region"
+colnames(fscore)[4] <- "Composite Score"
+colnames(fscore)[5] <- "Well-Being Rank"
 
-write.csv(final_score, file = "HHWell-Being.Index.csv")
-head(final_score)
+write.csv(fscore, file = "HHWell-Being.Index.csv")
+head(fscore)
 ```
 
 #Scatter plot showing the distribution of country ranks by region
 ```{r}
 final_score %>%
-  ggplot(aes(x = Country,
-             y = "Well-Being Rank",
-             colour=final_score$Region))+ 
+  ggplot(aes(x = CountryName,
+             y = finalindex,
+             colour=final_score$region))+ 
   geom_point(size=2, stat="identity") +
   labs(colour = "Regions",
        title = "Scatter plot showing the distribution of country ranks by region", 
@@ -913,14 +929,14 @@ final_score %>%
 
 #Plot showing the mean regional rank
 ```{r}
-a<- final_score %>%  group_by(Region) %>% summarise(fi = mean("Well-Being Rank"))
+a<- final_score %>%  group_by(region) %>% summarise(fi = mean(finalindex))
 
 a %>%
-  ggplot(aes(x = Region, 
+  ggplot(aes(x = region, 
              y = fi, 
-             colour = Region))+ 
+             colour = region))+ 
   geom_point(show.legend = FALSE, size = 7)+ 
-  aes(x = fct_reorder(Region,
+  aes(x = fct_reorder(region,
                       fi))+ 
   labs(title = "Plot showing the mean regional rank", 
        x = "Region", 
@@ -931,16 +947,147 @@ a %>%
 #Scatter plot showing the distribution of country ranks by region
 ```{r}
 final_score %>% 
-  ggplot(aes(x = Region,
-             y = "Well-Being Rank",
-              fill = Region))+
+  ggplot(aes(x = region,
+             y = finalindex,
+              fill = region))+
   geom_boxplot(show.legend = FALSE)+
-  aes(x = fct_reorder(Region,"Well-Being Rank")) + 
+    aes(x = fct_reorder(region,finalindex)) + 
   labs(colour = "Regions",
        title = "Scatter plot showing the distribution of country ranks by region", 
        x = "Country", 
        y = "Wellbeing Index ranking") + 
   theme_igray()
+```
+#Our Happiness Index
+```{r}
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+
+#joining the data to a map
+finalindexplot <- joinCountryData2Map(final_score,
+                                      joinCode = "NAME",
+                                      nameJoinColumn = "CountryName"
+)
+
+#creating a user defined colour palette
+op <- palette(c('blue','green', 'yellow','orange','red'))
+
+#find quartile breaks
+cutVector <- quantile(finalindexplot@data[["finalindex"]],na.rm=TRUE) 
+
+#classify the data to a factor
+finalindexplot@data[["Happy-categories"]] <- cut(finalindexplot@data[["finalindex"]],
+                                                 c(1,25,75,100,125,150,180),
+                                                 include.lowest=TRUE )
+#rename the categories
+levels(finalindexplot@data[["Happy-categories"]]) <- c('Very High', 'High','High Average','Low Average','Low','Very Low')  
+
+#mapping
+mapCountryData(finalindexplot, 
+               nameColumnToPlot='Happy-categories',
+               catMethod='categorical',
+               mapTitle='Happy Highs Wellbeing Index', 
+               colourPalette='palette',
+               oceanCol='lightblue',
+               missingCountryCol='white',
+               borderCol='black')
+```
+
+#Emission ranks
+```{r}
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+
+#joining the data to a map
+finalrank_emission <- joinCountryData2Map(final_score,
+                                      joinCode = "NAME",
+                                      nameJoinColumn = "CountryName"
+)
+
+#creating a user defined colour palette
+op <- palette(c('blue','darkgreen','green','yellow','orange', 'red'))
+
+#classify the data to a factor
+finalrank_emission@data[["Happy-categories"]] <- cut(finalrank_emission@data[["finalindex"]],
+                                                     c(1,27,54,108,135,163,190),
+                                                     include.lowest=TRUE )
+#rename the categories
+levels(finalrank_emission@data[["Happy-categories"]]) <- c('Very Low', 'Low','Low Average','High Average','High','Very High')
+
+
+#mapping
+mapCountryData(finalrank_emission,
+               nameColumnToPlot='Happy-categories',
+               catMethod='categorical',
+               mapTitle='Emission Index', 
+               colourPalette='heat',
+               oceanCol='lightblue',
+               missingCountryCol='white', 
+               borderCol='black')
+
+```
+
+#Gender ranks
+```{r}
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+
+#joining the data to a map
+finalrank_genplot <- joinCountryData2Map(final_score,
+                                      joinCode = "NAME",
+                                      nameJoinColumn = "CountryName"
+)
+
+#creating a user defined colour palette
+op <- palette(c('darkgreen','green','yellow','orange', 'red', 'darkblue'))
+
+#classify the data to a factor
+finalrank_genplot@data[["Happy-categories"]] <- cut(finalrank_genplot@data[["finalindex"]],
+                                                 c(1,27,54,108,135,163,190),
+                                                 include.lowest=TRUE )
+#rename the categories
+levels(finalrank_genplot@data[["Happy-categories"]]) <- c('Very High', 'High','High Average','Low Average','Low','Very Low')
+
+
+#mapping
+mapCountryData(finalrank_genplot,
+               nameColumnToPlot='Happy-categories',
+               catMethod='categorical',
+               mapTitle='Percentage women in parliament', 
+               colourPalette='diverging',
+               oceanCol='lightblue',
+               missingCountryCol='white', 
+               borderCol='black')
+```
+
+#Diversity ranks
+
+```{r}
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+
+#joining the data to a map
+finalrankdiv <- joinCountryData2Map(final_score,
+                                      joinCode = "NAME",
+                                      nameJoinColumn = "CountryName"
+)
+
+#creating a user defined colour palette
+op <- palette(c('darkgreen','green','yellow','orange', 'red', 'darkblue'))
+
+#classify the data to a factor
+finalrankdiv@data[["Happy-categories"]] <- cut(finalrankdiv@data[["finalindex"]],
+                                                 c(1,27,54,108,135,163,190),
+                                                 include.lowest=TRUE )
+#rename the categories
+levels(finalrankdiv@data[["Happy-categories"]]) <- c('Very High', 'High','High Average','Low Average','Low','Very Low')
+
+
+#mapping
+mapCountryData(finalrankdiv,
+               nameColumnToPlot='Happy-categories',
+               catMethod='categorical',
+               mapTitle='Diversity Index', 
+               colourPalette='topo',
+               oceanCol='lightblue',
+               missingCountryCol='white', 
+               borderCol='black')
 ```
 ## Final Analysis:
 A)What did you learn about the data? 
