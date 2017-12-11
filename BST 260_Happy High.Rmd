@@ -14,11 +14,12 @@ library(readr)
 library(tidyverse)
 library(readr)
 library(ggplot2)
+library(rvest)
 ```
 
 # Overview and Motivation
 
-[The World Happiness Report](http://worldhappiness.report/overview/) is a composite measure of country-level happiness based on economic and social factors such as per capita GDP, social support, healthy life expectancy at birth, freedom to make life choices, generosity and perceptions of corruption, released annually by the United Nations Sustainble Development Solutions Network. In the present landscape of shifting political and economic climates across the world, we believe it is important to expand and include measures which encompass a wider narrative of the human experience. 
+[The World Happiness Report](http://worldhappiness.report/overview/) is a composite measure of country-level happiness based on economic and social factors such as per capita GDP, social support, healthy life expectancy at birth, freedom to make life choices, generosity and perceptions of corruption, released annually by the United Nations Sustainable Development Solutions Network. In the present landscape of shifting political and economic climates across the world, we believe it is important to expand and include measures which encompass a wider narrative of the human experience. 
 
 We are keen to understand the association between country-level physical, financial, social, cultural, political, and environmental indicators and the parent country's ranking on an overall well-being index. For instance, [literature](https://bmcpublichealth.biomedcentral.com/articles/10.1186/1471-2458-13-496) shows that "fear of crime represents a complex set of responses to the environment. It may play a role in mediating environmental impacts on health and wellbeing". Conversely, in his [book](http://www.palgrave.com/us/book/9780333548080), "Politics, Women and Well-being", Robin Jeffrey discusses the key role played by a more gender-equal society in the overall health and improvement of a state in India. 
 
@@ -31,7 +32,7 @@ We believe that this information could potentially inform policies to improve ov
 
 We began our project with the goal of identifying yearly-changes in a country's happiness and well-being. However, as we learnt more about how these composite indices are derived, we grew keen to understand the factors considered in the creation of a well-being score. Over the course of our literature review, we identified more variables we believe are relevant to a population's well-being, and decided to create a new, incremented ranking of country well-being with this additional data. Thus, our project seeks to answer: 
 
-Is there a change in the average ranking of a country's happiness and well-being, given the inclusion of a more comprehensive variable list representing its physical, social, cultural, economic and political enviroments?
+Is there a change in the average ranking of a country's happiness and well-being, given the inclusion of a more comprehensive variable list representing its physical, social, cultural, economic and political environments?
 
 # Methods:
 
@@ -580,23 +581,29 @@ Population <- select(Population, "CountryName", "SP.POP.TOTL")
 tour <- left_join(tourism, Population, by = "CountryName")
 
 # Highest score will get a rank of 1 
-tourism_score <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL)))
+tourism_score <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL))) %>% select("CountryName", "finalscore_security")
 
-as.numeric(as.factor
+colnames(tourism_score)[2] <- "Composite_Tourism_Rank"
+ tourism_score %>%
+   arrange(Composite_Tourism_Rank) %>%
+   slice(1:5)
 ```
 
 Ethnic Diversity: Ethniz Fractionalization is commonly used in Economics literature to compare the levels of ethnic, cultural, linguistic and religious fractionalization in different countries ([Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level)). We use this as a measure of ethnic diversity in a country. Inclusion of this measure is one of the key strengths of our  project, since this was not included in earlier World Happiness Indices, but has been shown to be associated with health and [well-being](http://ftp.iza.org/dp9726.pdf). At a time when more [future research](http://www.nuffieldfoundation.org/impact-ethnic-diversity-well-being-and-health) is also being undertaken in this domain, we find it particularly relevant to include this in our index.
 
 ```{r}
 url <- "https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level"
-pop <- read_csv("../WDI data split/Population.csv")
 h <- read_html(url)
 efindex <- h %>% html_nodes("table") %>% html_table(fill = TRUE) %>%
         .[[3]]
 
 diversity <- select(efindex, "Country", "Ethnic Diversity Rank")
 colnames(diversity)[1] <- "CountryName"
-colnames(diversity)[2] <- "finalrank_diversity"
+colnames(diversity)[2] <- "Composite_Diversity_Rank"
+ 
+diversity %>%
+   arrange(Composite_Diversity_Rank) %>%
+   slice(1:5)
 ```
 
 # Extracting Data from the World Happiness Report Dataset
