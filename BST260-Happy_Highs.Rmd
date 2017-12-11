@@ -667,7 +667,7 @@ ts %>%
 
 ```
 
-Ethnic Diversity: Ethniz Fractionalization is commonly used in Economics literature to compare the levels of ethnic, cultural, linguistic and religious fractionalization in different countries ([Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level)). We use this as a measure of ethnic diversity in a country. Inclusion of this measure is one of the key strengths of our  project, since this was not included in earlier World Happiness Indices, but has been shown to be associated with health and [well-being](http://ftp.iza.org/dp9726.pdf). At a time when more [future research](http://www.nuffieldfoundation.org/impact-ethnic-diversity-well-being-and-health) is also being undertaken in this domain, we find it particularly relevant to include this in our index.
+Ethnic Diversity: Ethnic Fractionalization is commonly used in Economics literature to compare the levels of ethnic, cultural, linguistic and religious fractionalization in different countries ([Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level)). We use this as a measure of ethnic diversity in a country. Inclusion of this measure is one of the key strengths of our  project, since this was not included in earlier World Happiness Indices, but has been shown to be associated with health and [well-being](http://ftp.iza.org/dp9726.pdf). At a time when more [future research](http://www.nuffieldfoundation.org/impact-ethnic-diversity-well-being-and-health) is also being undertaken in this domain, we find it particularly relevant to include this in our index.
 
 ```{r}
 url <- "https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level"
@@ -953,7 +953,7 @@ final_score %>%
   geom_boxplot(show.legend = FALSE)+
     aes(x = fct_reorder(region,finalindex)) + 
   labs(colour = "Regions",
-       title = "Scatter plot showing the distribution of country ranks by region", 
+       title = "Box plot showing the distribution of country ranks by region", 
        x = "Country", 
        y = "Wellbeing Index ranking") + 
   theme_igray()
@@ -1092,6 +1092,6 @@ mapCountryData(finalrankdiv,
 ## Final Analysis:
 A)What did you learn about the data? 
 Data cleaning, wrangling 
-Data very broad
+
 How did you answer the questions? 
 How can you justify your answers?
