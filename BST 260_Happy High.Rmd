@@ -159,7 +159,7 @@ Energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.
 
 #removing rows with NA Variables >  and filling in remaining na's with same country means
  Energy <- Energy[order(-Energy$Year),]
- Energy[rowSums(is.na(Energy)) < ncol(Energy)/2, ]
+ Energy <- Energy[rowSums(is.na(Energy)) < ncol(Energy)/2, ]
  Energy<- aggregate(x=Energy[c("EG.ELC.ACCS.ZS","EG.FEC.RNEW.ZS","EG.USE.COMM.FO.ZS","EG.USE.ELEC.KH.PC")], by=list(name=Energy$CountryName), FUN = "mean" , na.rm = TRUE)
  colnames(Energy)[1] <- "CountryName"
  Energy <- Energy%>% distinct(CountryName, .keep_all = TRUE)
@@ -192,8 +192,11 @@ Energy_score <- Energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 +
 Energy_score <- Energy_score %>% mutate(finalrank_eng = rank(Energy_score$score_eng))
 
 Energy_score <- Energy_score %>% select("CountryName", "finalrank_eng")
-colnames(Energy_score)[2] <- "Composite_Energy_Rank"
- Energy_score %>%
+
+en_s <- Energy_score
+colnames(en_s)[2] <- "Composite_Energy_Rank"
+
+en_s %>%
    arrange(Composite_Energy_Rank) %>%
    slice(1:5)
 ```
@@ -214,8 +217,10 @@ emissions_score <- emissions %>%
   mutate(finalrank_emission = rank(mean_CO2))
 
 escore <- emissions_score %>% select("CountryName", "finalrank_emission")
-colnames(escore)[2] <- "Composite_Emissions_Rank"
- escore %>%
+em_s <- escore
+colnames(em_s)[2] <- "Composite_Emissions_Rank"
+ 
+em_s %>%
    arrange(Composite_Emissions_Rank) %>%
    slice(1:5)
 ```
@@ -239,11 +244,12 @@ environment_score <- envir %>%
   mutate(finalrank_env = rank(-score)) %>%
   select("CountryName", "finalrank_env")
 
-colnames(environment_score)[2] <- "Composite_Environment_Rank"
- environment_score %>%
+env_s <- environment_score
+colnames(env_s)[2] <- "Composite_Environment_Rank"
+ 
+env_s  %>%
    arrange(Composite_Environment_Rank) %>%
    slice(1:5)
-
 ```
 
 Communication/Connectivity score: This score is based on Mobile Cellular subscriptions (per 100 people) and Internet Users (per 100 people)
@@ -254,7 +260,7 @@ Communication/Connectivity score: This score is based on Mobile Cellular subscri
 
 Communication <- WDI4 %>% filter(IndicatorCode == "IT.CEL.SETS.P2"|IndicatorCode == "IT.NET.USER.P2")  %>% spread(IndicatorCode, Value)
  Communication <- Communication[order(-Communication$Year),]
- Communication[rowSums(is.na(Communication)) < ncol(Communication)/2, ]
+ Communication <- Communication[rowSums(is.na(Communication)) < ncol(Communication)/2, ]
  Communication<- aggregate(x=Communication[c("IT.CEL.SETS.P2","IT.NET.USER.P2")], by=list(name=Communication$CountryName), FUN = "mean" , na.rm = TRUE)
  colnames(Communication)[1] <- "CountryName"
 Communication <- Communication %>% mutate(rankcell = rank(IT.CEL.SETS.P2)) 
@@ -263,8 +269,10 @@ Communication <- Communication %>% mutate(score = (rankcell+ranknet)/2)
 Communication <- Communication %>% mutate(finalrank_comm = rank(-Communication$score))
 Communication_score <- select(Communication, "CountryName", "finalrank_comm" )
 
-colnames(Communication_score)[2] <- "Composite_Communications_Rank"
- Communication_score %>%
+com_s <-Communication_score
+colnames(com_s)[2] <- "Composite_Communications_Rank"
+ 
+com_s %>%
    arrange(Composite_Communications_Rank) %>%
    slice(1:5)
 ```
@@ -300,8 +308,12 @@ childwelfare_score <- mutate(childwelfare, finalscore_child = as.numeric
                        (as.factor(rank(((rank.neet+rank.imr)/2)))))
 
 childwelfare_score <- childwelfare_score %>% select("CountryName","finalscore_child")
-colnames(childwelfare_score)[2] <- "Composite_ChildWelfare_Rank"
- childwelfare_score %>%
+
+chld_s <- childwelfare_score
+
+colnames(chld_s)[2] <- "Composite_ChildWelfare_Rank"
+ 
+chld_s %>%
    arrange(Composite_ChildWelfare_Rank) %>%
    slice(1:5)
 ```
@@ -322,8 +334,11 @@ deficit_score <- deficit %>% mutate(finalrank_deficit =
                                 as.numeric(as.factor(rank((deficit$SN.ITK.DFCT)))))
 
 deficit_score <- deficit_score %>% select("CountryName", "finalrank_deficit")
-colnames(deficit_score)[2] <- "Composite_Deficit_Rank"
- deficit_score %>%
+
+def_s <- deficit_score
+colnames(def_s)[2] <- "Composite_Deficit_Rank"
+ 
+def_s  %>%
    arrange(Composite_Deficit_Rank) %>%
    slice(1:5)
 ```
@@ -389,14 +404,17 @@ GDP2[i] <- rowMeans(GDP2[,-1], na.rm = TRUE)[i[,1]]
 
 # Country with the highest average score will rank 1
 GDP2 <- GDP2 %>% mutate(score_gdp = (finalrank_mil + finalrank_ppp+ finalrank_gdp + finalrank_gdpg + finalrank_infl)/5)
+
 economy_score <- GDP2 %>% mutate(finalrank_GDP = rank(GDP2$score_gdp))
 
 economy_score <- economy_score %>% select("CountryName", "finalrank_GDP")
-colnames(economy_score)[2] <- "Composite_Economic_Rank"
-es <- economy_score %>%
+
+es <- economy_score
+
+colnames(es)[2] <- "Composite_Economic_Rank"
+es %>%
    arrange(Composite_Economic_Rank) %>%
    slice(1:5)
-es
 ```
 
 Education score: Assessed as an average aggregate of Youth literacy rate, population 15-24 years, both sexes (%) and Adult literacy rate, population 15+ years, both sexes (%) 
@@ -428,10 +446,13 @@ Education <- select(litjoin,"CountryName", "rank_eng1", "rank_eng2")
 Education <- Education%>% mutate(score_edu = (rank_eng1 + rank_eng2)/2)
 Education_score <- Education %>% mutate(finalrank_edu = rank(Education$score_edu)) %>% select("CountryName", "finalrank_edu")
 
-colnames(Education_score)[2] <- "Composite_Education_Rank"
- Education_score %>%
+ed_s<-Education_score
+colnames(ed_s)[2] <- "Composite_Education_Rank"
+
+ed_s %>%
    arrange(Composite_Education_Rank) %>%
    slice(1:5)
+
 ```
 
 Gender score: Assessed by proportion of seats held by women in national parliaments (%)
@@ -449,11 +470,13 @@ Gender_score <- gender %>% mutate(finalrank_gen = rank(-gender$SG.GEN.PARL.ZS))
 Gender_score$finalrank_gen<- as.numeric(as.factor(Gender_score$finalrank_gen))
 
 Gender_score <- Gender_score %>% select("CountryName", "finalrank_gen")
-colnames(Gender_score)[2] <- "Composite_Gender_Rank"
- Gender_score %>%
+
+gs <- Gender_score
+colnames(gs)[2] <- "Composite_Gender_Rank"
+
+gs %>%
    arrange(Composite_Gender_Rank) %>%
    slice(1:5)
-
 ```
 
 An interesting finding from our ranking, is the fact that Rwanda ranks No. 1 in the list of countries with the highest proportion of women in their parliaments. This is likely a reflection of its traditionally matriarchal society, increasing equity in gender roles in the country. [More](https://www.thedailybeast.com/two-decades-after-genocide-rwandas-women-have-made-the-nation-thrive) on this [here](https://kristof.blogs.nytimes.com/2008/10/07/when-it-comes-to-women-lawmakers-rwanda-leads-the-world/).
@@ -472,10 +495,13 @@ empl <- empl %>% distinct(CountryName, .keep_all = TRUE)
 employment_score <- empl %>% mutate(finalrank_empl =
                           as.numeric(as.factor(rank(-(empl$SL.EMP.WORK.ZS))))) %>% select("CountryName", "finalrank_empl")
 
-colnames(employment_score)[2] <- "Composite_Employment_Rank"
- employment_score %>%
+emp_s <- employment_score
+colnames(emp_s)[2] <- "Composite_Employment_Rank"
+
+emp_s %>%
    arrange(Composite_Employment_Rank) %>%
    slice(1:5)
+
 ```
 
 Population score: Final rank is positively correlated lower population density, lower GINI indices and  higher life expectancies at birth
@@ -486,10 +512,11 @@ Population score: Final rank is positively correlated lower population density, 
 Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "SM.POP.TOTL.ZS"|IndicatorCode == "SP.DYN.LE00.IN" | IndicatorCode == "SP.POP.TOTL"| IndicatorCode == "EN.POP.DNST") %>% spread(IndicatorCode, Value)
 
  Population <- Population[order(-Population$Year),]
- Population[rowSums(is.na(Population)) < ncol(Population)/2, ]
+ Population <- Population[rowSums(is.na(Population)) < ncol(Population)/2, ]
  Population<- aggregate(x=Population[c("EN.POP.DNST","SI.POV.GINI","SM.POP.TOTL.ZS","SP.DYN.LE00.IN", "SP.POP.TOTL")], by=list(name=Population$CountryName), FUN = "mean" , na.rm = TRUE)
+ 
  colnames(Population)[1] <- "CountryName"
-  Population[rowSums(is.na(Population)) < ncol(Population)/2, ]
+Population <- Population[rowSums(is.na(Population)) < ncol(Population)/2, ]
  Population <- Population%>% distinct(CountryName, .keep_all = TRUE)
 
 # Population density (people per sq. km of land area): Lowest ranked 1
@@ -519,18 +546,17 @@ Population <- left_join(Popjoin, Population3, "CountryName")
  Population_score <- Population %>% mutate(score_pop = ((finalrank_pop1 + finalrank_pop2 + finalrank_pop3)/3))
  Population_score <- Population_score %>% mutate(finalrank_pop = rank(Population_score$score_pop)) %>% select("CountryName", "finalrank_pop")
  
-colnames(Population_score)[2] <- "Composite_Population_Rank"
-Population_score %>% 
+ps <-Population_score
+colnames(ps)[2] <- "Composite_Population_Rank"
+
+ps %>% 
   arrange(Composite_Population_Rank) %>% 
   slice(1:5)
- 
-
 ```
 
 Sense of Security Composite score: Assessed by Strength of Legal system, and inversely related to intentional homicide rate (per 100,000)
 
 ```{r}
-
 security <- WDI4 %>% filter(IndicatorCode == "VC.IHR.PSRC.P5"|IndicatorCode == "IC.LGL.CRED.XQ") %>% spread(IndicatorCode, Value)
 
 #Strength of legal system - rank generates best legal strength at 1
@@ -558,10 +584,14 @@ security_score <- mutate(security_score,
                      finalscore_security = as.numeric(as.factor(rank((rank.legal+rank.homi)/2))))
 
 security_score <- security_score %>% select("CountryName", "finalscore_security")
-colnames(security_score)[2] <- "Composite_Security_Rank"
- security_score %>%
+
+sec_s <- security_score
+colnames(sec_s)[2] <- "Composite_Security_Rank"
+
+sec_s %>%
    arrange(Composite_Security_Rank) %>%
    slice(1:5)
+
 ```
 
 Tourism score: Assessed by number of international departures (% of total population)
@@ -583,10 +613,13 @@ tour <- left_join(tourism, Population, by = "CountryName")
 # Highest score will get a rank of 1 
 tourism_score <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL))) %>% select("CountryName", "finalrank_tourism")
 
-colnames(tourism_score)[2] <- "Composite_Tourism_Rank"
- tourism_score %>%
+ts <-tourism_score
+colnames(ts)[2] <- "Composite_Tourism_Rank"
+
+ts %>%
    arrange(Composite_Tourism_Rank) %>%
    slice(1:5)
+
 ```
 
 Ethnic Diversity: Ethniz Fractionalization is commonly used in Economics literature to compare the levels of ethnic, cultural, linguistic and religious fractionalization in different countries ([Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level)). We use this as a measure of ethnic diversity in a country. Inclusion of this measure is one of the key strengths of our  project, since this was not included in earlier World Happiness Indices, but has been shown to be associated with health and [well-being](http://ftp.iza.org/dp9726.pdf). At a time when more [future research](http://www.nuffieldfoundation.org/impact-ethnic-diversity-well-being-and-health) is also being undertaken in this domain, we find it particularly relevant to include this in our index.
@@ -599,11 +632,14 @@ efindex <- h %>% html_nodes("table") %>% html_table(fill = TRUE) %>%
 
 diversity <- select(efindex, "Country", "Ethnic Diversity Rank")
 colnames(diversity)[1] <- "CountryName"
-colnames(diversity)[2] <- "Composite_Diversity_Rank"
- 
-diversity %>%
+colnames(diversity)[2] <- "finalrank_diversity"
+
+ds <- diversity
+colnames(ds)[2] <- "Composite_Diversity_Rank"
+ds %>%
    arrange(Composite_Diversity_Rank) %>%
    slice(1:5)
+
 ```
 
 # Extracting Data from the World Happiness Report Dataset
@@ -625,8 +661,9 @@ pos_affect <- WHR %>%
   na.omit() %>%
   mutate(finalrank_pos = rank(mean_pa)) %>% select("CountryName", "finalrank_pos")
 
-colnames(pos_affect)[2] <- "Positive_Affect_Rank" 
-pos_affect %>%
+pos_a <- pos_affect
+colnames(pos_a)[2] <- "Positive_Affect_Rank" 
+pos_a %>%
    arrange(Positive_Affect_Rank) %>%
    slice(1:5)
 
@@ -637,8 +674,9 @@ neg_affect <- WHR %>%
   na.omit() %>%
   mutate(finalrank_neg = rank(mean_na)) %>% select("CountryName", "finalrank_neg")
 
-colnames(neg_affect)[2] <- "Negative_Affect_Rank" 
-neg_affect %>%
+neg_a <- neg_affect
+colnames(neg_a)[2] <- "Negative_Affect_Rank" 
+neg_a %>%
    arrange(Negative_Affect_Rank) %>%
    slice(1:5)
 ```
@@ -659,12 +697,13 @@ colnames(hpi_data_2016)[2] <- "CountryName"
  hpi_data_2016$finalrank_hpi <- as.numeric(as.factor(hpi_data_2016$finalrank_hpi2))
  
 happyplanet_score <- select(hpi_data_2016,"CountryName","finalrank_hpi")
-colnames(happyplanet_score)[2] <- "InequalityAdjusted_WellBeing_Rank"
-happyplanet_score %>%
+
+hps <-happyplanet_score
+colnames(hps)[2] <- "InequalityAdjusted_WellBeing_Rank"
+
+hps %>%
    arrange(InequalityAdjusted_WellBeing_Rank) %>%
    slice(1:5)
-
-
 ```
 
 
@@ -688,12 +727,12 @@ final_score_table <- Communication_score %>%
   full_join(happyplanet_score, by='CountryName')%>%
   full_join(neg_affect, by='CountryName')%>%
   full_join(pos_affect, by='CountryName')
+final_score_table
 ```
 
 ```{r, ECHO = FALSE}
 # This contains the columns with only the required final ranks for each variable
 final_score <- final_score_table %>% select(CountryName,
-                                            finalscore_child,
                                             finalrank_comm,
                                             finalrank_diversity,
                                             finalrank_edu,
@@ -705,6 +744,7 @@ final_score <- final_score_table %>% select(CountryName,
                                             finalrank_gen,
                                             finalrank_GDP,
                                             finalrank_pop,
+                                            finalscore_child,
                                             finalscore_security,
                                             finalrank_tourism,
                                             finalrank_hpi,
@@ -814,7 +854,7 @@ final_score$region[(final_score$sub.region == "Western Asia" | final_score$sub.r
 
 final_score$region[(final_score$sub.region == "Western Europe" | final_score$sub.region == "Eastern Europe" | final_score$sub.region == "Southern Europe")  & is.na(final_score$region)] <- "Europe"
 
-final score <- final score %>% select("CountryName", "region","sub.region","ourindex", "finalindex")
+final_score <- final_score %>% select("CountryName", "region","sub.region","ourindex", "finalindex")
 colnames(final_score)[1] <- "Country"
 colnames(final_score)[2] <- "Region"
 colnames(final_score)[3] <- "Sub-Region"

@@ -1,0 +1,173 @@
+"","Country","Region","Sub-Region","Composite Score","Well-Being Rank"
+"1","Afghanistan","Asia","Southern Asia",96.7,146
+"2","Albania","Europe","Southern Europe",69.71875,60
+"3","Algeria","Africa","Northern Africa",84.0357142857143,107
+"4","Angola","Africa","Middle Africa",86.7142857142857,117
+"5","Argentina","Americas","South America",65.6176470588235,39
+"6","Armenia","Asia","Western Asia",78.7941176470588,90
+"7","Australia","Oceania","Australia and New Zealand",63.6666666666667,35
+"8","Austria","Europe","Western Europe",46.40625,8
+"9","Azerbaijan","Asia","Western Asia",82,99
+"10","Bahrain","Asia","Western Asia",92.6666666666667,137
+"11","Bangladesh","Asia","Southern Asia",93.2,139
+"12","Barbados","Americas","Caribbean",97.3,148
+"13","Belarus","Europe","Eastern Europe",66.8461538461538,45
+"14","Belgium","Europe","Western Europe",53.7,17
+"15","Belize","Americas","Central America",83.8846153846154,105
+"16","Benin","Africa","Western Africa",87.1333333333333,119
+"17","Bhutan","Asia","Southern Asia",78.5384615384615,88
+"18","Bolivia","Americas","South America",73.4117647058823,70
+"19","Bosnia and Herzegovina","Europe","Southern Europe",69.2333333333333,55
+"20","Botswana","Africa","Southern Africa",84,106
+"21","Brazil","Americas","South America",67.7647058823529,49
+"22","Brunei Darussalam","Asia","South-Eastern Asia",70.25,62
+"23","Bulgaria","Europe","Eastern Europe",56.78125,22
+"24","Burkina Faso","Africa","Western Africa",84.2142857142857,108
+"25","Burundi","Africa","Eastern Africa",101.071428571429,158
+"26","Cabo Verde","Africa","Western Africa",100.045454545455,155
+"27","Cambodia","Asia","South-Eastern Asia",74.8666666666667,79
+"28","Cameroon","Africa","Middle Africa",73.03125,69
+"29","Canada","Americas","Northern America",58.2333333333333,23
+"30","Caribbean small states","Americas","South America",87.7272727272727,122
+"31","Central African Republic","Africa","Middle Africa",99.7,154
+"32","Chad","Africa","Middle Africa",92.96875,138
+"33","Chile","Americas","South America",63.4705882352941,34
+"34","China","Asia","Eastern Asia",67.5882352941177,48
+"35","Colombia","Americas","South America",72.7058823529412,67
+"36","Comoros","Africa","Eastern Africa",104.291666666667,160
+"37","Costa Rica","Americas","Central America",61.15625,30
+"38","Cote d'Ivoire","Africa","Western Africa",94.0384615384615,140
+"39","Croatia","Europe","Southern Europe",55.6875,20
+"40","Cuba","Americas","Caribbean",73.6,71
+"41","Cyprus","Asia","Western Asia",72.875,68
+"42","Czech Republic","Europe","Eastern Europe",55.6333333333333,19
+"43","Democratic Republic of Congo","Africa","Middle Africa",87.5454545454545,121
+"44","Denmark","Europe","Northern Europe",47.9,10
+"45","Djibouti","Africa","Eastern Africa",104.454545454545,161
+"46","Dominican Republic","Americas","Caribbean",85.3529411764706,113
+"47","Ecuador","Americas","South America",69.7058823529412,59
+"48","Egypt, Arab Rep.",NA,NA,103.576923076923,159
+"49","El Salvador","Americas","Central America",83,102
+"50","Equatorial Guinea","Africa","Middle Africa",106,162
+"51","Eritrea","Africa","Eastern Africa",94.45,143
+"52","Estonia","Europe","Northern Europe",40.46875,4
+"53","Ethiopia","Africa","Eastern Africa",74.5333333333333,74
+"54","Fiji","Oceania","Melanesia",88.2916666666667,125
+"55","Finland","Europe","Northern Europe",41.6666666666667,5
+"56","France","Europe","Western Europe",54.3333333333333,18
+"57","Gabon","Africa","Middle Africa",62.0625,32
+"58","Gambia","Africa","Western Africa",107.230769230769,164
+"59","Georgia","Asia","Western Asia",66.7647058823529,44
+"60","Germany","Europe","Western Europe",50.8928571428571,14
+"61","Ghana","Africa","Western Africa",74.84375,78
+"62","Greece","Europe","Southern Europe",69.46875,56
+"63","Guatemala","Americas","Central America",82.5294117647059,100
+"64","Guinea","Africa","Western Africa",94.125,141
+"65","Guinea-Bissau","Africa","Western Africa",92.5,135
+"66","Guyana","Americas","South America",85.5769230769231,114
+"67","Haiti","Americas","Caribbean",108.384615384615,165
+"68","Honduras","Americas","Central America",84.4411764705882,110
+"69","Hungary","Europe","Eastern Europe",60.6875,29
+"70","Iceland","Europe","Northern Europe",44.5,6
+"71","India","Asia","Southern Asia",94.6764705882353,144
+"72","Indonesia","Asia","South-Eastern Asia",70.6176470588235,63
+"73","Iran","Asia","Western Asia",97.53125,149
+"74","Iraq","Asia","Western Asia",99.5357142857143,153
+"75","Ireland","Europe","Northern Europe",65.7333333333333,40
+"76","Israel","Asia","Western Asia",74.7,76
+"77","Italy","Europe","Southern Europe",60.46875,28
+"78","Jamaica","Americas","Caribbean",100.3125,157
+"79","Japan","Asia","Eastern Asia",68.1,53
+"80","Jordan","Asia","Western Asia",83.75,104
+"81","Kazakhstan","Asia","Central Asia",64.09375,36
+"82","Kenya","Africa","Eastern Africa",76,84
+"83","Kiribati","Oceania","Micronesia",115.8,171
+"84","Kuwait","Asia","Western Asia",91.1923076923077,131
+"85","Kyrgyzstan","Asia","Central Asia",67.8125,50
+"86","Lao PDR",NA,NA,79.4090909090909,92
+"87","Latvia","Europe","Northern Europe",40.1875,3
+"88","Lebanon","Asia","Western Asia",92.5357142857143,136
+"89","Lesotho","Africa","Southern Africa",113.285714285714,170
+"90","Liberia","Africa","Western Africa",97.6,150
+"91","Libya","Africa","Northern Africa",107,163
+"92","Lithuania","Europe","Northern Europe",48.09375,11
+"93","Luxembourg","Europe","Western Europe",46.4615384615385,9
+"94","Macedonia","Europe","Southern Europe",69.1333333333333,54
+"95","Madagascar","Africa","Eastern Africa",85.75,115
+"96","Malawi","Africa","Eastern Africa",89.7666666666667,128
+"97","Malaysia","Asia","South-Eastern Asia",65.28125,38
+"98","Mali","Africa","Western Africa",98.9642857142857,152
+"99","Malta","Europe","Southern Europe",81.7666666666667,98
+"100","Mauritania","Africa","Western Africa",95.0357142857143,145
+"101","Mauritius","Africa","Eastern Africa",78.3823529411765,87
+"102","Mexico","Americas","Central America",67.8235294117647,51
+"103","Moldova","Europe","Eastern Europe",81.4,97
+"104","Mongolia","Asia","Eastern Asia",80.0625,93
+"105","Montenegro","Europe","Southern Europe",53.4285714285714,16
+"106","Morocco","Africa","Northern Africa",80.4,94
+"107","Mozambique","Africa","Eastern Africa",71.3571428571429,64
+"108","Myanmar","Asia","South-Eastern Asia",91.7142857142857,132
+"109","Namibia","Africa","Southern Africa",79.3666666666667,91
+"110","Nepal","Asia","Southern Asia",69.625,57
+"111","Netherlands","Europe","Western Europe",58.9333333333333,25
+"112","New Zealand","Oceania","Australia and New Zealand",53.1333333333333,15
+"113","Nicaragua","Americas","Central America",77.28125,85
+"114","Niger","Africa","Western Africa",87.3,120
+"115","Nigeria","Africa","Western Africa",84.6071428571429,112
+"116","Norway","Europe","Northern Europe",48.3928571428571,12
+"117","Oman","Asia","Western Asia",86.6666666666667,116
+"118","Pakistan","Asia","Southern Asia",98.2142857142857,151
+"119","Panama","Americas","Central America",67.5625,46
+"120","Papua New Guinea","Oceania","Melanesia",108.545454545455,166
+"121","Paraguay","Americas","South America",75.4705882352941,81
+"122","Peru","Americas","South America",66.0294117647059,42
+"123","Philippines","Asia","South-Eastern Asia",88.25,124
+"124","Poland","Europe","Eastern Europe",58.625,24
+"125","Portugal","Europe","Southern Europe",64.8,37
+"126","Qatar","Asia","Western Asia",100.227272727273,156
+"127","Republic of Congo","Africa","Western Africa",84.2692307692308,109
+"128","Romania","Europe","Eastern Europe",65.90625,41
+"129","Russia","Europe","Eastern Europe",62,31
+"130","Rwanda","Africa","Eastern Africa",92.28125,134
+"131","Samoa","Oceania","Polynesia",89.7916666666667,129
+"132","Saudi Arabia","Asia","Western Asia",74.75,77
+"133","Senegal","Africa","Western Africa",72.5,66
+"134","Serbia","Europe","Southern Europe",68.0714285714286,52
+"135","Seychelles","Africa","Eastern Africa",77.5416666666667,86
+"136","Sierra Leone","Africa","Western Africa",90.53125,130
+"137","Singapore","Asia","South-Eastern Asia",62.3,33
+"138","Slovakia","Europe","Eastern Europe",55.8333333333333,21
+"139","Slovenia","Europe","Southern Europe",45.25,7
+"140","Somalia","Africa","Eastern Africa",111.318181818182,169
+"141","South Africa","Africa","Southern Africa",74.6470588235294,75
+"142","South Korea","Asia","South-Eastern Asia",69.65625,58
+"143","Spain","Europe","Southern Europe",50.59375,13
+"144","Sri Lanka","Asia","Southern Asia",75.2941176470588,80
+"145","Sudan","Africa","Northern Africa",87.9583333333333,123
+"146","Suriname","Americas","South America",83.5,103
+"147","Swaziland","Africa","Southern Africa",110.875,168
+"148","Sweden","Europe","Northern Europe",34.1,1
+"149","Switzerland","Europe","Western Europe",38.7333333333333,2
+"150","Syria","Asia","Western Asia",96.9,147
+"151","Tajikistan","Asia","Central Asia",75.75,83
+"152","Tanzania","Africa","Middle Africa",69.78125,61
+"153","Thailand","Asia","South-Eastern Asia",74.3529411764706,73
+"154","Timor-Leste","Asia","South-Eastern Asia",110.75,167
+"155","Togo","Africa","Western Africa",86.9333333333333,118
+"156","Trinidad and Tobago","Americas","Caribbean",84.5882352941177,111
+"157","Tunisia","Africa","Northern Africa",72.4333333333333,65
+"158","Turkey","Asia","Western Asia",75.5,82
+"159","Turkmenistan","Asia","Central Asia",94.3076923076923,142
+"160","Uganda","Africa","Eastern Africa",92.2647058823529,133
+"161","Ukraine","Europe","Eastern Europe",73.6875,72
+"162","United Arab Emirates","Asia","Western Asia",80.4090909090909,95
+"163","United Kingdom","Europe","Western Europe",60.3333333333333,27
+"164","United States of America","Americas","Northern America",60.25,26
+"165","Uruguay","Americas","South America",66.2941176470588,43
+"166","Uzbekistan","Asia","Central Asia",88.4666666666667,126
+"167","Vanuatu","Oceania","Melanesia",89.6666666666667,127
+"168","Venezuela","Americas","South America",81.2647058823529,96
+"169","Vietnam","Asia","South-Eastern Asia",67.5666666666667,47
+"170","Yemen","Asia","Western Asia",116.84375,172
+"171","Zambia","Africa","Eastern Africa",78.6333333333333,89
+"172","Zimbabwe","Africa","Eastern Africa",82.6176470588235,101
