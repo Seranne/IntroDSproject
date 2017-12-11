@@ -1,25 +1,65 @@
 ---
-title: "BST 260_Happy Highs"
+title: "BST 260- Happy Highs"
 sub_title: "Exploring the Realm of Happiness and Well-being"
 author: "Seranne Motital, Shravanthi Seshasayee, Sanjana Sunderesan"
-date: "9 December 2017"
+date: "10 December 2017"
 output: html_document
 ---
 
-```{r echo=FALSE}
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 library(dplyr)
 library(tidyverse)
+library(rworldmap)
 library(knitr)
 library(readr)
-library(tidyverse)
-library(readr)
+library(ggthemes)
 library(ggplot2)
 library(rvest)
+library(gridExtra)
+library(maps)
+library(forcats)
 ```
 
-# Overview and Motivation
+**Overview and Motivation**
 
 [The World Happiness Report](http://worldhappiness.report/overview/) is a composite measure of country-level happiness based on economic and social factors such as per capita GDP, social support, healthy life expectancy at birth, freedom to make life choices, generosity and perceptions of corruption, released annually by the United Nations Sustainable Development Solutions Network. In the present landscape of shifting political and economic climates across the world, we believe it is important to expand and include measures which encompass a wider narrative of the human experience. 
+
+#WHR happiness index
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+url <- "https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Source%20Data/World%20Happiness%20Report/2016.csv"
+whr <- read_csv(url)
+
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+
+#joining the data to a map
+whrplot<- joinCountryData2Map(whr, 
+                              joinCode = "NAME", 
+                              nameJoinColumn = "Country")
+
+#creating a user defined colour palette
+op <- palette(c('green', 'yellow','red'))
+
+#find quartile breaks
+cutVector <- quantile(whrplot@data[["Happiness Rank"]],na.rm=TRUE) 
+
+#classify the data to a factor
+whrplot@data[["Happy-categories"]] <- cut(whrplot@data[["Happiness Rank"]],
+                                                 c(1,25,75,100,125,150,200),
+                                                 include.lowest=TRUE )
+#rename the categories
+levels(whrplot@data[["Happy-categories"]]) <- c('Very High', 'High','High Average','Low Average','Low','Very Low')  
+
+#mapping
+mapCountryData(whrplot, 
+               nameColumnToPlot='Happy-categories',
+               catMethod='categorical',
+               mapTitle='Happiness Index from the WHR', 
+               colourPalette='palette',
+               oceanCol='lightblue',
+               missingCountryCol='white',
+               borderCol='black')
+```
 
 We are keen to understand the association between country-level physical, financial, social, cultural, political, and environmental indicators and the parent country's ranking on an overall well-being index. For instance, [literature](https://bmcpublichealth.biomedcentral.com/articles/10.1186/1471-2458-13-496) shows that "fear of crime represents a complex set of responses to the environment. It may play a role in mediating environmental impacts on health and wellbeing". Conversely, in his [book](http://www.palgrave.com/us/book/9780333548080), "Politics, Women and Well-being", Robin Jeffrey discusses the key role played by a more gender-equal society in the overall health and improvement of a state in India. 
 
@@ -28,13 +68,13 @@ Similar to these findings, we strongly believe it is of great relevance to learn
 We hope to understand the underlying variables most responsible for these scores, and identify conceptual and measurement gaps in the development of an overall score of country-level well-being. We believe that factors such as racial diversity, environmental sustainability, and population skew, among others, are either missing or underrepresented in the present composite measure. We aim to modify this to build a more well-rounded measure of the well-being of a country.  
 We believe that this information could potentially inform policies to improve overall country happiness and human flourishing.  
 
-# Initial Questions: 
+**Initial Questions:** 
 
 We began our project with the goal of identifying yearly-changes in a country's happiness and well-being. However, as we learnt more about how these composite indices are derived, we grew keen to understand the factors considered in the creation of a well-being score. Over the course of our literature review, we identified more variables we believe are relevant to a population's well-being, and decided to create a new, incremented ranking of country well-being with this additional data. Thus, our project seeks to answer: 
 
 Is there a change in the average ranking of a country's happiness and well-being, given the inclusion of a more comprehensive variable list representing its physical, social, cultural, economic and political environments?
 
-# Data:
+**Data:**
 
 In order to develop our well-being index, we extracted data from a number of resources, categorized below: 
 
@@ -56,19 +96,9 @@ From each of our sources, we selected variables most relevant to the creation of
 
 A country-wise ranking was then generated for each variable, in every category. Every country then received a category-wise composite score, calculated as an equally-weighted average of the mean variable ranks. 
 
-# Exploratory Analysis: 
+**Methods:**
 
-]- Samples in the WHR (1000 per country not taking into acount population density or total population), doesn't take into consideration - 
-- Scatterplot of the WHR countries ranks?
-- Association between maybe ethnic fractionalization/total population/environmental biodiversity and these ranks? [T perhaps justify why we don't think that these ranks are very accurate]
-
-```{r, ECHO = FALSE}
-
-```
-
-## Methods: 
-
-# Extracting data from the World Bank World Development Indicators
+**Extracting data from the World Bank World Development Indicators**
 
 The World Bank's World Development Indicators were downloaded from [Kaggle](https://www.kaggle.com/worldbank/world-development-indicators), and this dataset is available for download as a .csv from [this link](https://drive.google.com/open?id=1ilfW3OIrVs6b4EsFPFbW-dw_vQiQgetU). However, given the large size of this data, our initial stage dataset is available as a smaller-sized url-linked csv (in the following code chunk), on which the rest of the code was run.
 
@@ -149,7 +179,7 @@ levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Yemen, Rep."] <- "Yemen"
 ```
 
 
-# Generating Category scores for each country
+**Generating Category scores for each country**
 
 Composite Energy Score: This score is based on Access to Electricity (% of population), Renewable Energy Consumption (% of final energy consumption), and Fossil fuel energy consumption (% of final energy consumption)
 
@@ -642,7 +672,7 @@ ds %>%
 
 ```
 
-# Extracting Data from the World Happiness Report Dataset
+**Extracting Data from the World Happiness Report Dataset**
 
 UN SDSN World Happiness Report Data is available for the years 2015, 2016 and 2017, the most comprehensive of which was WHR 2016. This is the report we compared against and used in our project. In particular, we extracted two variables from the 2016 World Happiness Report dataset, which we used in our composite well-being index: Citizen report of positive feelings the previous day (Positive Affect), and Citizen Feeling of negative feelings in the previous day (Negative Affect).
 
@@ -681,7 +711,7 @@ neg_a %>%
    slice(1:5)
 ```
 
-# Extracting Data from the Happy Planet Index
+**Extracting Data from the Happy Planet Index**
 
 2016 Happy Planet Index data is available through [this link](http://happyplanetindex.org/countries). A cleaned .CSV is available through the code below, on which further analysis was run. As other variables have been Covered in previous categories, only inequality adjusted well-being indicator was selected for our score.
 
@@ -707,7 +737,7 @@ hps %>%
 ```
 
 
-# Deriving new well-being index, and gathering all the variable indices join to create a composite score: 
+**Deriving new well-being index, and gathering all the variable indices join to create a composite score:** 
 
 ```{r, ECHO = FALSE}
 final_score_table <- Communication_score %>%
@@ -863,6 +893,58 @@ colnames(final_score)[5] <- "Well-Being Rank"
 
 write.csv(final_score, file = "HHWell-Being.Index.csv")
 head(final_score)
-````
+```
 
-## Final Analysis: What did you learn about the data? How did you answer the questions? How can you justify your answers?
+#Scatter plot showing the distribution of country ranks by region
+```{r}
+final_score %>%
+  ggplot(aes(x = Country,
+             y = "Well-Being Rank",
+             colour=final_score$Region))+ 
+  geom_point(size=2, stat="identity") +
+  labs(colour = "Regions",
+       title = "Scatter plot showing the distribution of country ranks by region", 
+       x = "Country", 
+       y = "Well-being Index ranking")+ 
+  theme_igray()+ 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 2.8)) 
+
+```
+
+#Plot showing the mean regional rank
+```{r}
+a<- final_score %>%  group_by(Region) %>% summarise(fi = mean("Well-Being Rank"))
+
+a %>%
+  ggplot(aes(x = Region, 
+             y = fi, 
+             colour = Region))+ 
+  geom_point(show.legend = FALSE, size = 7)+ 
+  aes(x = fct_reorder(Region,
+                      fi))+ 
+  labs(title = "Plot showing the mean regional rank", 
+       x = "Region", 
+       y = "Mean Wellbeing Index ranking per region")+ 
+  theme_igray()
+```
+
+#Scatter plot showing the distribution of country ranks by region
+```{r}
+final_score %>% 
+  ggplot(aes(x = Region,
+             y = "Well-Being Rank",
+              fill = Region))+
+  geom_boxplot(show.legend = FALSE)+
+  aes(x = fct_reorder(Region,"Well-Being Rank")) + 
+  labs(colour = "Regions",
+       title = "Scatter plot showing the distribution of country ranks by region", 
+       x = "Country", 
+       y = "Wellbeing Index ranking") + 
+  theme_igray()
+```
+## Final Analysis:
+A)What did you learn about the data? 
+Data cleaning, wrangling 
+Data very broad
+How did you answer the questions? 
+How can you justify your answers?
