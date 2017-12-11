@@ -56,17 +56,9 @@ From each of our sources, we selected variables most relevant to the creation of
 
 A country-wise ranking was then generated for each variable, in every category. Every country then received a category-wise composite score, calculated as an equally-weighted average of the mean variable ranks. 
 
-<<<<<<< HEAD
-# Exploratory Analysis: What visualizations did you use to look at your data in different ways? What are the different statistical methods you considered? Justify the decisions you made, and show any major changes to your ideas. How did you reach these conclusions?
-=======
 # Exploratory Analysis: 
 
-<<<<<<< HEAD
-=======
->>>>>>> 9fd07cc0fa2e3dc42286b64a039fd181049eb68a
-
->>>>>>> 814f5a038c0eb4e15b1fa96e42e30796a57ab6e1
-- Samples in the WHR (1000 per country not taking into acount population density or total population), doesn't take into consideration - 
+]- Samples in the WHR (1000 per country not taking into acount population density or total population), doesn't take into consideration - 
 - Scatterplot of the WHR countries ranks?
 - Association between maybe ethnic fractionalization/total population/environmental biodiversity and these ranks? [T perhaps justify why we don't think that these ranks are very accurate]
 
@@ -307,7 +299,7 @@ childwelfare <- mutate(childwelfare, rank.neet = as.numeric(as.factor(rank((SL.U
 childwelfare_score <- mutate(childwelfare, finalscore_child = as.numeric
                        (as.factor(rank(((rank.neet+rank.imr)/2)))))
 
-childwelfare_score <- childwelfare_score %>% select("CountryName, finalscore_child")
+childwelfare_score <- childwelfare_score %>% select("CountryName","finalscore_child")
 colnames(childwelfare_score)[2] <- "Composite_ChildWelfare_Rank"
  childwelfare_score %>%
    arrange(Composite_ChildWelfare_Rank) %>%
@@ -324,7 +316,6 @@ deficit <- WDI4 %>% filter(IndicatorCode == "SN.ITK.DFCT") %>% spread(IndicatorC
 deficit <- select(deficit, "CountryName", "Year", "SN.ITK.DFCT")
 deficit <- deficit[order(-deficit$Year),]
 deficit <- deficit %>% distinct(CountryName, .keep_all = TRUE)
-View(deficit)
 
 deficit.score = as.numeric(as.factor(rank((deficit$SN.ITK.DFCT))))
 deficit_score <- deficit %>% mutate(finalrank_deficit = 
@@ -402,9 +393,10 @@ economy_score <- GDP2 %>% mutate(finalrank_GDP = rank(GDP2$score_gdp))
 
 economy_score <- economy_score %>% select("CountryName", "finalrank_GDP")
 colnames(economy_score)[2] <- "Composite_Economic_Rank"
- economy_score %>%
+es <- economy_score %>%
    arrange(Composite_Economic_Rank) %>%
    slice(1:5)
+es
 ```
 
 Education score: Assessed as an average aggregate of Youth literacy rate, population 15-24 years, both sexes (%) and Adult literacy rate, population 15+ years, both sexes (%) 
@@ -577,19 +569,19 @@ Tourism score: Assessed by number of international departures (% of total popula
 ```{r}
 # Selecting indicator: number of international departures (% of total population)
 tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
-write.csv(Tourism, file = "Tourism.csv")
 
 tourism <- select(tourism, "CountryName", "Year", "ST.INT.DPRT")
 tourism <- tourism[order(-tourism$Year),]
 tourism <- tourism %>% distinct(CountryName, .keep_all = TRUE)
-View(tourism)
 
-Population <- filter(Population, pop$Year == "2013")
+Population <- read.csv("https://raw.githubusercontent.com/Seranne/IntroDSproject/master/WDI%20data%20split/Population.csv")
+
+Population <- filter(Population, Population$Year == "2013")
 Population <- select(Population, "CountryName", "SP.POP.TOTL")
 tour <- left_join(tourism, Population, by = "CountryName")
 
 # Highest score will get a rank of 1 
-tourism_score <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL))) %>% select("CountryName", "finalscore_security")
+tourism_score <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL))) %>% select("CountryName", "finalrank_tourism")
 
 colnames(tourism_score)[2] <- "Composite_Tourism_Rank"
  tourism_score %>%
@@ -653,13 +645,7 @@ neg_affect %>%
 
 # Extracting Data from the Happy Planet Index
 
-2016 Happy Planet Index data is available through [this link](http://happyplanetindex.org/countries). A cleaned .CSV is available through the code below this one, on which further analysis was run.
-
-```{r, EVAL=FALSE}
-# Load dataset
-hpi_data_2016 <- readxl::read_xlsx("Your/File/Path/Here.xlsx")
-```
-As other variables have been Covered in previous categories, only inequality adjusted well-being indicator was selected for our score.
+2016 Happy Planet Index data is available through [this link](http://happyplanetindex.org/countries). A cleaned .CSV is available through the code below, on which further analysis was run. As other variables have been Covered in previous categories, only inequality adjusted well-being indicator was selected for our score.
 
 ```{r, ECHO = FALSE}
 # Load dataset
@@ -670,7 +656,7 @@ colnames(hpi_data_2016)[2] <- "CountryName"
  hpi_data_2016 <- na.omit(hpi_data_2016)
  hpi_data_2016  <- hpi_data_2016 %>% distinct(CountryName, .keep_all = TRUE)
  hpi_data_2016  <- hpi_data_2016  %>% mutate(finalrank_hpi2 = rank(-hpi_data_2016 $Inequality.adjusted_Wellbeing))
- hpi_data_2016$finalrank_hpi <- as.numeric(as.factor(hpi_data_20162$finalrank_hpi2))
+ hpi_data_2016$finalrank_hpi <- as.numeric(as.factor(hpi_data_2016$finalrank_hpi2))
  
 happyplanet_score <- select(hpi_data_2016,"CountryName","finalrank_hpi")
 colnames(happyplanet_score)[2] <- "InequalityAdjusted_WellBeing_Rank"
@@ -685,29 +671,28 @@ happyplanet_score %>%
 # Deriving new well-being index, and gathering all the variable indices join to create a composite score: 
 
 ```{r, ECHO = FALSE}
-final_score_table <- communication_score %>%
-  full_join(education_score, by='CountryName') %>%
+final_score_table <- Communication_score %>%
+  full_join(Education_score, by='CountryName') %>%
   full_join(emissions_score, by='CountryName') %>%
   full_join(environment_score, by='CountryName') %>%
-  full_join(foodDeficit_score, by='CountryName') %>%
-  full_join(gender_score, by='CountryName') %>%
-  full_join(population_score, by='CountryName') %>%
+  full_join(deficit_score, by='CountryName') %>%
+  full_join(Gender_score, by='CountryName') %>%
+  full_join(Population_score, by='CountryName') %>%
   full_join(employment_score, by='CountryName') %>%
-  full_join(energy_score, by='CountryName') %>%
+  full_join(Energy_score, by='CountryName') %>%
   full_join(security_score, by='CountryName') %>%
   full_join(tourism_score, by='CountryName') %>%
   full_join(economy_score, by='CountryName') %>%
   full_join(childwelfare_score, by='CountryName')%>%
-  full_join(diversity_score, by='CountryName')%>%
+  full_join(diversity, by='CountryName')%>%
   full_join(happyplanet_score, by='CountryName')%>%
-  full_join(Negative_Affect, by='CountryName')%>%
-  full_join(Positive_Affect, by='CountryName')
+  full_join(neg_affect, by='CountryName')%>%
+  full_join(pos_affect, by='CountryName')
 ```
 
 ```{r, ECHO = FALSE}
 # This contains the columns with only the required final ranks for each variable
 final_score <- final_score_table %>% select(CountryName,
-                                            CountryCode, 
                                             finalscore_child,
                                             finalrank_comm,
                                             finalrank_diversity,
@@ -836,7 +821,8 @@ colnames(final_score)[3] <- "Sub-Region"
 colnames(final_score)[4] <- "Composite Score"
 colnames(final_score)[5] <- "Well-Being Rank"
 
-write.csv(final_score, file = "Happy Highs Well-Being Index")
+write.csv(final_score, file = "HHWell-Being.Index.csv")
+head(final_score)
 ````
 
 ## Final Analysis: What did you learn about the data? How did you answer the questions? How can you justify your answers?
