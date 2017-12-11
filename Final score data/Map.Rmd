@@ -9,7 +9,6 @@ library(gridExtra)
 library(dplyr)
 library(tidyverse)
 library(maps)
-library(rworldmap)
 library(ggthemes)
 library(forcats)
 ```
@@ -28,7 +27,7 @@ whrplot<- joinCountryData2Map(whr,
                               nameJoinColumn = "Country")
 
 #creating a user defined colour palette
-op <- palette(c('blue','green', 'yellow','orange','red'))
+op <- palette(c('green', 'yellow','red'))
 
 #find quartile breaks
 cutVector <- quantile(whrplot@data[["Happiness Rank"]],na.rm=TRUE) 
@@ -72,7 +71,7 @@ CalculatedOurindex %>%
        x = "Country", 
        y = "Well-being Index ranking")+ 
   theme_igray()+ 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 2.2)) 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 2.8)) 
 
 ```
 #Plot showing the mean regional rank
@@ -132,7 +131,7 @@ levels(finalindexplot@data[["Happy-categories"]]) <- c('Very High', 'High','High
 mapCountryData(finalindexplot, 
                nameColumnToPlot='Happy-categories',
                catMethod='categorical',
-               mapTitle='Happiness Index', 
+               mapTitle='Happy Highs Wellbeing Index', 
                colourPalette='palette',
                oceanCol='lightblue',
                missingCountryCol='white',
@@ -165,7 +164,7 @@ mapCountryData(finalrank_emission,
                nameColumnToPlot='Happy-categories',
                catMethod='categorical',
                mapTitle='Emission Index', 
-               colourPalette='palette',
+               colourPalette='heat',
                oceanCol='lightblue',
                missingCountryCol='white', 
                borderCol='black')
@@ -198,7 +197,7 @@ mapCountryData(finalrank_genplot,
                nameColumnToPlot='Happy-categories',
                catMethod='categorical',
                mapTitle='Percentage women in parliament', 
-               colourPalette='palette',
+               colourPalette='diverging',
                oceanCol='lightblue',
                missingCountryCol='white', 
                borderCol='black')
@@ -219,7 +218,7 @@ finalrankdiv <- joinCountryData2Map(CalculatedOurindex,
 op <- palette(c('darkgreen','green','yellow','orange', 'red', 'darkblue'))
 
 #classify the data to a factor
-finalrankdiv@data[["Happy-categories"]] <- cut(finalrankdiv@data[["finalrank_gen"]],
+finalrankdiv@data[["Happy-categories"]] <- cut(finalrankdiv@data[["finalrank_diversity"]],
                                                  c(1,27,54,108,135,163,190),
                                                  include.lowest=TRUE )
 #rename the categories
@@ -230,8 +229,8 @@ levels(finalrankdiv@data[["Happy-categories"]]) <- c('Very High', 'High','High A
 mapCountryData(finalrankdiv,
                nameColumnToPlot='Happy-categories',
                catMethod='categorical',
-               mapTitle='Percentage women in parliament', 
-               colourPalette='palette',
+               mapTitle='Diversity Index', 
+               colourPalette='topo',
                oceanCol='lightblue',
                missingCountryCol='white', 
                borderCol='black')
