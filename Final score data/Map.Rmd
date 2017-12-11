@@ -9,7 +9,6 @@ library(gridExtra)
 library(dplyr)
 library(tidyverse)
 library(maps)
-library(rworldmap)
 library(ggthemes)
 library(forcats)
 ```
