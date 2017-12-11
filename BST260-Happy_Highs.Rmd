@@ -196,6 +196,8 @@ levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Yemen, Rep."] <- "Yemen"
 
 **Generating Category scores for each country**
 
+After selecting the indicators of interest from the shortened WDI dataset, we created individual scores for each category based on the rank that a country achieved for the included variables. 
+
 Composite Energy Score: This score is based on Access to Electricity (% of population), Renewable Energy Consumption (% of final energy consumption), and Fossil fuel energy consumption (% of final energy consumption)
 
 ```{r, ECHO = FALSE}
@@ -750,7 +752,7 @@ hps %>%
    arrange(InequalityAdjusted_WellBeing_Rank) %>%
    slice(1:5)
 ```
-
+**Results**
 
 **Deriving new well-being index, and gathering all the variable indices join to create a composite score:** 
 
@@ -912,6 +914,7 @@ head(fscore)
 ```
 
 #Scatter plot showing the distribution of country ranks by region
+After calculating the composite well-being score, we created a scatter plot of these scores. From the graph, you can see a clear clustering of ranks based on the region of the country. For example, there is a cluster of blue points towards the bottom of the graph. These implies that the best performing countries are from Europe.
 ```{r}
 final_score %>%
   ggplot(aes(x = CountryName,
@@ -928,6 +931,7 @@ final_score %>%
 ```
 
 #Plot showing the mean regional rank
+Next, we looked at the mean of ranks per region and we can clearly see that the smaller ranks cluster in Europe.
 ```{r}
 a<- final_score %>%  group_by(region) %>% summarise(fi = mean(finalindex))
 
@@ -959,6 +963,7 @@ final_score %>%
   theme_igray()
 ```
 #Our Happiness Index
+Finally, we plotted our Happy Highs Well-being score on the world map.
 ```{r}
 par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
 
@@ -1090,8 +1095,11 @@ mapCountryData(finalrankdiv,
                borderCol='black')
 ```
 ## Final Analysis:
-A)What did you learn about the data? 
-Data cleaning, wrangling 
+From the aggregation of our individual category scores, we found that our well-being index did demonstrate a tilt towards European and American regions, with Europe producing the best ranks. However this only tells half the story, with significant shuffling of countries across the index, and the inclusion of countries such as Latvia and Estonia in the Top 10, and countries like Timor Leste and Gambia towards the bottom. Our index highlights the importance of including more relevant and encompassing variables, within population-level composite well-being indices in order to provide greater representation and acknowledgement of the factors which truly matter.
 
-How did you answer the questions? 
-How can you justify your answers?
+## Reasons for potentially skewed data
+1)Missing data problem: Many low and lower-middle income countries lacked data resulting in over representation of upper-middle and high income countries
+
+2)Poor data collection as reflected in the missing data
+
+3)Small sample sizes which were not representative of the total population (eg. ~2000 records for positive and negative affects to represent the 1.25 billion strong population of countries like India)
