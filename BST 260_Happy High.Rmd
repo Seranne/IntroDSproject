@@ -14,11 +14,12 @@ library(readr)
 library(tidyverse)
 library(readr)
 library(ggplot2)
+library(rvest)
 ```
 
 # Overview and Motivation
 
-[The World Happiness Report](http://worldhappiness.report/overview/) is a composite measure of country-level happiness based on economic and social factors such as per capita GDP, social support, healthy life expectancy at birth, freedom to make life choices, generosity and perceptions of corruption, released annually by the United Nations Sustainble Development Solutions Network. In the present landscape of shifting political and economic climates across the world, we believe it is important to expand and include measures which encompass a wider narrative of the human experience. 
+[The World Happiness Report](http://worldhappiness.report/overview/) is a composite measure of country-level happiness based on economic and social factors such as per capita GDP, social support, healthy life expectancy at birth, freedom to make life choices, generosity and perceptions of corruption, released annually by the United Nations Sustainable Development Solutions Network. In the present landscape of shifting political and economic climates across the world, we believe it is important to expand and include measures which encompass a wider narrative of the human experience. 
 
 We are keen to understand the association between country-level physical, financial, social, cultural, political, and environmental indicators and the parent country's ranking on an overall well-being index. For instance, [literature](https://bmcpublichealth.biomedcentral.com/articles/10.1186/1471-2458-13-496) shows that "fear of crime represents a complex set of responses to the environment. It may play a role in mediating environmental impacts on health and wellbeing". Conversely, in his [book](http://www.palgrave.com/us/book/9780333548080), "Politics, Women and Well-being", Robin Jeffrey discusses the key role played by a more gender-equal society in the overall health and improvement of a state in India. 
 
@@ -31,13 +32,13 @@ We believe that this information could potentially inform policies to improve ov
 
 We began our project with the goal of identifying yearly-changes in a country's happiness and well-being. However, as we learnt more about how these composite indices are derived, we grew keen to understand the factors considered in the creation of a well-being score. Over the course of our literature review, we identified more variables we believe are relevant to a population's well-being, and decided to create a new, incremented ranking of country well-being with this additional data. Thus, our project seeks to answer: 
 
-Is there a change in the average ranking of a country's happiness and well-being, given the inclusion of a more comprehensive variable list representing its physical, social, cultural, economic and political enviroments?
+Is there a change in the average ranking of a country's happiness and well-being, given the inclusion of a more comprehensive variable list representing its physical, social, cultural, economic and political environments?
 
-# Methods:
+# Data:
 
 In order to develop our well-being index, we extracted data from a number of resources, categorized below: 
 
-```{r}
+```{r, ECHO = FALSE}
 org = c("World Bank", "United Nations Sustainable Development Solutions Network", "New Economics Foundation", "Wikipedia (Fearon's Analysis)")
 dat <- c("World Development Indicators (2010-17)", "World Happiness Report", "Happy Planet Index", "Ethnic Fractionalization Index")
 
@@ -49,26 +50,19 @@ categs <- data.frame("Population Characteristics" = categs)
 print(kable(datasources))
 print(kable(categs))
 
-#dsources <- c("World Bank: World Development Indicators", "Happy Planet Index", "Wikipedia", "UN SDSN: World Happiness Report")
-#dframe1 %>% data.frame("Indicators" = categs) %>% kable
 ```
 
-From each of our sources, we selected variables most relevant to the creation of our composite index (based on literature review). After a review of the [Handbook on Constructing Composite Score Indicators](https://www.oecd.org/std/42495745.pdf) released by the OECD examining weighting techniques in social and demographix index development, we decided to provide equal weightage to all variables, to provide countries with lesser-utilized variables equal opportunity to receive higher ranks in the final index.
+From each of our sources, we selected variables most relevant to the creation of our composite index (based on literature review). After a review of the [Handbook on Constructing Composite Score Indicators](https://www.oecd.org/std/42495745.pdf) released by the OECD examining weighting techniques in social and demographic index development, we decided to provide equal weightage to all variables, to provide countries with lesser-utilized variables equal opportunity to receive higher ranks in the final index.
 
 A country-wise ranking was then generated for each variable, in every category. Every country then received a category-wise composite score, calculated as an equally-weighted average of the mean variable ranks. 
 
-<<<<<<< HEAD
-# Exploratory Analysis: What visualizations did you use to look at your data in different ways? What are the different statistical methods you considered? Justify the decisions you made, and show any major changes to your ideas. How did you reach these conclusions?
-=======
 # Exploratory Analysis: 
 
->>>>>>> 9fd07cc0fa2e3dc42286b64a039fd181049eb68a
-
-- Samples in the WHR (1000 per country not taking into acount population density or total population), doesn't take into consideration - 
+]- Samples in the WHR (1000 per country not taking into acount population density or total population), doesn't take into consideration - 
 - Scatterplot of the WHR countries ranks?
 - Association between maybe ethnic fractionalization/total population/environmental biodiversity and these ranks? [T perhaps justify why we don't think that these ranks are very accurate]
 
-```{r}
+```{r, ECHO = FALSE}
 
 ```
 
@@ -78,7 +72,7 @@ A country-wise ranking was then generated for each variable, in every category. 
 
 The World Bank's World Development Indicators were downloaded from [Kaggle](https://www.kaggle.com/worldbank/world-development-indicators), and this dataset is available for download as a .csv from [this link](https://drive.google.com/open?id=1ilfW3OIrVs6b4EsFPFbW-dw_vQiQgetU). However, given the large size of this data, our initial stage dataset is available as a smaller-sized url-linked csv (in the following code chunk), on which the rest of the code was run.
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, ECHO=FALSE}
 # Replace path name with that of the downloaded csv file
 Indicators_csv <- read_csv("Download/Path/Here.csv")
 
@@ -127,7 +121,7 @@ write.csv(WDI2, file = "ourWDI.csv")
 
 If the above original dataset was not downloaded, the code below runs on the .csv generated at the end of the above code chunk 
 
-```{r}
+```{r, ECHO = FALSE}
 # Load dataset
 url <- "https://raw.githubusercontent.com/Seranne/IntroDSproject/master/ourWDI.csv"
 WDI4 <- read.csv(url)
@@ -157,28 +151,21 @@ levels(WDI4$CountryName)[levels(WDI4$CountryName) == "Yemen, Rep."] <- "Yemen"
 
 # Generating Category scores for each country
 
-Composite Energy Score: 
+Composite Energy Score: This score is based on Access to Electricity (% of population), Renewable Energy Consumption (% of final energy consumption), and Fossil fuel energy consumption (% of final energy consumption)
 
-```{r}
+```{r, ECHO = FALSE}
 # Selecting indicators of interest 
 Energy <- WDI4%>% filter(IndicatorCode == "EG.FEC.RNEW.ZS"|IndicatorCode == "EG.USE.COMM.FO.ZS"|IndicatorCode == "EG.ELC.ACCS.ZS"|IndicatorCode == "EG.USE.ELEC.KH.PC") %>% spread(IndicatorCode, Value)
 
-<<<<<<< HEAD
-
-#reoving rows with too many na's and filling in remaining na's with same country means
+#removing rows with NA Variables >  and filling in remaining na's with same country means
  Energy <- Energy[order(-Energy$Year),]
-=======
-Energy <- Energy[order(-Energy$Year),]
->>>>>>> 3081b7b0338774f1563d5cbfc16517056e7601fb
  Energy[rowSums(is.na(Energy)) < ncol(Energy)/2, ]
  Energy<- aggregate(x=Energy[c("EG.ELC.ACCS.ZS","EG.FEC.RNEW.ZS","EG.USE.COMM.FO.ZS","EG.USE.ELEC.KH.PC")], by=list(name=Energy$CountryName), FUN = "mean" , na.rm = TRUE)
  colnames(Energy)[1] <- "CountryName"
-  Energy[rowSums(is.na(Energy1)) < ncol(Energy)/2, ]
  Energy <- Energy%>% distinct(CountryName, .keep_all = TRUE)
 
  # Access to Electricity (% of population); Highest score gets ranked 1
  Energy1<- select(Energy, "CountryName",  "EG.ELC.ACCS.ZS")
-<<<<<<< HEAD
  Energy1 <- Energy1 %>% mutate(finalrank_eng1 = rank(-Energy1$EG.ELC.ACCS.ZS))
  Energy1$finalrank_eng1<- as.numeric(as.factor(Energy1$finalrank_eng1))
  
@@ -204,7 +191,14 @@ Energy <- Energy[order(-Energy$Year),]
 Energy_score <- Energy %>% mutate(score_eng = (finalrank_eng1 + finalrank_eng2 + finalrank_eng3 )/3)
 Energy_score <- Energy_score %>% mutate(finalrank_eng = rank(Energy_score$score_eng))
 
+Energy_score <- Energy_score %>% select("CountryName", "finalrank_eng")
+colnames(Energy_score)[2] <- "Composite_Energy_Rank"
+ Energy_score %>%
+   arrange(Composite_Energy_Rank) %>%
+   slice(1:5)
 ```
+
+These scores reflect an aggregrate of least fossil fuel energy consumption, and most proportion of renewable energy consumption - the results of which aligned with our expectations given that the top 5 countries are largely smaller in size, and also have relatively smaller populations. 
 
 CO2 Emissions score:
 
@@ -218,9 +212,17 @@ emissions_score <- emissions %>%
   summarise(mean_CO2 = mean(EN.ATM.CO2E.PC)) %>%
   na.omit() %>%
   mutate(finalrank_emission = rank(mean_CO2))
+
+escore <- emissions_score %>% select("CountryName", "finalrank_emission")
+colnames(escore)[2] <- "Composite_Emissions_Rank"
+ escore %>%
+   arrange(Composite_Emissions_Rank) %>%
+   slice(1:5)
 ```
 
-Composite Environmental well-being score: 
+This score reflects lowest CO2 emissions in the world. We believe that this data reflects countries which are more agricultural than industrial, and also ones with relatively smaller population sizes. 
+
+Composite Environmental well-being score: This score is based on the proportion of protected areas: both Terrestrial and Marine protected areas (% of total territorial area), and Forest area(% land area)
 
 ```{r}
 # Selecting indicator variables: Terrestrial and marine protected areas (% of total territorial area) and Forest area (% of land area)
@@ -235,10 +237,16 @@ environment_score <- envir %>%
   mutate(rank_agland = rank(mean_agland), rank_protect = rank(mean_protect)) %>%
   mutate(score = (rank_agland+rank_protect)/2) %>%
   mutate(finalrank_env = rank(-score)) %>%
-  select(CountryName, finalrank_env)
+  select("CountryName", "finalrank_env")
+
+colnames(environment_score)[2] <- "Composite_Environment_Rank"
+ environment_score %>%
+   arrange(Composite_Environment_Rank) %>%
+   slice(1:5)
+
 ```
 
-Communication/Connectivity score: 
+Communication/Connectivity score: This score is based on Mobile Cellular subscriptions (per 100 people) and Internet Users (per 100 people)
 
 ```{r}
 # Score based on Mobile cellular subscriptions (per 100 people) and Internet Users (per 100 people)
@@ -254,9 +262,14 @@ Communication <- Communication %>% mutate(ranknet = rank(IT.NET.USER.P2))
 Communication <- Communication %>% mutate(score = (rankcell+ranknet)/2)
 Communication <- Communication %>% mutate(finalrank_comm = rank(-Communication$score))
 Communication_score <- select(Communication, "CountryName", "finalrank_comm" )
+
+colnames(Communication_score)[2] <- "Composite_Communications_Rank"
+ Communication_score %>%
+   arrange(Composite_Communications_Rank) %>%
+   slice(1:5)
 ```
 
-Composite Child Welfare score:
+Composite Child Welfare score: Based on share of children not in education, employment or training, and Infant Mortality Rate 
 
 ```{r}
 children<- WDI4 %>% filter(IndicatorCode == "SL.FAM.0714.ZS"|IndicatorCode == "SL.UEM.NEET.ZS" | IndicatorCode == "SP.DYN.IMRT.IN") %>% spread(IndicatorCode, Value)
@@ -285,26 +298,37 @@ childwelfare$SL.UEM.NEET.ZS[is.na(childwelfare$SL.UEM.NEET.ZS)] <- avgneet
 childwelfare <- mutate(childwelfare, rank.neet = as.numeric(as.factor(rank((SL.UEM.NEET.ZS)))))
 childwelfare_score <- mutate(childwelfare, finalscore_child = as.numeric
                        (as.factor(rank(((rank.neet+rank.imr)/2)))))
+
+childwelfare_score <- childwelfare_score %>% select("CountryName","finalscore_child")
+colnames(childwelfare_score)[2] <- "Composite_ChildWelfare_Rank"
+ childwelfare_score %>%
+   arrange(Composite_ChildWelfare_Rank) %>%
+   slice(1:5)
 ```
 
-Food Deficit score:
+Food Deficit score: Assessed by the depth of the food deficit (kilocalories per person per day), and returned as ranks with the least depth of food deficit
 
 ```{r}
-# Load dataset and select indicator: Depth of the food deficit (kilocalories per person per day)
+# Load dataset and select indicator
 deficit <- WDI4 %>% filter(IndicatorCode == "SN.ITK.DFCT") %>% spread(IndicatorCode, Value)
 
 # Country with the least food deficit will rank 1
 deficit <- select(deficit, "CountryName", "Year", "SN.ITK.DFCT")
 deficit <- deficit[order(-deficit$Year),]
 deficit <- deficit %>% distinct(CountryName, .keep_all = TRUE)
-View(deficit)
 
 deficit.score = as.numeric(as.factor(rank((deficit$SN.ITK.DFCT))))
 deficit_score <- deficit %>% mutate(finalrank_deficit = 
                                 as.numeric(as.factor(rank((deficit$SN.ITK.DFCT)))))
+
+deficit_score <- deficit_score %>% select("CountryName", "finalrank_deficit")
+colnames(deficit_score)[2] <- "Composite_Deficit_Rank"
+ deficit_score %>%
+   arrange(Composite_Deficit_Rank) %>%
+   slice(1:5)
 ```
 
-Economic score: 
+Economic score: This is assessed by assigning positive correlations between a higher rank and higher GDP per capita (in USD), GDP per capita, PPP (in current international dollar), GDP per capita growth (annual %). The ranks are also negatively correlated with Military Expenditure (% of GDP) and Inflation (annual %).
 
 ```{r}
 # Selecting relevant economic indicators
@@ -344,7 +368,7 @@ gdp_4 <- GDP_base %>%
   summarise(mean_gdpg = mean(NY.GDP.PCAP.KD.ZG)) %>%
   mutate(finalrank_gdpg = rank(-mean_gdpg))
 
-#Inflation (annula %) - Country with the lowest annual inflation % will rank 1
+#Inflation (annual %) - Country with the lowest annual inflation % will rank 1
 gdp_5 <- GDP_base %>% 
   select(CountryName, Year, FP.CPI.TOTL.ZG) %>%
   na.omit() %>%
@@ -366,12 +390,19 @@ GDP2[i] <- rowMeans(GDP2[,-1], na.rm = TRUE)[i[,1]]
 # Country with the highest average score will rank 1
 GDP2 <- GDP2 %>% mutate(score_gdp = (finalrank_mil + finalrank_ppp+ finalrank_gdp + finalrank_gdpg + finalrank_infl)/5)
 economy_score <- GDP2 %>% mutate(finalrank_GDP = rank(GDP2$score_gdp))
+
+economy_score <- economy_score %>% select("CountryName", "finalrank_GDP")
+colnames(economy_score)[2] <- "Composite_Economic_Rank"
+es <- economy_score %>%
+   arrange(Composite_Economic_Rank) %>%
+   slice(1:5)
+es
 ```
 
-Education score:
+Education score: Assessed as an average aggregate of Youth literacy rate, population 15-24 years, both sexes (%) and Adult literacy rate, population 15+ years, both sexes (%) 
 
 ```{r}
-# Selecting relevant indicator variables: Youth literacy rate, population 15-24 years, both sexes (%) and Adult literacy rate, population 15+ years, both sexes (%) 
+# Selecting relevant indicator variables: 
 
 Education <- WDI4 %>% filter(IndicatorCode == "SE.ADT.1524.LT.ZS"|IndicatorCode == "SE.ADT.LITR.ZS") %>% spread(IndicatorCode, Value)
 
@@ -395,13 +426,18 @@ En2$rank_eng2<- as.numeric(as.factor(En2$rank_eng2))
 litjoin <- left_join(En1, En2, "CountryName")
 Education <- select(litjoin,"CountryName", "rank_eng1", "rank_eng2")
 Education <- Education%>% mutate(score_edu = (rank_eng1 + rank_eng2)/2)
-Education_score <- Education %>% mutate(finalrank_edu = rank(Education$score_edu))
+Education_score <- Education %>% mutate(finalrank_edu = rank(Education$score_edu)) %>% select("CountryName", "finalrank_edu")
+
+colnames(Education_score)[2] <- "Composite_Education_Rank"
+ Education_score %>%
+   arrange(Composite_Education_Rank) %>%
+   slice(1:5)
 ```
 
-Gender score:
+Gender score: Assessed by proportion of seats held by women in national parliaments (%)
 
 ```{r}
-# Select indicator variable to assess gender equity: Proportion of seats held by women in national partliaments (%)
+# Select indicator variable to assess gender equity: Proportion of seats held by women in national parliaments (%)
 
 gender <- WDI4 %>% filter(IndicatorCode == "SG.GEN.PARL.ZS") %>% spread(IndicatorCode, Value)
 
@@ -409,14 +445,23 @@ gender <- select(gender, "CountryName", "CountryCode", "Year", "SG.GEN.PARL.ZS")
 gender <- gender[order(-gender$Year),]
 gender <- na.omit(gender)
 gender <- gender%>% distinct(CountryName, .keep_all = TRUE)
-Gender_score <- gender %>% mutate(finalrank_gen = rank(-gender$SG.GEN.PARL.ZS))
+Gender_score <- gender %>% mutate(finalrank_gen = rank(-gender$SG.GEN.PARL.ZS)) 
 Gender_score$finalrank_gen<- as.numeric(as.factor(Gender_score$finalrank_gen))
+
+Gender_score <- Gender_score %>% select("CountryName", "finalrank_gen")
+colnames(Gender_score)[2] <- "Composite_Gender_Rank"
+ Gender_score %>%
+   arrange(Composite_Gender_Rank) %>%
+   slice(1:5)
+
 ```
 
-Employment score:
+An interesting finding from our ranking, is the fact that Rwanda ranks No. 1 in the list of countries with the highest proportion of women in their parliaments. This is likely a reflection of its traditionally matriarchal society, increasing equity in gender roles in the country. [More](https://www.thedailybeast.com/two-decades-after-genocide-rwandas-women-have-made-the-nation-thrive) on this [here](https://kristof.blogs.nytimes.com/2008/10/07/when-it-comes-to-women-lawmakers-rwanda-leads-the-world/).
+
+Employment score: Assessed by Wage and salaried workers, total (% of total employed)
 
 ```{r}
-# Select indicator variable: Wage and salaried workers, total (% of total employed)
+# Select indicator variable
 # country with the highest % of wage and salaried workers will be ranked 1
 
 empl<- WDI4 %>% filter(IndicatorCode == "SL.EMP.WORK.ZS") %>% spread(IndicatorCode, Value)
@@ -425,10 +470,15 @@ empl <- empl[order(-empl$Year),]
 empl <- empl %>% distinct(CountryName, .keep_all = TRUE)
 
 employment_score <- empl %>% mutate(finalrank_empl =
-                          as.numeric(as.factor(rank(-(empl$SL.EMP.WORK.ZS)))))
+                          as.numeric(as.factor(rank(-(empl$SL.EMP.WORK.ZS))))) %>% select("CountryName", "finalrank_empl")
+
+colnames(employment_score)[2] <- "Composite_Employment_Rank"
+ employment_score %>%
+   arrange(Composite_Employment_Rank) %>%
+   slice(1:5)
 ```
 
-Population score:
+Population score: Final rank is positively correlated lower population density, lower GINI indices and  higher life expectancies at birth
 
 ```{r}
 # Select relevant indicator variables
@@ -439,7 +489,7 @@ Population <- WDI4 %>% filter(IndicatorCode == "SI.POV.GINI"|IndicatorCode == "S
  Population[rowSums(is.na(Population)) < ncol(Population)/2, ]
  Population<- aggregate(x=Population[c("EN.POP.DNST","SI.POV.GINI","SM.POP.TOTL.ZS","SP.DYN.LE00.IN", "SP.POP.TOTL")], by=list(name=Population$CountryName), FUN = "mean" , na.rm = TRUE)
  colnames(Population)[1] <- "CountryName"
-  Population[rowSums(is.na(Population1)) < ncol(Population)/2, ]
+  Population[rowSums(is.na(Population)) < ncol(Population)/2, ]
  Population <- Population%>% distinct(CountryName, .keep_all = TRUE)
 
 # Population density (people per sq. km of land area): Lowest ranked 1
@@ -467,11 +517,17 @@ Population <- left_join(Popjoin, Population3, "CountryName")
  
  
  Population_score <- Population %>% mutate(score_pop = ((finalrank_pop1 + finalrank_pop2 + finalrank_pop3)/3))
- Population_score <- Population_score %>% mutate(finalrank_pop = rank(Population_score$score_pop))
+ Population_score <- Population_score %>% mutate(finalrank_pop = rank(Population_score$score_pop)) %>% select("CountryName", "finalrank_pop")
+ 
+colnames(Population_score)[2] <- "Composite_Population_Rank"
+Population_score %>% 
+  arrange(Composite_Population_Rank) %>% 
+  slice(1:5)
+ 
 
 ```
 
-Sense of Security Composite score:
+Sense of Security Composite score: Assessed by Strength of Legal system, and inversely related to intentional homicide rate (per 100,000)
 
 ```{r}
 
@@ -498,190 +554,145 @@ security_score <- left_join(legal, homicide, by = "CountryName")
 
 security_score <- select(security_score, "CountryName", "IC.LGL.CRED.XQ", "rank.legal", "VC.IHR.PSRC.P5", "rank.homi")
 
-security_score <- mutate(security_score, finalscore_security = as.numeric(as.factor(rank(((rank.legal+rank.homi)/2)))))
+security_score <- mutate(security_score, 
+                     finalscore_security = as.numeric(as.factor(rank((rank.legal+rank.homi)/2))))
+
+security_score <- security_score %>% select("CountryName", "finalscore_security")
+colnames(security_score)[2] <- "Composite_Security_Rank"
+ security_score %>%
+   arrange(Composite_Security_Rank) %>%
+   slice(1:5)
 ```
 
-Tourism score:
+Tourism score: Assessed by number of international departures (% of total population)
 
 ```{r}
 # Selecting indicator: number of international departures (% of total population)
 tourism <- WDI4 %>% filter(IndicatorCode == "ST.INT.DPRT") %>% spread(IndicatorCode, Value)
-write.csv(Tourism, file = "Tourism.csv")
 
 tourism <- select(tourism, "CountryName", "Year", "ST.INT.DPRT")
 tourism <- tourism[order(-tourism$Year),]
 tourism <- tourism %>% distinct(CountryName, .keep_all = TRUE)
-View(tourism)
 
-Population <- filter(Population, pop$Year == "2013")
+Population <- read.csv("https://raw.githubusercontent.com/Seranne/IntroDSproject/master/WDI%20data%20split/Population.csv")
+
+Population <- filter(Population, Population$Year == "2013")
 Population <- select(Population, "CountryName", "SP.POP.TOTL")
 tour <- left_join(tourism, Population, by = "CountryName")
 
 # Highest score will get a rank of 1 
-tourism_score <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL)))
+tourism_score <- tour %>% mutate(finalrank_tourism = rank(-(tour$ST.INT.DPRT/tour$SP.POP.TOTL))) %>% select("CountryName", "finalrank_tourism")
+
+colnames(tourism_score)[2] <- "Composite_Tourism_Rank"
+ tourism_score %>%
+   arrange(Composite_Tourism_Rank) %>%
+   slice(1:5)
 ```
 
 Ethnic Diversity: Ethniz Fractionalization is commonly used in Economics literature to compare the levels of ethnic, cultural, linguistic and religious fractionalization in different countries ([Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level)). We use this as a measure of ethnic diversity in a country. Inclusion of this measure is one of the key strengths of our  project, since this was not included in earlier World Happiness Indices, but has been shown to be associated with health and [well-being](http://ftp.iza.org/dp9726.pdf). At a time when more [future research](http://www.nuffieldfoundation.org/impact-ethnic-diversity-well-being-and-health) is also being undertaken in this domain, we find it particularly relevant to include this in our index.
 
 ```{r}
 url <- "https://en.wikipedia.org/wiki/List_of_countries_ranked_by_ethnic_and_cultural_diversity_level"
-pop <- read_csv("../WDI data split/Population.csv")
 h <- read_html(url)
 efindex <- h %>% html_nodes("table") %>% html_table(fill = TRUE) %>%
         .[[3]]
 
 diversity <- select(efindex, "Country", "Ethnic Diversity Rank")
 colnames(diversity)[1] <- "CountryName"
-colnames(diversity)[2] <- "finalrank_diversity"
+colnames(diversity)[2] <- "Composite_Diversity_Rank"
+ 
+diversity %>%
+   arrange(Composite_Diversity_Rank) %>%
+   slice(1:5)
 ```
 
 # Extracting Data from the World Happiness Report Dataset
 
-UN SDSN World Happiness Report Data is available for the years 2015, 2016 and 2017:
+UN SDSN World Happiness Report Data is available for the years 2015, 2016 and 2017, the most comprehensive of which was WHR 2016. This is the report we compared against and used in our project. In particular, we extracted two variables from the 2016 World Happiness Report dataset, which we used in our composite well-being index: Citizen report of positive feelings the previous day (Positive Affect), and Citizen Feeling of negative feelings in the previous day (Negative Affect).
 
-```{r}
-# Load datasets
-url1 <- "https://github.com/Seranne/IntroDSproject/blob/master/Source%20Data/World%20Happiness%20Report/2015.csv"
-url2 <- "https://github.com/Seranne/IntroDSproject/blob/master/Source%20Data/World%20Happiness%20Report/2016.csv"
-url3 <- "https://github.com/Seranne/IntroDSproject/blob/master/Source%20Data/World%20Happiness%20Report/2017.csv"
+```{r, ECHO = FALSE}
+# Load dataset: WHR 2016
+url <- "https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Original%20Data/online-data-chapter-2-whr-2017.csv"
+WHR <- read_csv(url)
+WHR <- WHR %>% select(country, `Positive affect`, `Negative affect`)
 
-gh2015 <- read.csv(url1)
-gh2016 <- read.csv(url2)
-gh2017 <- read.csv(url3)
-
-# Selecting required indicators
-GHI2015 <- select(gh2015, "Country", "Region", "Family", "Freedom", "Trust (Government Corruption)", "Generosity", "Dystopia Residual")
-GH2016 <- select(gh2016, "Country", "Region", "Family", "Freedom", "Trust (Government Corruption)", "Generosity", "Dystopia Residual")
-GH2017 <- select(gh2017, "Country", "Family", "Freedom", "Trust..Government.Corruption.", "Generosity", "Dystopia.Residual")
-
-gh <- read_csv("Original Data/online-data-chapter-2-whr-2017.csv")
-
-gh1 <- gh %>% select(country, year, `Social support`, Generosity, `Freedom to make life choices`, `Perceptions of corruption`, `Confidence in national government`, `Positive affect`, `Negative affect`) %>% filter(year == 2016)
-
-whr <- read_csv("Original Data/gh2017.csv")
-
-whr <- whr %>% select(Country, Dystopia.Residual) %>% mutate(country = Country)
-
-WHR <- left_join(gh, whr, "country")  
-colnames(WHR)[2] <- "CountryName"
-write.csv(WHR, file = "final_whr.csv")
+colnames(WHR)[1] <- "CountryName"
 
 #Citizen report of positive feelings
 pos_affect <- WHR %>% 
   group_by(CountryName) %>% 
   summarise(mean_pa = mean(`Positive affect`)) %>%
   na.omit() %>%
-  mutate(finalrank_pos = rank(mean_pa))
+  mutate(finalrank_pos = rank(mean_pa)) %>% select("CountryName", "finalrank_pos")
 
-write.csv(pos_affect, file = "Positive Affect.csv")
+colnames(pos_affect)[2] <- "Positive_Affect_Rank" 
+pos_affect %>%
+   arrange(Positive_Affect_Rank) %>%
+   slice(1:5)
 
 #Citizen report of negative feelings
 neg_affect <- WHR %>% 
   group_by(CountryName) %>% 
   summarise(mean_na = mean(`Negative affect`)) %>%
   na.omit() %>%
-  mutate(finalrank_neg = rank(mean_na))
-View(neg_affect)
-write.csv(neg_affect, file = "Negative Affect.csv")
+  mutate(finalrank_neg = rank(mean_na)) %>% select("CountryName", "finalrank_neg")
 
-#Dystopia score
-
-dystopia <- WHR %>% 
-  group_by(CountryName) %>% 
-  summarise(mean_dys = mean(Dystopia.Residual)) %>%
-  na.omit() %>%
-  mutate(finalrank_dys = rank(mean_dys))
-View(dystopia)
-write.csv(dystopia, file = "Dystopia_score.csv")
-
-
+colnames(neg_affect)[2] <- "Negative_Affect_Rank" 
+neg_affect %>%
+   arrange(Negative_Affect_Rank) %>%
+   slice(1:5)
 ```
 
 # Extracting Data from the Happy Planet Index
 
-2016 Happy Planet Index data is available through [this link](http://happyplanetindex.org/countries). A cleaned .CSV is available through the code below this one, on which further analysis was run.
+2016 Happy Planet Index data is available through [this link](http://happyplanetindex.org/countries). A cleaned .CSV is available through the code below, on which further analysis was run. As other variables have been Covered in previous categories, only inequality adjusted well-being indicator was selected for our score.
 
-```{r, EVAL=FALSE}
+```{r, ECHO = FALSE}
 # Load dataset
-hpi_data_2016 <- readxl::read_xlsx("Your/File/Path/Here.xlsx")
-hpi_data_2016 <- read_csv("../IntroDSproject/Original Data/hpi-data-2016.csv")
-
-<<<<<<< HEAD
-#As other variables have been Covered in previous categories, only wellbeing index was selected for our score
-
+hpi_data_2016 <- read.csv("https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Cleaned_Data/cleaned_hpi_2016.csv")
+hpi_data_2016
 colnames(hpi_data_2016)[2] <- "CountryName"
- hpi_data_20162<- select(hpi_data_2016, "CountryName", "Inequality-adjusted_Wellbeing")
- hpi_data_20162<- na.omit(hpi_data_20162)
- hpi_data_20162 <- hpi_data_20162%>% distinct(CountryName, .keep_all = TRUE)
- hpi_data_20162 <- hpi_data_20162 %>% mutate(finalrank_hpi2 = rank(-hpi_data_20162$`Inequality-adjusted_Wellbeing`))
- hpi_data_20162$finalrank_hpi2<- as.numeric(as.factor(hpi_data_20162$finalrank_hpi2))
+ hpi_data_2016 <- select(hpi_data_2016, "CountryName", "Inequality.adjusted_Wellbeing")
+ hpi_data_2016 <- na.omit(hpi_data_2016)
+ hpi_data_2016  <- hpi_data_2016 %>% distinct(CountryName, .keep_all = TRUE)
+ hpi_data_2016  <- hpi_data_2016  %>% mutate(finalrank_hpi2 = rank(-hpi_data_2016 $Inequality.adjusted_Wellbeing))
+ hpi_data_2016$finalrank_hpi <- as.numeric(as.factor(hpi_data_2016$finalrank_hpi2))
  
-hpi_data_2016<- select(hpi_data_20162,"CountryName",  "finalrank_hpi2")
- 
+happyplanet_score <- select(hpi_data_2016,"CountryName","finalrank_hpi")
+colnames(happyplanet_score)[2] <- "InequalityAdjusted_WellBeing_Rank"
+happyplanet_score %>%
+   arrange(InequalityAdjusted_WellBeing_Rank) %>%
+   slice(1:5)
 
- happyplanet_score <- hpi_data_2016 %>% mutate(score_hpi = finalrank_hpi2 )
- happyplanet_score <- happyplanet_score %>% mutate(finalrank_hpi = rank(happyplanet_score$score_hpi))
- 
 
 ```
 
-```{r}
-# Load dataset
-HPI2016 <- read.csv("https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Cleaned_Data/cleaned_hpi_2016.csv")
-```
 
+# Deriving new well-being index, and gathering all the variable indices join to create a composite score: 
 
-# Checking for correlations between indicators chosen based on literature review
-
-# Deriving new well-rounded well-being index 
-
-#Gather all the variable indices join to create on table 
-
-```{r}
-Communication_score <- read_csv("../Scored data+Rmds/Communication_score.csv")
-Education_score <- read_csv("../Scored data+Rmds/Education_score.csv")
-Emissions_score <- read_csv("../Scored data+Rmds/Emissions_score.csv")
-Employment_score <- read_csv("../Scored data+Rmds/Employment_score.csv")
-Energy_score <- read_csv("../Scored data+Rmds/Energy_score.csv")
-Environment_score <- read_csv("../Scored data+Rmds/Environment_score.csv")
-FoodDeficit_score <- read_csv("../Scored data+Rmds/FoodDeficit_score.csv")
-Gender_score <- read_csv("../Scored data+Rmds/Gender_score.csv")
-Population_score <- read_csv("../Scored data+Rmds/Population_score.csv")
-Security_score <- read_csv("../Scored data+Rmds/Security_score.csv")
-Tourism_score <- read_csv("../Scored data+Rmds/Tourism_score.csv")
-GDP_score <- read_csv("../Scored data+Rmds/GDP_score.csv")
-childwelfare_score <- read_csv("../Scored data+Rmds/childwelfare_score.csv")
-diversity_score <- read_csv("../Scored data+Rmds/diversity_score.csv")
-happyplanet_score <- read_csv("../Scored data+Rmds/happyplanet_score.csv")
-Negative_Affect <- read_csv("../Scored data+Rmds/Negative Affect.csv")
-Positive_Affect <- read_csv("../Scored data+Rmds/Positive Affect.csv")
-```
-
-
-```{r}
-final_score_table <- communication_score %>%
-  full_join(education_score, by='CountryName') %>%
+```{r, ECHO = FALSE}
+final_score_table <- Communication_score %>%
+  full_join(Education_score, by='CountryName') %>%
   full_join(emissions_score, by='CountryName') %>%
   full_join(environment_score, by='CountryName') %>%
-  full_join(foodDeficit_score, by='CountryName') %>%
-  full_join(gender_score, by='CountryName') %>%
-  full_join(population_score, by='CountryName') %>%
+  full_join(deficit_score, by='CountryName') %>%
+  full_join(Gender_score, by='CountryName') %>%
+  full_join(Population_score, by='CountryName') %>%
   full_join(employment_score, by='CountryName') %>%
-  full_join(energy_score, by='CountryName') %>%
+  full_join(Energy_score, by='CountryName') %>%
   full_join(security_score, by='CountryName') %>%
   full_join(tourism_score, by='CountryName') %>%
   full_join(economy_score, by='CountryName') %>%
   full_join(childwelfare_score, by='CountryName')%>%
-  full_join(diversity_score, by='CountryName')%>%
+  full_join(diversity, by='CountryName')%>%
   full_join(happyplanet_score, by='CountryName')%>%
-  full_join(Negative_Affect, by='CountryName')%>%
-  full_join(Positive_Affect, by='CountryName')
+  full_join(neg_affect, by='CountryName')%>%
+  full_join(pos_affect, by='CountryName')
 ```
 
+```{r, ECHO = FALSE}
 # This contains the columns with only the required final ranks for each variable
-```{r}
 final_score <- final_score_table %>% select(CountryName,
-                                            CountryCode, 
                                             finalscore_child,
                                             finalrank_comm,
                                             finalrank_diversity,
@@ -701,10 +712,8 @@ final_score <- final_score_table %>% select(CountryName,
                                             finalrank_pos)
 ```
 
-
-#drop countries with too many NA's and use of mean of the coutries other ranking to fill in NA'for remaining countries
-
-```{r}
+```{r, ECHO = FALSE}
+# drop countries with too many NA's and use of mean of the coutries other ranking to fill in NA'for remaining countries
  final_score[rowSums(is.na(final_score)) < ncol(final_score)/2, ]
  final_score<- aggregate(x=final_score[c("finalscore_child",
                                             "finalrank_comm",
@@ -748,72 +757,72 @@ final_score<- final_score %>%
                         finalrank_neg + 
                         finalrank_pos)/17) %>% 
   mutate(finalindex = rank(ourindex))
+```
 
-#fill in regional data
+```{r, ECHO = FALSE}
+# Fill in data on regions and sub-regions
  
 url <- "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
-
 regions <-read.csv(url)
 regions <- regions %>% select(name, region, sub.region)
 colnames(regions)[1] <- "CountryName"
 final_score <- left_join(final_score, regions, "CountryName")
- 
 
 
- write.csv(final_score, file = "CalculatedOurindex.csv")
-```
+levels(final_score$CountryName)[levels(final_score$CountryName) == "Egypt, Arab Rep."] <- "Egypt"
+levels(final_score$CountryName)[levels(final_score$CountryName) == "Lao PDR"] <- "Laos"
 
+final_score$sub.region[final_score$CountryName == "Bolivia" & is.na(final_score$sub.region)] <- "South America"
 
+final_score$sub.region[final_score$CountryName == "Egypt" & is.na(final_score$sub.region)] <- "Northern Africa"
 
-# Fixing Regions
-```{r}
-read.csv("/IntroDSproject/Final score data/CalculatedOurindex.csv")
-levels(CalculatedOurindex$CountryName)[levels(CalculatedOurindex$CountryName) == "Egypt, Arab Rep."] <- "Egypt"
-levels(CalculatedOurindex$CountryName)[levels(CalculatedOurindex$CountryName) == "Lao PDR"] <- "Laos"
+final_score$sub.region[final_score$CountryName == "Caribbean small states" & is.na(final_score$sub.region)] <- "South America"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Bolivia" & is.na(CalculatedOurindex$sub.region)] <- "South America"
+final_score$sub.region[final_score$CountryName == "Venezuela" & is.na(final_score$sub.region)] <- "South America"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Egypt" & is.na(CalculatedOurindex$sub.region)] <- "Northern Africa"
+final_score$sub.region[final_score$CountryName == "Cote d'Ivoire" & is.na(final_score$sub.region)] <- "Western Africa"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Caribbean small states" & is.na(CalculatedOurindex$sub.region)] <- "South America"
+final_score$sub.region[final_score$CountryName == "Democratic Republic of Congo" & is.na(final_score$sub.region)] <- "Middle Africa"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Venezuela" & is.na(CalculatedOurindex$sub.region)] <- "South America"
+final_score$sub.region[final_score$CountryName == "Tanzania" & is.na(final_score$sub.region)] <- "Middle Africa"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Cote d'Ivoire" & is.na(CalculatedOurindex$sub.region)] <- "Western Africa"
+final_score$sub.region[final_score$CountryName == "Republic of Congo" & is.na(final_score$sub.region)] <- "Western Africa"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Democratic Republic of Congo" & is.na(CalculatedOurindex$sub.region)] <- "Middle Africa"
+final_score$sub.region[final_score$CountryName == "Iran" & is.na(final_score$sub.region)] <- "Western Asia"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Tanzania" & is.na(CalculatedOurindex$sub.region)] <- "Middle Africa"
+final_score$sub.region[final_score$CountryName == "Laos" & is.na(final_score$sub.region)] <- "South-Eastern Asia"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Republic of Congo" & is.na(CalculatedOurindex$sub.region)] <- "Western Africa"
+final_score$sub.region[final_score$CountryName == "Macedonia" & is.na(final_score$sub.region)] <- "Southern Europe"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Iran" & is.na(CalculatedOurindex$sub.region)] <- "Western Asia"
+final_score$sub.region[final_score$CountryName == "Moldova" & is.na(final_score$sub.region)] <- "Eastern Europe"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Laos" & is.na(CalculatedOurindex$sub.region)] <- "South-Eastern Asia"
+final_score$sub.region[final_score$CountryName == "Russia" & is.na(final_score$sub.region)] <- "Eastern Europe"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Macedonia" & is.na(CalculatedOurindex$sub.region)] <- "Southern Europe"
+final_score$sub.region[final_score$CountryName == "United Kingdom" & is.na(final_score$sub.region)] <- "Western Europe"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Moldova" & is.na(CalculatedOurindex$sub.region)] <- "Eastern Europe"
+final_score$sub.region[final_score$CountryName == "South Korea" & is.na(final_score$sub.region)] <- "South-Eastern Asia"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Russia" & is.na(CalculatedOurindex$sub.region)] <- "Eastern Europe"
+final_score$sub.region[final_score$CountryName == "Vietnam" & is.na(final_score$sub.region)] <- "South-Eastern Asia"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "United Kingdom" & is.na(CalculatedOurindex$sub.region)] <- "Western Europe"
+final_score$sub.region[final_score$CountryName == "Syria" & is.na(final_score$sub.region)] <- "Western Asia"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "South Korea" & is.na(CalculatedOurindex$sub.region)] <- "South-Eastern Asia"
+final_score$region[final_score$sub.region == "South America" & is.na(final_score$region)] <- "Americas"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Vietnam" & is.na(CalculatedOurindex$sub.region)] <- "South-Eastern Asia"
+final_score$region[(final_score$sub.region == "Western Africa" | final_score$sub.region == "Middle Africa" | final_score$sub.region == "Northern Africa")  & is.na(final_score$region)] <- "Africa"
 
-CalculatedOurindex$sub.region[CalculatedOurindex$CountryName == "Syria" & is.na(CalculatedOurindex$sub.region)] <- "Western Asia"
+final_score$region[(final_score$sub.region == "Western Asia" | final_score$sub.region == "South-Eastern Asia")  & is.na(final_score$region)] <- "Asia"
 
-CalculatedOurindex$region[CalculatedOurindex$sub.region == "South America" & is.na(CalculatedOurindex$region)] <- "Americas"
+final_score$region[(final_score$sub.region == "Western Europe" | final_score$sub.region == "Eastern Europe" | final_score$sub.region == "Southern Europe")  & is.na(final_score$region)] <- "Europe"
 
-CalculatedOurindex$region[(CalculatedOurindex$sub.region == "Western Africa" | CalculatedOurindex$sub.region == "Middle Africa" | CalculatedOurindex$sub.region == "Northern Africa")  & is.na(CalculatedOurindex$region)] <- "Africa"
+final score <- final score %>% select("CountryName", "region","sub.region","ourindex", "finalindex")
+colnames(final_score)[1] <- "Country"
+colnames(final_score)[2] <- "Region"
+colnames(final_score)[3] <- "Sub-Region"
+colnames(final_score)[4] <- "Composite Score"
+colnames(final_score)[5] <- "Well-Being Rank"
 
-CalculatedOurindex$region[(CalculatedOurindex$sub.region == "Western Asia" | CalculatedOurindex$sub.region == "South-Eastern Asia")  & is.na(CalculatedOurindex$region)] <- "Asia"
+write.csv(final_score, file = "HHWell-Being.Index.csv")
+head(final_score)
+````
 
-CalculatedOurindex$region[(CalculatedOurindex$sub.region == "Western Europe" | CalculatedOurindex$sub.region == "Eastern Europe" | CalculatedOurindex$sub.region == "Southern Europe")  & is.na(CalculatedOurindex$region)] <- "Europe"
-
-#CalculatedOurindex <- CalculatedOurindex[rowSums(is.na(CalculatedOurindex)) > 0,]
-
-write.csv(CalculatedOurindex, file = "CalculatedOurindex.csv")
 ## Final Analysis: What did you learn about the data? How did you answer the questions? How can you justify your answers?
