@@ -56,8 +56,16 @@ From each of our sources, we selected variables most relevant to the creation of
 
 A country-wise ranking was then generated for each variable, in every category. Every country then received a category-wise composite score, calculated as an equally-weighted average of the mean variable ranks. 
 
+<<<<<<< HEAD
+# Exploratory Analysis: What visualizations did you use to look at your data in different ways? What are the different statistical methods you considered? Justify the decisions you made, and show any major changes to your ideas. How did you reach these conclusions?
+=======
 # Exploratory Analysis: 
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9fd07cc0fa2e3dc42286b64a039fd181049eb68a
+
+>>>>>>> 814f5a038c0eb4e15b1fa96e42e30796a57ab6e1
 - Samples in the WHR (1000 per country not taking into acount population density or total population), doesn't take into consideration - 
 - Scatterplot of the WHR countries ranks?
 - Association between maybe ethnic fractionalization/total population/environmental biodiversity and these ranks? [T perhaps justify why we don't think that these ranks are very accurate]
