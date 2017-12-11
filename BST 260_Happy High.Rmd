@@ -34,7 +34,7 @@ We began our project with the goal of identifying yearly-changes in a country's 
 
 Is there a change in the average ranking of a country's happiness and well-being, given the inclusion of a more comprehensive variable list representing its physical, social, cultural, economic and political environments?
 
-# Methods:
+# Data:
 
 In order to develop our well-being index, we extracted data from a number of resources, categorized below: 
 
@@ -52,7 +52,7 @@ print(kable(categs))
 
 ```
 
-From each of our sources, we selected variables most relevant to the creation of our composite index (based on literature review). After a review of the [Handbook on Constructing Composite Score Indicators](https://www.oecd.org/std/42495745.pdf) released by the OECD examining weighting techniques in social and demographix index development, we decided to provide equal weightage to all variables, to provide countries with lesser-utilized variables equal opportunity to receive higher ranks in the final index.
+From each of our sources, we selected variables most relevant to the creation of our composite index (based on literature review). After a review of the [Handbook on Constructing Composite Score Indicators](https://www.oecd.org/std/42495745.pdf) released by the OECD examining weighting techniques in social and demographic index development, we decided to provide equal weightage to all variables, to provide countries with lesser-utilized variables equal opportunity to receive higher ranks in the final index.
 
 A country-wise ranking was then generated for each variable, in every category. Every country then received a category-wise composite score, calculated as an equally-weighted average of the mean variable ranks. 
 
@@ -608,32 +608,39 @@ diversity %>%
 
 # Extracting Data from the World Happiness Report Dataset
 
-UN SDSN World Happiness Report Data is available for the years 2015, 2016 and 2017:
+UN SDSN World Happiness Report Data is available for the years 2015, 2016 and 2017, the most comprehensive of which was WHR 2016. This is the report we compared against and used in our project. In particular, we extracted two variables from the 2016 World Happiness Report dataset, which we used in our composite well-being index: Citizen report of positive feelings the previous day (Positive Affect), and Citizen Feeling of negative feelings in the previous day (Negative Affect).
 
 ```{r, ECHO = FALSE}
 # Load dataset: WHR 2016
-url <- "https://github.com/Seranne/IntroDSproject/blob/master/Original%20Data/online-data-chapter-2-whr-2017.csv"
+url <- "https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Original%20Data/online-data-chapter-2-whr-2017.csv"
+WHR <- read_csv(url)
+WHR <- WHR %>% select(country, `Positive affect`, `Negative affect`)
 
-whr <- read_csv(url)
-whr <- whr %>% select(Country, Dystopia.Residual) %>% mutate(country = Country)
-
-WHR <- left_join(gh, whr, "country")  
-colnames(WHR)[2] <- "CountryName"
-write.csv(WHR, file = "final_whr.csv")
+colnames(WHR)[1] <- "CountryName"
 
 #Citizen report of positive feelings
 pos_affect <- WHR %>% 
   group_by(CountryName) %>% 
   summarise(mean_pa = mean(`Positive affect`)) %>%
   na.omit() %>%
-  mutate(finalrank_pos = rank(mean_pa))
+  mutate(finalrank_pos = rank(mean_pa)) %>% select("CountryName", "finalrank_pos")
+
+colnames(pos_affect)[2] <- "Positive_Affect_Rank" 
+pos_affect %>%
+   arrange(Positive_Affect_Rank) %>%
+   slice(1:5)
 
 #Citizen report of negative feelings
 neg_affect <- WHR %>% 
   group_by(CountryName) %>% 
   summarise(mean_na = mean(`Negative affect`)) %>%
   na.omit() %>%
-  mutate(finalrank_neg = rank(mean_na))
+  mutate(finalrank_neg = rank(mean_na)) %>% select("CountryName", "finalrank_neg")
+
+colnames(neg_affect)[2] <- "Negative_Affect_Rank" 
+neg_affect %>%
+   arrange(Negative_Affect_Rank) %>%
+   slice(1:5)
 ```
 
 # Extracting Data from the Happy Planet Index
@@ -643,31 +650,29 @@ neg_affect <- WHR %>%
 ```{r, EVAL=FALSE}
 # Load dataset
 hpi_data_2016 <- readxl::read_xlsx("Your/File/Path/Here.xlsx")
-hpi_data_2016 <- read_csv("../IntroDSproject/Original Data/hpi-data-2016.csv")
-
-
-#As other variables have been Covered in previous categories, only wellbeing index was selected for our score
-
-colnames(hpi_data_2016)[2] <- "CountryName"
- hpi_data_20162<- select(hpi_data_2016, "CountryName", "Inequality-adjusted_Wellbeing")
- hpi_data_20162<- na.omit(hpi_data_20162)
- hpi_data_20162 <- hpi_data_20162%>% distinct(CountryName, .keep_all = TRUE)
- hpi_data_20162 <- hpi_data_20162 %>% mutate(finalrank_hpi2 = rank(-hpi_data_20162$`Inequality-adjusted_Wellbeing`))
- hpi_data_20162$finalrank_hpi2<- as.numeric(as.factor(hpi_data_20162$finalrank_hpi2))
- 
-hpi_data_2016<- select(hpi_data_20162,"CountryName",  "finalrank_hpi2")
- 
-
- happyplanet_score <- hpi_data_2016 %>% mutate(score_hpi = finalrank_hpi2 )
- happyplanet_score <- happyplanet_score %>% mutate(finalrank_hpi = rank(happyplanet_score$score_hpi))
- 
-
 ```
+As other variables have been Covered in previous categories, only inequality adjusted well-being indicator was selected for our score.
 
 ```{r, ECHO = FALSE}
 # Load dataset
-HPI2016 <- read.csv("https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Cleaned_Data/cleaned_hpi_2016.csv")
+hpi_data_2016 <- read.csv("https://raw.githubusercontent.com/Seranne/IntroDSproject/master/Cleaned_Data/cleaned_hpi_2016.csv")
+hpi_data_2016
+colnames(hpi_data_2016)[2] <- "CountryName"
+ hpi_data_2016 <- select(hpi_data_2016, "CountryName", "Inequality.adjusted_Wellbeing")
+ hpi_data_2016 <- na.omit(hpi_data_2016)
+ hpi_data_2016  <- hpi_data_2016 %>% distinct(CountryName, .keep_all = TRUE)
+ hpi_data_2016  <- hpi_data_2016  %>% mutate(finalrank_hpi2 = rank(-hpi_data_2016 $Inequality.adjusted_Wellbeing))
+ hpi_data_2016$finalrank_hpi <- as.numeric(as.factor(hpi_data_20162$finalrank_hpi2))
+ 
+happyplanet_score <- select(hpi_data_2016,"CountryName","finalrank_hpi")
+colnames(happyplanet_score)[2] <- "InequalityAdjusted_WellBeing_Rank"
+happyplanet_score %>%
+   arrange(InequalityAdjusted_WellBeing_Rank) %>%
+   slice(1:5)
+
+
 ```
+
 
 # Deriving new well-being index, and gathering all the variable indices join to create a composite score: 
 
